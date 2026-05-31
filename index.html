@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IAMAI · Программа обучения ИИ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1ECE2;       /* тёплое молоко */
+  --paper-2:#F8F4EC;
+  --surface:#F2EDE3;
+  --ink:#2B2925;
+  --ink-soft:#5A564E;
+  --muted:#9A958A;
+  --line:#E0DACE;
+  --sage:#8C9A84;
+  --terra:#C2613C;       /* терракота / акцент */
+  --terra-soft:#D99A7E;
+  --warm:#C2613C;
+  --cta:#322F2A;         /* графит, не чёрный */
+  --nm-light:rgba(255,255,255,.95);
+  --nm-dark:rgba(197,186,165,.5);
+  --raised:6px 6px 15px var(--nm-dark), -6px -6px 15px var(--nm-light);
+  --raised-sm:4px 4px 9px var(--nm-dark), -4px -4px 9px var(--nm-light);
+  --inset:inset 4px 4px 9px var(--nm-dark), inset -4px -4px 9px var(--nm-light);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.bg-rings{position:fixed;right:-160px;top:50%;transform:translateY(-50%);width:560px;opacity:.05;pointer-events:none;z-index:0}
+.kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.serif{font-family:"Lora",serif}
+.shell{position:relative;z-index:1;min-height:100dvh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:26px clamp(20px,5vw,64px)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .mark{width:34px;height:34px;flex:0 0 auto}
+.brand .wm{font-weight:800;letter-spacing:.22em;font-size:18px}
+.brand .wm b{color:var(--ink)}
+.brand .by{font-size:9.5px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.topbar .meta{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:1.7}
+.edge{position:fixed;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);z-index:2}
+@media(max-width:820px){.edge{display:none}}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:10px clamp(20px,5vw,64px) 40px}
+.foot{display:flex;justify-content:space-between;padding:20px clamp(20px,5vw,64px);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.screen{display:none;width:100%;max-width:1080px;animation:rise .7s var(--ease) both}
+.screen.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.stagger>*{animation:rise .7s var(--ease) both}
+.stagger>*:nth-child(1){animation-delay:.05s}.stagger>*:nth-child(2){animation-delay:.13s}.stagger>*:nth-child(3){animation-delay:.21s}.stagger>*:nth-child(4){animation-delay:.29s}.stagger>*:nth-child(5){animation-delay:.37s}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:36px}}
+.hero h1{font-weight:300;font-size:clamp(34px,5.4vw,60px);line-height:1.04;letter-spacing:-.02em;margin:20px 0 22px}
+.hero h1 em{font-family:"Lora",serif;font-style:italic;font-weight:400;color:var(--terra)}
+.hero p.lead{color:var(--ink-soft);font-size:clamp(15px,1.6vw,17px);line-height:1.6;max-width:38ch;font-weight:400}
+.rule{height:1px;background:var(--line);margin:28px 0;width:100%}
+.enter{margin-top:30px;max-width:430px}
+.enter label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:11px;font-weight:600}
+.field{display:flex;gap:12px}
+@media(max-width:480px){.field{flex-direction:column}}
+.field input{flex:1;background:var(--surface);border:none;border-radius:14px;padding:16px 18px;font-family:inherit;font-size:15px;color:var(--ink);box-shadow:var(--inset);outline:none}
+.field input::placeholder{color:var(--muted)}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;letter-spacing:.02em;border-radius:14px;padding:16px 26px;background:var(--cta);color:#F4F1EA;transition:transform .25s var(--ease),box-shadow .25s var(--ease),opacity .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(38,36,31,.22)}
+.btn:active{transform:translateY(0)}
+.hint{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+.cluster{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.cluster svg{width:78%;max-width:360px}
+.jhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:30px}
+.jhead h2{font-weight:300;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.02em}
+.chip{display:flex;align-items:center;gap:11px;background:var(--surface);box-shadow:var(--raised-sm);border-radius:40px;padding:9px 9px 9px 18px}
+.chip .who{font-size:12.5px;font-weight:600;color:var(--ink)}
+.chip .who span{display:block;font-size:10.5px;color:var(--muted);font-weight:500;letter-spacing:.04em}
+.chip .av{width:36px;height:36px;border-radius:50%;background:var(--cta);color:#F4F1EA;display:grid;place-items:center;font-weight:700;font-size:13px}
+.progress-line{display:flex;align-items:center;gap:14px;margin:0 2px 30px}
+.progress-line .bar{flex:1;height:6px;border-radius:6px;box-shadow:var(--inset);overflow:hidden}
+.progress-line .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sage),#A7B49E);border-radius:6px;transition:width .6s var(--ease)}
+.progress-line .pct{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:680px){.steps{grid-template-columns:1fr}}
+.step{position:relative;background:var(--surface);border-radius:20px;padding:24px;cursor:pointer;box-shadow:var(--raised);transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:flex;gap:18px;align-items:flex-start;min-height:118px}
+.step:hover{transform:translateY(-3px);box-shadow:8px 9px 22px var(--nm-dark),-8px -8px 22px var(--nm-light)}
+.step.locked{cursor:not-allowed;box-shadow:var(--inset)}
+.step.locked:hover{transform:none;box-shadow:var(--inset)}
+.step.locked .s-title,.step.locked .s-desc{opacity:.55}
+.step .num{font-family:"Lora",serif;font-size:30px;font-weight:500;color:var(--ink);line-height:1;width:54px;height:54px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%;box-shadow:var(--inset)}
+.step.done .num{color:var(--sage)}
+.step.active .num{box-shadow:var(--raised-sm);background:var(--terra);color:#FBF7F0;font-family:"Manrope"}
+.step .s-body{flex:1;min-width:0}
+.s-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.step.done .s-tag{color:var(--sage)}
+.step.active .s-tag{color:var(--warm)}
+.step.locked .s-tag,.step.upcoming .s-tag{color:var(--muted)}
+.s-title{font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:5px}
+.s-desc{font-size:13px;color:var(--ink-soft);line-height:1.45}
+.step .arrow{align-self:center;color:var(--muted);font-size:18px;transition:transform .3s var(--ease)}
+.step:hover .arrow{transform:translateX(4px);color:var(--ink)}
+.crumb{display:inline-flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--muted);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:26px;transition:color .2s}
+.crumb:hover{color:var(--ink)}
+.formwrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+@media(max-width:820px){.formwrap{grid-template-columns:1fr;gap:30px}}
+.formwrap h2{font-weight:300;font-size:clamp(26px,4vw,42px);letter-spacing:-.02em;margin:14px 0 18px;line-height:1.08}
+.formwrap .lead{color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:34ch}
+.panel{background:var(--surface);border-radius:24px;padding:clamp(24px,3vw,36px);box-shadow:var(--raised)}
+.embed-note{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.04em;color:var(--muted);background:var(--paper-2);border-radius:10px;padding:9px 13px;margin-bottom:24px;box-shadow:var(--inset)}
+.embed-note b{color:var(--ink-soft);font-weight:700}
+.f-row{margin-bottom:18px}
+.f-row label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:9px}
+.f-row input{width:100%;background:var(--paper-2);border:none;border-radius:12px;padding:14px 16px;font-family:inherit;font-size:14.5px;color:var(--ink);box-shadow:var(--inset);outline:none}
+.f-row input:disabled{color:var(--muted)}
+.f-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.f-two{grid-template-columns:1fr}}
+.q{margin-bottom:24px}
+.q p{font-size:14.5px;font-weight:600;margin-bottom:13px;color:var(--ink);line-height:1.4}
+.scale{display:flex;gap:9px}
+.scale button{flex:1;background:var(--paper-2);border:none;border-radius:11px;padding:13px 0;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;color:var(--ink-soft);box-shadow:var(--raised-sm);transition:all .2s var(--ease)}
+.scale button:hover{transform:translateY(-2px)}
+.scale button.sel{box-shadow:var(--inset);background:var(--terra);color:#FBF7F0}
+.soon{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 10px}
+.soon svg{width:120px;opacity:.5;margin-bottom:22px}
+.soon h3{font-weight:400;font-size:22px;margin-bottom:10px}
+.soon p{color:var(--ink-soft);font-size:14px;max-width:34ch;line-height:1.55}
+.submit-row{display:flex;justify-content:flex-end;margin-top:26px}
+.scrim{position:fixed;inset:0;background:rgba(43,41,37,.34);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;z-index:50}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:48vw;min-width:440px;max-width:760px;background:var(--paper);box-shadow:-18px 0 60px rgba(43,41,37,.2);transform:translateX(100%);transition:transform .42s var(--ease);z-index:60;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+@media(max-width:760px){.drawer{width:100vw;min-width:0;max-width:none}}
+.drawer-head{padding:30px clamp(22px,4vw,38px) 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.drawer-head .kicker{margin-bottom:10px}
+.drawer-head h2{font-weight:300;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.02em;line-height:1.1}
+.drawer-head .lead{color:var(--ink-soft);font-size:13.5px;line-height:1.55;margin-top:11px;max-width:42ch}
+.x{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;background:var(--surface);box-shadow:var(--raised-sm);color:var(--ink);font-size:15px;transition:transform .25s var(--ease)}
+.x:hover{transform:rotate(90deg)}
+.drawer-body{padding:24px clamp(22px,4vw,38px) 40px;overflow-y:auto;flex:1}
+.drawer-body .panel{box-shadow:none;background:transparent;padding:0}
+.form-frame{width:100%;height:calc(100dvh - 240px);min-height:440px;border:0;border-radius:14px;background:var(--paper-2);box-shadow:var(--inset)}
+.cohort-note{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.04em;color:var(--muted);background:var(--paper-2);border-radius:10px;padding:9px 13px;margin-bottom:18px;box-shadow:var(--inset)}
+.cohort-note b{color:var(--ink-soft);font-weight:700}
+</style>
+</head>
+<body>
+<svg class="bg-rings" viewBox="0 0 200 280" fill="none" stroke="#3a382f" stroke-width="1">
+  <circle cx="100" cy="80" r="62"/><circle cx="100" cy="125" r="62"/><circle cx="100" cy="170" r="62"/>
+</svg>
+<div class="edge">Программа обучения ИИ · 2026</div>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 60 80" fill="none" stroke="#2C2A26" stroke-width="2">
+        <circle cx="30" cy="22" r="18"/><circle cx="30" cy="38" r="18"/><circle cx="30" cy="54" r="18"/>
+      </svg>
+      <div><div class="wm">I.AM.<b>AI</b></div><div class="by">by Théa</div></div>
+    </div>
+    <div class="meta">Конфиденциально<br>Корпоративная программа</div>
+  </header>
+  <main class="main">
+    <section class="screen on" id="s-landing">
+      <div class="hero">
+        <div class="stagger">
+          <div class="kicker">Программа обучения</div>
+          <h1>Обучение ИИ<br>с <em>конкретным</em><br>результатом</h1>
+          <p class="lead">Путь из нескольких шагов — от входного опроса до финальной оценки прогресса. Один шаг — один экран, без лишнего.</p>
+          <div class="enter">
+            <label for="mail">Войдите по рабочему email</label>
+            <div class="field">
+              <input id="mail" type="email" placeholder="name@company.com" autocomplete="email">
+              <button class="btn" onclick="enter()">Войти в программу →</button>
+            </div>
+            <p class="hint">Пока без пароля: доступ и прогресс привязаны к вашему email. Личный кабинет с логином появится позже.</p>
+          </div>
+        </div>
+        <div class="cluster">
+          <svg viewBox="0 0 200 260" fill="none" stroke="#2C2A26" stroke-width="1.2">
+            <circle cx="100" cy="74" r="56" opacity=".9"/><circle cx="100" cy="118" r="56" opacity=".55"/><circle cx="100" cy="162" r="56" opacity=".3"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="screen" id="s-journey">
+      <div class="jhead">
+        <div><div class="kicker" style="margin-bottom:12px">Ваш путь</div><h2>Журнал программы</h2></div>
+        <div class="chip"><div class="who">Участник<span id="who-mail">—</span></div><div class="av" id="who-av">У</div></div>
+      </div>
+      <div class="progress-line">
+        <div class="bar"><i id="bar-fill" style="width:0%"></i></div>
+        <div class="pct" id="bar-pct">0 / 6 шагов</div>
+      </div>
+      <div class="steps" id="steps"></div>
+    </section>
+    <div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer-head">
+        <div><div class="kicker" id="drawer-tag">Шаг</div><h2 id="drawer-title">—</h2><p class="lead" id="drawer-lead">—</p></div>
+        <button class="x" onclick="closeDrawer()" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="drawer-body"><div class="panel" id="drawer-panel"></div></div>
+    </aside>
+  </main>
+  <footer class="foot"><span>Théa · IAMAI</span><a href="consent.html" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px">Обработка персональных данных</a><span id="foot-step">01 — Регистрация</span></footer>
+</div>
+<script>
+const rings=(o1=.9,o2=.55,o3=.3)=>`<svg viewBox="0 0 200 260" fill="none" stroke="#2C2A26" stroke-width="1.2"><circle cx="100" cy="74" r="56" opacity="${o1}"/><circle cx="100" cy="118" r="56" opacity="${o2}"/><circle cx="100" cy="162" r="56" opacity="${o3}"/></svg>`;
+const state={mail:"",name:"Участник",openStepIdx:-1};
+/* ---- Cohort routing: page ?group= -> Fillout form URLs ---- */
+const FORM_BASE={
+  reg:"https://iamai.fillout.com/t/ePAL2PK9K9us",
+  survey:"https://iamai.fillout.com/intake"
+};
+const GROUPS={
+  evrika_corp25_alm1:{company:"Evrika",course:"IAMAI_EVRIKA_2026",label:"Evrika · Алматы · группа 1"},
+  evrika_corp25_alm2:{company:"Evrika",course:"IAMAI_EVRIKA_2026",label:"Evrika · Алматы · группа 2"},
+  evrika_corp25_shy1:{company:"Evrika",course:"IAMAI_EVRIKA_2026",label:"Evrika · Шымкент · группа 1"},
+  sz_corp25_01:{company:"SZ",course:"IAMAI_SZ_2026",label:"SZ · группа 1"},
+  sz_corp25_02:{company:"SZ",course:"IAMAI_SZ_2026",label:"SZ · группа 2"},
+  sz_corp25_03:{company:"SZ",course:"IAMAI_SZ_2026",label:"SZ · группа 3"},
+  sz_corp25_04:{company:"SZ",course:"IAMAI_SZ_2026",label:"SZ · группа 4"}
+};
+const Q=new URLSearchParams(location.search);
+const cohort=(()=>{const g=(Q.get("group")||"").trim();const k=GROUPS[g]||{};return{
+  group:g,
+  company:(Q.get("company")||k.company||"").trim(),
+  course:(Q.get("course")||k.course||"").trim(),
+  source:(Q.get("source")||"portal").trim(),
+  label:k.label||(g||"группа не указана")
+};})();
+function formURL(type){const p=new URLSearchParams();
+  if(cohort.source)p.set("source",cohort.source);
+  if(cohort.group)p.set("group",cohort.group);
+  if(cohort.course)p.set("course",cohort.course);
+  if(cohort.company)p.set("company",cohort.company);
+  return FORM_BASE[type]+"?"+p.toString();}
+const steps=[
+  {n:"01",title:"Регистрация",desc:"Базовые данные участника программы.",status:"active",type:"reg"},
+  {n:"02",title:"Входной опрос",desc:"Оценка текущего уровня владения ИИ.",status:"upcoming",type:"survey"},
+  {n:"03",title:"Материалы курса",desc:"Видео, ссылки и конспекты по модулям.",status:"soon",type:"soon"},
+  {n:"04",title:"Практические задания",desc:"Отработка навыков на своих сценариях.",status:"soon",type:"soon"},
+  {n:"05",title:"Финальный опрос",desc:"Замер прогресса после программы.",status:"soon",type:"soon"},
+  {n:"06",title:"Обратная связь",desc:"Ваши впечатления и идеи по курсу.",status:"soon",type:"soon"},
+];
+const tagText={done:"Завершено",active:"Доступно сейчас",upcoming:"Далее",soon:"Скоро"};
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+function enter(){const v=document.getElementById('mail').value.trim();state.mail=v||"demo@company.com";const initial=(state.mail[0]||"У").toUpperCase();document.getElementById('who-mail').textContent=state.mail;document.getElementById('who-av').textContent=initial;renderSteps();show('s-journey');}
+function goJourney(){renderSteps();show('s-journey');}
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('scrim').classList.add('open');document.getElementById('drawer').setAttribute('aria-hidden','false');}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('scrim').classList.remove('open');document.getElementById('drawer').setAttribute('aria-hidden','true');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+/* ---- Fillout submit -> mark step done (cosmetic; source of truth = Airtable) ----
+   Raw-iframe postMessage format is NOT publicly documented by Fillout.
+   Conservative matcher below + console diagnostic. Confirm exact shape on live Pages
+   test (open console, submit reg form, read "[IAMAI] msg" log), then tighten if needed. */
+window.addEventListener('message',function(e){
+  if(((e.origin||"")+"").indexOf("fillout")===-1) return;
+  let d=e.data; if(typeof d==="string"){try{d=JSON.parse(d);}catch(_){}}
+  console.log("[IAMAI] fillout msg:", e.origin, d);
+  const t=((d&&(d.type||d.event||d.name))||"").toString().toLowerCase();
+  const isSubmit = t==="submit"||t==="onsubmit"||t==="formsubmit"||t==="form_submit"||t==="form-submit"||t==="completed";
+  if(isSubmit && state.openStepIdx>=0) complete(state.openStepIdx);
+});
+function renderSteps(){const wrap=document.getElementById('steps');wrap.innerHTML="";const done=steps.filter(s=>s.status==="done").length;document.getElementById('bar-fill').style.width=(done/steps.length*100)+"%";document.getElementById('bar-pct').textContent=`${done} / ${steps.length} шагов`;steps.forEach((s,i)=>{const locked=(s.status==="upcoming"||s.status==="soon");const el=document.createElement('div');el.className="step "+s.status+(locked?" locked":"");el.innerHTML=`<div class="num">${s.status==="done"?"✓":s.n}</div><div class="s-body"><div class="s-tag">${tagText[s.status]}</div><div class="s-title">${s.title}</div><div class="s-desc">${s.desc}</div></div><div class="arrow">→</div>`;el.onclick=()=>{if(s.status==="active"||s.status==="done"||s.status==="upcoming")openStep(i);};wrap.appendChild(el);});}
+function openStep(i){const s=steps[i];state.openStepIdx=i;document.getElementById('drawer-tag').textContent="Шаг "+s.n;document.getElementById('drawer-title').textContent=s.title;document.getElementById('foot-step').textContent=s.n+" — "+s.title;const panel=document.getElementById('drawer-panel');const lead=document.getElementById('drawer-lead');const note=`<div class="cohort-note">◐ <b>${cohort.company||"—"}</b> · группа <b>${cohort.group||"не указана"}</b></div>`;
+  if(s.type==="reg"||s.type==="survey"){
+    lead.textContent = s.type==="reg"
+      ? "Заполните базовые данные. Ваш рабочий email — ключ доступа к программе."
+      : "Короткий входной опрос — фиксируем стартовый уровень. То же спросим в финале, так увидим рост.";
+    panel.innerHTML=note+`<iframe class="form-frame" src="${formURL(s.type)}" title="${s.title}" loading="lazy"></iframe>`;
+  }
+  else{lead.textContent="Этот шаг откроется по мере прохождения программы.";panel.innerHTML=`<div class="soon">${rings(.6,.4,.25)}<h3>Откроется позже</h3><p>Здесь появятся материалы, задания и опросы — по мере движения по программе. Это задел под будущую LMS.</p></div>`;}
+  openDrawer();}
+function likert(q){let b="";for(let k=1;k<=5;k++)b+=`<button onclick="pick(this)">${k}</button>`;return `<div class="q"><p>${q}</p><div class="scale">${b}</div></div>`;}
+function pick(btn){btn.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');}
+function complete(i){steps[i].status="done";const next=steps[i+1];if(next&&(next.type==="reg"||next.type==="survey")&&next.status!=="done")next.status="active";closeDrawer();renderSteps();}
+</script>
+</body>
+</html>
