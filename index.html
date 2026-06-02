@@ -166,12 +166,16 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
           <h1>Обучение ИИ<br>с <em>конкретным</em><br>результатом</h1>
           <p class="lead">Путь из нескольких шагов — от входного опроса до финальной оценки прогресса. Один шаг — один экран, без лишнего.</p>
           <div class="enter">
-            <label for="mail">Войдите по рабочему email</label>
-            <div class="field">
-              <input id="mail" type="email" placeholder="name@company.com" autocomplete="email">
-              <button class="btn" onclick="enter()">Войти в программу →</button>
+            <button class="btn" onclick="register()">Зарегистрироваться →</button>
+            <div><button onclick="showLogin()" style="margin-top:16px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px">Уже регистрировались? Войти по email</button></div>
+            <div id="login-row" style="margin-top:18px" hidden>
+              <label for="mail">Рабочий email</label>
+              <div class="field">
+                <input id="mail" type="email" placeholder="name@company.com" autocomplete="email">
+                <button class="btn" onclick="enter()">Войти →</button>
+              </div>
             </div>
-            <p class="hint">Пока без пароля: доступ и прогресс привязаны к вашему email. Личный кабинет с логином появится позже.</p>
+            <p class="hint">Впервые здесь — начните с регистрации. Пароля нет: доступ и прогресс привязаны к рабочему email.</p>
           </div>
         </div>
         <div class="cluster">
@@ -244,6 +248,8 @@ const steps=[
 ];
 const tagText={done:"Завершено",active:"Доступно сейчас",upcoming:"Далее",soon:"Скоро"};
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+function register(){openStep(0);}
+function showLogin(){const r=document.getElementById('login-row');r.hidden=false;document.getElementById('mail').focus();}
 function enter(){const v=document.getElementById('mail').value.trim();state.mail=v||"demo@company.com";const initial=(state.mail[0]||"У").toUpperCase();document.getElementById('who-mail').textContent=state.mail;document.getElementById('who-av').textContent=initial;renderSteps();show('s-journey');}
 function goJourney(){renderSteps();show('s-journey');}
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('scrim').classList.add('open');document.getElementById('drawer').setAttribute('aria-hidden','false');}
