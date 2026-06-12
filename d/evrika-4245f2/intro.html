@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Evrika · Intro — IAMAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/dash.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+<header class="dash">
+  <h1>Evrika · <em>Intro</em></h1>
+  <div class="meta"><span id="updated">Загрузка…</span><span id="badge" class="badge"></span></div>
+</header>
+<div id="app">
+  <div class="kpis">
+    <div class="kpi" id="kpi-total"><div class="label">Всего сдали</div><div class="value">—</div><div class="sub"></div></div>
+    <div class="kpi" id="kpi-24h"><div class="label">За последние сутки</div><div class="value">—</div><div class="sub">на момент обновления</div></div>
+    <div class="kpi" id="kpi-full"><div class="label">Полная сдача</div><div class="value">—</div><div class="sub"></div></div>
+  </div>
+  <div class="grid">
+    <div class="panel wide"><h3>Сдачи по времени</h3><div class="chartbox"><canvas id="timeline"></canvas></div></div>
+  </div>
+  <div class="grid" id="qgrid" style="margin-top:18px"></div>
+  <section class="tablewrap">
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Поиск по всем полям…">
+      <select id="deptFilter"><option value="">Все отделы</option></select>
+      <span id="count" style="color:var(--muted);font-size:13px"></span>
+      <span style="flex:1"></span>
+      <button class="btn alt" id="csv">Скачать CSV</button>
+      <button class="btn" id="xlsx">Скачать XLSX</button>
+    </div>
+    <div class="tscroll"><div id="table" class="loading">Загрузка данных…</div></div>
+  </section>
+</div>
+<footer class="dash">IAMAI · данные обновляются автоматически по расписанию · доступ по персональной ссылке</footer>
+<script>
+window.DASH_CONFIG = {
+  dataUrl: "data/intro.json",
+  labels: {
+    submitted_at: "Сдано", first_name: "Имя", last_name: "Фамилия",
+    email: "Email", position: "Должность", department: "Отдел",
+    is_manager: "Есть подчинённые", usage_frequency: "Частота использования AI",
+    tools_used: "Какими инструментами пользуются", paid_subscription: "Платная подписка",
+    usage_depth: "Для чего используют AI", prompting_skill: "Как формулируют запросы",
+    self_rating: "Самооценка навыка (1–5)", hardest_task: "Самая сложная задача",
+    main_functions: "Основные функции в работе", time_consuming_tasks: "Что съедает время",
+    routine_tasks: "Рутинные задачи", learning_goals: "Чему хотят научиться",
+    personal_usecases: "Личные кейсы для AI", documents_for_workshop: "Документы для воркшопа"
+  }
+};
+</script>
+<script src="assets/dash.js"></script>
+</body>
+</html>
