@@ -252,7 +252,8 @@ def main():
         mem.setdefault(mail_hash(email), [])
         if gid not in mem[mail_hash(email)]:
             mem[mail_hash(email)].append(gid)
-    (OUT_DIR / "_members.json").write_text(
+    # ВНИМАНИЕ: имя файла БЕЗ подчёркивания — GH Pages (Jekyll) режет `_*` (M-034).
+    (OUT_DIR / "members.json").write_text(
         json.dumps({"generated_at": now, "groups": gmeta, "members": mem},
                    ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"membership: {len(mem)} человек")

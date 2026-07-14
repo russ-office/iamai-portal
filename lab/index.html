@@ -177,7 +177,7 @@ async function home(){
   document.getElementById("g-sub").textContent="Твои группы";
   let mem;
   try{
-    const r=await fetch(`data/_members.json?ts=${Date.now()}`);
+    const r=await fetch(`data/members.json?ts=${Date.now()}`);
     mem=await r.json();
   }catch(e){ list.innerHTML=`<div class="empty">Список групп недоступен. Попробуй позже.</div>`; return; }
   const mine=mem.members[await mailHash(m)]||[];

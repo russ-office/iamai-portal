@@ -4,7 +4,7 @@
  "client": "recTHD8qGCMvvoznH",
  "cycle": "SZ_LAB_1_HR_2-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&type=T1_idea&author_email=",
- "generated_at": "2026-07-14T17:55:41+05:00",
+ "generated_at": "2026-07-14T18:10:03+05:00",
  "threads": [
   {
    "thread_key": "SZ_LAB_1_HR_2-P7",
@@ -21,7 +21,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P7&type=T2_task&p_title=HR%202&p_content=1.%20%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%20%E2%80%93%20%D0%B5%D1%89%D0%B5%20%D0%BD%D0%B5%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D0%BB%D0%B8%2C%20%D0%BD%D0%BE%20%D0%BF%D1%80%D0%B8%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D1%82%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%0A&p_freq=6&p_time=360&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P7&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -44,7 +44,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P10&type=T2_task&p_title=HR%202&p_content=1.%20%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D1%8F%D1%8E%D1%89%D0%B8%D0%B5%D1%81%D1%8F%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%20%D0%BA%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%20%E2%80%93%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B6%D0%B5%D0%BB%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%B1%D0%B5%D0%B7%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0%2C%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D0%BE%D1%82%20-%2020%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=80&p_time=15&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P10&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -67,7 +67,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P9&type=T2_task&p_title=HR%202&p_content=1.%20HR-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20-%20%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%2C%20%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5%20%D0%BB%D1%8E%D0%B4%D0%B8%2C%20%D1%80%D0%B0%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%87%D0%B0%D1%81%D1%82%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%0A&p_freq=1&p_time=60&p_emp=5",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P9&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -90,7 +90,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P2&type=T2_task&p_title=HR%202%20&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%20%E2%80%A2%20%D0%94%D0%BD%D0%B8%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%E2%80%93%20%D1%81%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%20%D0%BE%D1%87%D0%B5%D0%BD%D1%8C%20%D0%BA%D1%80%D0%B8%D0%B2%D0%BE%D0%B9%2C%20%D0%B5%D0%B3%D0%BE%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B2%20%D1%86%D0%B5%D0%BB%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%BE%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%81%D0%BD%D0%B8%D0%B7%D0%B8%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0%20%E2%80%93%202%20%D1%87%D0%B0%D1%81%D0%B0%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=20&p_time=10&p_emp=1&p_calc=%D1%81%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D1%82%D0%B0%D0%BA%3A%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%D0%B8%D0%B7%201%D0%A1%20%D0%97%D0%A3%D0%9F%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C%20%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%BC%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B4%D1%80%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0%2C%20%D1%81%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B2%20%D1%84%D0%B8%D0%B3%D0%BC%D1%83.%201.%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86.%202.%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C%20%D1%82%D0%B0%D0%BA%20%D0%B6%D0%B5%20%20%D0%B2%20%D1%84%D0%B8%D0%B3%D0%BC%D0%B5.%20&p_verif=%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P2&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -113,7 +113,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P8&type=T2_task&p_title=HR%202&p_content=1.%20%D0%9F%D0%BE%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%A1%D0%94%20%E2%80%93%203%20%D1%87%D0%B0%D1%81%D0%B0%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=3&p_time=60&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P8&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -136,7 +136,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P6&type=T2_task&p_title=HR%202&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%20%0A%0A%E2%80%A2%20%D0%9E%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%E2%80%93%20%D0%BF%D0%BE%20%D0%BC%D0%B5%D1%80%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%E2%80%93%201%20%D1%87%D0%B0%D1%81%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%2C%201%20%D1%87%D0%B0%D1%81%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%2C%20%D0%B5%D1%89%D0%B5%2030%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D1%80%D0%BE%D1%81%D1%8C%D0%B1%D1%8B%20%D0%BF%D1%80%D0%BE%D0%B9%D1%82%D0%B8%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%0A&p_freq=3&p_time=45&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P6&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -159,7 +159,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P1&type=T2_task&p_title=SZ_LAB_1_HR_2&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%20%0A%0A%E2%80%A2%20%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8%20%E2%80%93%20%D0%BF%D0%BE%20%D0%BC%D0%B5%D1%80%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D1%8F%20%2B%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5%201%20%D1%80%D0%B0%D0%B7%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%20%E2%80%93%201%20%D1%87%D0%B0%D1%81%20%0A%0A%26nbsp%3B%0A&p_freq=1&p_time=60&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P1&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -182,7 +182,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P3&type=T2_task&p_title=HR%202%20&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%20%0A%0A%20%E2%80%A2%20%D0%9A%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%E2%80%93%20%D0%BF%D0%BE%20%D0%BC%D0%B5%D1%80%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D1%8F%20%E2%80%93%201%20%D1%87%D0%B0%D1%81%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=1&p_time=60&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P3&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -205,7 +205,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P4&type=T2_task&p_title=HR%202&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%20%0A%0A%E2%80%A2%20%D0%A6%D0%B8%D1%82%D0%B0%D1%82%D1%8B%20%E2%80%93%20%D0%B6%D0%B5%D0%BB%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%2C%20%D0%BF%D1%80%D0%BE%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%BF%D0%BE%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%20%E2%80%93%201%20%D1%87%D0%B0%D1%81%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=4&p_time=15&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P4&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -228,7 +228,7 @@
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P5&type=T2_task&p_title=HR%202&p_content=1.%20%D0%A0%D0%B0%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8%0A%0A%20%E2%80%A2%20%D0%9F%D1%80%D0%B0%D0%B7%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8%20%E2%80%93%20%D0%B2%D1%81%D0%B5%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8E%20%2B%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%BD%D0%B0%D0%BC%D0%B8%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%E2%80%93%2030%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%0A&p_freq=2&p_time=15&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&thread_key=SZ_LAB_1_HR_2-P5&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
