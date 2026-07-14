@@ -39,11 +39,31 @@ td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:ta
 .bar b{color:var(--terra);font-weight:700}
 .foot{margin-top:34px;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
 .empty{text-align:center;padding:60px 20px;color:var(--muted)}
+/* charts */
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:14px}
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:22px}
+.card h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px}
+.pie{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pie svg{flex:0 0 auto}
+.leg{flex:1 1 150px;min-width:150px}
+.leg .row{display:flex;align-items:center;gap:8px;font-size:12.5px;padding:3px 0;color:var(--ink-soft)}
+.leg .dot{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
+.leg .lb{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.leg .vl{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.leg .pc{color:var(--muted);font-size:11px;width:38px;text-align:right;font-variant-numeric:tabular-nums}
+.hbar{margin-bottom:12px}
+.hbar .top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+.hbar .top .who{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-soft)}
+.hbar .top .val{font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums;padding-left:10px;white-space:nowrap}
+.hbar .track{height:10px;border-radius:999px;background:rgba(197,186,165,.35);overflow:hidden}
+.hbar .fill{height:100%;border-radius:999px;background:var(--terra)}
+.hbar .fill.s{background:var(--sage)}
+.hint{font-size:12px;color:var(--muted);margin-top:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <img src="logo.png" alt="MateOS" style="height:34px;width:auto;display:block;margin-bottom:10px">
+  <img id="logo" src="logo.png" alt="" style="height:44px;width:auto;display:block;margin-bottom:10px">
   <div class="kicker">MateOS Lab</div>
   <h1 id="h">Дашборд <em id="c">—</em></h1>
   <div class="sub" id="sub">Загрузка…</div>
@@ -54,6 +74,47 @@ td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:ta
 const TOK=(new URLSearchParams(location.search).get("c")||"").trim();
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const n=v=>Math.round((v||0)*10)/10;
+const PAL=["#C2613C","#8C9A84","#7E6A55","#D68B63","#A8B49F","#B0844F","#6E7A66","#CBA88C","#9A958A","#5A564E"];
+
+function donut(items){
+  items=items.filter(i=>i.value>0);
+  const tot=items.reduce((s,i)=>s+i.value,0);
+  if(!tot) return `<div class="hint">Пока нет данных.</div>`;
+  const cx=95,cy=95,R=82,r=52;
+  let a=-Math.PI/2,svg="";
+  items.forEach((it,i)=>{
+    const f=it.value/tot, a1=a+f*2*Math.PI, col=PAL[i%PAL.length];
+    if(f>0.9995){
+      svg+=`<circle cx="${cx}" cy="${cy}" r="${(R+r)/2}" fill="none" stroke="${col}" stroke-width="${R-r}"/>`;
+    }else{
+      const lg=f>0.5?1:0;
+      const P=(ang,rad)=>`${(cx+rad*Math.cos(ang)).toFixed(2)},${(cy+rad*Math.sin(ang)).toFixed(2)}`;
+      svg+=`<path d="M${P(a,R)} A${R},${R} 0 ${lg} 1 ${P(a1,R)} L${P(a1,r)} A${r},${r} 0 ${lg} 0 ${P(a,r)} Z" fill="${col}"/>`;
+    }
+    a=a1;
+  });
+  const leg=items.map((it,i)=>`<div class="row">
+      <span class="dot" style="background:${PAL[i%PAL.length]}"></span>
+      <span class="lb">${esc(it.label)}</span>
+      <span class="vl">${n(it.value)}</span>
+      <span class="pc">${Math.round(it.value/tot*100)}%</span>
+    </div>`).join("");
+  return `<div class="pie"><svg viewBox="0 0 190 190" width="190" height="190">${svg}
+    <text x="95" y="92" text-anchor="middle" font-size="22" font-weight="700" fill="#2B2925">${n(tot)}</text>
+    <text x="95" y="108" text-anchor="middle" font-size="9" letter-spacing="1.4" fill="#9A958A">ВСЕГО</text>
+    </svg><div class="leg">${leg}</div></div>`;
+}
+
+function hbars(items,sage){
+  items=items.filter(i=>i.value>0);
+  if(!items.length) return `<div class="hint">Пока нет данных.</div>`;
+  const max=Math.max(...items.map(i=>i.value));
+  return items.map(i=>`<div class="hbar">
+    <div class="top"><span class="who">${esc(i.label)}${i.note?` · <span style="color:#9A958A">${esc(i.note)}</span>`:""}</span>
+    <span class="val">${n(i.value)}</span></div>
+    <div class="track"><div class="fill${sage?" s":""}" style="width:${Math.max(2,i.value/max*100)}%"></div></div>
+  </div>`).join("");
+}
 
 async function boot(){
   if(!TOK){document.getElementById("sub").textContent="Ссылка неполная.";return;}
@@ -65,6 +126,10 @@ async function boot(){
   }catch(e){document.getElementById("sub").textContent="Дашборд не найден. Проверь ссылку.";return;}
 
   document.getElementById("c").textContent=d.client;
+  const lg=document.getElementById("logo");
+  lg.alt=d.client||"";
+  lg.onerror=()=>{lg.onerror=null;lg.src="logo.png";lg.alt="MateOS";};
+  lg.src=`logo-${encodeURIComponent(d.client||"")}.png`;
   document.getElementById("sub").textContent="Что группы уже нашли: проблемы, потенциал экономии, стадии работы";
   const k=d.kpi;
   let html=`<div class="kpis">
@@ -75,14 +140,24 @@ async function boot(){
     <div class="kpi hot"><b>${n(k.hours_year)}</b><span>часов / год</span></div>
   </div>`;
 
+  // — графики —
+  const gh=(d.groups||[]).map(g=>({label:g.group,value:g.hours_month||0})).sort((a,b)=>b.value-a.value);
+  const gt=(d.groups||[]).map(g=>({label:g.group,value:g.threads||0})).sort((a,b)=>b.value-a.value);
+  const fn=Object.entries(d.funnel||{}).map(([s,c])=>({label:s,value:c})).sort((a,b)=>b.value-a.value);
+  const pp=(d.board||[]).map(b=>({label:b.email,value:b.hours_month||0,note:`${b.ideas} идей`}))
+                        .sort((a,b)=>b.value-a.value).slice(0,12);
+
+  html+=`<h2>Картина в цифрах</h2><div class="charts">
+    <div class="card"><h3>Часы / мес — доля групп</h3>${donut(gh)}</div>
+    <div class="card"><h3>Стадии работы — доля проблем</h3>${donut(fn)}</div>
+    <div class="card"><h3>Вклад людей · часов / мес</h3>${hbars(pp,false)}</div>
+    <div class="card"><h3>Проблем найдено по группам</h3>${hbars(gt,true)}</div>
+  </div>`;
+
   html+=`<h2>По группам</h2><table><tr><th>Группа</th><th>Цикл</th><th style="text-align:right">Участников</th><th style="text-align:right">Проблем</th><th style="text-align:right">Часов / мес</th></tr>`;
   html+=d.groups.map(g=>`<tr><td>${esc(g.group)}</td><td>${esc(g.cycle||"—")}</td>
     <td class="n">${g.people}</td><td class="n">${g.threads}</td><td class="h">${n(g.hours_month)}</td></tr>`).join("");
   html+=`</table>`;
-
-  const f=Object.entries(d.funnel||{}).sort((a,b)=>b[1]-a[1]);
-  if(f.length) html+=`<h2>Стадии</h2><div class="bars">`+
-    f.map(([s,c])=>`<div class="bar">${esc(s)} · <b>${c}</b></div>`).join("")+`</div>`;
 
   if((d.top||[]).length){
     html+=`<h2>Топ проблем по потенциалу</h2><table><tr><th>Проблема</th><th>Группа</th><th>Стадия</th><th style="text-align:right">Часов / мес</th></tr>`;
