@@ -83,7 +83,20 @@ def first(v):
     return v[0] if isinstance(v, list) and v else (v if not isinstance(v, list) else None)
 
 
+def strip_author(url):
+    """Убрать author_email из формульной ссылки: автор строки = тот, кто её создаёт СЕЙЧАС,
+    а не автор идеи. Портал подставит свой email на клиенте."""
+    if not url:
+        return url
+    head, _, qs = url.partition("?")
+    if not qs:
+        return url
+    keep = [p for p in qs.split("&") if p and not p.startswith("author_email=")]
+    return head + ("?" + "&".join(keep) if keep else "")
+
+
 def add_prefill(url, f):
+    url = strip_author(url)
     if not (PREFILL and url):
         return url
     p = {}
@@ -98,18 +111,24 @@ def add_prefill(url, f):
 
 
 def build_threads(rows):
-    """rows = артефакты одной группы. → список тредов (только is_current-версии)."""
+    """rows = ВСЕ артефакты одной группы (все версии).
+    Карточка строится из is_current-версий; вклад считается по всем строкам:
+    тред принадлежит группе, автор строки = тот, кто её подал."""
     threads = {}
     for r in rows:
         f = r["fields"]
         tk = f.get("thread_key")
-        if not tk or not f.get("is_current"):
+        if not tk:
             continue
-        t = threads.setdefault(tk, {"thread_key": tk, "artifacts": []})
-        t["artifacts"].append({"id": r["id"], "f": f})
+        t = threads.setdefault(tk, {"thread_key": tk, "artifacts": [], "all": []})
+        t["all"].append(r)
+        if f.get("is_current"):
+            t["artifacts"].append({"id": r["id"], "f": f})
 
     out = []
     for tk, t in threads.items():
+        if not t["artifacts"]:
+            continue
         arts = sorted(t["artifacts"],
                       key=lambda a: STAGE_ORDER.index(a["f"].get("type"))
                       if a["f"].get("type") in STAGE_ORDER else 99)
@@ -120,11 +139,22 @@ def build_threads(rows):
         protos = [{"artifact_key": a["f"].get("artifact_key"),
                    "url_test": add_prefill(a["f"].get("url_test_T6"), a["f"])}
                   for a in arts if a["f"].get("type") == "T5_prototype"]
+        allrows = sorted(t["all"], key=lambda r: r["fields"].get("submitted_at") or "")
+        contributors = []
+        for r in allrows:
+            em = r["fields"].get("author_email")
+            if em and em not in contributors:
+                contributors.append(em)
+        last_row = allrows[-1]["fields"] if allrows else {}
         out.append({
             "thread_key": tk,
             "title": hf.get("title") or tk,
             "content": hf.get("content") or "",
             "author_email": hf.get("author_email") or "",
+            "contributors": contributors,
+            "edits": len(allrows),
+            "last_author": last_row.get("author_email") or "",
+            "last_at": (last_row.get("submitted_at") or "")[:16].replace("T", " "),
             "hours_month": hf.get("total_hours") or 0,
             "stage": STAGE_LABEL.get(lf.get("type"), lf.get("type") or "—"),
             "stage_code": lf.get("type") or "",

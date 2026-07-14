@@ -58,6 +58,7 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 
   <div class="bar">
     <button class="btn" id="btn-add">＋ Добавить проблему</button>
+    <span class="sub" style="font-size:12.5px;color:var(--ink-soft)">Ты: <span id="who">—</span></span>
     <span class="stat" id="g-stat"></span>
   </div>
 
@@ -82,10 +83,35 @@ let DATA=null;
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const h=n=>Math.round((n||0)*10)/10;
 
+/* Автор = тот, кто подаёт СТРОКУ. Email спрашиваем один раз на группе
+   и подставляем в любую форму. Перезаписи нет: каждый сабмит = новая строка. */
+const MAILKEY="mateos_lab_email";
+function myMail(){return (localStorage.getItem(MAILKEY)||"").trim();}
+function askMail(force){
+  const cur=myMail();
+  const v=(prompt("Твой рабочий email (нужен, чтобы записать вклад на тебя):",cur)||"").trim();
+  if(v&&v.includes("@")){localStorage.setItem(MAILKEY,v);renderWho();return v;}
+  return force?"":cur;
+}
+function renderWho(){
+  const el=document.getElementById("who");
+  const m=myMail();
+  el.innerHTML = m
+    ? `${esc(m)} · <a href="#" onclick="askMail(true);return false" style="color:var(--muted)">сменить</a>`
+    : `<a href="#" onclick="askMail(true);return false" style="color:var(--terra);font-weight:600">указать свой email</a>`;
+}
+function withMe(url){
+  if(!url) return url;
+  let m=myMail(); if(!m) m=askMail(true);
+  if(!m) return null;
+  return url+(url.includes("?")?"&":"?")+"author_email="+encodeURIComponent(m);
+}
+
 function openModal(url,title){
-  if(!url){alert("Ссылка недоступна — обновится в следующем снимке.");return;}
+  const u=withMe(url);
+  if(!u){alert("Без email вклад не запишется. Укажи email и попробуй снова.");return;}
   document.getElementById("m-title").textContent=title;
-  document.getElementById("m-frame").src=url;
+  document.getElementById("m-frame").src=u;
   document.getElementById("modal").classList.add("on");
   document.getElementById("scrim").classList.add("on");
 }
@@ -108,7 +134,8 @@ function card(t){
     <div class="top">
       <div>
         <h3>${esc(t.title)}</h3>
-        <div class="meta">${esc(t.thread_key)} · ${esc(t.author_email)}</div>
+        <div class="meta">${esc(t.thread_key)} · вклад: ${t.edits} ${t.edits===1?"запись":"записей"} · участники: ${esc((t.contributors||[]).join(", "))||"—"}</div>
+        <div class="meta">последняя правка: ${esc(t.last_author)||"—"} · ${esc(t.last_at)}</div>
       </div>
       <div style="text-align:right">
         <span class="tag">${esc(t.stage)}</span>
@@ -120,6 +147,7 @@ function card(t){
 }
 
 async function boot(){
+  renderWho();
   if(!GROUP){document.getElementById("g-sub").textContent="Группа не указана в ссылке (?group=…)";return;}
   try{
     const r=await fetch(`data/${encodeURIComponent(GROUP)}.json?ts=${Date.now()}`);

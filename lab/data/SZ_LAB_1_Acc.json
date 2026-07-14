@@ -3,18 +3,24 @@
  "group_id": "rechQNZDU1nxPz1RH",
  "cycle": "SZ_LAB_1_Acc-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&type=T1_idea&author_email=",
- "generated_at": "2026-07-14T17:01:07+05:00",
+ "generated_at": "2026-07-14T17:19:23+05:00",
  "threads": [
   {
    "thread_key": "SZ_LAB_1_Acc-P4",
    "title": "test test test",
    "content": "test\n",
    "author_email": "russ.office@gmail.com",
+   "contributors": [
+    "russ.office@gmail.com"
+   ],
+   "edits": 2,
+   "last_author": "russ.office@gmail.com",
+   "last_at": "2026-07-14 03:24",
    "hours_month": 230,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=russ.office@gmail.com&thread_key=SZ_LAB_1_Acc-P4&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P4&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -27,11 +33,17 @@
    "title": "ежедневный запуск обработок по загрузке/выгрузке данных в 1с БК",
    "content": "- запуск и контроль за тем что обработка была запущена вовремя, с правильными параметрами, обработки были запущены в правильной последовательности  \nтрудозатраты: 1час/сутки\n- анализ сообщений о наличии ошибок, их критичность  \nтрудозатраты: 1час/сутки\n- контроль, по завершении обработки - что загружено, сколько (в различных разрезах), при необходимости запуск дальнейших обработок, зависящих от результатов текущей   \nтрудозатраты: 1 час/сутки\n\n&nbsp;\n\n&nbsp;\n",
    "author_email": "AHlystunov@szhuldyz.kz",
+   "contributors": [
+    "AHlystunov@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "AHlystunov@szhuldyz.kz",
+   "last_at": "2026-07-14 07:03",
    "hours_month": 90,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=AHlystunov@szhuldyz.kz&thread_key=SZ_LAB_1_Acc-P9&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P9&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -44,11 +56,17 @@
    "title": "ежедневный отчет по дебиторской задолженности",
    "content": "данные из 1С, по различным счетам, с выявлением необоснованной разницы для ее своевременного устранения.\n",
    "author_email": "lnikulina@szhuldyz.kz",
+   "contributors": [
+    "lnikulina@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "lnikulina@szhuldyz.kz",
+   "last_at": "2026-07-14 06:46",
    "hours_month": 40,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=lnikulina@szhuldyz.kz&thread_key=SZ_LAB_1_Acc-P5&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P5&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -61,11 +79,17 @@
    "title": "сверка учета, ЦОЛИ, налогов",
    "content": "1. Сверка данный учета 1С и данные предоставленных из ЦОЛИ файл предоставляют IT.\n2. Сверка данных учета  1С по начисленным и уплаченным налогам и данные с системы ИС ИСНА.\n\n&nbsp;\n",
    "author_email": "onurmagambetova@sz.kz",
+   "contributors": [
+    "onurmagambetova@sz.kz"
+   ],
+   "edits": 1,
+   "last_author": "onurmagambetova@sz.kz",
+   "last_at": "2026-07-14 06:50",
    "hours_month": 19,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=onurmagambetova@sz.kz&thread_key=SZ_LAB_1_Acc-P6&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P6&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -78,11 +102,17 @@
    "title": "Отчеты Логиком",
    "content": "Данные для отчета поступает из разных источников, наименование игр разная и отличная от наименований в отчете, отчет формируется в разрезе электронных игр, поступающие данные помимо электронных игр еще содержат данные по моментальным. также в разные периоды в перечень игр добавляются новые игры или удаляются старые. Необходимо консолидировать данные в один файл и составить корректный отчет. Также из данных этого файла необходимо разбить по нескольким вкладкам с разными играми и с разными расчетами\n",
    "author_email": "ATsupikova@szhuldyz.kz",
+   "contributors": [
+    "ATsupikova@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "ATsupikova@szhuldyz.kz",
+   "last_at": "2026-07-14 06:57",
    "hours_month": 5,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=ATsupikova@szhuldyz.kz&thread_key=SZ_LAB_1_Acc-P8&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P8&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -95,11 +125,17 @@
    "title": "test",
    "content": "test\n",
    "author_email": "russ.office@gmail.com",
+   "contributors": [
+    "russ.office@gmail.com"
+   ],
+   "edits": 1,
+   "last_author": "russ.office@gmail.com",
+   "last_at": "2026-07-14 03:15",
    "hours_month": 3.5,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=russ.office@gmail.com&thread_key=SZ_LAB_1_Acc-P3&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P3&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -112,11 +148,17 @@
    "title": "test",
    "content": "test\n",
    "author_email": "russ.office@gmail.com",
+   "contributors": [
+    "russ.office@gmail.com"
+   ],
+   "edits": 2,
+   "last_author": "russ.office@gmail.com",
+   "last_at": "2026-07-14 03:12",
    "hours_month": 0.4,
    "stage": "В работе",
    "stage_code": "T2_task",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=russ.office@gmail.com&thread_key=SZ_LAB_1_Acc-P2&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P2&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -129,11 +171,17 @@
    "title": "test",
    "content": "test\n",
    "author_email": "russ.office@gmail.com",
+   "contributors": [
+    "russ.office@gmail.com"
+   ],
+   "edits": 1,
+   "last_author": "russ.office@gmail.com",
+   "last_at": "2026-07-14 02:39",
    "hours_month": 0,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=russ.office@gmail.com&thread_key=SZ_LAB_1_Acc-P1&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P1&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -146,11 +194,17 @@
    "title": "Разработка Налоговой учетной политики компании",
    "content": "Разработать рабочий документ Налоговую учетную политику, который будет определять принципы и подходы компании по ведению налогового учета с учетом специфики деятельности компании- национального оператора\n",
    "author_email": "ndidenkova@szhuldyz.kz",
+   "contributors": [
+    "ndidenkova@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "ndidenkova@szhuldyz.kz",
+   "last_at": "2026-07-14 06:51",
    "hours_month": 0,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&author_email=ndidenkova@szhuldyz.kz&thread_key=SZ_LAB_1_Acc-P7&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P7&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,

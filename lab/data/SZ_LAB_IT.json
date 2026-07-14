@@ -3,18 +3,24 @@
  "group_id": "recBoN3ZsXbY7AAGn",
  "cycle": "SZ_LAB_IT-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&type=T1_idea&author_email=",
- "generated_at": "2026-07-14T17:01:07+05:00",
+ "generated_at": "2026-07-14T17:19:23+05:00",
  "threads": [
   {
    "thread_key": "SZ_LAB_IT-P1",
    "title": "Экспертиза ЛБ",
    "content": "В компании проводится экспертиза ЛБ. Онлан от суммы 700 тыс тенге, офлайн от 100 тыс тенге. Создается акт и пакет документов передается на выплату в ДБУ\n",
    "author_email": "YRudenko@szhuldyz.kz",
+   "contributors": [
+    "YRudenko@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "YRudenko@szhuldyz.kz",
+   "last_at": "2026-07-14 10:37",
    "hours_month": 10.416666666666666,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&author_email=YRudenko@szhuldyz.kz&thread_key=SZ_LAB_IT-P1&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&thread_key=SZ_LAB_IT-P1&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -27,11 +33,17 @@
    "title": "Обработка обращений FastPlay",
    "content": "Поступает обращение в crm от точки продаж с проблемой продажи или выплаты билетов FastPlay. \n\nДелается несколько обращений API, проверка статусов в БД\n\nВыдается ответ в crm\n",
    "author_email": "kson@szhuldyz.kz",
+   "contributors": [
+    "kson@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "kson@szhuldyz.kz",
+   "last_at": "2026-07-14 10:40",
    "hours_month": 3.3333333333333335,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&author_email=kson@szhuldyz.kz&thread_key=SZ_LAB_IT-P2&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&thread_key=SZ_LAB_IT-P2&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -44,11 +56,17 @@
    "title": "Создание схем БП из текста",
    "content": "Необходимо автоматизировать создание схем бизнес-процессов на основе текстового описания от заказчика, либо аналитика.\n\n&nbsp;\n\nНа выходе должно быть два типа файлов: \n\n1. Упрощённая схема для заказчика для согласования. \n2. Валидный bpmn для деплоя в camunda 8.9\n\n&nbsp;\n\nВ первой итерации проекта важно спроектировать движок который умеет раскладывать элементы схемы как высококлассный инженер. \n\n&nbsp;\n",
    "author_email": "ndzhumashev@szhuldyz.kz",
+   "contributors": [
+    "ndzhumashev@szhuldyz.kz"
+   ],
+   "edits": 1,
+   "last_author": "ndzhumashev@szhuldyz.kz",
+   "last_at": "2026-07-14 10:41",
    "hours_month": 0,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&author_email=ndzhumashev@szhuldyz.kz&thread_key=SZ_LAB_IT-P3&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=rec9VRgLOr8eyR6mU&thread_key=SZ_LAB_IT-P3&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,

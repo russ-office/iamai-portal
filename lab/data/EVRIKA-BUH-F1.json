@@ -3,18 +3,24 @@
  "group_id": "recq4f8g3aLUFXJwi",
  "cycle": "EVRIKA-BUH-F1-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
- "generated_at": "2026-07-14T17:01:07+05:00",
+ "generated_at": "2026-07-14T17:19:23+05:00",
  "threads": [
   {
    "thread_key": "EVRIKA-BUH-F1-P1",
    "title": "test EVRIKA BUH",
    "content": "test\n",
    "author_email": "russ.office@gmail.com",
+   "contributors": [
+    "russ.office@gmail.com"
+   ],
+   "edits": 1,
+   "last_author": "russ.office@gmail.com",
+   "last_at": "2026-07-14 02:44",
    "hours_month": 0,
    "stage": "Проблема",
    "stage_code": "T1_idea",
    "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&author_email=russ.office@gmail.com&thread_key=EVRIKA-BUH-F1-P1&type=T2_task",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA-BUH-F1-P1&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,
