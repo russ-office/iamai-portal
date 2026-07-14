@@ -1,6 +1,6 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-14T18:54:32+05:00",
+ "generated_at": "2026-07-14T19:03:58+05:00",
  "kpi": {
   "groups": 8,
   "people": 14,
@@ -161,6 +161,92 @@
    "hours_month": 4,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_Ecom-P1"
+  }
+ ],
+ "board": [
+  {
+   "email": "ahlystunov@szhuldyz.kz",
+   "group": "SZ_LAB_1_Acc",
+   "ideas": 1,
+   "hours_month": 90,
+   "rows": 1
+  },
+  {
+   "email": "plogacheva@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_2",
+   "ideas": 10,
+   "hours_month": 73.08333333333333,
+   "rows": 10
+  },
+  {
+   "email": "agabdullina@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 1,
+   "hours_month": 66,
+   "rows": 1
+  },
+  {
+   "email": "nmukhpulova@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 1,
+   "hours_month": 50,
+   "rows": 1
+  },
+  {
+   "email": "lnikulina@szhuldyz.kz",
+   "group": "SZ_LAB_1_Acc",
+   "ideas": 1,
+   "hours_month": 40,
+   "rows": 1
+  },
+  {
+   "email": "onurmagambetova@sz.kz",
+   "group": "SZ_LAB_1_Acc",
+   "ideas": 1,
+   "hours_month": 19,
+   "rows": 1
+  },
+  {
+   "email": "yrudenko@szhuldyz.kz",
+   "group": "SZ_LAB_IT",
+   "ideas": 1,
+   "hours_month": 10.416666666666666,
+   "rows": 1
+  },
+  {
+   "email": "vkoval@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 1,
+   "hours_month": 9,
+   "rows": 1
+  },
+  {
+   "email": "atsupikova@szhuldyz.kz",
+   "group": "SZ_LAB_1_Acc",
+   "ideas": 1,
+   "hours_month": 5,
+   "rows": 1
+  },
+  {
+   "email": "rsidelnikov@szhuldyz.kz",
+   "group": "SZ_LAB_Ecom",
+   "ideas": 1,
+   "hours_month": 4,
+   "rows": 1
+  },
+  {
+   "email": "kson@szhuldyz.kz",
+   "group": "SZ_LAB_IT",
+   "ideas": 1,
+   "hours_month": 3.3333333333333335,
+   "rows": 1
+  },
+  {
+   "email": "dsavitsky@szhuldyz.kz",
+   "group": "SZ_LAB_Ecom",
+   "ideas": 1,
+   "hours_month": 3.3333333333333335,
+   "rows": 1
   }
  ]
 }

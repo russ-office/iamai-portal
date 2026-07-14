@@ -270,6 +270,7 @@ def main():
 
     for cid, gids in by_client.items():
         rows, funnel, people, top = [], {}, set(), []
+        board = {}   # leaderboard: email → вклад
         for gid in gids:
             snap = json.loads((OUT_DIR / f"{gid}.json").read_text(encoding="utf-8"))
             ppl = set()
@@ -279,6 +280,17 @@ def main():
                 top.append({"title": t["title"], "group": snap["group"],
                             "hours_month": t["hours_month"], "stage": t["stage"],
                             "thread_key": t["thread_key"]})
+                # автор идеи (head) забирает часы; любой соавтор — записи
+                a = (t.get("author_email") or "").lower()
+                if a:
+                    b = board.setdefault(a, {"email": a, "group": snap["group"],
+                                             "ideas": 0, "hours_month": 0, "rows": 0})
+                    b["ideas"] += 1
+                    b["hours_month"] += t["hours_month"] or 0
+                for c in (t.get("contributors") or []):
+                    b = board.setdefault(c.lower(), {"email": c.lower(), "group": snap["group"],
+                                                     "ideas": 0, "hours_month": 0, "rows": 0})
+                    b["rows"] += 1
             people |= ppl
             rows.append({"group": snap["group"], "group_id": gid, "cycle": snap["cycle"],
                          "threads": len(snap["threads"]), "people": len(ppl),
@@ -294,6 +306,8 @@ def main():
                     "threads": sum(r["threads"] for r in rows),
                     "hours_month": total_h, "hours_year": round(total_h * 12, 1)},
             "groups": rows, "funnel": funnel, "top": top[:12],
+            "board": sorted(board.values(),
+                            key=lambda b: (-(b["hours_month"] or 0), -b["ideas"]))[:12],
         }
         tok = hashlib.sha256(cid.encode()).hexdigest()[:10]
         (OUT_DIR / f"dash-{tok}.json").write_text(

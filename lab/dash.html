@@ -43,6 +43,7 @@ td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:ta
 </head>
 <body>
 <div class="wrap">
+  <img src="logo.png" alt="MateOS" style="height:34px;width:auto;display:block;margin-bottom:10px">
   <div class="kicker">MateOS Lab</div>
   <h1 id="h">Дашборд <em id="c">—</em></h1>
   <div class="sub" id="sub">Загрузка…</div>
@@ -87,6 +88,12 @@ async function boot(){
     html+=`<h2>Топ проблем по потенциалу</h2><table><tr><th>Проблема</th><th>Группа</th><th>Стадия</th><th style="text-align:right">Часов / мес</th></tr>`;
     html+=d.top.map(t=>`<tr><td>${esc(t.title)}</td><td>${esc(t.group)}</td>
       <td><span class="tag">${esc(t.stage)}</span></td><td class="h">${n(t.hours_month)}</td></tr>`).join("");
+    html+=`</table>`;
+  }
+  if((d.board||[]).length){
+    html+=`<h2>Лидеры</h2><table><tr><th>#</th><th>Сотрудник</th><th>Группа</th><th style="text-align:right">Идей</th><th style="text-align:right">Записей</th><th style="text-align:right">Часов / мес</th></tr>`;
+    html+=d.board.map((b,i)=>`<tr><td>${i+1}</td><td>${esc(b.email)}</td><td>${esc(b.group)}</td>
+      <td class="n">${b.ideas}</td><td class="n">${b.rows}</td><td class="h">${n(b.hours_month)}</td></tr>`).join("");
     html+=`</table>`;
   }
   document.getElementById("body").innerHTML=html;
