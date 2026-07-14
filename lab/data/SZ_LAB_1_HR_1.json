@@ -1,0 +1,60 @@
+{
+ "group": "SZ_LAB_1_HR_1",
+ "group_id": "recmJ5pNhqkWX05Vi",
+ "cycle": "SZ_LAB_1_HR_1-C1",
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&type=T1_idea&author_email=",
+ "generated_at": "2026-07-14T17:01:07+05:00",
+ "threads": [
+  {
+   "thread_key": "SZ_LAB_1_HR_1-P3",
+   "title": "Воронка найма ",
+   "content": "Воронка найма – обзвон, занесение в xls, если порядка 50-60 резюме, на занесение вручную уходит от 2 до 3 часов.\n",
+   "author_email": "Agabdullina@szhuldyz.kz",
+   "hours_month": 66,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&author_email=Agabdullina@szhuldyz.kz&thread_key=SZ_LAB_1_HR_1-P3&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_1-P2",
+   "title": "Расчет оценочных бланков (переменная часть заработной платы)",
+   "content": "1.1. Департамент электронной коммерции и Департамент продаж – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- получение данных по фактическим продажам (продажи, инкассация, QR-канал)\n- проверка и сопоставление данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n \n\n1.2. Подразделения, не связанные с продажами – 1 рабочий день\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- проверка данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n1.3. Завершение процесса – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- проверка корректности расчетов;\n- согласование оценочных бланков;\n- подготовка приказа;\n- передача приказа и итоговых данных в бухгалтерию.\n\n&nbsp;\n",
+   "author_email": "NMukhpulova@szhuldyz.kz",
+   "hours_month": 50,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&author_email=NMukhpulova@szhuldyz.kz&thread_key=SZ_LAB_1_HR_1-P2&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_1-P1",
+   "title": "Внесение изменений в штатное расписание и оргструктуру ",
+   "content": "**1.       Внесение изменений в штатное расписание и орг структуру (ежемесячно, от одного до нескольких раз в месяц, от одного часа каждый раз):**\n\n- внесение данных из служебной записки в 1С (вручную);\n- внесение данных из служебной записки в штатное расписание (вручную, файл exel);\n- внесение данных из штатного расписания в оргструктуру (вручную, файлы могут быть разные);\n\nПроблема – повторяющиеся действия, отсутствие автоматизации.\n\nЦель – возможность внесения данных в один источник (1 С) и автоматическая выгрузка в ШР и оргструтуру)\n",
+   "author_email": "VKoval@szhuldyz.kz",
+   "hours_month": 9,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&author_email=VKoval@szhuldyz.kz&thread_key=SZ_LAB_1_HR_1-P1&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  }
+ ]
+}

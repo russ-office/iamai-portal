@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MateOS Lab · Бэклог группы</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1ECE2; --surface:#F2EDE3; --ink:#2B2925; --ink-soft:#5A564E;
+  --muted:#9A958A; --line:#E0DACE; --terra:#C2613C; --sage:#8C9A84; --cta:#322F2A;
+  --nm-light:rgba(255,255,255,.95); --nm-dark:rgba(197,186,165,.5);
+  --raised:5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light);
+  --inset:inset 4px 4px 9px var(--nm-dark), inset -4px -4px 9px var(--nm-light);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:34px clamp(16px,4vw,40px) 70px}
+.kicker{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-weight:300;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;margin:12px 0 6px}
+h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+.sub{color:var(--ink-soft);font-size:14px}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:26px 0 30px}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;border-radius:14px;
+  padding:14px 22px;background:var(--cta);color:#F4F1EA;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,36,31,.2)}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--raised)}
+.stat{margin-left:auto;font-size:12px;color:var(--muted);letter-spacing:.06em}
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:20px 22px;margin-bottom:14px}
+.card .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.card h3{font-size:17px;font-weight:600;line-height:1.35}
+.meta{font-size:12px;color:var(--muted);margin-top:6px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:#F4F1EA;background:var(--sage);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.hours{font-size:22px;font-weight:700;color:var(--terra);white-space:nowrap}
+.hours small{display:block;font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.act{border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:600;border-radius:11px;
+  padding:9px 14px;background:transparent;color:var(--ink-soft);box-shadow:var(--raised);transition:color .2s,transform .2s}
+.act:hover{color:var(--terra);transform:translateY(-1px)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.scrim{position:fixed;inset:0;background:rgba(30,28,25,.45);opacity:0;pointer-events:none;transition:.25s;z-index:10}
+.scrim.on{opacity:1;pointer-events:auto}
+.modal{position:fixed;inset:auto 0 0 0;height:92dvh;background:var(--paper);border-radius:22px 22px 0 0;
+  transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);z-index:11;display:flex;flex-direction:column}
+.modal.on{transform:none}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.modal iframe{flex:1;width:100%;border:none}
+.x{border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted)}
+.foot{margin-top:34px;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">MateOS Lab</div>
+  <h1>Бэклог группы <em id="g-name">—</em></h1>
+  <div class="sub" id="g-sub">Загрузка…</div>
+
+  <div class="bar">
+    <button class="btn" id="btn-add">＋ Добавить проблему</button>
+    <span class="stat" id="g-stat"></span>
+  </div>
+
+  <div id="list"></div>
+  <div class="foot" id="g-gen"></div>
+</div>
+
+<div class="scrim" id="scrim" onclick="closeModal()"></div>
+<aside class="modal" id="modal" aria-hidden="true">
+  <div class="modal-head">
+    <strong id="m-title">Форма</strong>
+    <button class="x" onclick="closeModal()" aria-label="Закрыть">✕</button>
+  </div>
+  <iframe id="m-frame" src="about:blank" title="Форма"></iframe>
+</aside>
+
+<script>
+const Q=new URLSearchParams(location.search);
+const GROUP=(Q.get("group")||"").trim();
+let DATA=null;
+
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const h=n=>Math.round((n||0)*10)/10;
+
+function openModal(url,title){
+  if(!url){alert("Ссылка недоступна — обновится в следующем снимке.");return;}
+  document.getElementById("m-title").textContent=title;
+  document.getElementById("m-frame").src=url;
+  document.getElementById("modal").classList.add("on");
+  document.getElementById("scrim").classList.add("on");
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("on");
+  document.getElementById("scrim").classList.remove("on");
+  setTimeout(()=>{document.getElementById("m-frame").src="about:blank";},350);
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+
+function card(t){
+  const acts=[
+    ["take","Взять в работу"],["research","Исследование"],["hypothesis","Гипотеза"],
+    ["prototype","Прототип"],["prd","PRD"]
+  ].filter(([k])=>t.links[k])
+   .map(([k,label])=>`<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').links.${k},'${label}')">${label}</button>`);
+  const tests=(t.prototypes||[]).filter(p=>p.url_test).map((p,i)=>
+    `<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').prototypes[${i}].url_test,'Тест прототипа')">Тест · ${esc(p.artifact_key||"")}</button>`);
+  return `<div class="card">
+    <div class="top">
+      <div>
+        <h3>${esc(t.title)}</h3>
+        <div class="meta">${esc(t.thread_key)} · ${esc(t.author_email)}</div>
+      </div>
+      <div style="text-align:right">
+        <span class="tag">${esc(t.stage)}</span>
+        <div class="hours" style="margin-top:10px">${h(t.hours_month)}<small>часов / мес</small></div>
+      </div>
+    </div>
+    <div class="acts">${acts.join("")}${tests.join("")}</div>
+  </div>`;
+}
+
+async function boot(){
+  if(!GROUP){document.getElementById("g-sub").textContent="Группа не указана в ссылке (?group=…)";return;}
+  try{
+    const r=await fetch(`data/${encodeURIComponent(GROUP)}.json?ts=${Date.now()}`);
+    if(!r.ok) throw new Error(r.status);
+    DATA=await r.json();
+  }catch(e){
+    document.getElementById("g-sub").textContent="Группа не найдена. Проверь ссылку.";
+    return;
+  }
+  document.getElementById("g-name").textContent=DATA.group;
+  document.getElementById("g-sub").textContent=`Цикл ${DATA.cycle||"—"} · всё, что группа уже накидала`;
+  const sum=DATA.threads.reduce((a,t)=>a+(t.hours_month||0),0);
+  document.getElementById("g-stat").textContent=`${DATA.threads.length} проблем · ${h(sum)} ч/мес потенциал`;
+  document.getElementById("g-gen").textContent="Обновлено: "+(DATA.generated_at||"").replace("T"," ").slice(0,16);
+  document.getElementById("btn-add").onclick=()=>openModal(DATA.url_backlog,"Новая проблема в бэклог");
+  document.getElementById("list").innerHTML =
+    DATA.threads.length ? DATA.threads.map(card).join("")
+    : `<div class="empty">Пока пусто. Нажми «Добавить проблему» — и она появится здесь.</div>`;
+}
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+{
+ "group": "SZ_LAB_1_HR_2",
+ "group_id": "recJTpyGqmXv0brvo",
+ "cycle": "SZ_LAB_1_HR_2-C1",
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&type=T1_idea&author_email=",
+ "generated_at": "2026-07-14T17:01:07+05:00",
+ "threads": [
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P7",
+   "title": "HR 2",
+   "content": "1. Регулярный контент – еще не создавали, но приоритетная задача\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 36,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P7&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P10",
+   "title": "HR 2",
+   "content": "1. Часто повторяющиеся вопросы отдела кадров – нужно решение желательно без человека, возможно бот - 20 часов в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 20,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P10&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P9",
+   "title": "HR 2",
+   "content": "1. HR-аналитика - делаем вручную, разные люди, разная частотность \n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P9&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P2",
+   "title": "HR 2 ",
+   "content": "1. Рассылки • Дни рождения – сейчас процесс очень кривой, его нужно в целом изменить и по возможности снизить участие человека – 2 часа в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 3.3333333333333335,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P2&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P8",
+   "title": "HR 2",
+   "content": "1. Пояснительные записки и протокола для СД – 3 часа в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 3,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P8&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P6",
+   "title": "HR 2",
+   "content": "1. Рассылки \n\n• Опросы – по мере возникновения необходимости – 1 час подготовка, 1 час обработка, еще 30 минут после проведения для напоминания и просьбы пройти опрос\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 2.25,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P6&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P1",
+   "title": "SZ_LAB_1_HR_2",
+   "content": "1. Рассылки \n\n• Вакансии – по мере возникновения + напоминание 1 раз в месяц – 1 час \n\n&nbsp;\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 1,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P1&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P3",
+   "title": "HR 2 ",
+   "content": "1. Рассылки \n\n • Кадровые перемещения – по мере возникновения – 1 час в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 1,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P3&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P4",
+   "title": "HR 2",
+   "content": "1. Рассылки \n\n• Цитаты – желательно автоматизировать, происходит каждый понедельник – 1 час в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 1,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P4&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "SZ_LAB_1_HR_2-P5",
+   "title": "HR 2",
+   "content": "1. Рассылки\n\n • Праздники – все по производственному календарю + дополнительно нами придуманные – 30 минут в месяц\n",
+   "author_email": "plogacheva@szhuldyz.kz",
+   "hours_month": 0.5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=reccWbKBBFw0YeitC&author_email=plogacheva@szhuldyz.kz&thread_key=SZ_LAB_1_HR_2-P5&type=T2_task",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  }
+ ]
+}
