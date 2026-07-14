@@ -1,0 +1,23 @@
+{
+ "client": "Evrika",
+ "generated_at": "2026-07-14T18:54:32+05:00",
+ "kpi": {
+  "groups": 1,
+  "people": 0,
+  "threads": 0,
+  "hours_month": 0,
+  "hours_year": 0
+ },
+ "groups": [
+  {
+   "group": "EVRIKA-BUH-F1",
+   "group_id": "recq4f8g3aLUFXJwi",
+   "cycle": "EVRIKA-BUH-F1-C1",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  }
+ ],
+ "funnel": {},
+ "top": []
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MateOS Lab · Дашборд</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1ECE2; --surface:#F2EDE3; --ink:#2B2925; --ink-soft:#5A564E;
+  --muted:#9A958A; --line:#E0DACE; --terra:#C2613C; --sage:#8C9A84; --cta:#322F2A;
+  --nm-light:rgba(255,255,255,.95); --nm-dark:rgba(197,186,165,.5);
+  --raised:5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:34px clamp(16px,4vw,40px) 70px}
+.kicker{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-weight:300;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;margin:12px 0 6px}
+h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:34px 0 14px}
+.sub{color:var(--ink-soft);font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px}
+.kpi{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:20px}
+.kpi b{display:block;font-size:30px;font-weight:700;color:var(--ink);line-height:1.1}
+.kpi.hot b{color:var(--terra)}
+.kpi span{display:block;margin-top:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:18px;box-shadow:var(--raised);overflow:hidden}
+th{text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:14px 18px;border-bottom:1px solid var(--line)}
+td{padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+tr:last-child td{border-bottom:none}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  color:#F4F1EA;background:var(--sage);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.bars{display:flex;gap:10px;flex-wrap:wrap}
+.bar{background:var(--surface);box-shadow:var(--raised);border-radius:14px;padding:12px 16px;font-size:13px}
+.bar b{color:var(--terra);font-weight:700}
+.foot{margin-top:34px;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">MateOS Lab</div>
+  <h1 id="h">Дашборд <em id="c">—</em></h1>
+  <div class="sub" id="sub">Загрузка…</div>
+  <div id="body"></div>
+  <div class="foot" id="gen"></div>
+</div>
+<script>
+const TOK=(new URLSearchParams(location.search).get("c")||"").trim();
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const n=v=>Math.round((v||0)*10)/10;
+
+async function boot(){
+  if(!TOK){document.getElementById("sub").textContent="Ссылка неполная.";return;}
+  let d;
+  try{
+    const r=await fetch(`data/dash-${encodeURIComponent(TOK)}.json?ts=${Date.now()}`);
+    if(!r.ok) throw 0;
+    d=await r.json();
+  }catch(e){document.getElementById("sub").textContent="Дашборд не найден. Проверь ссылку.";return;}
+
+  document.getElementById("c").textContent=d.client;
+  document.getElementById("sub").textContent="Что группы уже нашли: проблемы, потенциал экономии, стадии работы";
+  const k=d.kpi;
+  let html=`<div class="kpis">
+    <div class="kpi"><b>${k.groups}</b><span>групп</span></div>
+    <div class="kpi"><b>${k.people}</b><span>участников</span></div>
+    <div class="kpi"><b>${k.threads}</b><span>проблем найдено</span></div>
+    <div class="kpi hot"><b>${n(k.hours_month)}</b><span>часов / мес потенциал</span></div>
+    <div class="kpi hot"><b>${n(k.hours_year)}</b><span>часов / год</span></div>
+  </div>`;
+
+  html+=`<h2>По группам</h2><table><tr><th>Группа</th><th>Цикл</th><th style="text-align:right">Участников</th><th style="text-align:right">Проблем</th><th style="text-align:right">Часов / мес</th></tr>`;
+  html+=d.groups.map(g=>`<tr><td>${esc(g.group)}</td><td>${esc(g.cycle||"—")}</td>
+    <td class="n">${g.people}</td><td class="n">${g.threads}</td><td class="h">${n(g.hours_month)}</td></tr>`).join("");
+  html+=`</table>`;
+
+  const f=Object.entries(d.funnel||{}).sort((a,b)=>b[1]-a[1]);
+  if(f.length) html+=`<h2>Стадии</h2><div class="bars">`+
+    f.map(([s,c])=>`<div class="bar">${esc(s)} · <b>${c}</b></div>`).join("")+`</div>`;
+
+  if((d.top||[]).length){
+    html+=`<h2>Топ проблем по потенциалу</h2><table><tr><th>Проблема</th><th>Группа</th><th>Стадия</th><th style="text-align:right">Часов / мес</th></tr>`;
+    html+=d.top.map(t=>`<tr><td>${esc(t.title)}</td><td>${esc(t.group)}</td>
+      <td><span class="tag">${esc(t.stage)}</span></td><td class="h">${n(t.hours_month)}</td></tr>`).join("");
+    html+=`</table>`;
+  }
+  document.getElementById("body").innerHTML=html;
+  document.getElementById("gen").textContent="Обновлено: "+(d.generated_at||"").replace("T"," ").slice(0,16);
+}
+boot();
+</script>
+</body>
+</html>

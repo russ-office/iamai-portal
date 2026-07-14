@@ -258,6 +258,48 @@ def main():
                    ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"membership: {len(mem)} человек")
 
+    # ── Дашборд клиента (CEO/HR). Непубличная ссылка = токен в имени файла. ──
+    # Токен детерминированный: sha256(org_id)[:10] — стабилен, но не угадывается.
+    orgs = fetch_all("Organizations")
+    oname = {o["id"]: (o["fields"].get("Name") or "") for o in orgs}
+    by_client = {}
+    for gid, meta in gmeta.items():
+        cid = gclient.get(gid)
+        if cid:
+            by_client.setdefault(cid, []).append(gid)
+
+    for cid, gids in by_client.items():
+        rows, funnel, people, top = [], {}, set(), []
+        for gid in gids:
+            snap = json.loads((OUT_DIR / f"{gid}.json").read_text(encoding="utf-8"))
+            ppl = set()
+            for t in snap["threads"]:
+                funnel[t["stage"]] = funnel.get(t["stage"], 0) + 1
+                ppl.update(t.get("contributors") or [])
+                top.append({"title": t["title"], "group": snap["group"],
+                            "hours_month": t["hours_month"], "stage": t["stage"],
+                            "thread_key": t["thread_key"]})
+            people |= ppl
+            rows.append({"group": snap["group"], "group_id": gid, "cycle": snap["cycle"],
+                         "threads": len(snap["threads"]), "people": len(ppl),
+                         "hours_month": round(sum(t["hours_month"] or 0
+                                                  for t in snap["threads"]), 1)})
+        rows.sort(key=lambda r: -r["hours_month"])
+        top.sort(key=lambda t: -(t["hours_month"] or 0))
+        total_h = round(sum(r["hours_month"] for r in rows), 1)
+        dash = {
+            "client": oname.get(cid, ""),
+            "generated_at": now,
+            "kpi": {"groups": len(rows), "people": len(people),
+                    "threads": sum(r["threads"] for r in rows),
+                    "hours_month": total_h, "hours_year": round(total_h * 12, 1)},
+            "groups": rows, "funnel": funnel, "top": top[:12],
+        }
+        tok = hashlib.sha256(cid.encode()).hexdigest()[:10]
+        (OUT_DIR / f"dash-{tok}.json").write_text(
+            json.dumps(dash, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"дашборд {oname.get(cid,'?')}: /lab/dash.html?c={tok}")
+
     (OUT_DIR / "_index.json").write_text(
         json.dumps({"generated_at": now, "groups": index}, ensure_ascii=False, indent=1),
         encoding="utf-8")
