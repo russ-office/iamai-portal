@@ -187,7 +187,9 @@ def main():
 
     gname = {g["id"]: g["fields"].get("name", "") for g in groups}
     gclient = {g["id"]: (first(g["fields"].get("client")) or "") for g in groups}
-    umail = {u["id"]: (u["fields"].get("email") or "").strip() for u in users}
+    # ВНИМАНИЕ: в Users поле называется "Email" (с заглавной). M-034: было .get("email") → всегда пусто.
+    umail = {u["id"]: (u["fields"].get("Email") or u["fields"].get("email") or "").strip()
+             for u in users}
 
     # актуальный цикл группы = максимальный cycle_no
     cyc_by_group = {}
