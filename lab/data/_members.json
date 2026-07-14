@@ -1,68 +1,60 @@
 {
  "generated_at": "2026-07-14T17:55:41+05:00",
- "groups": [
-  {
-   "id": "recBoN3ZsXbY7AAGn",
-   "group": "SZ_LAB_IT",
+ "groups": {
+  "recBoN3ZsXbY7AAGn": {
+   "name": "SZ_LAB_IT",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_IT-C1",
    "threads": 3
   },
-  {
-   "id": "recJTpyGqmXv0brvo",
-   "group": "SZ_LAB_1_HR_2",
+  "recJTpyGqmXv0brvo": {
+   "name": "SZ_LAB_1_HR_2",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_2-C1",
    "threads": 10
   },
-  {
-   "id": "rech5SFuPyuwYAdJy",
-   "group": "SZ_LAB_Ecom",
+  "rech5SFuPyuwYAdJy": {
+   "name": "SZ_LAB_Ecom",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_Ecom-C1",
    "threads": 2
   },
-  {
-   "id": "rechQNZDU1nxPz1RH",
-   "group": "SZ_LAB_1_Acc",
+  "rechQNZDU1nxPz1RH": {
+   "name": "SZ_LAB_1_Acc",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_Acc-C1",
    "threads": 5
   },
-  {
-   "id": "reciKzjGJVFrhLmBo",
-   "group": "SZ_LAB_Sales",
+  "reciKzjGJVFrhLmBo": {
+   "name": "SZ_LAB_Sales",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_Sales-C1",
    "threads": 0
   },
-  {
-   "id": "recmJ5pNhqkWX05Vi",
-   "group": "SZ_LAB_1_HR_1",
+  "recmJ5pNhqkWX05Vi": {
+   "name": "SZ_LAB_1_HR_1",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_1-C1",
    "threads": 3
   },
-  {
-   "id": "recq40h3l2aTVnge5",
-   "group": "SZ_LAB_1_CorpGov",
+  "recq40h3l2aTVnge5": {
+   "name": "SZ_LAB_1_CorpGov",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_CorpGov-C1",
    "threads": 0
   },
-  {
-   "id": "recq4f8g3aLUFXJwi",
-   "group": "EVRIKA-BUH-F1",
+  "recq4f8g3aLUFXJwi": {
+   "name": "EVRIKA-BUH-F1",
    "client": "rec7kIMmwjZ6j3ahS",
    "cycle": "EVRIKA-BUH-F1-C1",
    "threads": 0
   },
-  {
-   "id": "rectNb6K7IojGTGdS",
-   "group": "SZ_LAB_1_Adm",
+  "rectNb6K7IojGTGdS": {
+   "name": "SZ_LAB_1_Adm",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_Adm-C1",
    "threads": 0
   }
- ]
+ },
+ "members": {}
 }

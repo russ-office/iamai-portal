@@ -12,6 +12,7 @@
 Stdlib only.
 """
 
+import hashlib
 import json
 import os
 import sys
@@ -172,12 +173,21 @@ def build_threads(rows):
     return out
 
 
+def mail_hash(email):
+    """В публичный снимок кладём только sha256(email) — открытые адреса на GH Pages не публикуем."""
+    return hashlib.sha256(email.strip().lower().encode()).hexdigest()
+
+
 def main():
     groups = fetch_all("Groups")
     cycles = fetch_all("Cycles")
     arts = fetch_all("Artifacts")
+    members = fetch_all("GroupMembership")
+    users = fetch_all("Users")
 
     gname = {g["id"]: g["fields"].get("name", "") for g in groups}
+    gclient = {g["id"]: (first(g["fields"].get("client")) or "") for g in groups}
+    umail = {u["id"]: (u["fields"].get("email") or "").strip() for u in users}
 
     # актуальный цикл группы = максимальный cycle_no
     cyc_by_group = {}
@@ -200,6 +210,7 @@ def main():
     index = []
     now = datetime.now(ALMATY).isoformat(timespec="seconds")
 
+    gmeta = {}
     for gid, name in gname.items():
         if not name:
             continue
@@ -208,15 +219,41 @@ def main():
         snap = {
             "group": name,
             "group_id": gid,
+            "client": gclient.get(gid, ""),
             "cycle": (cyc or {}).get("fields", {}).get("cycle", ""),
             "url_backlog": (cyc or {}).get("fields", {}).get("url_backlog_T1", ""),
             "generated_at": now,
             "threads": threads,
         }
-        (OUT_DIR / f"{name}.json").write_text(
-            json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
-        index.append({"group": name, "cycle": snap["cycle"], "threads": len(threads)})
-        print(f"{name}: {len(threads)} тредов")
+        body = json.dumps(snap, ensure_ascii=False, indent=1)
+        # M-034: стабильный ключ = rec_id. Имя-файл остаётся как legacy —
+        # старые ссылки ?group=<имя> не ломаем, но переименование группы их убьёт.
+        (OUT_DIR / f"{gid}.json").write_text(body, encoding="utf-8")
+        (OUT_DIR / f"{name}.json").write_text(body, encoding="utf-8")
+        gmeta[gid] = {"name": name, "client": snap["client"],
+                      "cycle": snap["cycle"], "threads": len(threads)}
+        index.append({"id": gid, "group": name, "client": snap["client"],
+                      "cycle": snap["cycle"], "threads": len(threads)})
+        print(f"{name} ({gid}): {len(threads)} тредов")
+
+    # _members.json: sha256(email) → [group_id, …]. Открытых email в снимке нет.
+    mem = {}
+    for r in members:
+        f = r["fields"]
+        if f.get("active") is False:
+            continue
+        gid = first(f.get("group"))
+        uid = first(f.get("user"))
+        email = umail.get(uid, "")
+        if not gid or not email or gid not in gmeta:
+            continue
+        mem.setdefault(mail_hash(email), [])
+        if gid not in mem[mail_hash(email)]:
+            mem[mail_hash(email)].append(gid)
+    (OUT_DIR / "_members.json").write_text(
+        json.dumps({"generated_at": now, "groups": gmeta, "members": mem},
+                   ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"membership: {len(mem)} человек")
 
     (OUT_DIR / "_index.json").write_text(
         json.dumps({"generated_at": now, "groups": index}, ensure_ascii=False, indent=1),

@@ -22,7 +22,8 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 .sub{color:var(--ink-soft);font-size:14px}
 .bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:26px 0 30px}
 .btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;border-radius:14px;
-  padding:14px 22px;background:var(--cta);color:#F4F1EA;transition:transform .2s,box-shadow .2s}
+  padding:14px 22px;background:var(--cta);color:#F4F1EA;transition:transform .2s,box-shadow .2s;
+  text-decoration:none;display:inline-block;line-height:1}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,36,31,.2)}
 .btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--raised)}
 .stat{margin-left:auto;font-size:12px;color:var(--muted);letter-spacing:.06em}
@@ -41,9 +42,12 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 .empty{text-align:center;padding:60px 20px;color:var(--muted)}
 .scrim{position:fixed;inset:0;background:rgba(30,28,25,.45);opacity:0;pointer-events:none;transition:.25s;z-index:10}
 .scrim.on{opacity:1;pointer-events:auto}
-.modal{position:fixed;inset:auto 0 0 0;height:92dvh;background:var(--paper);border-radius:22px 22px 0 0;
-  transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);z-index:11;display:flex;flex-direction:column}
+/* Шторка справа на половину экрана (M-034) */
+.modal{position:fixed;inset:0 0 0 auto;width:min(50vw,780px);min-width:420px;height:100dvh;background:var(--paper);
+  border-radius:22px 0 0 22px;box-shadow:-18px 0 44px rgba(38,36,31,.20);
+  transform:translateX(105%);transition:transform .35s cubic-bezier(.22,.61,.36,1);z-index:11;display:flex;flex-direction:column}
 .modal.on{transform:none}
+@media(max-width:820px){.modal{width:100vw;min-width:0;border-radius:0}}
 .modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
 .modal iframe{flex:1;width:100%;border:none}
 .x{border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted)}
@@ -77,8 +81,20 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 
 <script>
 const Q=new URLSearchParams(location.search);
+/* M-034: стабильный ключ = Groups.rec_id (?g=recXXX). ?group=<имя> оставлен как legacy —
+   старые ссылки не ломаем, но новые раздаём только через ?g=. */
+const GID=(Q.get("g")||"").trim();
 const GROUP=(Q.get("group")||"").trim();
+const KEY=GID||GROUP;            // имя файла снимка
 let DATA=null;
+
+/* sha256(email в нижнем регистре) — в _members.json лежат ТОЛЬКО хэши,
+   открытые email на GH Pages не публикуются. */
+async function mailHash(m){
+  const b=new TextEncoder().encode(m.trim().toLowerCase());
+  const d=await crypto.subtle.digest("SHA-256",b);
+  return [...new Uint8Array(d)].map(x=>x.toString(16).padStart(2,"0")).join("");
+}
 
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const h=n=>Math.round((n||0)*10)/10;
@@ -146,11 +162,44 @@ function card(t){
   </div>`;
 }
 
+/* ── Вход по email: одна ссылка на всю компанию (.../lab/ без параметров) ──
+   Человек вводит email → видит ТОЛЬКО свои группы (по GroupMembership). */
+async function home(){
+  document.getElementById("btn-add").style.display="none";
+  document.querySelector("h1").innerHTML='MateOS <em>Lab</em>';
+  const list=document.getElementById("list");
+  const m=myMail();
+  if(!m){
+    document.getElementById("g-sub").textContent="Введи свой рабочий email — покажу твои группы.";
+    list.innerHTML=`<div class="empty"><button class="btn" onclick="askMail(true);boot()">Войти по email</button></div>`;
+    return;
+  }
+  document.getElementById("g-sub").textContent="Твои группы";
+  let mem;
+  try{
+    const r=await fetch(`data/_members.json?ts=${Date.now()}`);
+    mem=await r.json();
+  }catch(e){ list.innerHTML=`<div class="empty">Список групп недоступен. Попробуй позже.</div>`; return; }
+  const mine=mem.members[await mailHash(m)]||[];
+  if(!mine.length){
+    list.innerHTML=`<div class="empty">Для <b>${esc(m)}</b> групп не найдено.<br>Проверь email или напиши куратору.</div>`;
+    return;
+  }
+  list.innerHTML=mine.map(id=>{
+    const g=mem.groups[id]||{};
+    return `<div class="card"><div class="top">
+      <div><h3>${esc(g.name||id)}</h3>
+      <div class="meta">${esc(g.client||"")} · ${g.threads||0} проблем${g.cycle?" · цикл "+esc(g.cycle):""}</div></div>
+      <a class="btn" href="?g=${encodeURIComponent(id)}">Открыть</a>
+    </div></div>`;
+  }).join("");
+}
+
 async function boot(){
   renderWho();
-  if(!GROUP){document.getElementById("g-sub").textContent="Группа не указана в ссылке (?group=…)";return;}
+  if(!KEY){ return home(); }
   try{
-    const r=await fetch(`data/${encodeURIComponent(GROUP)}.json?ts=${Date.now()}`);
+    const r=await fetch(`data/${encodeURIComponent(KEY)}.json?ts=${Date.now()}`);
     if(!r.ok) throw new Error(r.status);
     DATA=await r.json();
   }catch(e){
