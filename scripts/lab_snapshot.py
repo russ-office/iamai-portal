@@ -107,7 +107,8 @@ def add_prefill(url, f):
     if not p:
         return url
     sep = "&" if "?" in url else "?"
-    return url + sep + urllib.parse.urlencode(p)
+    # quote_via=quote → пробел как %20, а не '+' (Fillout не всегда декодирует '+')
+    return url + sep + urllib.parse.urlencode(p, quote_via=urllib.parse.quote)
 
 
 def build_threads(rows):
