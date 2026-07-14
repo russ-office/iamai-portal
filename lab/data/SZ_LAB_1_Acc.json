@@ -3,31 +3,8 @@
  "group_id": "rechQNZDU1nxPz1RH",
  "cycle": "SZ_LAB_1_Acc-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&type=T1_idea&author_email=",
- "generated_at": "2026-07-14T17:19:23+05:00",
+ "generated_at": "2026-07-14T17:29:15+05:00",
  "threads": [
-  {
-   "thread_key": "SZ_LAB_1_Acc-P4",
-   "title": "test test test",
-   "content": "test\n",
-   "author_email": "russ.office@gmail.com",
-   "contributors": [
-    "russ.office@gmail.com"
-   ],
-   "edits": 2,
-   "last_author": "russ.office@gmail.com",
-   "last_at": "2026-07-14 03:24",
-   "hours_month": 230,
-   "stage": "Проблема",
-   "stage_code": "T1_idea",
-   "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P4&type=T2_task",
-    "research": null,
-    "hypothesis": null,
-    "prototype": null,
-    "prd": null
-   },
-   "prototypes": []
-  },
   {
    "thread_key": "SZ_LAB_1_Acc-P9",
    "title": "ежедневный запуск обработок по загрузке/выгрузке данных в 1с БК",
@@ -113,75 +90,6 @@
    "stage_code": "T1_idea",
    "links": {
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P8&type=T2_task",
-    "research": null,
-    "hypothesis": null,
-    "prototype": null,
-    "prd": null
-   },
-   "prototypes": []
-  },
-  {
-   "thread_key": "SZ_LAB_1_Acc-P3",
-   "title": "test",
-   "content": "test\n",
-   "author_email": "russ.office@gmail.com",
-   "contributors": [
-    "russ.office@gmail.com"
-   ],
-   "edits": 1,
-   "last_author": "russ.office@gmail.com",
-   "last_at": "2026-07-14 03:15",
-   "hours_month": 3.5,
-   "stage": "Проблема",
-   "stage_code": "T1_idea",
-   "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P3&type=T2_task",
-    "research": null,
-    "hypothesis": null,
-    "prototype": null,
-    "prd": null
-   },
-   "prototypes": []
-  },
-  {
-   "thread_key": "SZ_LAB_1_Acc-P2",
-   "title": "test",
-   "content": "test\n",
-   "author_email": "russ.office@gmail.com",
-   "contributors": [
-    "russ.office@gmail.com"
-   ],
-   "edits": 2,
-   "last_author": "russ.office@gmail.com",
-   "last_at": "2026-07-14 03:12",
-   "hours_month": 0.4,
-   "stage": "В работе",
-   "stage_code": "T2_task",
-   "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P2&type=T2_task",
-    "research": null,
-    "hypothesis": null,
-    "prototype": null,
-    "prd": null
-   },
-   "prototypes": []
-  },
-  {
-   "thread_key": "SZ_LAB_1_Acc-P1",
-   "title": "test",
-   "content": "test\n",
-   "author_email": "russ.office@gmail.com",
-   "contributors": [
-    "russ.office@gmail.com"
-   ],
-   "edits": 1,
-   "last_author": "russ.office@gmail.com",
-   "last_at": "2026-07-14 02:39",
-   "hours_month": 0,
-   "stage": "Проблема",
-   "stage_code": "T1_idea",
-   "links": {
-    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&thread_key=SZ_LAB_1_Acc-P1&type=T2_task",
     "research": null,
     "hypothesis": null,
     "prototype": null,

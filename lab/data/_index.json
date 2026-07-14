@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14T17:19:23+05:00",
+ "generated_at": "2026-07-14T17:29:15+05:00",
  "groups": [
   {
    "group": "SZ_LAB_IT",
@@ -19,7 +19,7 @@
   {
    "group": "SZ_LAB_1_Acc",
    "cycle": "SZ_LAB_1_Acc-C1",
-   "threads": 9
+   "threads": 5
   },
   {
    "group": "SZ_LAB_Sales",
@@ -39,7 +39,7 @@
   {
    "group": "EVRIKA-BUH-F1",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 1
+   "threads": 0
   },
   {
    "group": "SZ_LAB_1_Adm",
