@@ -1,12 +1,12 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-14T21:58:39+05:00",
+ "generated_at": "2026-07-15T11:04:26+05:00",
  "kpi": {
   "groups": 8,
   "people": 14,
-  "threads": 23,
-  "hours_month": 373.2,
-  "hours_year": 4478.4
+  "threads": 24,
+  "hours_month": 378.2,
+  "hours_year": 4538.4
  },
  "groups": [
   {
@@ -21,9 +21,9 @@
    "group": "SZ_LAB_1_HR_1",
    "group_id": "recmJ5pNhqkWX05Vi",
    "cycle": "SZ_LAB_1_HR_1-C1",
-   "threads": 3,
+   "threads": 4,
    "people": 3,
-   "hours_month": 125
+   "hours_month": 130
   },
   {
    "group": "SZ_LAB_1_HR_2",
@@ -75,7 +75,7 @@
   }
  ],
  "funnel": {
-  "Проблема": 23
+  "Проблема": 24
  },
  "top": [
   {
@@ -156,11 +156,11 @@
    "thread_key": "SZ_LAB_1_Acc-P8"
   },
   {
-   "title": "Мониторинг продаж по продуктам (план/факт, динамика, % выполнения)",
-   "group": "SZ_LAB_Ecom",
-   "hours_month": 4,
+   "title": "Подготовка шаблонов приказов для MetaDoc ",
+   "group": "SZ_LAB_1_HR_1",
+   "hours_month": 5,
    "stage": "Проблема",
-   "thread_key": "SZ_LAB_Ecom-P1"
+   "thread_key": "SZ_LAB_1_HR_1-P4"
   }
  ],
  "board": [
@@ -207,17 +207,17 @@
    "rows": 1
   },
   {
+   "email": "vkoval@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 2,
+   "hours_month": 14,
+   "rows": 2
+  },
+  {
    "email": "yrudenko@szhuldyz.kz",
    "group": "SZ_LAB_IT",
    "ideas": 1,
    "hours_month": 10.416666666666666,
-   "rows": 1
-  },
-  {
-   "email": "vkoval@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_1",
-   "ideas": 1,
-   "hours_month": 9,
    "rows": 1
   },
   {
