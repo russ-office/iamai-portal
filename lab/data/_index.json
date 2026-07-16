@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-07-16T19:17:53+05:00",
+ "generated_at": "2026-07-16T20:52:20+05:00",
  "groups": [
   {
    "id": "recBoN3ZsXbY7AAGn",
    "group": "SZ_LAB_IT",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_IT-C1",
-   "threads": 3
+   "threads": 4
   },
   {
    "id": "recJTpyGqmXv0brvo",

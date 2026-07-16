@@ -1,10 +1,10 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-16T19:17:53+05:00",
+ "generated_at": "2026-07-16T20:52:20+05:00",
  "kpi": {
   "groups": 8,
-  "people": 14,
-  "threads": 24,
+  "people": 15,
+  "threads": 25,
   "hours_month": 378.2,
   "hours_year": 4538.4
  },
@@ -37,8 +37,8 @@
    "group": "SZ_LAB_IT",
    "group_id": "recBoN3ZsXbY7AAGn",
    "cycle": "SZ_LAB_IT-C1",
-   "threads": 3,
-   "people": 3,
+   "threads": 4,
+   "people": 4,
    "hours_month": 13.8
   },
   {
@@ -75,7 +75,7 @@
   }
  ],
  "funnel": {
-  "Проблема": 24
+  "Проблема": 25
  },
  "top": [
   {
