@@ -1,12 +1,12 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-19T11:20:12+05:00",
+ "generated_at": "2026-07-19T13:39:16+05:00",
  "kpi": {
   "groups": 8,
   "people": 15,
-  "threads": 25,
-  "hours_month": 378.2,
-  "hours_year": 4538.4
+  "threads": 26,
+  "hours_month": 388.2,
+  "hours_year": 4658.4
  },
  "groups": [
   {
@@ -21,9 +21,9 @@
    "group": "SZ_LAB_1_HR_1",
    "group_id": "recmJ5pNhqkWX05Vi",
    "cycle": "SZ_LAB_1_HR_1-C1",
-   "threads": 4,
+   "threads": 5,
    "people": 3,
-   "hours_month": 130
+   "hours_month": 140
   },
   {
    "group": "SZ_LAB_1_HR_2",
@@ -75,7 +75,7 @@
   }
  ],
  "funnel": {
-  "Проблема": 25
+  "Проблема": 26
  },
  "top": [
   {
@@ -135,6 +135,13 @@
    "thread_key": "SZ_LAB_IT-P1"
   },
   {
+   "title": "Изменение должностных инструкций",
+   "group": "SZ_LAB_1_HR_1",
+   "hours_month": 10,
+   "stage": "Проблема",
+   "thread_key": "SZ_LAB_1_HR_1-P5"
+  },
+  {
    "title": "Внесение изменений в штатное расписание и оргструктуру ",
    "group": "SZ_LAB_1_HR_1",
    "hours_month": 9,
@@ -154,13 +161,6 @@
    "hours_month": 5,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_Acc-P8"
-  },
-  {
-   "title": "Подготовка шаблонов приказов для MetaDoc ",
-   "group": "SZ_LAB_1_HR_1",
-   "hours_month": 5,
-   "stage": "Проблема",
-   "thread_key": "SZ_LAB_1_HR_1-P4"
   }
  ],
  "board": [
@@ -200,18 +200,18 @@
    "rows": 1
   },
   {
+   "email": "vkoval@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 3,
+   "hours_month": 24,
+   "rows": 3
+  },
+  {
    "email": "onurmagambetova@sz.kz",
    "group": "SZ_LAB_1_Acc",
    "ideas": 1,
    "hours_month": 19,
    "rows": 1
-  },
-  {
-   "email": "vkoval@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_1",
-   "ideas": 2,
-   "hours_month": 14,
-   "rows": 2
   },
   {
    "email": "yrudenko@szhuldyz.kz",
