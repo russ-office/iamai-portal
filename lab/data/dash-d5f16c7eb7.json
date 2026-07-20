@@ -1,12 +1,12 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-14T19:27:14+05:00",
+ "generated_at": "2026-07-20T23:17:41+05:00",
  "kpi": {
   "groups": 8,
-  "people": 14,
-  "threads": 23,
-  "hours_month": 373.2,
-  "hours_year": 4478.4
+  "people": 15,
+  "threads": 26,
+  "hours_month": 388.2,
+  "hours_year": 4658.4
  },
  "groups": [
   {
@@ -21,9 +21,9 @@
    "group": "SZ_LAB_1_HR_1",
    "group_id": "recmJ5pNhqkWX05Vi",
    "cycle": "SZ_LAB_1_HR_1-C1",
-   "threads": 3,
+   "threads": 5,
    "people": 3,
-   "hours_month": 125
+   "hours_month": 140
   },
   {
    "group": "SZ_LAB_1_HR_2",
@@ -37,8 +37,8 @@
    "group": "SZ_LAB_IT",
    "group_id": "recBoN3ZsXbY7AAGn",
    "cycle": "SZ_LAB_IT-C1",
-   "threads": 3,
-   "people": 3,
+   "threads": 4,
+   "people": 4,
    "hours_month": 13.8
   },
   {
@@ -75,7 +75,7 @@
   }
  ],
  "funnel": {
-  "Проблема": 23
+  "Проблема": 26
  },
  "top": [
   {
@@ -135,6 +135,13 @@
    "thread_key": "SZ_LAB_IT-P1"
   },
   {
+   "title": "Изменение должностных инструкций",
+   "group": "SZ_LAB_1_HR_1",
+   "hours_month": 10,
+   "stage": "Проблема",
+   "thread_key": "SZ_LAB_1_HR_1-P5"
+  },
+  {
    "title": "Внесение изменений в штатное расписание и оргструктуру ",
    "group": "SZ_LAB_1_HR_1",
    "hours_month": 9,
@@ -154,13 +161,6 @@
    "hours_month": 5,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_Acc-P8"
-  },
-  {
-   "title": "Мониторинг продаж по продуктам (план/факт, динамика, % выполнения)",
-   "group": "SZ_LAB_Ecom",
-   "hours_month": 4,
-   "stage": "Проблема",
-   "thread_key": "SZ_LAB_Ecom-P1"
   }
  ],
  "board": [
@@ -200,6 +200,13 @@
    "rows": 1
   },
   {
+   "email": "vkoval@szhuldyz.kz",
+   "group": "SZ_LAB_1_HR_1",
+   "ideas": 3,
+   "hours_month": 24,
+   "rows": 3
+  },
+  {
    "email": "onurmagambetova@sz.kz",
    "group": "SZ_LAB_1_Acc",
    "ideas": 1,
@@ -211,13 +218,6 @@
    "group": "SZ_LAB_IT",
    "ideas": 1,
    "hours_month": 10.416666666666666,
-   "rows": 1
-  },
-  {
-   "email": "vkoval@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_1",
-   "ideas": 1,
-   "hours_month": 9,
    "rows": 1
   },
   {
