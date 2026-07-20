@@ -56,7 +56,7 @@
     return '' +
       '<div class="c-shell">' +
         '<aside class="c-shell__rail">' +
-          '<div class="c-shell__brand"><b>MateOS</b><span>ПУЛЬС</span></div>' +
+          '<a class="c-shell__brand" href="page-person.html" style="text-decoration:none;cursor:pointer" title="На стартовую (Мой Пульс)"><b>MateOS</b><span>ПУЛЬС</span></a>' +
           '<nav class="c-nav">' + nav + '</nav>' +
           '<div class="c-nav__foot">' +
             '<a href="page-person.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">' +
@@ -79,7 +79,8 @@
   }
 
   function updatedAction(D) { return '<span class="p-updated">обновлено ' + esc((D.generated_at || "").replace("T"," ").slice(0,16)) + '</span>'; }
-  function backlogAction() { return '<a class="c-btn is-primary" href="' + FILLOUT_BACKLOG + '" target="_blank" rel="noreferrer">Добавить проблему</a>'; }
+  // Add opens the write-path in the right drawer (not a new tab) — canon write-path is c-drawer.
+  function backlogAction() { return '<button type="button" class="c-btn is-primary" id="p-add-problem">Добавить проблему</button>'; }
 
   // ── c-tape (activity feed, exactly 14 days; 1px tick + dot; not a bar chart) ─
   function tapeHTML(arr, fromLabel, toLabel) {
@@ -222,7 +223,7 @@
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="c-chip">' + esc(b.thread_key) + '</span></div>' +
             '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(b.total_hours) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
             '<p class="p-backlog-card__body">' + esc(b.content) + '</p>' +
-            '<div class="p-backlog-card__edit"><a href="' + FILLOUT_BACKLOG + '" target="_blank" rel="noreferrer">редактировать →</a></div>' +
+            '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '" data-title="' + esc(b.title) + '">редактировать →</button></div>' +
           '</div>';
         }).join("") + '</div>';
 
@@ -233,6 +234,11 @@
           '<span class="c-filter-bar__count">' + D.backlog.length + ' проблем · ' + total + ' ч/мес потенциал</span>' +
         '</div>' + cards +
       '</div>';
+
+    // edit → same right-drawer write-path as tasks (opens the backlog form, not a new tab)
+    body.querySelectorAll("[data-edit-backlog]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openDrawer("Редактировать проблему", btn.getAttribute("data-title") || "Бэклог", FILLOUT_BACKLOG); });
+    });
   }
 
   function renderCalendar(body, D) {
@@ -301,7 +307,8 @@
   function renderOverview(body, D) {
     var cycle = D.events.filter(function (e) { return e.all_day; })[0];
     var done = D.tasks.filter(function (t) { return t.status === "done"; }).length;
-    var doing = D.tasks.filter(function (t) { return t.status === "doing"; }).length;
+    var doingTasks = D.tasks.filter(function (t) { return t.status === "doing"; });
+    var doing = doingTasks.length;
     var potential = D.backlog.reduce(function (s, b) { return s + b.total_hours; }, 0);
     var day = cycle ? U.daysBetween(cycle.start, D.today) + 1 : 1;
 
@@ -326,6 +333,10 @@
           kpi("Вклад", Math.round(D.metrics.impact_share * 100) + "%", D.metrics.quadrant) +
         '</div>' +
         '<div class="p-note" style="max-width:none;margin-top:0">«Один прототип закрыт, интервью в работе — экономия по треду считается ДО минус ПОСЛЕ.»</div>' +
+        // Текущая задача (в работе) — спотлайт наверху, чтобы её было видно на Спринте
+        '<div><div class="p-section">Текущая задача · в работе</div><div class="c-sheet c-sheet--flush">' +
+          (doingTasks.length ? doingTasks.map(taskRowHTML).join("") : '<div class="c-empty">Нет активной задачи в работе</div>') +
+        '</div></div>' +
         '<div class="p-grid-2">' +
           '<div><div class="p-section">Задачи спринта</div><div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
           '<div><div class="p-section">Экономия по тредам</div><div class="c-sheet c-sheet--pad">' + threads + '</div></div>' +
@@ -366,6 +377,7 @@
     document.getElementById("p-drawer-title").textContent = title || "";
     var f = document.getElementById("p-drawer-iframe");
     if (src && f.src !== src) f.src = src; // lazy-load; keeps offline double-click cheap
+    var ol = document.getElementById("p-drawer-open"); if (ol && src) ol.href = src; // footer fallback = same form
     document.getElementById("p-scrim").classList.add("is-open");
     var d = document.getElementById("p-drawer"); d.classList.add("is-open"); d.setAttribute("aria-hidden", "false");
   }
@@ -404,6 +416,8 @@
       document.title = "MateOS · Пульс · " + (metaFor(view, D).title);
       root.innerHTML = buildShell(view, metaFor(view, D), D);
       var body = document.getElementById("p-body");
+      var addBtn = document.getElementById("p-add-problem");
+      if (addBtn) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", FILLOUT_BACKLOG); });
       if (view === "person") renderPerson(body, D);
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);

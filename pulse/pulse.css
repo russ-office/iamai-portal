@@ -65,8 +65,10 @@
 .p-backlog-card__unit { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
 .p-backlog-card__body { margin: 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
 .p-backlog-card__edit { margin-top: auto; padding-top: 6px; }
-.p-backlog-card__edit a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-soft); }
-.p-backlog-card__edit a:hover { color: var(--action-hover); }
+.p-backlog-card__edit a,
+.p-backlog-card__edit button { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-soft); border: none; background: transparent; padding: 0; cursor: pointer; }
+.p-backlog-card__edit a:hover,
+.p-backlog-card__edit button:hover { color: var(--action-hover); }
 
 /* Native select styled as a D1 control inside c-filter-bar (no select component in the kit) */
 .p-select { height: 34px; border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); background: var(--surface); color: var(--ink); padding: 0 10px; font-family: var(--font-text); font-size: 14px; cursor: pointer; }
