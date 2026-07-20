@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MateOS · Пульс · Дашборд</title>
+<link rel="stylesheet" href="../design-system/styles.css">
+<link rel="stylesheet" href="./pulse.css">
+<style>
+/* dash — standalone CEO/HR surface (org scope), single scrolling column. Layout only. */
+.d-wrap { max-width: 1040px; margin: 0 auto; padding: 32px clamp(16px,4vw,40px) 72px; }
+.d-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 4px; }
+.d-kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.d-title { font-size: 28px; font-weight: 700; letter-spacing: -.015em; margin: 6px 0 0; }
+.d-note { font-family: var(--font-accent); font-style: italic; font-size: 16px; color: var(--ink); margin: 16px 0 0; }
+.d-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 24px; }
+.d-sect { margin-top: 34px; }
+.d-empty { padding: 60px 20px; text-align: center; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="d-wrap">
+  <div class="d-kicker">MateOS Lab</div>
+  <div class="d-head">
+    <h1 class="d-title" id="d-title">Дашборд —</h1>
+    <span class="p-updated" id="d-updated"></span>
+  </div>
+  <div class="d-note">Что группы уже нашли: проблемы, потенциал экономии, стадии работы.</div>
+  <div id="d-body"></div>
+</div>
+<script>
+(function () {
+  "use strict";
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" })[c]; }); }
+  function n(v) { return Math.round((v || 0) * 10) / 10; }
+  var tok = (new URLSearchParams(location.search).get("c") || "").trim();
+  var titleEl = document.getElementById("d-title"), bodyEl = document.getElementById("d-body"), upEl = document.getElementById("d-updated");
+
+  if (!tok) { bodyEl.innerHTML = '<div class="d-empty">Ссылка неполная — нет токена.</div>'; }
+  else {
+    fetch("../lab/data/dash-" + encodeURIComponent(tok) + ".json?ts=" + Date.now())
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(render)
+      .catch(function () { bodyEl.innerHTML = '<div class="d-empty">Дашборд не найден. Проверь ссылку.</div>'; });
+  }
+
+  function kpi(label, value, sub) {
+    return '<div class="c-kpi-tile"><div class="c-kpi-tile__label">' + esc(label) + '</div>' +
+           '<div class="c-kpi-tile__value c-num">' + esc(value) + '</div>' +
+           '<div class="c-kpi-tile__sub">' + esc(sub) + '</div></div>';
+  }
+
+  function render(d) {
+    titleEl.textContent = "Дашборд — " + (d.client || "");
+    document.title = "MateOS · Пульс · Дашборд " + (d.client || "");
+    upEl.textContent = "обновлено " + (d.generated_at || "").replace("T", " ").slice(0, 16);
+    var k = d.kpi || {};
+
+    var kpis = '<div class="d-kpis">' +
+      kpi("Групп", k.groups, "в работе") +
+      kpi("Участников", k.people, "активных") +
+      kpi("Проблем найдено", k.threads, "тредов") +
+      kpi("Часов / мес", n(k.hours_month), "потенциал экономии") +
+      kpi("Часов / год", n(k.hours_year), "×12") + '</div>';
+
+    // По группам — c-table
+    var grows = (d.groups || []).map(function (g) {
+      return '<tr><td>' + esc(g.group) + '</td><td>' + esc(g.cycle || "—") + '</td>' +
+        '<td class="c-num">' + (g.people || 0) + '</td><td class="c-num">' + (g.threads || 0) + '</td>' +
+        '<td class="c-num">' + n(g.hours_month) + '</td></tr>';
+    }).join("");
+    var groups = '<div class="d-sect"><div class="p-section">По группам</div>' +
+      '<table class="c-table"><thead><tr><th>Группа</th><th>Цикл</th>' +
+      '<th class="c-num">Участников</th><th class="c-num">Проблем</th><th class="c-num">Часов / мес</th></tr></thead>' +
+      '<tbody>' + (grows || '<tr><td colspan="5"><div class="c-empty">Нет групп</div></td></tr>') + '</tbody></table></div>';
+
+    // Стадии работы (funnel) — c-stage-bar по стадиям (без пончиков)
+    var fEntries = Object.keys(d.funnel || {}).map(function (s) { return { stage: s, count: d.funnel[s] }; }).sort(function (a, b) { return b.count - a.count; });
+    var fmax = fEntries.reduce(function (m, e) { return Math.max(m, e.count); }, 0) || 1;
+    var funnel = '<div class="d-sect"><div class="p-section">Стадии работы · распределение проблем</div>' +
+      '<div class="c-sheet c-sheet--pad">' + (fEntries.length ? fEntries.map(function (e, i) {
+        var last = i === fEntries.length - 1;
+        return '<div class="c-stage-bar" style="margin-bottom:' + (last ? 0 : 14) + 'px">' +
+          '<div class="c-stage-bar__top"><span>' + esc(e.stage) + '</span><span class="c-num">' + e.count + '</span></div>' +
+          '<div class="c-stage-bar__track"><div class="c-stage-bar__fill" style="width:' + Math.round(e.count / fmax * 100) + '%"></div></div></div>';
+      }).join("") : '<div class="c-empty">Нет данных по стадиям</div>') + '</div></div>';
+
+    // Топ проблем — c-table
+    var trows = (d.top || []).map(function (t) {
+      return '<tr><td>' + esc(t.title) + '</td><td>' + esc(t.group) + '</td>' +
+        '<td><span class="c-chip is-quiet">' + esc(t.stage) + '</span></td>' +
+        '<td class="c-num">' + n(t.hours_month) + '</td></tr>';
+    }).join("");
+    var top = '<div class="d-sect"><div class="p-section">Топ проблем по потенциалу</div>' +
+      '<table class="c-table"><thead><tr><th>Проблема</th><th>Группа</th><th>Стадия</th><th class="c-num">Часов / мес</th></tr></thead>' +
+      '<tbody>' + (trows || '<tr><td colspan="4"><div class="c-empty">Пока нет проблем</div></td></tr>') + '</tbody></table></div>';
+
+    // Лидеры — c-table (позиция · сотрудник · группа · идей · записей · часов)
+    var brows = (d.board || []).map(function (b, i) {
+      return '<tr><td class="c-num">' + (i + 1) + '</td><td>' + esc(b.email) + '</td><td>' + esc(b.group) + '</td>' +
+        '<td class="c-num">' + (b.ideas || 0) + '</td><td class="c-num">' + (b.rows || 0) + '</td>' +
+        '<td class="c-num">' + n(b.hours_month) + '</td></tr>';
+    }).join("");
+    var board = '<div class="d-sect"><div class="p-section">Лидеры · вклад</div>' +
+      '<table class="c-table"><thead><tr><th class="c-num">#</th><th>Сотрудник</th><th>Группа</th>' +
+      '<th class="c-num">Идей</th><th class="c-num">Записей</th><th class="c-num">Часов / мес</th></tr></thead>' +
+      '<tbody>' + (brows || '<tr><td colspan="6"><div class="c-empty">Пока нет вклада</div></td></tr>') + '</tbody></table></div>';
+
+    bodyEl.innerHTML = kpis + groups + funnel + top + board;
+  }
+})();
+</script>
+</body>
+</html>

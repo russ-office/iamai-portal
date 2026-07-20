@@ -1,0 +1,102 @@
+{
+ "scope": "person",
+ "generated_at": "2026-07-21T02:33:31+05:00",
+ "today": "2026-07-21",
+ "sprint_no": 1,
+ "subject": {
+  "id": "recWycZYUSl4UFCCC",
+  "name": "Асия Кошмуратова",
+  "group": "SZ_LAB_IT",
+  "client": "SZ"
+ },
+ "status_light": {
+  "days_idle": 5,
+  "done_7d": 1,
+  "state": "bad"
+ },
+ "events": [
+  {
+   "id": "rec9VRgLOr8eyR6mU",
+   "title": "SZ_LAB_IT-C1",
+   "start": "2026-07-21T02:33:31+05:00",
+   "end": "2026-07-21T02:33:31+05:00",
+   "kind": "other",
+   "all_day": true
+  }
+ ],
+ "tasks": [],
+ "profile": {
+  "name": "Асия Кошмуратова",
+  "role": "",
+  "group": "SZ_LAB_IT",
+  "org": "SZ",
+  "skills": [],
+  "work_style": "",
+  "format_pref": "",
+  "country": "",
+  "city_residence": "",
+  "os": "",
+  "device": ""
+ },
+ "metrics": {
+  "total_hours": 0,
+  "impact_share": 0.0,
+  "quadrant": "",
+  "threads": [
+   {
+    "thread": "Обучение",
+    "progress": 0.143,
+    "hours": 0,
+    "stage": "Проблема"
+   }
+  ],
+  "activity_14d": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "activity_from": "08.07",
+  "activity_to": "21.07"
+ },
+ "backlog": [
+  {
+   "id": "recUxujSTBylcp11a",
+   "title": "Экспертиза ЛБ",
+   "total_hours": 10.416666666666666,
+   "thread_key": "SZ_LAB_IT-P1",
+   "content": "В компании проводится экспертиза ЛБ. Онлан от суммы 700 тыс тенге, офлайн от 100 тыс тенге. Создается акт и пакет документов передается на выплату в ДБУ\n"
+  },
+  {
+   "id": "recvEa5gwElMWx1og",
+   "title": "Обработка обращений FastPlay",
+   "total_hours": 3.3333333333333335,
+   "thread_key": "SZ_LAB_IT-P2",
+   "content": "Поступает обращение в crm от точки продаж с проблемой продажи или выплаты билетов FastPlay. \n\nДелается несколько обращений API, проверка статусов в БД\n\nВыдается ответ в crm\n"
+  },
+  {
+   "id": "rec0G65NT0aA3FgVy",
+   "title": "Создание схем БП из текста",
+   "total_hours": 0,
+   "thread_key": "SZ_LAB_IT-P3",
+   "content": "Необходимо автоматизировать создание схем бизнес-процессов на основе текстового описания от заказчика, либо аналитика.\n\n&nbsp;\n\nНа выходе должно быть два типа файлов: \n\n1. Упрощённая схема для заказчика для согласования. \n2. Валидный bpmn для деплоя в camunda 8.9\n\n&nbsp;\n\nВ первой итерации проекта важно спроектировать движок который умеет раскладывать элементы схемы как высококлассный инженер. \n\n&nbsp;\n"
+  },
+  {
+   "id": "recOW8nT3XuYJBdsy",
+   "title": "Обучение",
+   "total_hours": 0,
+   "thread_key": "SZ_LAB_IT-P4",
+   "content": "изучение нового приложение для меня, обычно трачу на это около 20-30 мин в день\n"
+  }
+ ]
+}

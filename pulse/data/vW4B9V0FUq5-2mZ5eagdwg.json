@@ -1,0 +1,205 @@
+{
+ "scope": "person",
+ "generated_at": "2026-07-21T02:33:31+05:00",
+ "today": "2026-07-21",
+ "sprint_no": 1,
+ "subject": {
+  "id": "recRm4vfoIzYkxY8J",
+  "name": "Полина Логачева",
+  "group": "SZ_LAB_1_HR_2",
+  "client": "SZ"
+ },
+ "status_light": {
+  "days_idle": 7,
+  "done_7d": 11,
+  "state": "bad"
+ },
+ "events": [
+  {
+   "id": "reccWbKBBFw0YeitC",
+   "title": "SZ_LAB_1_HR_2-C1",
+   "start": "2026-07-21T02:33:31+05:00",
+   "end": "2026-07-21T02:33:31+05:00",
+   "kind": "other",
+   "all_day": true
+  }
+ ],
+ "tasks": [],
+ "profile": {
+  "name": "Полина Логачева",
+  "role": "",
+  "group": "SZ_LAB_1_HR_2",
+  "org": "SZ",
+  "skills": [],
+  "work_style": "",
+  "format_pref": "",
+  "country": "",
+  "city_residence": "",
+  "os": "",
+  "device": ""
+ },
+ "metrics": {
+  "total_hours": 73.1,
+  "impact_share": 0.951,
+  "quadrant": "",
+  "threads": [
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 36,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 20,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 5,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2 ",
+    "progress": 0.143,
+    "hours": 3.3333333333333335,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 3,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 2.25,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 1,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2 ",
+    "progress": 0.143,
+    "hours": 1,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "SZ_LAB_1_HR_2",
+    "progress": 0.143,
+    "hours": 1,
+    "stage": "Проблема"
+   },
+   {
+    "thread": "HR 2",
+    "progress": 0.143,
+    "hours": 0.5,
+    "stage": "Проблема"
+   }
+  ],
+  "activity_14d": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   11,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "activity_from": "08.07",
+  "activity_to": "21.07"
+ },
+ "backlog": [
+  {
+   "id": "rec2aDSvjxxrmXzNx",
+   "title": "HR 2",
+   "total_hours": 36,
+   "thread_key": "SZ_LAB_1_HR_2-P7",
+   "content": "1. Регулярный контент – еще не создавали, но приоритетная задача\n"
+  },
+  {
+   "id": "reck1uDvUE7kqMOD5",
+   "title": "HR 2",
+   "total_hours": 20,
+   "thread_key": "SZ_LAB_1_HR_2-P10",
+   "content": "1. Часто повторяющиеся вопросы отдела кадров – нужно решение желательно без человека, возможно бот - 20 часов в месяц\n"
+  },
+  {
+   "id": "recX6YDBOJDldLTOp",
+   "title": "HR 2",
+   "total_hours": 5,
+   "thread_key": "SZ_LAB_1_HR_2-P9",
+   "content": "1. HR-аналитика - делаем вручную, разные люди, разная частотность \n"
+  },
+  {
+   "id": "receAyC1aqLIRDraU",
+   "title": "HR 2",
+   "total_hours": 3.75,
+   "thread_key": "SZ_LAB_1_HR_2-P2",
+   "content": "1. Рассылки \n\n• Дни рождения – сейчас процесс очень кривой, его нужно в целом изменить и по возможности снизить участие человека – 2 часа в месяц\n"
+  },
+  {
+   "id": "recbmHVvjyi773CCd",
+   "title": "HR 2 ",
+   "total_hours": 3.3333333333333335,
+   "thread_key": "SZ_LAB_1_HR_2-P2",
+   "content": "1. Рассылки • Дни рождения – сейчас процесс очень кривой, его нужно в целом изменить и по возможности снизить участие человека – 2 часа в месяц\n"
+  },
+  {
+   "id": "recJWqnC2PZaQaN83",
+   "title": "HR 2",
+   "total_hours": 3,
+   "thread_key": "SZ_LAB_1_HR_2-P8",
+   "content": "1. Пояснительные записки и протокола для СД – 3 часа в месяц\n"
+  },
+  {
+   "id": "rec6LP8kLYZm9uFDe",
+   "title": "HR 2",
+   "total_hours": 2.25,
+   "thread_key": "SZ_LAB_1_HR_2-P6",
+   "content": "1. Рассылки \n\n• Опросы – по мере возникновения необходимости – 1 час подготовка, 1 час обработка, еще 30 минут после проведения для напоминания и просьбы пройти опрос\n"
+  },
+  {
+   "id": "recXcN8scYAdpzC5w",
+   "title": "HR 2",
+   "total_hours": 1,
+   "thread_key": "SZ_LAB_1_HR_2-P4",
+   "content": "1. Рассылки \n\n• Цитаты – желательно автоматизировать, происходит каждый понедельник – 1 час в месяц\n"
+  },
+  {
+   "id": "receO7MXRdgdPQWEu",
+   "title": "SZ_LAB_1_HR_2",
+   "total_hours": 1,
+   "thread_key": "SZ_LAB_1_HR_2-P1",
+   "content": "1. Рассылки \n\n• Вакансии – по мере возникновения + напоминание 1 раз в месяц – 1 час \n\n&nbsp;\n"
+  },
+  {
+   "id": "recoktqEPiVoYS6kG",
+   "title": "HR 2 ",
+   "total_hours": 1,
+   "thread_key": "SZ_LAB_1_HR_2-P3",
+   "content": "1. Рассылки \n\n • Кадровые перемещения – по мере возникновения – 1 час в месяц\n"
+  },
+  {
+   "id": "rec18MlHBXegrWt7F",
+   "title": "HR 2",
+   "total_hours": 0.5,
+   "thread_key": "SZ_LAB_1_HR_2-P5",
+   "content": "1. Рассылки\n\n • Праздники – все по производственному календарю + дополнительно нами придуманные – 30 минут в месяц\n"
+  }
+ ]
+}

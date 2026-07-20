@@ -12,7 +12,7 @@
     fmtDay:  function (iso) { var d = new Date(iso); return String(d.getDate()).padStart(2,"0") + "." + String(d.getMonth()+1).padStart(2,"0"); },
     fmtTime: function (iso) { var d = new Date(iso); return String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0"); },
     daysBetween: function (a, b) { return Math.round((new Date(b) - new Date(a)) / 86400000); },
-    statusLight: function (s) { var st = s.state; return { state: st, label: st === "ok" ? "Хорошо" : st === "warn" ? "Так себе" : "Плохо" }; },
+    statusLight: function (s) { var st = s.state; var L = { ok: "Хорошо", warn: "Так себе", bad: "Плохо", none: "Нет данных" }; return { state: st, label: L[st] || "Нет данных" }; },
     taskStatus: function (t) { return t === "done" ? "ok" : t === "doing" ? "warn" : "none"; },
     taskLabel:  function (t) { return t === "done" ? "Готово" : t === "doing" ? "В работе" : "К выполнению"; },
     kindLabel:  function (k) { return ({ demo_day: "Demo Day", session: "Сессия", other: "Цикл" })[k] || "Событие"; },
@@ -39,7 +39,12 @@
     { id: "marketplace", label: "Marketplace", state: "soon" },
   ];
 
-  function loadSnapshot() {
+  function loadSnapshot(token) {
+    if (token) {
+      // capability link → load this participant's snapshot; a bad token surfaces as error (mount .catch)
+      return fetch("data/" + encodeURIComponent(token) + ".json?ts=" + Date.now())
+        .then(function (r) { if (!r.ok) throw new Error("notfound"); return r.json(); });
+    }
     if (window.PULSE_SNAPSHOT) return Promise.resolve(window.PULSE_SNAPSHOT);
     return fetch("./snapshot.json").then(function (r) { if (!r.ok) throw 0; return r.json(); });
   }
@@ -124,6 +129,9 @@
   // ── views ──────────────────────────────────────────────────────────────────
   function renderPerson(body, D) {
     var light = U.statusLight(D.status_light);
+    var slMeta = (D.status_light.state === "none" || D.status_light.days_idle == null)
+      ? "· нет недавней активности"
+      : "· без простоя " + D.status_light.days_idle + "д · " + D.status_light.done_7d + " готово за 7д";
     var cycle = D.events.filter(function (e) { return e.all_day; })[0];
     var day = cycle ? U.daysBetween(cycle.start, D.today) + 1 : 1;
     var first = (D.subject.name || "").split(" ")[0];
@@ -144,15 +152,20 @@
 
     var tasks = D.tasks.map(taskRowHTML).join("");
 
-    var threads = D.metrics.threads.map(function (th, i) {
+    var threads = D.metrics.threads.length ? D.metrics.threads.map(function (th, i) {
       var last = i === D.metrics.threads.length - 1;
+      var h = Math.round((th.hours || 0) * 10) / 10;
       return '<div style="margin-bottom:' + (last ? 0 : 16) + 'px">' +
-             stageBarHTML(th.thread, th.progress, th.hours + " ч · " + Math.round(th.progress * 100) + "%") + '</div>';
-    }).join("");
+             stageBarHTML(th.thread, th.progress, h + " ч · " + Math.round(th.progress * 100) + "%") + '</div>';
+    }).join("") : '<div class="c-empty">Пока нет тредов</div>';
 
-    var skills = D.profile.skills.map(function (s) { return '<span class="c-chip">' + esc(s) + '</span>'; }).join("") +
-                 '<span class="c-chip is-quiet">' + esc(D.profile.work_style) + '</span>' +
-                 '<span class="c-chip is-quiet">' + esc(D.profile.format_pref) + '</span>';
+    var tagArr = (D.profile.skills || []).map(function (s) { return '<span class="c-chip">' + esc(s) + '</span>'; });
+    if (D.profile.work_style) tagArr.push('<span class="c-chip is-quiet">' + esc(D.profile.work_style) + '</span>');
+    if (D.profile.format_pref) tagArr.push('<span class="c-chip is-quiet">' + esc(D.profile.format_pref) + '</span>');
+    var skills = tagArr.join("");
+    var geoParts = [D.profile.city_residence, D.profile.country].filter(Boolean).join(" · ");
+    var devParts = [D.profile.os, D.profile.device].filter(Boolean).join(" · ");
+    var geoHTML = [geoParts, devParts].filter(Boolean).join("<br>");
 
     body.innerHTML =
       '<div class="p-wrap">' +
@@ -163,7 +176,7 @@
             '<h1 class="p-cover__title">Привет, ' + esc(first) + '</h1>' +
             '<div class="p-cover__status">' + dot(light.state, light.label) +
               '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
-              '<span class="p-cover__status-meta">· без простоя ' + esc(D.status_light.days_idle) + 'д · ' + esc(D.status_light.done_7d) + ' готово за 7д</span>' +
+              '<span class="p-cover__status-meta">' + esc(slMeta) + '</span>' +
             '</div>' +
             '<div class="p-note">«Прототип закрыт, интервью в работе — держим темп до Demo Day.»</div>' +
           '</div>' +
@@ -204,10 +217,10 @@
         // Профиль
         '<div><div class="p-section">Профиль</div><div class="c-sheet c-sheet--pad">' +
           '<div class="p-profile__row">' + avatar(D.profile.name, 44) +
-            '<div style="flex:1"><div class="p-profile__name">' + esc(D.profile.name) + '</div><div class="p-profile__role">' + esc(D.profile.role) + '</div></div>' +
-            '<div class="p-profile__geo">' + esc(D.profile.city_residence) + ' · ' + esc(D.profile.country) + '<br>' + esc(D.profile.os) + ' · ' + esc(D.profile.device) + '</div>' +
+            '<div style="flex:1"><div class="p-profile__name">' + esc(D.profile.name) + '</div><div class="p-profile__role">' + esc(D.profile.role || D.profile.group || "") + '</div></div>' +
+            (geoHTML ? '<div class="p-profile__geo">' + geoHTML + '</div>' : '') +
           '</div>' +
-          '<div class="p-profile__tags">' + skills + '</div>' +
+          (skills ? '<div class="p-profile__tags">' + skills + '</div>' : '') +
         '</div></div>' +
       '</div>';
 
@@ -215,13 +228,13 @@
   }
 
   function renderBacklog(body, D) {
-    var total = D.backlog.reduce(function (s, b) { return s + b.total_hours; }, 0);
+    var total = Math.round(D.backlog.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0) * 10) / 10;
     var cards = D.backlog.length === 0
       ? '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму</div></div>'
       : '<div class="p-backlog-grid">' + D.backlog.map(function (b) {
           return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="c-chip">' + esc(b.thread_key) + '</span></div>' +
-            '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(b.total_hours) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
+            '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
             '<p class="p-backlog-card__body">' + esc(b.content) + '</p>' +
             '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '" data-title="' + esc(b.title) + '">редактировать →</button></div>' +
           '</div>';
@@ -309,7 +322,7 @@
     var done = D.tasks.filter(function (t) { return t.status === "done"; }).length;
     var doingTasks = D.tasks.filter(function (t) { return t.status === "doing"; });
     var doing = doingTasks.length;
-    var potential = D.backlog.reduce(function (s, b) { return s + b.total_hours; }, 0);
+    var potential = Math.round(D.backlog.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0) * 10) / 10;
     var day = cycle ? U.daysBetween(cycle.start, D.today) + 1 : 1;
 
     function kpi(label, value, sub) {
@@ -319,10 +332,10 @@
     }
 
     var tasks = D.tasks.map(taskRowHTML).join("");
-    var threads = D.metrics.threads.map(function (th, i) {
+    var threads = D.metrics.threads.length ? D.metrics.threads.map(function (th, i) {
       var last = i === D.metrics.threads.length - 1;
-      return '<div style="margin-bottom:' + (last ? 0 : 16) + 'px">' + stageBarHTML(th.thread, th.progress, th.hours + " ч") + '</div>';
-    }).join("");
+      return '<div style="margin-bottom:' + (last ? 0 : 16) + 'px">' + stageBarHTML(th.thread, th.progress, (Math.round((th.hours || 0) * 10) / 10) + " ч") + '</div>';
+    }).join("") : '<div class="c-empty">Пока нет тредов</div>';
 
     body.innerHTML =
       '<div class="p-wrap">' +
@@ -412,7 +425,8 @@
 
   function mount(view) {
     var root = document.getElementById("app");
-    loadSnapshot().then(function (D) {
+    var token = new URLSearchParams(location.search).get("c");
+    loadSnapshot(token).then(function (D) {
       document.title = "MateOS · Пульс · " + (metaFor(view, D).title);
       root.innerHTML = buildShell(view, metaFor(view, D), D);
       var body = document.getElementById("p-body");
