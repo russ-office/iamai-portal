@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пульс · этюд глубины</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F7F4ED;--surface:#FCFAF5;--ink:#1C1A17;--ink-soft:#57534C;--muted:#9A948A;
+--line:#E3DED2;--accent:#D9542F;--warn:#C08A2B;--ok:#778C5C;--none:#C5BFB3;
+--fu:Manrope,sans-serif;--fm:"JetBrains Mono",ui-monospace,monospace;
+--hi:rgba(255,255,255,.9);--lo:rgba(186,174,155,.45);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fu);background:var(--paper);color:var(--ink);padding:44px clamp(16px,4vw,56px) 90px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto}
+.kick{font-family:var(--fm);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+h1{font-weight:300;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.03em;margin:10px 0 8px}
+.sub{color:var(--ink-soft);font-size:14.5px;max-width:64ch;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;margin-top:44px}
+.slot>.tag{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:11px}
+.note{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:12px}
+.c{background:var(--surface);padding:22px 24px;position:relative}
+.c::after{content:attr(data-code);position:absolute;right:13px;top:11px;font-family:var(--fm);font-size:9px;letter-spacing:.14em;color:var(--muted)}
+/* D0 flat */
+.d0{border:1px solid var(--line);border-radius:3px}
+/* D1 edge */
+.d1{border:1px solid var(--line);border-top-color:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(120,105,85,.10)}
+/* D2 lift */
+.d2{border:1px solid rgba(210,200,182,.55);border-radius:8px;box-shadow:0 3px 12px rgba(140,124,100,.13)}
+/* D3 soft neo */
+.d3{border:none;border-radius:14px;box-shadow:3px 3px 8px var(--lo),-3px -3px 8px var(--hi)}
+/* D4 current MVP */
+.d4{border:none;border-radius:18px;box-shadow:5px 5px 12px rgba(197,186,165,.5),-5px -5px 12px rgba(255,255,255,.95)}
+.hd{display:flex;gap:12px;align-items:flex-start}
+.dot{width:14px;height:14px;border-radius:999px;margin-top:5px;flex:0 0 auto}
+.ttl{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.meta{font-family:var(--fm);font-size:9px;letter-spacing:.14em;color:var(--muted);margin-top:6px}
+.num{font-family:var(--fm);font-size:24px;font-weight:500;color:var(--accent);line-height:1}
+.numl{font-family:var(--fm);font-size:8.5px;letter-spacing:.14em;color:var(--muted);margin-top:3px}
+.stg{display:flex;margin:18px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stg i{flex:1;padding:9px 0;font-family:var(--fm);font-size:8.5px;letter-spacing:.1em;text-align:center;font-style:normal;color:var(--muted);margin-bottom:-1px}
+.stg i.p{color:var(--ink)} .stg i.a{color:var(--accent);border-bottom:1px solid var(--accent)}
+.tri{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tri h4{font-family:var(--fm);font-size:8.5px;letter-spacing:.14em;color:var(--muted);font-weight:400;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.tri p{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:8px}
+</style></head>
+<body><div class="wrap">
+<div class="kick">MateOS · Пульс #602 · depth study</div>
+<h1>Сколько глубины оставить</h1>
+<p class="sub">Одна и та же карточка треда, палитра W2 · Linen. Отличается только слой глубины. D4 — то, что стоит в MVP сейчас, для честного сравнения.</p>
+<div class="grid" id="g"></div>
+</div>
+<script>
+const V=[
+ ["d0","D0 · ПЛОСКИЙ","CARD / FLAT","Только hairline. Максимум чертёжности, ноль объёма. Читается как лист спецификации. Риск: плотный список карточек сливается в таблицу."],
+ ["d1","D1 · ГРАНЬ","CARD / EDGE","Hairline + светлая верхняя грань + тень 1px. Объём есть только на ощупь. Мой выбор: карточка отделяется от бумаги, но язык остаётся чертёжным."],
+ ["d2","D2 · ПОДЪЁМ","CARD / LIFT","Мягкая рассеянная тень без рамки-контраста. Дружелюбно, современно, чуть менее технично. Хорошо работает при 2–3 карточках на экран, хуже — при двадцати."],
+ ["d3","D3 · МЯГКИЙ НЕО","CARD / SOFT","Неоморфизм вдвое слабее текущего: 3px вместо 5, радиус 14 вместо 18. Компромисс, если выпуклость хочется сохранить как узнаваемость MateOS."],
+ ["d4","D4 · MVP СЕЙЧАС","CARD / MVP","Текущий дашборд как есть. Для сравнения. На тёплой FT-бумаге читается мягче, чем на прежней, но в чертёжный язык не встаёт."]
+];
+document.getElementById("g").innerHTML=V.map(([cl,name,code,note])=>`
+<div class="slot">
+ <div class="tag"><span>${name}</span><span>${code.split(" / ")[1]}</span></div>
+ <div class="c ${cl}" data-code="THR-014 / T3">
+  <div class="hd">
+   <span class="dot" style="background:var(--warn)"></span>
+   <div style="flex:1"><div class="ttl">Автосбор часов из 1С в бэклог</div>
+   <div class="meta">ЭВРИКА · 3 ДНЯ БЕЗ ДВИЖЕНИЯ</div></div>
+   <div style="text-align:right"><div class="num">66</div><div class="numl">ЧАС/МЕС</div></div>
+  </div>
+  <div class="stg"><i class="p">ЗАДАЧА</i><i class="p">ИССЛЕД.</i><i class="a">ПРОТОТИП</i><i>ТЕСТЫ</i><i>ТЗ</i></div>
+  <div class="tri">
+   <div><h4>ПРОБЛЕМА</h4><p>Часы считают вручную, данные расходятся с 1С.</p></div>
+   <div><h4>НА ВЫХОДЕ</h4><p>Ночная выгрузка в бэклог, сверка автоматом.</p></div>
+  </div>
+ </div>
+ <p class="note">${note}</p>
+</div>`).join("");
+</script></body></html>

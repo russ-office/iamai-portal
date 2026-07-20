@@ -1,0 +1,154 @@
+/* MateOS / Pulse — the canonical component inventory (20, closed list).
+   Every component sits on the single D1 "Edge" elevation. One elevation level.
+   Class names are authoritative: c-shell, c-nav, c-nav-item, c-page-head,
+   c-sheet, c-status-dot, c-metric, c-kpi-tile, c-stage-bar, c-triad, c-tape,
+   c-drawer, c-table, c-rank-row, c-filter-bar, c-chip, c-btn, c-avatar,
+   c-task-row, c-empty. Do not add beyond this list. */
+
+/* Shared: every number is mono + tabular. */
+.c-num, .c-metric__value, .c-kpi-tile__value, .c-table td.c-num, .c-rank-row__num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 1 · c-shell — app frame: fixed rail + scrolling main. */
+.c-shell { display: flex; height: 760px; background: var(--paper); color: var(--ink); font-family: var(--font-text); }
+.c-shell__rail { width: 224px; flex: none; background: var(--surface); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 20px 0; }
+.c-shell__brand { padding: 0 22px 22px; display: flex; align-items: baseline; gap: 8px; }
+.c-shell__brand b { font-weight: 700; font-size: 18px; letter-spacing: -.02em; }
+.c-shell__brand span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); }
+.c-shell__main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.c-shell__body { flex: 1; overflow-y: auto; padding: 32px; }
+
+/* 2 · c-nav — vertical, data-driven list of c-nav-item. */
+.c-nav { display: flex; flex-direction: column; }
+.c-nav__foot { margin-top: auto; padding: 0 22px; }
+
+/* 3 · c-nav-item — +is-active (accent rail), +is-soon (muted, mono chip, not a link). */
+.c-nav-item { text-align: left; padding: 9px 22px; font-size: 14px; font-family: var(--font-text); display: flex; align-items: center; gap: 8px; color: var(--ink-soft); background: transparent; border: none; border-left: 2px solid transparent; cursor: pointer; transition: background 140ms ease; }
+.c-nav-item:hover { background: rgba(28,26,23,.04); }
+.c-nav-item.is-active { color: var(--ink); background: rgba(28,26,23,.05); border-left-color: var(--accent); }
+.c-nav-item.is-soon { color: var(--muted); cursor: default; }
+.c-nav-item.is-soon:hover { background: transparent; }
+.c-nav-item.is-soon::after { content: "скоро"; margin-left: auto; font-family: var(--font-mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 1px 5px; }
+
+/* 4 · c-page-head — top bar: eyebrow + title, optional action. */
+.c-page-head { height: 56px; flex: none; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 16px; padding: 0 32px; background: var(--paper); }
+.c-page-head__titles { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.c-page-head__eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.c-page-head__title { font-size: 16px; font-weight: 600; }
+
+/* 5 · c-sheet — THE D1 "Edge" surface. The only elevation. */
+.c-sheet { background: var(--surface); border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); }
+.c-sheet--pad { padding: 16px; }
+.c-sheet--flush { padding: 0; }
+
+/* 6 · c-status-dot — 14px circle, four colours, colour only. aria-label mandatory. */
+.c-status-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; flex: none; }
+.c-status-dot[data-state="ok"]   { background: var(--status-ok); }
+.c-status-dot[data-state="warn"] { background: var(--status-warn); }
+.c-status-dot[data-state="bad"]  { background: var(--status-bad); }
+.c-status-dot[data-state="none"] { background: var(--status-none); }
+
+/* 7 · c-metric — a labelled number (label under or over). */
+.c-metric { display: flex; flex-direction: column; gap: 2px; }
+.c-metric__value { font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1.05; }
+.c-metric__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.c-metric__sub { font-size: 12px; color: var(--ink-soft); }
+
+/* 8 · c-kpi-tile — a c-sheet wrapping one c-metric; sizes to the row, not the number. */
+.c-kpi-tile { background: var(--surface); border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); padding: 16px; flex: 1; min-width: 0; }
+.c-kpi-tile__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-kpi-tile__value { font-size: 26px; font-weight: 600; margin-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-kpi-tile__sub { font-size: 12px; color: var(--ink-soft); }
+
+/* 9 · c-stage-bar — thread/pipeline progress. Track + fill; +is-complete = sage. */
+.c-stage-bar { }
+.c-stage-bar__top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+.c-stage-bar__top .c-num { color: var(--ink-soft); }
+.c-stage-bar__track { height: 6px; border-radius: 999px; background: rgba(28,26,23,.06); overflow: hidden; }
+.c-stage-bar__fill { height: 100%; border-radius: 999px; background: var(--accent); }
+.c-stage-bar.is-complete .c-stage-bar__fill { background: var(--status-ok); }
+
+/* 10 · c-triad — Problem / Output / Input, three columns, hairline headings. No nested cards. */
+.c-triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.c-triad__col { padding: 0 14px; border-left: 1px solid var(--line); }
+.c-triad__col:first-child { padding-left: 0; border-left: none; }
+.c-triad__head { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.c-triad__body { font-size: 13px; color: var(--ink); line-height: 1.45; }
+
+/* 11 · c-tape — activity feed, exactly 14 days. 1px tick (height = activity) + dot.
+   Empty day = tick in line colour. Today = dashed vertical guide. Not a bar chart. */
+.c-tape { }
+.c-tape__row { display: flex; align-items: flex-end; gap: 6px; height: 44px; }
+.c-tape__day { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 3px; flex: 1; }
+.c-tape__tick { width: 1px; background: var(--ink-soft); }
+.c-tape__day.is-empty .c-tape__tick { background: var(--line); }
+.c-tape__dot { width: 3px; height: 3px; border-radius: 50%; background: var(--accent); }
+.c-tape__day.is-empty .c-tape__dot { background: var(--status-none); opacity: .6; }
+.c-tape__day.is-today::before { content: ""; position: absolute; top: -4px; bottom: -4px; left: 50%; border-left: 1px dashed var(--muted); }
+.c-tape__axis { display: flex; justify-content: space-between; margin-top: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+
+/* 12 · c-drawer — right panel over content, 480px (100% mobile), dimmed backdrop.
+   Esc + outside click close; full-height Fillout iframe; animate transform only. */
+.c-drawer__scrim { position: fixed; inset: 0; background: rgba(28,26,23,.18); opacity: 0; pointer-events: none; transition: opacity 160ms ease; z-index: 40; }
+.c-drawer__scrim.is-open { opacity: 1; pointer-events: auto; }
+.c-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 480px; max-width: 100vw; background: var(--surface); border-left: 1px solid var(--line); box-shadow: var(--shadow-d1); transform: translateX(100%); transition: transform 160ms ease; z-index: 41; display: flex; flex-direction: column; }
+.c-drawer.is-open { transform: translateX(0); }
+.c-drawer__head { padding: 20px 24px 16px; border-bottom: 1px solid var(--line); }
+.c-drawer__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.c-drawer__title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.c-drawer__title { margin: 0; font-size: 18px; font-weight: 600; color: var(--ink); }
+.c-drawer__close { border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; line-height: 1; padding: 4px; }
+.c-drawer__body { padding: 24px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 18px; }
+.c-drawer__iframe { border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); width: 100%; flex: 1; min-height: 320px; background: var(--paper); }
+.c-drawer__foot { padding: 16px 24px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 8px; }
+@media (max-width: 560px) { .c-drawer { width: 100%; } }
+
+/* 13 · c-table — data table on a sheet. Numbers right, tabular, mono. */
+.c-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); overflow: hidden; }
+.c-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; border-bottom: 1px solid var(--line); font-weight: 500; }
+.c-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink); }
+.c-table tr:last-child td { border-bottom: none; }
+.c-table td.c-num, .c-table th.c-num { text-align: right; }
+
+/* 14 · c-rank-row — leaderboard row: position · avatar · name · dot · numbers. */
+.c-rank-row { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.c-rank-row:last-child { border-bottom: none; }
+.c-rank-row__pos { font-family: var(--font-mono); font-size: 13px; color: var(--muted); width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
+.c-rank-row__name { flex: 1; min-width: 0; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.c-rank-row__num { font-size: 13px; color: var(--ink-soft); width: 64px; text-align: right; }
+
+/* 15 · c-filter-bar — row of selects / chips above a list or table. */
+.c-filter-bar { display: flex; align-items: center; gap: 12px; }
+.c-filter-bar__count { margin-left: auto; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* 16 · c-chip — mono chip for codes/counts/state text. +is-accent, +is-quiet. */
+.c-chip { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; line-height: 1; padding: 3px 6px; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 5px; font-variant-numeric: tabular-nums; color: var(--ink-soft); background: rgba(28,26,23,.05); border: 1px solid var(--line); }
+.c-chip.is-accent { color: var(--action); background: rgba(217,84,47,.08); border-color: rgba(217,84,47,.25); }
+.c-chip.is-quiet { color: var(--muted); background: transparent; }
+
+/* 17 · c-btn — primary (terracotta) / ghost. */
+.c-btn { font-family: var(--font-text); font-size: 13px; font-weight: 600; line-height: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 14px; border-radius: var(--radius); cursor: pointer; white-space: nowrap; user-select: none; transition: background 140ms ease, color 140ms ease, border-color 140ms ease; border: 1px solid transparent; }
+.c-btn:active { transform: translateY(1px); }
+.c-btn.is-primary { background: var(--action); color: #fff; border-color: var(--action); }
+.c-btn.is-primary:hover { background: var(--action-hover); }
+.c-btn.is-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); border-top-color: #fff; box-shadow: var(--shadow-d1); }
+.c-btn.is-ghost { background: transparent; color: var(--ink-soft); }
+.c-btn.is-ghost:hover { background: rgba(28,26,23,.05); }
+.c-btn[disabled] { opacity: .45; pointer-events: none; }
+
+/* 18 · c-avatar — monogram chip on the deep surface. No photos. */
+.c-avatar { border-radius: var(--radius); background: var(--deep); color: var(--text-on-inverted); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); letter-spacing: .02em; flex: none; }
+
+/* 19 · c-task-row — status dot · title/artifact · chip · due. */
+.c-task-row { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 8px 14px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background 120ms ease; }
+.c-task-row:last-child { border-bottom: none; }
+.c-task-row:hover { background: rgba(28,26,23,.03); }
+.c-task-row__main { flex: 1; min-width: 0; }
+.c-task-row__title { font-size: 14px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.c-task-row__meta { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+.c-task-row__due { font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); width: 62px; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 20 · c-empty — empty state for any list/table/feed. Mono line, muted, no illustration. */
+.c-empty { display: flex; align-items: center; justify-content: center; padding: 40px 20px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--muted); text-align: center; }

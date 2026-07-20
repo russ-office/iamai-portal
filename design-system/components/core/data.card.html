@@ -1,0 +1,23 @@
+<!-- @dsCard group="Components" viewport="700x250" name="Data & status" subtitle="DataRow · Indicator · Badge · Avatar · ActivityFeed" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:22px;background:var(--paper)}#r{display:flex;flex-direction:column;gap:16px;max-width:620px}.strip{display:flex;gap:14px;align-items:center;flex-wrap:wrap}</style>
+</head><body><div id="r"></div>
+<script type="text/babel">
+const {DataRow,Indicator,Badge,Avatar,ActivityFeed,Card}=window.MateOSPulseDesignSystem_436c23;
+function Demo(){return(<>
+<div className="strip"><Indicator status="ok"/><Indicator status="warn"/><Indicator status="bad"/><Indicator status="none"/>
+<Badge>PR-4821</Badge><Badge tone="accent">4 open</Badge><Badge tone="quiet">14d</Badge>
+<Avatar name="Dana Okoro"/><Avatar name="Priya S"/></div>
+<Card padding={0}>
+<DataRow status="ok" primary="Dana Okoro" secondary="Payments" meta="4 open · 6d"/>
+<DataRow status="warn" primary="Auth rewrite" secondary="Platform" meta="PR-4821"/>
+<DataRow status="bad" primary="Billing migration" secondary="Growth" meta="2d overdue" style={{borderBottom:'none'}}/>
+</Card>
+<div className="strip"><span className="label" style={{fontFamily:'var(--font-mono)',fontSize:11,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--muted)'}}>14-day activity</span><ActivityFeed data={[2,0,1,4,3,0,0,5,2,1,3,4,2,6]}/></div>
+</>);}
+ReactDOM.createRoot(document.getElementById('r')).render(<Demo/>);
+</script></body></html>

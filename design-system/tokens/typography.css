@@ -1,0 +1,36 @@
+/* Type — Manrope for text, JetBrains Mono for labels/codes/numbers,
+   Lora italic at most once per page. */
+:root {
+  --font-text:   "Manrope", system-ui, sans-serif;
+  --font-mono:   "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-accent: "Lora", Georgia, serif;
+
+  /* semantic aliases */
+  --font-body:    var(--font-text);
+  --font-label:   var(--font-mono);
+  --font-note:    var(--font-accent);
+
+  /* sizes — dense instrument scale */
+  --fs-micro:  11px; /* mono labels, ticks */
+  --fs-meta:   12px; /* captions, table meta */
+  --fs-body:   13px; /* dense body */
+  --fs-base:   14px; /* default reading size */
+  --fs-lead:   16px; /* emphasised body */
+  --fs-h3:     18px;
+  --fs-h2:     22px;
+  --fs-h1:     28px;
+
+  /* weights */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+
+  /* line-heights */
+  --lh-tight:  1.2; /* @kind font */
+  --lh-snug:   1.35; /* @kind font */
+  --lh-body:   1.55; /* @kind font */
+
+  /* mono label treatment */
+  --label-spacing: 0.06em;
+}

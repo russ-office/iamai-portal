@@ -1,0 +1,43 @@
+{
+  "_note": "MOCK/SAMPLE для Claude Design — НЕ живые записи SZ. Форма = snapshot-схема брифа #602 (person scope).",
+  "scope": "person",
+  "generated_at": "2026-07-20T05:30:00Z",
+  "subject": {
+    "id": "recSAMPLE001",
+    "name": "Аружан Сериккызы",
+    "group": "Команда Alpha",
+    "client": "SZ",
+    "avatar_seed": "aruzhan-serikkyzy"
+  },
+  "events": [
+    { "id": "recEV01", "title": "Demo Day · Команда Alpha", "start": "2026-07-24T10:00:00+05:00", "end": "2026-07-24T12:00:00+05:00", "kind": "demo_day", "group": "Команда Alpha" },
+    { "id": "recEV02", "title": "status_check · Команда Alpha", "start": "2026-07-21T15:00:00+05:00", "end": "2026-07-21T15:30:00+05:00", "kind": "session", "group": "Команда Alpha" },
+    { "id": "recEV03", "title": "Cycle 1", "start": "2026-07-20T00:00:00+05:00", "end": "2026-08-03T00:00:00+05:00", "kind": "other", "group": "Команда Alpha", "all_day": true }
+  ],
+  "tasks": [
+    { "id": "recTK01", "title": "Собрать 20 проблемных интервью", "status": "doing", "priority": "high", "due": "2026-07-23", "assignees": ["Аружан Сериккызы"], "artifact": "Проблемные интервью v1" },
+    { "id": "recTK02", "title": "Свести гипотезы в one-pager", "status": "todo", "priority": "normal", "due": "2026-07-25", "assignees": ["Аружан Сериккызы", "Данияр Т."], "artifact": "One-pager Alpha" },
+    { "id": "recTK03", "title": "Настроить прототип в Figma", "status": "done", "priority": "normal", "due": "2026-07-19", "assignees": ["Аружан Сериккызы"], "artifact": "Figma-прототип" }
+  ],
+  "profile": {
+    "name": "Аружан Сериккызы",
+    "role": "Product lead · Команда Alpha",
+    "country": "KZ",
+    "city_residence": "Алматы",
+    "skills": ["продуктовые интервью", "Figma", "питчинг"],
+    "work_style": "команда",
+    "format_pref": "онлайн",
+    "os": "macOS",
+    "device": "iPhone"
+  },
+  "metrics": {
+    "total_hours": 18.5,
+    "impact_share": 0.34,
+    "quadrant": "high-impact / high-effort",
+    "threads": [
+      { "thread": "Проблемные интервью", "progress": 0.6, "hours": 8 },
+      { "thread": "Прототип", "progress": 1.0, "hours": 6.5 },
+      { "thread": "One-pager", "progress": 0.1, "hours": 4 }
+    ]
+  }
+}

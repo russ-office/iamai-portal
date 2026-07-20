@@ -1,0 +1,32 @@
+/* MateOS / Pulse — palette W2 "Linen".
+   Warm paper base, single terracotta accent used sparingly.
+   Do not add colours outside this list. */
+:root {
+  /* base */
+  --paper:    #F7F4ED; /* app background */
+  --surface:  #FCFAF5; /* card / raised surface */
+  --ink:      #1C1A17; /* primary text */
+  --ink-soft: #57534C; /* secondary text */
+  --muted:    #9A948A; /* tertiary text, meta */
+  --line:     #E3DED2; /* hairline borders */
+  --accent:   #D9542F; /* terracotta — primary action, active, bad */
+  --deep:     #2E2B27; /* near-black surface for inverted chrome */
+
+  /* status — indicator only, exactly 4 values */
+  --status-bad:  #D9542F;
+  --status-warn: #C08A2B;
+  --status-ok:   #778C5C;
+  --status-none: #C5BFB3;
+
+  /* semantic aliases */
+  --bg-app:        var(--paper);
+  --surface-card:  var(--surface);
+  --text-heading:  var(--ink);
+  --text-body:     var(--ink-soft);
+  --text-muted:    var(--muted);
+  --border-hair:   var(--line);
+  --action:        var(--accent);
+  --action-hover:  #C24A29;
+  --surface-inverted: var(--deep);
+  --text-on-inverted: #F2EDE2;
+}

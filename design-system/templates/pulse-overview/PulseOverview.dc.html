@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Pulse Overview" description="MateOS / Pulse sprint overview — stat cards, team pulse list, 14-day activity" -->
+<helmet>
+<link rel="stylesheet" href="../../styles.css">
+<script src="./ds-base.js"></script>
+</helmet>
+<div style="min-height:100vh;background:#F7F4ED;color:#1C1A17;font-family:'Manrope',system-ui,sans-serif;padding:32px 40px">
+  <div style="max-width:920px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A">Sprint 24 · Day 6 of 10</div>
+    <h1 style="margin:4px 0 0;font-size:28px;font-weight:700;letter-spacing:-.01em">Sprint 24 overview</h1>
+
+    <div style="display:flex;gap:16px;margin-top:24px">
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.Card" padding="16" style="flex:1" hint-size="100%,90px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A">Team health</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:600;margin-top:8px">On track</div>
+        <div style="font-size:12px;color:#57534C">6 of 8 green</div>
+      </x-import>
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.Card" padding="16" style="flex:1" hint-size="100%,90px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A">Open work</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:600;margin-top:8px">23</div>
+        <div style="font-size:12px;color:#57534C">4 at risk</div>
+      </x-import>
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.Card" padding="16" style="flex:1" hint-size="100%,90px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A">Sprint</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:600;margin-top:8px">Day 6/10</div>
+        <div style="font-size:12px;color:#57534C">62% complete</div>
+      </x-import>
+    </div>
+
+    <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:16px;margin-top:24px">“Velocity dipped after the release freeze, then recovered by mid-sprint.”</div>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A;margin:24px 0 8px">Team pulse</div>
+    <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.Card" padding="0" hint-size="100%,200px">
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.DataRow" status="ok" primary="Dana Okoro" secondary="Payments" meta="4 open · 6h" hint-size="100%,40px"></x-import>
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.DataRow" status="ok" primary="Ivy Chen" secondary="Payments" meta="2 open · 2h" hint-size="100%,40px"></x-import>
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.DataRow" status="warn" primary="Priya Shah" secondary="Platform" meta="6 open · 1d" hint-size="100%,40px"></x-import>
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.DataRow" status="bad" primary="Marcus Lang" secondary="Growth" meta="8 open · 3d" hint-size="100%,40px"></x-import>
+    </x-import>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9A948A;margin:24px 0 8px">Activity · 14 days</div>
+    <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.Card" padding="16" hint-size="100%,80px">
+      <x-import component-from-global-scope="MateOSPulseDesignSystem_436c23.ActivityFeed" data="{{ activity }}" hint-size="240px,40px"></x-import>
+    </x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { activity: [3,1,2,5,4,0,0,6,3,2,4,5,3,7] };
+  }
+}
+</script>
+</body>
+</html>

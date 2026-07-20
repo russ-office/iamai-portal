@@ -1,0 +1,56 @@
+:root {
+  /* MateOS / Pulse — palette W2 "Linen" */
+  --paper:    #F7F4ED;
+  --surface:  #FCFAF5;
+  --ink:      #1C1A17;
+  --ink-soft: #57534C;
+  --muted:    #9A948A;
+  --line:     #E3DED2;
+  --accent:   #D9542F;
+  --deep:     #2E2B27;
+
+  /* status — indicator only, exactly 4 values */
+  --status-bad:  #D9542F;
+  --status-warn: #C08A2B;
+  --status-ok:   #778C5C;
+  --status-none: #C5BFB3;
+
+  /* typography */
+  --font-text:   "Manrope", system-ui, sans-serif;
+  --font-mono:   "JetBrains Mono", ui-monospace, monospace;
+  --font-accent: "Lora", Georgia, serif;
+
+  --radius: 4px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+}
+
+.mono        { font-family: var(--font-mono); }
+.accent-note { font-family: var(--font-accent); font-style: italic; }
+
+/* Depth D1 "Edge" — the ONLY elevation level in this system.
+   Never add a second, heavier level. No neumorphism. */
+.d1 {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 1px solid #fff;
+  box-shadow: 0 1px 2px rgba(120, 105, 85, .10);
+  border-radius: var(--radius);
+}
+
+/* Indicator: 14px circle, colour only.
+   No labels, no shape variants. aria-label is mandatory. */
+.indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.indicator--bad  { background: var(--status-bad); }
+.indicator--warn { background: var(--status-warn); }
+.indicator--ok   { background: var(--status-ok); }
+.indicator--none { background: var(--status-none); }

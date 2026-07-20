@@ -1,0 +1,5 @@
+/* Webfonts. No font binaries were supplied with the source, so the three
+   families are loaded from Google Fonts (exact families: Manrope, JetBrains
+   Mono, Lora). SUBSTITUTION FLAG: swap these @import/@font-face for licensed
+   local binaries if the brand ships its own files. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");

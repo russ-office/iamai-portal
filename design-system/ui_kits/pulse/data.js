@@ -1,0 +1,56 @@
+// Real snapshot shape from mock_snapshot_pulse_person.json (person scope).
+window.PULSE_SNAPSHOT = {
+  scope: "person",
+  // __mock marks the two arrays that are NOT in the real snapshot (leaderboard[]
+  // and metrics.activity_14d). Delete either and its view degrades to c-empty.
+  __mock: true,
+  generated_at: "2026-07-20T05:30:00Z",
+  today: "2026-07-20",
+  sprint_no: 1,
+  subject: { id: "recSAMPLE001", name: "Аружан Сериккызы", group: "Команда Alpha", client: "SZ" },
+  // Status light: детерминированно из снапшота. Пороги залочены (дефолты Ruslan),
+  // цвета — из палитры Linen. Хорошо / Так себе / Плохо.
+  status_light: { days_idle: 1, done_7d: 2, state: "ok" }, // ≤1 idle И ≥2 done → Хорошо
+  events: [
+    { id: "recEV01", title: "Demo Day · Команда Alpha", start: "2026-07-24T10:00:00+05:00", end: "2026-07-24T12:00:00+05:00", kind: "demo_day" },
+    { id: "recEV02", title: "status_check · Команда Alpha", start: "2026-07-21T15:00:00+05:00", end: "2026-07-21T15:30:00+05:00", kind: "session" },
+    { id: "recEV03", title: "Cycle 1", start: "2026-07-20T00:00:00+05:00", end: "2026-08-03T00:00:00+05:00", kind: "other", all_day: true },
+  ],
+  tasks: [
+    { id: "recTK01", title: "Собрать 20 проблемных интервью", status: "doing", priority: "high", due: "2026-07-23", assignees: ["Аружан Сериккызы"], artifact: "Проблемные интервью v1" },
+    { id: "recTK02", title: "Свести гипотезы в one-pager", status: "todo", priority: "normal", due: "2026-07-25", assignees: ["Аружан Сериккызы", "Данияр Т."], artifact: "One-pager Alpha" },
+    { id: "recTK03", title: "Настроить прототип в Figma", status: "done", priority: "normal", due: "2026-07-19", assignees: ["Аружан Сериккызы"], artifact: "Figma-прототип" },
+  ],
+  profile: {
+    name: "Аружан Сериккызы", role: "Product lead · Команда Alpha",
+    country: "KZ", city_residence: "Алматы",
+    skills: ["продуктовые интервью", "Figma", "питчинг"],
+    work_style: "команда", format_pref: "онлайн", os: "macOS", device: "iPhone",
+  },
+  metrics: {
+    total_hours: 18.5, impact_share: 0.34, quadrant: "high-impact / high-effort",
+    // MOCK/DERIVED (__mock): count of Artifacts.submitted_at + LabTasks.done_at per day.
+    activity_14d: [2, 1, 0, 3, 2, 0, 0, 4, 1, 2, 3, 0, 2, 3],
+    activity_from: "07.07", activity_to: "20.07",
+    threads: [
+      { thread: "Проблемные интервью", progress: 0.6, hours: 8 },
+      { thread: "Прототип", progress: 1.0, hours: 6.5 },
+      { thread: "One-pager", progress: 0.1, hours: 4 },
+    ],
+  },
+  // Бэклог (Artifacts T0/T1): title · N часов/мес (total_hours, потенциал) · content
+  backlog: [
+    { id: "recBL01", title: "Ручной сбор проблемных интервью", total_hours: 12, thread_key: "T-INT", content: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста." },
+    { id: "recBL02", title: "Сборка one-pager под Demo Day", total_hours: 6, thread_key: "T-OPG", content: "Гипотезы живут в чатах и файлах. Перед демо всё пересобирается заново — 6 часов на человека в цикл." },
+    { id: "recBL03", title: "Прогон прототипов в Figma", total_hours: 9, thread_key: "T-FIG", content: "Прототипы делаются с нуля каждый раз. Нет переиспользуемых блоков под путь Вход→Выход." },
+    { id: "recBL04", title: "Синхронизация статусов по спринту", total_hours: 4, thread_key: "T-SYNC", content: "Статусы задач разбросаны. Лид тратит время на ручной сбор картины к status_check." },
+  ],
+  // Leaderboard (MOCK/DERIVED, __mock): GroupMembership + Artifacts → часы/вклад по участнику.
+  // Delete this array to see the c-empty state on the Leaderboard view.
+  leaderboard: [
+    { id: "recLB01", name: "Аружан Сериккызы", status: "ok", hours: 18.5 },
+    { id: "recLB02", name: "Данияр Т.", status: "warn", hours: 12.0 },
+    { id: "recLB03", name: "Мадина К.", status: "ok", hours: 9.5 },
+    { id: "recLB04", name: "Ержан Б.", status: "none", hours: 0 },
+  ],
+};

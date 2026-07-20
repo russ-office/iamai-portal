@@ -1,0 +1,23 @@
+/* Elevation — exactly ONE level, D1 "Edge".
+   1px border, white top edge, 4px radius, near-invisible shadow.
+   Never introduce a second, heavier level. No neumorphism. */
+:root {
+  --radius: 4px;
+  --radius-sm: 3px;
+  --radius-pill: 999px;
+
+  --border-1: 1px solid var(--line);
+  --edge-top: 1px solid #ffffff; /* @kind other */
+  --shadow-d1: 0 1px 2px rgba(120, 105, 85, .10);
+
+  --indicator-size: 14px;
+}
+
+/* The one and only surface treatment. */
+.d1 {
+  background: var(--surface);
+  border: var(--border-1);
+  border-top: var(--edge-top);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-d1);
+}

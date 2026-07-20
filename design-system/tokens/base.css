@@ -1,0 +1,45 @@
+/* Base element defaults derived from the source. */
+:root { --link: var(--accent); --link-hover: var(--action-hover); }
+
+body {
+  background: var(--bg-app);
+  color: var(--text-heading);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* Utilities named in the source */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--label-spacing);
+}
+.accent-note { font-family: var(--font-accent); font-style: italic; }
+
+/* Mono label — uppercase caption used for field labels and section eyebrows */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--label-spacing);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Status indicator — 14px circle, colour only. aria-label mandatory. */
+.indicator {
+  width: var(--indicator-size);
+  height: var(--indicator-size);
+  border-radius: 50%;
+  display: inline-block;
+  flex: none;
+}
+.indicator--bad  { background: var(--status-bad); }
+.indicator--warn { background: var(--status-warn); }
+.indicator--ok   { background: var(--status-ok); }
+.indicator--none { background: var(--status-none); }
