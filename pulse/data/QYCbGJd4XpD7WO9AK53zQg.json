@@ -1,6 +1,6 @@
 {
  "scope": "person",
- "generated_at": "2026-07-21T02:33:31+05:00",
+ "generated_at": "2026-07-21T11:12:40+05:00",
  "today": "2026-07-21",
  "sprint_no": 1,
  "subject": {
@@ -9,6 +9,7 @@
   "group": "SZ_LAB_Sales",
   "client": "SZ"
  },
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=rectNv6ECSGAupr7D&type=T1_idea&author_email=",
  "status_light": {
   "days_idle": null,
   "done_7d": 0,
@@ -18,8 +19,8 @@
   {
    "id": "rectNv6ECSGAupr7D",
    "title": "SZ_LAB_Sales-C1",
-   "start": "2026-07-21T02:33:31+05:00",
-   "end": "2026-07-21T02:33:31+05:00",
+   "start": "2026-07-21T11:12:40+05:00",
+   "end": "2026-07-21T11:12:40+05:00",
    "kind": "other",
    "all_day": true
   }

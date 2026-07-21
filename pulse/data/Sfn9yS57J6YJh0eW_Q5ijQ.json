@@ -1,6 +1,6 @@
 {
  "scope": "person",
- "generated_at": "2026-07-21T02:33:31+05:00",
+ "generated_at": "2026-07-21T11:12:40+05:00",
  "today": "2026-07-21",
  "sprint_no": 1,
  "subject": {
@@ -9,6 +9,7 @@
   "group": "SZ_LAB_1_HR_1",
   "client": "SZ"
  },
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&type=T1_idea&author_email=",
  "status_light": {
   "days_idle": 2,
   "done_7d": 3,
@@ -18,8 +19,8 @@
   {
    "id": "rectGKGooOWuVG6yB",
    "title": "SZ_LAB_1_HR_1-C1",
-   "start": "2026-07-21T02:33:31+05:00",
-   "end": "2026-07-21T02:33:31+05:00",
+   "start": "2026-07-21T11:12:40+05:00",
+   "end": "2026-07-21T11:12:40+05:00",
    "kind": "other",
    "all_day": true
   }
@@ -44,22 +45,49 @@
   "quadrant": "",
   "threads": [
    {
+    "thread_key": "SZ_LAB_1_HR_1-P5",
     "thread": "Изменение должностных инструкций",
     "progress": 0.143,
     "hours": 10,
-    "stage": "Проблема"
+    "stage": "Проблема",
+    "links": {
+     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P5&type=T2_task&p_title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%BD%D1%8B%D1%85%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9&p_content=%D0%AD%D1%82%D0%BE%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D1%88%D0%B0%D0%B3%20%28%D0%B8%D0%BB%D0%B8%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%29%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B%20%D1%81%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D0%BF%D1%8B%20-%20%D1%87%D0%B0%D1%81%D1%82%D0%BE%20%D0%B1%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%2C%20%D1%87%D1%82%D0%BE%20%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%BD%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C%20%D0%B0%20%D0%B5%D0%B5%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%98%D0%BB%D0%B8%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%20%D0%9F%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%81%D1%8F%20%D0%B2%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%8C%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%94%D0%98%2C%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D1%8B%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%20%0A&p_freq=1&p_time=600&p_emp=1",
+     "research": null,
+     "hypothesis": null,
+     "prototype": null,
+     "prd": null
+    },
+    "prototypes": []
    },
    {
+    "thread_key": "SZ_LAB_1_HR_1-P1",
     "thread": "Внесение изменений в штатное расписание и оргструктуру ",
     "progress": 0.143,
     "hours": 9,
-    "stage": "Проблема"
+    "stage": "Проблема",
+    "links": {
+     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P1&type=T2_task&p_title=%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20&p_content=%2A%2A1.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D1%80%D0%B3%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20%28%D0%B5%D0%B6%D0%B5%D0%BC%D0%B5%D1%81%D1%8F%D1%87%D0%BD%D0%BE%2C%20%D0%BE%D1%82%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85%20%D1%80%D0%B0%D0%B7%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%2C%20%D0%BE%D1%82%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%87%D0%B0%D1%81%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D1%80%D0%B0%D0%B7%29%3A%2A%2A%0A%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%B2%201%D0%A1%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%29%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%2C%20%D1%84%D0%B0%D0%B9%D0%BB%20exel%29%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%2C%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D0%B1%D1%8B%D1%82%D1%8C%20%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5%29%3B%0A%0A%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0%20%E2%80%93%20%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D1%8F%D1%8E%D1%89%D0%B8%D0%B5%D1%81%D1%8F%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%2C%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8.%0A%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%E2%80%93%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%281%20%D0%A1%29%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%D0%B2%20%D0%A8%D0%A0%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D1%82%D1%83%D1%80%D1%83%29%0A&p_freq=3&p_time=60&p_emp=3",
+     "research": null,
+     "hypothesis": null,
+     "prototype": null,
+     "prd": null
+    },
+    "prototypes": []
    },
    {
+    "thread_key": "SZ_LAB_1_HR_1-P4",
     "thread": "Подготовка шаблонов приказов для MetaDoc ",
     "progress": 0.143,
     "hours": 5,
-    "stage": "Проблема"
+    "stage": "Проблема",
+    "links": {
+     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P4&type=T2_task&p_title=%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20MetaDoc%20&p_content=%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20MetaDoc%20%20%D0%BD%D0%B0%20%D0%B4%D0%B2%D1%83%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%D1%85%20%D1%81%20%D1%85%D1%8D%D1%88%D1%82%D0%B5%D0%B3%D0%B0%D0%BC%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%B8%D0%B2%D1%8F%D0%B7%D0%BA%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D0%97%D0%A3%D0%9F%20%D0%B8%20%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D1%85%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2.%20%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BE%D1%82%D1%81%D0%B5%D0%B8%D0%B2%D0%B0%D1%8E%20%D0%B2%D1%81%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%8D%D1%82%D0%BE%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C.%0A&p_freq=5&p_time=60&p_emp=1",
+     "research": null,
+     "hypothesis": null,
+     "prototype": null,
+     "prd": null
+    },
+    "prototypes": []
    }
   ],
   "activity_14d": [
@@ -87,35 +115,70 @@
    "title": "Воронка найма ",
    "total_hours": 66,
    "thread_key": "SZ_LAB_1_HR_1-P3",
-   "content": "Воронка найма – обзвон, занесение в xls, если порядка 50-60 резюме, на занесение вручную уходит от 2 до 3 часов.\n"
+   "content": "Воронка найма – обзвон, занесение в xls, если порядка 50-60 резюме, на занесение вручную уходит от 2 до 3 часов.\n",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P3&type=T2_task&p_title=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%D0%B9%D0%BC%D0%B0%20&p_content=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%D0%B9%D0%BC%D0%B0%20%E2%80%93%20%D0%BE%D0%B1%D0%B7%D0%B2%D0%BE%D0%BD%2C%20%D0%B7%D0%B0%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20xls%2C%20%D0%B5%D1%81%D0%BB%D0%B8%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B0%2050-60%20%D1%80%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%2C%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D1%83%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BE%D1%82%202%20%D0%B4%D0%BE%203%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2.%0A&p_freq=22&p_time=180&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   }
   },
   {
    "id": "rec9vCVukCRZfnzW7",
    "title": "Расчет оценочных бланков (переменная часть заработной платы)",
    "total_hours": 50,
    "thread_key": "SZ_LAB_1_HR_1-P2",
-   "content": "1.1. Департамент электронной коммерции и Департамент продаж – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- получение данных по фактическим продажам (продажи, инкассация, QR-канал)\n- проверка и сопоставление данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n \n\n1.2. Подразделения, не связанные с продажами – 1 рабочий день\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- проверка данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n1.3. Завершение процесса – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- проверка корректности расчетов;\n- согласование оценочных бланков;\n- подготовка приказа;\n- передача приказа и итоговых данных в бухгалтерию.\n\n&nbsp;\n"
+   "content": "1.1. Департамент электронной коммерции и Департамент продаж – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- получение данных по фактическим продажам (продажи, инкассация, QR-канал)\n- проверка и сопоставление данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n \n\n1.2. Подразделения, не связанные с продажами – 1 рабочий день\n\nВыполняемые действия:\n\n- получение табеля учета рабочего времени\n- проверка данных;\n- внесение качественного показателя по каждому сотруднику;\n- при отсутствии служебной записки от руководителя об удержании устанавливается значение 100%;\n- заполнение оценочных бланков для расчета переменной части заработной платы;\n\n1.3. Завершение процесса – 0,5 рабочего дня\n\nВыполняемые действия:\n\n- проверка корректности расчетов;\n- согласование оценочных бланков;\n- подготовка приказа;\n- передача приказа и итоговых данных в бухгалтерию.\n\n&nbsp;\n",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P2&type=T2_task&p_title=%D0%A0%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%20%28%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%87%D0%B0%D1%81%D1%82%D1%8C%20%D0%B7%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%29&p_content=1.1.%20%D0%94%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%94%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%E2%80%93%200%2C5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%0A%0A%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%3A%0A%0A-%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D1%8F%20%D1%83%D1%87%D0%B5%D1%82%D0%B0%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%0A-%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BF%D0%BE%20%D1%84%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%BC%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%D0%BC%20%28%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8%2C%20%D0%B8%D0%BD%D0%BA%D0%B0%D1%81%D1%81%D0%B0%D1%86%D0%B8%D1%8F%2C%20QR-%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%29%0A-%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B8%20%D1%81%D0%BE%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%20%D0%BF%D0%BE%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D1%83%3B%0A-%20%D0%BF%D1%80%D0%B8%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B8%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BE%D1%82%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D0%BE%D0%B1%20%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B2%D0%BB%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20100%25%3B%0A-%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%87%D0%B0%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%3B%0A%0A%C2%A0%0A%0A1.2.%20%D0%9F%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%BD%D0%B5%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%D0%BC%D0%B8%20%E2%80%93%201%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%0A%0A%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%3A%0A%0A-%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D1%8F%20%D1%83%D1%87%D0%B5%D1%82%D0%B0%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%0A-%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%20%D0%BF%D0%BE%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D1%83%3B%0A-%20%D0%BF%D1%80%D0%B8%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B8%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BE%D1%82%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D0%BE%D0%B1%20%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B2%D0%BB%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20100%25%3B%0A-%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%87%D0%B0%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%3B%0A%0A1.3.%20%D0%97%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%20%E2%80%93%200%2C5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%0A%0A%D0%92%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%3A%0A%0A-%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%BE%D0%B2%3B%0A-%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%B1%D0%BB%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%3B%0A-%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%B0%3B%0A-%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%B0%20%D0%B8%20%D0%B8%D1%82%D0%BE%D0%B3%D0%BE%D0%B2%D1%8B%D1%85%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20%D0%B1%D1%83%D1%85%D0%B3%D0%B0%D0%BB%D1%82%D0%B5%D1%80%D0%B8%D1%8E.%0A%0A%26nbsp%3B%0A&p_freq=1&p_time=1000&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   }
   },
   {
    "id": "recgAWFvctx68jo3E",
    "title": "Изменение должностных инструкций",
    "total_hours": 10,
    "thread_key": "SZ_LAB_1_HR_1-P5",
-   "content": "Это следующий шаг (или ответвление) проблемы с изменением штатного расписания и оргструктупы - часто бывает, что меняется не функционал должности, а ее название. Или должность переносится в другое подразделение. Приходится вносить вручную изменения в ДИ, согласовыать и переподписывать \n"
+   "content": "Это следующий шаг (или ответвление) проблемы с изменением штатного расписания и оргструктупы - часто бывает, что меняется не функционал должности, а ее название. Или должность переносится в другое подразделение. Приходится вносить вручную изменения в ДИ, согласовыать и переподписывать \n",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P5&type=T2_task&p_title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%BD%D1%8B%D1%85%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9&p_content=%D0%AD%D1%82%D0%BE%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D1%88%D0%B0%D0%B3%20%28%D0%B8%D0%BB%D0%B8%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%29%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B%20%D1%81%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D0%BF%D1%8B%20-%20%D1%87%D0%B0%D1%81%D1%82%D0%BE%20%D0%B1%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%2C%20%D1%87%D1%82%D0%BE%20%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%BD%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C%20%D0%B0%20%D0%B5%D0%B5%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%98%D0%BB%D0%B8%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.%20%D0%9F%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%81%D1%8F%20%D0%B2%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%8C%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%94%D0%98%2C%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D1%8B%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%20%0A&p_freq=1&p_time=600&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   }
   },
   {
    "id": "recqiA5elR53X2eJs",
    "title": "Внесение изменений в штатное расписание и оргструктуру ",
    "total_hours": 9,
    "thread_key": "SZ_LAB_1_HR_1-P1",
-   "content": "**1.       Внесение изменений в штатное расписание и орг структуру (ежемесячно, от одного до нескольких раз в месяц, от одного часа каждый раз):**\n\n- внесение данных из служебной записки в 1С (вручную);\n- внесение данных из служебной записки в штатное расписание (вручную, файл exel);\n- внесение данных из штатного расписания в оргструктуру (вручную, файлы могут быть разные);\n\nПроблема – повторяющиеся действия, отсутствие автоматизации.\n\nЦель – возможность внесения данных в один источник (1 С) и автоматическая выгрузка в ШР и оргструтуру)\n"
+   "content": "**1.       Внесение изменений в штатное расписание и орг структуру (ежемесячно, от одного до нескольких раз в месяц, от одного часа каждый раз):**\n\n- внесение данных из служебной записки в 1С (вручную);\n- внесение данных из служебной записки в штатное расписание (вручную, файл exel);\n- внесение данных из штатного расписания в оргструктуру (вручную, файлы могут быть разные);\n\nПроблема – повторяющиеся действия, отсутствие автоматизации.\n\nЦель – возможность внесения данных в один источник (1 С) и автоматическая выгрузка в ШР и оргструтуру)\n",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P1&type=T2_task&p_title=%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20&p_content=%2A%2A1.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D1%80%D0%B3%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20%28%D0%B5%D0%B6%D0%B5%D0%BC%D0%B5%D1%81%D1%8F%D1%87%D0%BD%D0%BE%2C%20%D0%BE%D1%82%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85%20%D1%80%D0%B0%D0%B7%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%2C%20%D0%BE%D1%82%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%87%D0%B0%D1%81%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D1%80%D0%B0%D0%B7%29%3A%2A%2A%0A%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%B2%201%D0%A1%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%29%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%B2%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%2C%20%D1%84%D0%B0%D0%B9%D0%BB%20exel%29%3B%0A-%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D1%88%D1%82%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%83%20%28%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%2C%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D0%B1%D1%8B%D1%82%D1%8C%20%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5%29%3B%0A%0A%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0%20%E2%80%93%20%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D1%8F%D1%8E%D1%89%D0%B8%D0%B5%D1%81%D1%8F%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%2C%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8.%0A%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%E2%80%93%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%20%281%20%D0%A1%29%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%D0%B2%20%D0%A8%D0%A0%20%D0%B8%20%D0%BE%D1%80%D0%B3%D1%81%D1%82%D1%80%D1%83%D1%82%D1%83%D1%80%D1%83%29%0A&p_freq=3&p_time=60&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   }
   },
   {
    "id": "recYgyqc0N2YLua5B",
    "title": "Подготовка шаблонов приказов для MetaDoc ",
    "total_hours": 5,
    "thread_key": "SZ_LAB_1_HR_1-P4",
-   "content": "Подготовка шаблонов приказов для MetaDoc  на двух языках с хэштегами для привязки данных из ЗУП и других источников. Сейчас вручную отсеиваю все данные, которые могут заменяться, хочу это автоматизировать.\n"
+   "content": "Подготовка шаблонов приказов для MetaDoc  на двух языках с хэштегами для привязки данных из ЗУП и других источников. Сейчас вручную отсеиваю все данные, которые могут заменяться, хочу это автоматизировать.\n",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&thread_key=SZ_LAB_1_HR_1-P4&type=T2_task&p_title=%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20MetaDoc%20&p_content=%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20MetaDoc%20%20%D0%BD%D0%B0%20%D0%B4%D0%B2%D1%83%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%D1%85%20%D1%81%20%D1%85%D1%8D%D1%88%D1%82%D0%B5%D0%B3%D0%B0%D0%BC%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%B8%D0%B2%D1%8F%D0%B7%D0%BA%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B7%20%D0%97%D0%A3%D0%9F%20%D0%B8%20%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D1%85%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2.%20%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BE%D1%82%D1%81%D0%B5%D0%B8%D0%B2%D0%B0%D1%8E%20%D0%B2%D1%81%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%8D%D1%82%D0%BE%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C.%0A&p_freq=5&p_time=60&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   }
   }
  ]
 }
