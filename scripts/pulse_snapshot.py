@@ -16,7 +16,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lab_links import add_prefill, step_links  # noqa: E402
+from lab_links import add_prefill, report_dropped, step_links  # noqa: E402
 
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
@@ -252,6 +252,7 @@ def main():
         print(f"{gname.get(gid,''):<18} {name:<26} → {tok}.json  (threads={len(threads)}, state={snap['status_light']['state']})")
 
     print(f"\nwritten: {written} per-participant snapshots → pulse/data/")
+    report_dropped()
 
 
 if __name__ == "__main__":

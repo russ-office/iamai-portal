@@ -22,7 +22,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lab_links import add_prefill, step_links  # noqa: E402
+from lab_links import add_prefill, report_dropped, step_links  # noqa: E402
 
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
@@ -278,6 +278,7 @@ def main():
     (OUT_DIR / "_index.json").write_text(
         json.dumps({"generated_at": now, "groups": index}, ensure_ascii=False, indent=1),
         encoding="utf-8")
+    report_dropped()
 
 
 if __name__ == "__main__":

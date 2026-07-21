@@ -43,6 +43,16 @@ def strip_author(url):
     return head + ("?" + "&".join(keep) if keep else "")
 
 
+# Потолок длины ссылки. 2000 — практический предел, за которым GET начинают резать
+# прокси/браузеры; берём запас и держим 1800. Решение M-042 (Ruslan делегировал число).
+# Правило: текст НИКОГДА не режем — обрезок участник сохранит и не заметит подмены.
+# Вместо этого выкидываем целые поля: сперва самые длинные, p_title держим всегда
+# (он — якорь узнавания «это моя запись»). Выкинутое печатаем в лог, молча не теряем.
+URL_LIMIT = 1800
+
+dropped_log = []
+
+
 def add_prefill(url, f):
     """url = формульная ссылка Airtable, f = fields артефакта-источника."""
     url = strip_author(url)
@@ -56,8 +66,40 @@ def add_prefill(url, f):
     if not p:
         return url
     sep = "&" if "?" in url else "?"
-    # quote_via=quote → пробел как %20, а не '+' (Fillout не всегда декодирует '+')
-    return url + sep + urllib.parse.urlencode(p, quote_via=urllib.parse.quote)
+
+    def build(params):
+        # quote_via=quote → пробел как %20, а не '+' (Fillout не всегда декодирует '+')
+        return url + sep + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+
+    full = build(p)
+    if len(full) <= URL_LIMIT:
+        return full
+
+    # не влезает: держим p_title, остальные добавляем от коротких к длинным, пока лезут
+    keep = {k: v for k, v in p.items() if k == "p_title"}
+    rest = sorted(((k, v) for k, v in p.items() if k != "p_title"), key=lambda kv: len(kv[1]))
+    dropped = []
+    for k, v in rest:
+        trial = dict(keep, **{k: v})
+        if len(build(trial)) <= URL_LIMIT:
+            keep = trial
+        else:
+            dropped.append(k)
+    out = build(keep)
+    if len(out) > URL_LIMIT:  # даже один p_title не влез — честнее вернуть ссылку без значений
+        dropped = list(p)
+        out = url
+    dropped_log.append((f.get("artifact_key") or f.get("thread_key") or "?", len(full), dropped))
+    return out
+
+
+def report_dropped():
+    """Печатает, у каких артефактов prefill урезан. Тихий обрез = ложное «всё доехало»."""
+    if not dropped_log:
+        return
+    print(f"\nprefill: {len(dropped_log)} ссылок длиннее {URL_LIMIT} симв. — поля выкинуты целиком (текст не резан):")
+    for key, full_len, dropped in sorted(dropped_log, key=lambda x: -x[1]):
+        print(f"  {key:<28} {full_len:>6} симв. → выкинуто: {', '.join(dropped) or '—'}")
 
 
 def step_links(f):
