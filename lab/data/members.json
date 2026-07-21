@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21T11:20:13+05:00",
+ "generated_at": "2026-07-21T13:29:20+05:00",
  "groups": {
   "recBoN3ZsXbY7AAGn": {
    "name": "SZ_LAB_IT",
@@ -12,6 +12,12 @@
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_2-C1",
    "threads": 10
+  },
+  "recT5FrmxKKm27NIA": {
+   "name": "SZ_LAB_1_HR_3",
+   "client": "recTHD8qGCMvvoznH",
+   "cycle": "SZ_LAB_1_HR_3-C1",
+   "threads": 3
   },
   "rech5SFuPyuwYAdJy": {
    "name": "SZ_LAB_Ecom",
@@ -35,7 +41,7 @@
    "name": "SZ_LAB_1_HR_1",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_1-C1",
-   "threads": 5
+   "threads": 2
   },
   "recq40h3l2aTVnge5": {
    "name": "SZ_LAB_1_CorpGov",
@@ -88,7 +94,7 @@
    "recmJ5pNhqkWX05Vi"
   ],
   "57f9a9278554c4250216c84e5c7a01c13df3a17b4fd4cb2b38c16317fcfa7c23": [
-   "recmJ5pNhqkWX05Vi"
+   "recT5FrmxKKm27NIA"
   ],
   "b316b00061fee73ea0a0accf716533b604679348f39b96db2c907b12ca6ccce1": [
    "rechQNZDU1nxPz1RH"

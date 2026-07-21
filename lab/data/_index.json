@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21T11:20:13+05:00",
+ "generated_at": "2026-07-21T13:29:20+05:00",
  "groups": [
   {
    "id": "recBoN3ZsXbY7AAGn",
@@ -14,6 +14,13 @@
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_2-C1",
    "threads": 10
+  },
+  {
+   "id": "recT5FrmxKKm27NIA",
+   "group": "SZ_LAB_1_HR_3",
+   "client": "recTHD8qGCMvvoznH",
+   "cycle": "SZ_LAB_1_HR_3-C1",
+   "threads": 3
   },
   {
    "id": "rech5SFuPyuwYAdJy",
@@ -41,7 +48,7 @@
    "group": "SZ_LAB_1_HR_1",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_1-C1",
-   "threads": 5
+   "threads": 2
   },
   {
    "id": "recq40h3l2aTVnge5",
