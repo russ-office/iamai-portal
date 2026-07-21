@@ -24,6 +24,22 @@
   function avatar(name, size) { var fs = Math.round(size * 0.36); return '<span class="c-avatar" role="img" aria-label="' + esc(name) + '" style="width:' + size + 'px;height:' + size + 'px;font-size:' + fs + 'px">' + esc(initials(name)) + '</span>'; }
   function dot(state, label) { return '<span class="c-status-dot" data-state="' + esc(state) + '" role="img" aria-label="' + esc(label) + '"></span>'; }
 
+  // Выжимка для карточки: снимаем markdown-разметку и режем по границе слова.
+  // Режем ТОЛЬКО для показа — в форму и в базу всегда едет полный текст.
+  function excerpt(s, max) {
+    var t = String(s == null ? "" : s)
+      .replace(/&nbsp;/g, " ")
+      .replace(/^#{1,6}\s*/gm, "")        // заголовки
+      .replace(/[*_`>]+/g, "")            // выделения и цитаты
+      .replace(/^\s*[-–—]\s+/gm, "· ")    // списки
+      .replace(/\s+/g, " ")
+      .trim();
+    if (t.length <= max) return t;
+    var cut = t.slice(0, max);
+    var sp = cut.lastIndexOf(" ");
+    return (sp > max * 0.6 ? cut.slice(0, sp) : cut) + "…";
+  }
+
   // ИНВАРИАНТ РЕЛЬСА (runbook_lab_delivery_rail): фронт НИКОГДА не собирает ссылку
   // на форму сам. Голый адрес формы уходит без client/group/cycle/type/thread_key →
   // сабмит рождает мусорный тред, и это тихо: форма говорит «спасибо», метрика не считается.
@@ -238,7 +254,9 @@
           return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="c-chip">' + esc(b.thread_key) + '</span></div>' +
             '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
-            '<p class="p-backlog-card__body">' + esc(b.content) + '</p>' +
+            // Карточка = название + часы + выжимка. Полный текст живёт в форме, не здесь:
+            // стена markdown-а ломала вёрстку карточки (улов Ruslan, M-042).
+            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 180)) + '</p>' +
             (formLink((b.links || {}).take)
               ? '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '">редактировать →</button></div>'
               : '') +
