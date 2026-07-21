@@ -21,24 +21,17 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lab_links import add_prefill, step_links  # noqa: E402
+
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
 ALMATY = timezone(timedelta(hours=5))
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "lab" / "data"
 
-# Prefill: параметры вопросов в форме ЗАДАЧИ. Включать только после того,
-# как в Fillout каждому вопросу задан URL-параметр (см. runbook §5).
-PREFILL = os.environ.get("LAB_PREFILL", "0") == "1"
-PREFILL_MAP = {
-    "p_title": "title",
-    "p_content": "content",
-    "p_freq": "freq_per_period",
-    "p_time": "time_per_unit_min",
-    "p_emp": "employees",
-    "p_calc": "calc_notes",
-    "p_verif": "verification_source",
-}
+# Prefill и сборка ссылок — общий модуль lab_links (единственное место в репо).
+# Гейт LAB_PREFILL, PREFILL_MAP, strip_author, add_prefill живут там.
 
 STAGE_LABEL = {
     "T0_function_map": "Карта функций",
@@ -84,32 +77,6 @@ def first(v):
     return v[0] if isinstance(v, list) and v else (v if not isinstance(v, list) else None)
 
 
-def strip_author(url):
-    """Убрать author_email из формульной ссылки: автор строки = тот, кто её создаёт СЕЙЧАС,
-    а не автор идеи. Портал подставит свой email на клиенте."""
-    if not url:
-        return url
-    head, _, qs = url.partition("?")
-    if not qs:
-        return url
-    keep = [p for p in qs.split("&") if p and not p.startswith("author_email=")]
-    return head + ("?" + "&".join(keep) if keep else "")
-
-
-def add_prefill(url, f):
-    url = strip_author(url)
-    if not (PREFILL and url):
-        return url
-    p = {}
-    for param, field in PREFILL_MAP.items():
-        val = f.get(field)
-        if val not in (None, "", []):
-            p[param] = str(val)
-    if not p:
-        return url
-    sep = "&" if "?" in url else "?"
-    # quote_via=quote → пробел как %20, а не '+' (Fillout не всегда декодирует '+')
-    return url + sep + urllib.parse.urlencode(p, quote_via=urllib.parse.quote)
 
 
 def build_threads(rows):
@@ -160,13 +127,7 @@ def build_threads(rows):
             "hours_month": hf.get("total_hours") or 0,
             "stage": STAGE_LABEL.get(lf.get("type"), lf.get("type") or "—"),
             "stage_code": lf.get("type") or "",
-            "links": {
-                "take": add_prefill(hf.get("url_take_T2"), hf),
-                "research": add_prefill(hf.get("url_research_T3"), hf),
-                "hypothesis": add_prefill(hf.get("url_hypothesis_T4"), hf),
-                "prototype": add_prefill(hf.get("url_prototype_T5"), hf),
-                "prd": add_prefill(hf.get("url_prd_T7"), hf),
-            },
+            "links": step_links(hf),
             "prototypes": protos,
         })
     out.sort(key=lambda t: (-(t["hours_month"] or 0), t["thread_key"]))

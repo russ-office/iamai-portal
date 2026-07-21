@@ -15,6 +15,9 @@ import json, os, sys, urllib.parse, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lab_links import add_prefill, step_links  # noqa: E402
+
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
 ALMATY = timezone(timedelta(hours=5))
@@ -80,10 +83,16 @@ def user_threads(arts):
         head = next((f for f in cur_sorted if f.get("type") in ("T1_idea", "T0_function_map")), cur_sorted[0])
         last = cur_sorted[-1]
         out.append({
+            "thread_key": tk,
             "thread": head.get("title") or tk,
             "progress": stage_progress(last.get("type")),
             "hours": head.get("total_hours") or 0,
             "stage": STAGE_LABEL.get(last.get("type"), last.get("type") or "—"),
+            # ссылки собирает рельс (lab_links), фронт их только открывает
+            "links": step_links(head),
+            "prototypes": [{"artifact_key": f.get("artifact_key"),
+                            "url_test": add_prefill(f.get("url_test_T6"), f)}
+                           for f in cur_sorted if f.get("type") == "T5_prototype"],
         })
     out.sort(key=lambda t: (-(t["hours"] or 0), t["thread"]))
     return out
@@ -166,7 +175,9 @@ def main():
                 out.append({"id": r["id"], "title": f.get("title") or f.get("thread_key") or "—",
                             "total_hours": f.get("total_hours") or 0,
                             "thread_key": f.get("thread_key") or "",
-                            "content": f.get("content") or ""})
+                            "content": f.get("content") or "",
+                            # готовые ссылки со значениями — фронт свои не собирает
+                            "links": step_links(f)})
         out.sort(key=lambda b: -(b["total_hours"] or 0))
         return out
 
@@ -220,6 +231,8 @@ def main():
             "today": today.isoformat(),
             "sprint_no": (cyc["fields"].get("cycle_no") if cyc else 1) or 1,
             "subject": {"id": uid, "name": name, "group": gname.get(gid, ""), "client": "SZ"},
+            # «Новая проблема» = чистая форма бэклога с hidden client/group/cycle (без prefill)
+            "url_backlog": (cyc or {}).get("fields", {}).get("url_backlog_T1", ""),
             "status_light": status_light(dates, today),
             "events": events,
             "tasks": [],  # LabTasks пока пусты в базе — деградирует в c-empty

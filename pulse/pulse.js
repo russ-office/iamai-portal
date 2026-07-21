@@ -24,8 +24,11 @@
   function avatar(name, size) { var fs = Math.round(size * 0.36); return '<span class="c-avatar" role="img" aria-label="' + esc(name) + '" style="width:' + size + 'px;height:' + size + 'px;font-size:' + fs + 'px">' + esc(initials(name)) + '</span>'; }
   function dot(state, label) { return '<span class="c-status-dot" data-state="' + esc(state) + '" role="img" aria-label="' + esc(label) + '"></span>'; }
 
-  var FILLOUT_BACKLOG = "https://iamai.fillout.com/t/xnyBgL499Qus"; // Форма 1 · Бэклог (T0/T1)
-  var FILLOUT_TASK    = "https://iamai.fillout.com/t/8RtZLWzrveus"; // Форма 2 · Задача/Решение (T2–T7)
+  // ИНВАРИАНТ РЕЛЬСА (runbook_lab_delivery_rail): фронт НИКОГДА не собирает ссылку
+  // на форму сам. Голый адрес формы уходит без client/group/cycle/type/thread_key →
+  // сабмит рождает мусорный тред, и это тихо: форма говорит «спасибо», метрика не считается.
+  // Все ссылки приходят готовыми из снапшота (scripts/lab_links.py). Нет ссылки — нет кнопки.
+  function formLink(url) { return typeof url === "string" && url ? url : ""; }
 
   // Navigation exactly as the spec enumerates it. active → its page; soon → not a link.
   var NAV = [
@@ -236,7 +239,9 @@
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="c-chip">' + esc(b.thread_key) + '</span></div>' +
             '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
             '<p class="p-backlog-card__body">' + esc(b.content) + '</p>' +
-            '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '" data-title="' + esc(b.title) + '">редактировать →</button></div>' +
+            (formLink((b.links || {}).take)
+              ? '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '">редактировать →</button></div>'
+              : '') +
           '</div>';
         }).join("") + '</div>';
 
@@ -248,9 +253,13 @@
         '</div>' + cards +
       '</div>';
 
-    // edit → same right-drawer write-path as tasks (opens the backlog form, not a new tab)
+    // edit → same right-drawer write-path as tasks. Ссылка берётся из снапшота:
+    // она несёт hidden-принадлежность И значения (p_*), чтобы человек видел, что писал.
     body.querySelectorAll("[data-edit-backlog]").forEach(function (btn) {
-      btn.addEventListener("click", function () { openDrawer("Редактировать проблему", btn.getAttribute("data-title") || "Бэклог", FILLOUT_BACKLOG); });
+      var b = D.backlog.filter(function (x) { return x.id === btn.getAttribute("data-edit-backlog"); })[0];
+      var src = b && formLink((b.links || {}).take);
+      if (!src) return;
+      btn.addEventListener("click", function () { openDrawer("Редактировать проблему", b.title || "Бэклог", src); });
     });
   }
 
@@ -375,7 +384,7 @@
         '<div class="c-drawer__body"><iframe class="c-drawer__iframe" id="p-drawer-iframe" title="Форма" data-src=""></iframe></div>' +
         '<div class="c-drawer__foot">' +
           '<button class="c-btn is-ghost" id="p-drawer-cancel">Закрыть</button>' +
-          '<a class="c-btn is-primary" id="p-drawer-open" href="' + FILLOUT_TASK + '" target="_blank" rel="noreferrer">Открыть форму</a>' +
+          '<a class="c-btn is-primary" id="p-drawer-open" href="#" target="_blank" rel="noreferrer">Открыть форму</a>' +
         '</div>' +
       '</aside>';
     while (wrap.firstChild) document.body.appendChild(wrap.firstChild);
@@ -403,7 +412,10 @@
     body.querySelectorAll("[data-task]").forEach(function (row) {
       var t = D.tasks.filter(function (x) { return x.id === row.getAttribute("data-task"); })[0];
       if (!t) return;
-      function open() { openDrawer(U.taskLabel(t.status), t.title, FILLOUT_TASK); }
+      // У LabTasks своей формы нет (задача ≠ артефакт). Ссылка появится в снапшоте — откроем её.
+      var src = formLink(t.url);
+      if (!src) return;
+      function open() { openDrawer(U.taskLabel(t.status), t.title, src); }
       row.addEventListener("click", open);
       row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
     });
@@ -431,7 +443,10 @@
       root.innerHTML = buildShell(view, metaFor(view, D), D);
       var body = document.getElementById("p-body");
       var addBtn = document.getElementById("p-add-problem");
-      if (addBtn) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", FILLOUT_BACKLOG); });
+      // «Новая проблема» = url_backlog_T1 текущего цикла (hidden client/group/cycle, без prefill).
+      var newBacklog = formLink(D.url_backlog);
+      if (addBtn && newBacklog) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", newBacklog); });
+      else if (addBtn) addBtn.setAttribute("disabled", "disabled");
       if (view === "person") renderPerson(body, D);
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);
