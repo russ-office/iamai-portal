@@ -1,12 +1,12 @@
 {
  "scope": "person",
- "generated_at": "2026-07-22T14:05:15+05:00",
+ "generated_at": "2026-07-22T15:59:34+05:00",
  "today": "2026-07-22",
  "sprint_no": 1,
  "subject": {
   "id": "recCuAZ2AfCU0Bmdn",
   "name": "Мөлдір Атамкулова",
-  "group": "SZ_LAB_Sales",
+  "group": "SZ_LAB_1_3_Sales",
   "client": "SZ"
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=rectNv6ECSGAupr7D&type=T1_idea&author_email=",
@@ -29,7 +29,7 @@
  "profile": {
   "name": "Мөлдір Атамкулова",
   "role": "",
-  "group": "SZ_LAB_Sales",
+  "group": "SZ_LAB_1_3_Sales",
   "org": "SZ",
   "skills": [],
   "work_style": "",

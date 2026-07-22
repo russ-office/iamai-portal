@@ -1,8 +1,8 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-22T14:05:13+05:00",
+ "generated_at": "2026-07-22T15:59:33+05:00",
  "kpi": {
-  "groups": 9,
+  "groups": 10,
   "people": 15,
   "threads": 26,
   "hours_month": 388.2,
@@ -10,7 +10,7 @@
  },
  "groups": [
   {
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "group_id": "rechQNZDU1nxPz1RH",
    "cycle": "SZ_LAB_1_Acc-C1",
    "threads": 5,
@@ -18,7 +18,7 @@
    "hours_month": 154
   },
   {
-   "group": "SZ_LAB_1_HR_1",
+   "group": "SZ_LAB_1_7_HR",
    "group_id": "recmJ5pNhqkWX05Vi",
    "cycle": "SZ_LAB_1_HR_1-C1",
    "threads": 2,
@@ -26,7 +26,7 @@
    "hours_month": 116
   },
   {
-   "group": "SZ_LAB_1_HR_2",
+   "group": "SZ_LAB_1_6_HR",
    "group_id": "recJTpyGqmXv0brvo",
    "cycle": "SZ_LAB_1_HR_2-C1",
    "threads": 10,
@@ -34,7 +34,7 @@
    "hours_month": 73.1
   },
   {
-   "group": "SZ_LAB_1_HR_3",
+   "group": "SZ_LAB_1_10_HR",
    "group_id": "recT5FrmxKKm27NIA",
    "cycle": "SZ_LAB_1_HR_3-C1",
    "threads": 3,
@@ -42,7 +42,7 @@
    "hours_month": 24
   },
   {
-   "group": "SZ_LAB_IT",
+   "group": "SZ_LAB_1_4_IT",
    "group_id": "recBoN3ZsXbY7AAGn",
    "cycle": "SZ_LAB_IT-C1",
    "threads": 4,
@@ -50,7 +50,7 @@
    "hours_month": 13.8
   },
   {
-   "group": "SZ_LAB_Ecom",
+   "group": "SZ_LAB_1_5_Ecom",
    "group_id": "rech5SFuPyuwYAdJy",
    "cycle": "SZ_LAB_Ecom-C1",
    "threads": 2,
@@ -58,7 +58,15 @@
    "hours_month": 7.3
   },
   {
-   "group": "SZ_LAB_Sales",
+   "group": "SZ_LAB_1_9_Acc",
+   "group_id": "recOKKQS1JJRlAAAi",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  },
+  {
+   "group": "SZ_LAB_1_3_Sales",
    "group_id": "reciKzjGJVFrhLmBo",
    "cycle": "SZ_LAB_Sales-C1",
    "threads": 0,
@@ -66,7 +74,7 @@
    "hours_month": 0
   },
   {
-   "group": "SZ_LAB_1_CorpGov",
+   "group": "SZ_LAB_1_1_CorpGov",
    "group_id": "recq40h3l2aTVnge5",
    "cycle": "SZ_LAB_1_CorpGov-C1",
    "threads": 0,
@@ -74,7 +82,7 @@
    "hours_month": 0
   },
   {
-   "group": "SZ_LAB_1_Adm",
+   "group": "SZ_LAB_1_2_Adm",
    "group_id": "rectNb6K7IojGTGdS",
    "cycle": "SZ_LAB_1_Adm-C1",
    "threads": 0,
@@ -88,84 +96,84 @@
  "top": [
   {
    "title": "ежедневный запуск обработок по загрузке/выгрузке данных в 1с БК",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "hours_month": 90,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_Acc-P9"
   },
   {
    "title": "Воронка найма ",
-   "group": "SZ_LAB_1_HR_1",
+   "group": "SZ_LAB_1_7_HR",
    "hours_month": 66,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_1-P3"
   },
   {
    "title": "Расчет оценочных бланков (переменная часть заработной платы)",
-   "group": "SZ_LAB_1_HR_1",
+   "group": "SZ_LAB_1_7_HR",
    "hours_month": 50,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_1-P2"
   },
   {
    "title": "ежедневный отчет по дебиторской задолженности",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "hours_month": 40,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_Acc-P5"
   },
   {
    "title": "Регулярный контент для сотрудников",
-   "group": "SZ_LAB_1_HR_2",
+   "group": "SZ_LAB_1_6_HR",
    "hours_month": 36,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_2-P7"
   },
   {
    "title": "Часто повторяющиеся вопросы отдела кадров",
-   "group": "SZ_LAB_1_HR_2",
+   "group": "SZ_LAB_1_6_HR",
    "hours_month": 20,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_2-P10"
   },
   {
    "title": "сверка учета, ЦОЛИ, налогов",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "hours_month": 19,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_Acc-P6"
   },
   {
    "title": "Экспертиза ЛБ",
-   "group": "SZ_LAB_IT",
+   "group": "SZ_LAB_1_4_IT",
    "hours_month": 10.416666666666666,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_IT-P1"
   },
   {
    "title": "Изменение должностных инструкций",
-   "group": "SZ_LAB_1_HR_3",
+   "group": "SZ_LAB_1_10_HR",
    "hours_month": 10,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_1-P5"
   },
   {
    "title": "Внесение изменений в штатное расписание и оргструктуру ",
-   "group": "SZ_LAB_1_HR_3",
+   "group": "SZ_LAB_1_10_HR",
    "hours_month": 9,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_1-P1"
   },
   {
    "title": "HR-аналитика вручную",
-   "group": "SZ_LAB_1_HR_2",
+   "group": "SZ_LAB_1_6_HR",
    "hours_month": 5,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_2-P9"
   },
   {
    "title": "Подготовка шаблонов приказов для MetaDoc ",
-   "group": "SZ_LAB_1_HR_3",
+   "group": "SZ_LAB_1_10_HR",
    "hours_month": 5,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_1-P4"
@@ -174,84 +182,84 @@
  "board": [
   {
    "email": "ahlystunov@szhuldyz.kz",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "ideas": 1,
    "hours_month": 90,
    "rows": 1
   },
   {
    "email": "plogacheva@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_2",
+   "group": "SZ_LAB_1_6_HR",
    "ideas": 10,
    "hours_month": 73.08333333333333,
    "rows": 10
   },
   {
    "email": "agabdullina@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_1",
+   "group": "SZ_LAB_1_7_HR",
    "ideas": 1,
    "hours_month": 66,
    "rows": 1
   },
   {
    "email": "nmukhpulova@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_1",
+   "group": "SZ_LAB_1_7_HR",
    "ideas": 1,
    "hours_month": 50,
    "rows": 1
   },
   {
    "email": "lnikulina@szhuldyz.kz",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "ideas": 1,
    "hours_month": 40,
    "rows": 1
   },
   {
    "email": "vkoval@szhuldyz.kz",
-   "group": "SZ_LAB_1_HR_3",
+   "group": "SZ_LAB_1_10_HR",
    "ideas": 3,
    "hours_month": 24,
    "rows": 3
   },
   {
    "email": "onurmagambetova@sz.kz",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "ideas": 1,
    "hours_month": 19,
    "rows": 1
   },
   {
    "email": "yrudenko@szhuldyz.kz",
-   "group": "SZ_LAB_IT",
+   "group": "SZ_LAB_1_4_IT",
    "ideas": 1,
    "hours_month": 10.416666666666666,
    "rows": 1
   },
   {
    "email": "atsupikova@szhuldyz.kz",
-   "group": "SZ_LAB_1_Acc",
+   "group": "SZ_LAB_1_8_Acc",
    "ideas": 1,
    "hours_month": 5,
    "rows": 1
   },
   {
    "email": "rsidelnikov@szhuldyz.kz",
-   "group": "SZ_LAB_Ecom",
+   "group": "SZ_LAB_1_5_Ecom",
    "ideas": 1,
    "hours_month": 4,
    "rows": 1
   },
   {
    "email": "kson@szhuldyz.kz",
-   "group": "SZ_LAB_IT",
+   "group": "SZ_LAB_1_4_IT",
    "ideas": 1,
    "hours_month": 3.3333333333333335,
    "rows": 1
   },
   {
    "email": "dsavitsky@szhuldyz.kz",
-   "group": "SZ_LAB_Ecom",
+   "group": "SZ_LAB_1_5_Ecom",
    "ideas": 1,
    "hours_month": 3.3333333333333335,
    "rows": 1

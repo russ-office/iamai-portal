@@ -1,0 +1,58 @@
+{
+ "group": "DAN_LAB_1_3",
+ "group_id": "recJgiQEmCVXaNJ7p",
+ "client": "recFZuQiqAJAsyL6U",
+ "cycle": "DAN_LAB_1_3-C1",
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recSXOjdkg8TsEkR4&type=T1_idea&author_email=",
+ "generated_at": "2026-07-22T15:59:33+05:00",
+ "threads": [
+  {
+   "thread_key": "DAN_LAB_1_Intake-P5",
+   "title": "Проверка писем отклонений вертикальных конструкций",
+   "content": "Проверка писем отклонений вертикальных конструкций на наполнение , присутствует всей необходимой информации и значений согласно НТД\n",
+   "author_email": "d.alimov@danpartners.com",
+   "contributors": [
+    "d.alimov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "d.alimov@danpartners.com",
+   "last_at": "2026-07-22 06:40",
+   "hours_month": 4.166666666666667,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recSXOjdkg8TsEkR4&type=T1_idea&thread_key=DAN_LAB_1_Intake-P5&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9%20%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%2C%20%D0%BF%D1%80%D0%B8%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D0%B2%D1%81%D0%B5%D0%B9%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B9%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%20%D0%9D%D0%A2%D0%94%0A&p_freq=50&p_time=5&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recSXOjdkg8TsEkR4&thread_key=DAN_LAB_1_Intake-P5&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9%20%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%2C%20%D0%BF%D1%80%D0%B8%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D0%B2%D1%81%D0%B5%D0%B9%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B9%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%20%D0%9D%D0%A2%D0%94%0A&p_freq=50&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P10",
+   "title": "Проверка листов чертежей",
+   "content": "Проверка элементов чертежа выходящие за границы листа, наслаивание элементов чертежа с друг другом\n",
+   "author_email": "a.kayrbek@danpartners.com",
+   "contributors": [
+    "a.kayrbek@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.kayrbek@danpartners.com",
+   "last_at": "2026-07-22 06:42",
+   "hours_month": 2.5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recSXOjdkg8TsEkR4&type=T1_idea&thread_key=DAN_LAB_1_Intake-P10&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B5%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D0%BB%D0%B8%D1%81%D1%82%D0%B0%2C%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D1%81%20%D0%B4%D1%80%D1%83%D0%B3%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%0A&p_freq=5&p_time=30&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recSXOjdkg8TsEkR4&thread_key=DAN_LAB_1_Intake-P10&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B5%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D0%BB%D0%B8%D1%81%D1%82%D0%B0%2C%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D1%81%20%D0%B4%D1%80%D1%83%D0%B3%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%0A&p_freq=5&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  }
+ ]
+}

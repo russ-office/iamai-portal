@@ -1,18 +1,18 @@
 {
  "scope": "person",
- "generated_at": "2026-07-22T14:05:15+05:00",
+ "generated_at": "2026-07-22T15:59:34+05:00",
  "today": "2026-07-22",
  "sprint_no": 1,
  "subject": {
   "id": "recw8cBPKanoY2OUK",
   "name": "Дмитрий Савицкий",
-  "group": "SZ_LAB_Ecom",
+  "group": "SZ_LAB_1_5_Ecom",
   "client": "SZ"
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&type=T1_idea&author_email=",
  "status_light": {
   "days_idle": 8,
-  "done_7d": 1,
+  "done_7d": 0,
   "state": "bad"
  },
  "events": [
@@ -29,7 +29,7 @@
  "profile": {
   "name": "Дмитрий Савицкий",
   "role": "",
-  "group": "SZ_LAB_Ecom",
+  "group": "SZ_LAB_1_5_Ecom",
   "org": "SZ",
   "skills": [],
   "work_style": "",
@@ -51,6 +51,7 @@
     "hours": 3.3333333333333335,
     "stage": "Проблема",
     "links": {
+     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&type=T1_idea&thread_key=SZ_LAB_Ecom-P2&p_title=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%A1%D0%9C%D0%A1&p_content=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D1%85%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D1%85%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%BC%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D1%83%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2.%20%D0%A1%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D0%B2%D0%BA%D0%BE%D0%B9%20%D0%BF%D0%BE%20%D0%B2%D0%B8%D0%B4%D0%B0%D0%BC%20%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D0%B9%2C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B5%20%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BE%D0%B2%2C%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%80%D0%BE%D0%B7%D1%8B%D0%B3%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%B8%20%D1%82.%D0%B4.%0A&p_freq=20&p_time=5&p_emp=2",
      "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&thread_key=SZ_LAB_Ecom-P2&type=T2_task&p_title=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%A1%D0%9C%D0%A1&p_content=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D1%85%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D1%85%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%BC%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D1%83%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2.%20%D0%A1%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D0%B2%D0%BA%D0%BE%D0%B9%20%D0%BF%D0%BE%20%D0%B2%D0%B8%D0%B4%D0%B0%D0%BC%20%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D0%B9%2C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B5%20%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BE%D0%B2%2C%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%80%D0%BE%D0%B7%D1%8B%D0%B3%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%B8%20%D1%82.%D0%B4.%0A&p_freq=20&p_time=5&p_emp=2",
      "research": null,
      "hypothesis": null,
@@ -87,6 +88,7 @@
    "thread_key": "SZ_LAB_Ecom-P1",
    "content": "### Описание задачи\n\nПостроить систему регулярного отслеживания продаж электронных мгновенных лотерей в разрезе продуктов, сравнивающую фактические показатели с плановыми, показывающую динамику во времени и процент выполнения плана.\n\n**Ключевые метрики:**\n\n- План продаж по каждому продукту (билету/тиражу) на период\n- Факт продаж (количество проданных билетов, GGR/выручка, сумма ставок)\n- % выполнения = Факт / План × 100\n- Динамика: WoW, MoM, YoY, тренд по неделям/месяцам\n- Отклонение (абсолютное и относительное) факт от плана\n\n**Разрезы анализа:**\n\n- По продукту (номинал билета, тип игры, механика)\n- По каналу дистрибуции (терминалы, онлайн, точки продаж, мобильное приложение)\n- По географии (регионы Казахстана, города)\n- По времени (день/неделя/месяц/квартал)\n\n**Типовой выход:** дашборд (например, в Power BI / Excel / Google Data Studio) + регулярная отчётность (ежедневная/еженедельная сводка).\n\n&nbsp;\n\n### Возможные трудности и проблемы\n\n**Данные и источники**\n\n- Разрозненность источников: продажи из терминалов, онлайн-платформы, POS могут лежать в разных системах с разными форматами и частотой выгрузки.\n- Отсутствие единого справочника продуктов (SKU) — один и тот же продукт называется по-разному в разных системах.\n- Задержки и рассинхрон данных: терминалы могут выгружать данные с лагом, что искажает «факт» на текущую дату.\n- Возвраты, аннулированные билеты, технические сбои транзакций — как их учитывать в факте.\n\n**Планирование**\n\n- Отсутствие или низкое качество плана: план часто ставится «сверху» без разбивки по продуктам/каналам, и его не с чем сопоставлять на детальном уровне.\n- Сезонность лотерейного спроса (праздники, выплаты зарплат, крупные джекпоты) — линейный план даёт ложные отклонения.\n- Влияние размера призового фонда/джекпота на продажи — трудно отделить эффект продукта от эффекта текущего джекпота.\n\n**Методология и метрики**\n\n- Что считать «продажей»: сумму ставок (handle), выручку оператора (GGR), количество билетов — разные метрики дают разную картину.\n- Каннибализация между продуктами: запуск нового билета «съедает» продажи старого, и падение факта по продукту не означает провал.\n- Корректное сравнение периодов при разном числе дней/выходных.\n\n**Технические и организационные**\n\n- Ручная сборка отчётов в Excel — трудозатратно, ошибки, невозможность масштабирования; нужна автоматизация выгрузок.\n- Права доступа к данным (финансы, IT, платформа поставщика) — согласование доступа.\n- Актуализация: кто и как часто обновляет данные, кто отвечает за корректность.\n\n**Регуляторные / отраслевые (специфика РК и лотерей)**\n\n- Лотерейный бизнес в Казахстане регулируется (единый оператор, требования к отчётности) — часть данных может быть конфиденциальной или требовать особого обращения.\n- Отчётность перед регулятором может требовать иных форматов/метрик, чем внутренний мониторинг.\n\n**Интерпретация**\n\n- Риск «управления по отклонениям» без причинного анализа: видно, что план не выполнен, но не видно почему (маркетинг, наличие билетов в точках, конкуренция, макроэкономика).\n- Отсутствие бенчмарков — не с чем сравнивать «нормальный» % выполнения.\n\n&nbsp;\n",
    "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&type=T1_idea&thread_key=SZ_LAB_Ecom-P1&p_title=%D0%9C%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0%D0%BC%20%28%D0%BF%D0%BB%D0%B0%D0%BD%2F%D1%84%D0%B0%D0%BA%D1%82%2C%20%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%2C%20%25%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%29&p_freq=4&p_emp=1&p_time=60",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&thread_key=SZ_LAB_Ecom-P1&type=T2_task&p_title=%D0%9C%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0%D0%BC%20%28%D0%BF%D0%BB%D0%B0%D0%BD%2F%D1%84%D0%B0%D0%BA%D1%82%2C%20%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%2C%20%25%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%29&p_freq=4&p_emp=1&p_time=60",
     "research": null,
     "hypothesis": null,
@@ -101,6 +103,7 @@
    "thread_key": "SZ_LAB_Ecom-P2",
    "content": "Создание коротких рекламных сообщений с лимитом по количеству символов. С разбивкой по видам лотерей, сумме главных призов, даты розыгрышей и т.д.\n",
    "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&type=T1_idea&thread_key=SZ_LAB_Ecom-P2&p_title=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%A1%D0%9C%D0%A1&p_content=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D1%85%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D1%85%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%BC%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D1%83%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2.%20%D0%A1%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D0%B2%D0%BA%D0%BE%D0%B9%20%D0%BF%D0%BE%20%D0%B2%D0%B8%D0%B4%D0%B0%D0%BC%20%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D0%B9%2C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B5%20%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BE%D0%B2%2C%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%80%D0%BE%D0%B7%D1%8B%D0%B3%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%B8%20%D1%82.%D0%B4.%0A&p_freq=20&p_time=5&p_emp=2",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recfsRuuB3PAOW9rj&thread_key=SZ_LAB_Ecom-P2&type=T2_task&p_title=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%A1%D0%9C%D0%A1&p_content=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D1%85%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D1%85%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BE%D0%BC%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D1%83%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2.%20%D0%A1%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D0%B2%D0%BA%D0%BE%D0%B9%20%D0%BF%D0%BE%20%D0%B2%D0%B8%D0%B4%D0%B0%D0%BC%20%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D0%B9%2C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B5%20%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BE%D0%B2%2C%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%80%D0%BE%D0%B7%D1%8B%D0%B3%D1%80%D1%8B%D1%88%D0%B5%D0%B9%20%D0%B8%20%D1%82.%D0%B4.%0A&p_freq=20&p_time=5&p_emp=2",
     "research": null,
     "hypothesis": null,

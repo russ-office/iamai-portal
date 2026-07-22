@@ -1,6 +1,6 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-22T14:05:13+05:00",
+ "generated_at": "2026-07-22T15:59:33+05:00",
  "kpi": {
   "groups": 1,
   "people": 0,
@@ -10,7 +10,7 @@
  },
  "groups": [
   {
-   "group": "EVRIKA-BUH-F1",
+   "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
    "threads": 0,
