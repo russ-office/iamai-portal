@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-21T22:42:46+05:00",
- "today": "2026-07-21",
+ "generated_at": "2026-07-22T11:18:58+05:00",
+ "today": "2026-07-22",
  "sprint_no": 1,
  "subject": {
   "id": "recEBfnEqfkzDYOEg",
@@ -11,7 +11,7 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=rectGKGooOWuVG6yB&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 7,
+  "days_idle": 8,
   "done_7d": 1,
   "state": "bad"
  },
@@ -19,8 +19,8 @@
   {
    "id": "rectGKGooOWuVG6yB",
    "title": "SZ_LAB_1_HR_1-C1",
-   "start": "2026-07-21T22:42:46+05:00",
-   "end": "2026-07-21T22:42:46+05:00",
+   "start": "2026-07-22",
+   "end": "2026-08-05",
    "kind": "other",
    "all_day": true
   }
@@ -66,8 +66,8 @@
    0,
    0,
    0,
-   0,
    1,
+   0,
    0,
    0,
    0,
@@ -76,8 +76,8 @@
    0,
    0
   ],
-  "activity_from": "08.07",
-  "activity_to": "21.07"
+  "activity_from": "09.07",
+  "activity_to": "22.07"
  },
  "backlog": [
   {

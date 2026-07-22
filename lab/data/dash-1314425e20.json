@@ -1,5 +1,5 @@
 {
- "client": "Evrika",
+ "client": "DAN Partners",
  "generated_at": "2026-07-22T11:18:56+05:00",
  "kpi": {
   "groups": 1,
@@ -10,9 +10,9 @@
  },
  "groups": [
   {
-   "group": "EVRIKA-BUH-F1",
-   "group_id": "recq4f8g3aLUFXJwi",
-   "cycle": "EVRIKA-BUH-F1-C1",
+   "group": "DAN_LAB_1_Intake",
+   "group_id": "recIS4AAapP5XL737",
+   "cycle": "DAN_LAB_1_Intake-C1",
    "threads": 0,
    "people": 0,
    "hours_month": 0

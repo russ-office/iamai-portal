@@ -1,6 +1,6 @@
 {
  "client": "SZ",
- "generated_at": "2026-07-21T22:42:45+05:00",
+ "generated_at": "2026-07-22T11:18:56+05:00",
  "kpi": {
   "groups": 9,
   "people": 15,
@@ -115,14 +115,14 @@
    "thread_key": "SZ_LAB_1_Acc-P5"
   },
   {
-   "title": "HR 2",
+   "title": "Регулярный контент для сотрудников",
    "group": "SZ_LAB_1_HR_2",
    "hours_month": 36,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_2-P7"
   },
   {
-   "title": "HR 2",
+   "title": "Часто повторяющиеся вопросы отдела кадров",
    "group": "SZ_LAB_1_HR_2",
    "hours_month": 20,
    "stage": "Проблема",
@@ -157,7 +157,7 @@
    "thread_key": "SZ_LAB_1_HR_1-P1"
   },
   {
-   "title": "HR 2",
+   "title": "HR-аналитика вручную",
    "group": "SZ_LAB_1_HR_2",
    "hours_month": 5,
    "stage": "Проблема",
