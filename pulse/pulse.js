@@ -53,6 +53,7 @@
     { id: "overview",    label: "Спринт",      href: "page-overview.html",            state: "active" },
     { id: "calendar",    label: "Календарь",   href: "page-list.html?view=calendar",  state: "active" },
     { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard", state: "active" },
+    { id: "guides",      label: "Инструкции",  href: "page-guides.html",               state: "active" },
     { id: "history",     label: "История",     state: "soon" },
     { id: "library",     label: "Библиотека",  state: "soon" },
     { id: "marketplace", label: "Marketplace", state: "soon" },
@@ -301,6 +302,62 @@
     });
   }
 
+  // ── инструкции ─────────────────────────────────────────────────────────────
+  // Контент лежит в guides.json (не в снапшоте): он одинаков для всех участников
+  // и меняется руками, а не прогоном. Плашки — та же сетка, что у бэклога.
+  // Мини-markdown: ровно то подмножество, которым написаны инструкции. Полноценный
+  // парсер сюда не тянем — это 40 строк против библиотеки в снапшоте на каждой странице.
+  function mdToHtml(src) {
+    var out = [], list = null;
+    String(src || "").split("\n").forEach(function (raw) {
+      var line = raw.trim();
+      function closeList() { if (list) { out.push("</" + list + ">"); list = null; } }
+      if (!line) { closeList(); return; }
+      var inline = esc(line)
+        .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+        .replace(/`([^`]+)`/g, '<code class="p-guide__code">$1</code>');
+      var h = line.match(/^(#{2,3})\s+(.*)$/);
+      if (h) { closeList(); out.push("<h" + h[1].length + ' class="p-guide__h">' + inline.replace(/^#{2,3}\s+/, "") + "</h" + h[1].length + ">"); return; }
+      var ol = line.match(/^\d+\.\s+(.*)$/);
+      if (ol) { if (list !== "ol") { closeList(); out.push("<ol>"); list = "ol"; } out.push("<li>" + inline.replace(/^\d+\.\s+/, "") + "</li>"); return; }
+      if (/^[-–—]\s+/.test(line)) { if (list !== "ul") { closeList(); out.push("<ul>"); list = "ul"; } out.push("<li>" + inline.replace(/^[-–—]\s+/, "") + "</li>"); return; }
+      closeList();
+      out.push("<p>" + inline + "</p>");
+    });
+    if (list) out.push("</" + list + ">");
+    return out.join("");
+  }
+
+  function renderGuides(body) {
+    body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Загружаем…</div></div>';
+    fetch("guides.json?ts=" + Date.now())
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (G) {
+        var cards = (G.guides || []).map(function (g) {
+          return '<div class="c-sheet c-sheet--pad p-backlog-card" role="button" tabindex="0" data-guide="' + esc(g.id) + '">' +
+            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(g.title) + '</span>' +
+            '<span class="c-chip is-quiet">' + esc(g.meta || "") + '</span></div>' +
+            '<p class="p-backlog-card__body">' + esc(g.subtitle || "") + '</p>' +
+            '<div class="p-backlog-card__edit"><button type="button">читать →</button></div>' +
+          '</div>';
+        }).join("");
+        body.innerHTML = '<div class="p-wrap--list">' +
+          '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
+            (G.guides || []).length + ' инструкции · обновлено ' + esc(G.updated || "") + '</span></div>' +
+          '<div class="p-backlog-grid">' + cards + '</div></div>';
+        body.querySelectorAll("[data-guide]").forEach(function (card) {
+          var g = G.guides.filter(function (x) { return x.id === card.getAttribute("data-guide"); })[0];
+          if (!g) return;
+          function open() { openDrawer(g.subtitle || "Инструкция", g.title, null, mdToHtml(g.body)); }
+          card.addEventListener("click", open);
+          card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+        });
+      })
+      .catch(function () {
+        body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Инструкции не загрузились. Обнови страницу.</div></div>';
+      });
+  }
+
   function renderCalendar(body, D) {
     // c-table + view-level sort (as the readme prescribes; sort wired in the view).
     var cols = [
@@ -419,7 +476,10 @@
           '<div class="c-drawer__title-row"><h2 class="c-drawer__title" id="p-drawer-title"></h2>' +
           '<button class="c-drawer__close" id="p-drawer-close" aria-label="Закрыть">✕</button></div>' +
         '</div>' +
-        '<div class="c-drawer__body"><iframe class="c-drawer__iframe" id="p-drawer-iframe" title="Форма" data-src=""></iframe></div>' +
+        '<div class="c-drawer__body">' +
+          '<iframe class="c-drawer__iframe" id="p-drawer-iframe" title="Форма" data-src=""></iframe>' +
+          '<div class="p-guide" id="p-drawer-html" hidden></div>' +
+        '</div>' +
         '<div class="c-drawer__foot">' +
           '<button class="c-btn is-ghost" id="p-drawer-cancel">Закрыть</button>' +
           '<a class="c-btn is-primary" id="p-drawer-open" href="#" target="_blank" rel="noreferrer">Открыть форму</a>' +
@@ -431,13 +491,24 @@
     document.getElementById("p-drawer-cancel").addEventListener("click", closeDrawer);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
   }
-  function openDrawer(eyebrow, title, src) {
+  // src → форма в iframe (write-path); html → текст (инструкции). Ровно одно из двух.
+  function openDrawer(eyebrow, title, src, html) {
     initDrawer();
     document.getElementById("p-drawer-eyebrow").textContent = eyebrow || "";
     document.getElementById("p-drawer-title").textContent = title || "";
     var f = document.getElementById("p-drawer-iframe");
-    if (src && f.src !== src) f.src = src; // lazy-load; keeps offline double-click cheap
-    var ol = document.getElementById("p-drawer-open"); if (ol && src) ol.href = src; // footer fallback = same form
+    var h = document.getElementById("p-drawer-html");
+    var ol = document.getElementById("p-drawer-open");
+    // display, а не атрибут hidden: у .c-btn стоит display:inline-flex и перебивает hidden
+    if (html) {
+      h.innerHTML = html; h.hidden = false; f.style.display = "none";
+      if (ol) ol.style.display = "none";   // «Открыть форму» у текста смысла не имеет
+    } else {
+      h.hidden = true; f.style.display = "";
+      if (ol) ol.style.display = "";
+      if (src && f.src !== src) f.src = src; // lazy-load; keeps offline double-click cheap
+      if (ol && src) ol.href = src;          // footer fallback = same form
+    }
     document.getElementById("p-scrim").classList.add("is-open");
     var d = document.getElementById("p-drawer"); d.classList.add("is-open"); d.setAttribute("aria-hidden", "false");
   }
@@ -468,6 +539,7 @@
       list:        { title: "Бэклог",       eyebrow: "ARTIFACTS · T0 / T1",                                 action: backlogAction() },
       overview:    { title: "Спринт",       eyebrow: "CYCLE " + D.sprint_no + " · " + range,                action: updatedAction(D) },
       calendar:    { title: "Календарь",    eyebrow: "SESSIONS + CYCLES + LABTASKS",                        action: updatedAction(D) },
+      guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
       leaderboard: { title: "Leaderboard",  eyebrow: "ПРОИЗВОДНОЕ · GROUPMEMBERSHIP + ARTIFACTS",           action: updatedAction(D) },
     };
     return M[view] || { title: view, eyebrow: "", action: updatedAction(D) };
@@ -489,6 +561,7 @@
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);
       else if (view === "calendar") renderCalendar(body, D);
+      else if (view === "guides") renderGuides(body);
       else if (view === "leaderboard") renderLeaderboard(body, D);
       else body.innerHTML = '<div class="c-empty">Экран появится позже</div>';
       initDrawer();

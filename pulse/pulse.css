@@ -71,6 +71,15 @@
 .p-backlog-card__edit a:hover,
 .p-backlog-card__edit button:hover { color: var(--action-hover); }
 
+/* Инструкции: читаемый текст в шторке. Ширина держится шторкой, здесь только ритм. */
+.p-guide { overflow-y: auto; font-size: 14px; line-height: 1.6; color: var(--ink); }
+.p-guide p { margin: 0 0 12px; }
+.p-guide ul, .p-guide ol { margin: 0 0 12px; padding-left: 20px; }
+.p-guide li { margin-bottom: 6px; }
+.p-guide__h { font-size: 15px; font-weight: 600; margin: 20px 0 8px; line-height: 1.3; }
+.p-guide h3.p-guide__h { font-size: 14px; color: var(--ink-soft); }
+.p-guide__code { font-family: var(--font-mono); font-size: 12px; background: var(--paper); padding: 2px 6px; border-radius: 4px; }
+
 /* Native select styled as a D1 control inside c-filter-bar (no select component in the kit) */
 .p-select { height: 34px; border: 1px solid var(--line); border-top: 1px solid #fff; border-radius: var(--radius); box-shadow: var(--shadow-d1); background: var(--surface); color: var(--ink); padding: 0 10px; font-family: var(--font-text); font-size: 14px; cursor: pointer; }
 
