@@ -108,8 +108,15 @@ def report_dropped():
 
 
 def step_links(f):
-    """Ссылки «следующий шаг треда» для артефакта-головы, все с prefill."""
+    """Ссылки «следующий шаг треда» для артефакта-головы, все с prefill.
+
+    edit — правка САМОЙ проблемы (форма БЭКЛОГ), остальные — следующий шаг треда.
+    Формула Artifacts.url_edit отдаёт пустую строку, когда у записи нет thread_key:
+    без него сабмит родил бы новую проблему вместо версии. Лучше отсутствие кнопки,
+    чем кнопка, тихо рвущая цепочку версий (M-044).
+    """
     return {
+        "edit": add_prefill(f.get("url_edit"), f),
         "take": add_prefill(f.get("url_take_T2"), f),
         "research": add_prefill(f.get("url_research_T3"), f),
         "hypothesis": add_prefill(f.get("url_hypothesis_T4"), f),
