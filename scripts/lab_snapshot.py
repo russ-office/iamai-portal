@@ -147,6 +147,8 @@ def main():
     users = fetch_all("Users")
 
     gname = {g["id"]: g["fields"].get("name", "") for g in groups}
+    # Поля группы целиком: ссылка бэклога живёт на ГРУППЕ, не на цикле (M-046).
+    gfields = {g["id"]: g["fields"] for g in groups}
     gclient = {g["id"]: (first(g["fields"].get("client")) or "") for g in groups}
     # ВНИМАНИЕ: в Users поле называется "Email" (с заглавной). M-034: было .get("email") → всегда пусто.
     umail = {u["id"]: (u["fields"].get("Email") or u["fields"].get("email") or "").strip()
@@ -184,7 +186,8 @@ def main():
             "group_id": gid,
             "client": gclient.get(gid, ""),
             "cycle": (cyc or {}).get("fields", {}).get("cycle", ""),
-            "url_backlog": (cyc or {}).get("fields", {}).get("url_backlog_T1", ""),
+            # См. pulse_snapshot: на цикле формула при общем спринте склеивает группы.
+            "url_backlog": gfields.get(gid, {}).get("url_backlog_T1", ""),
             "generated_at": now,
             "threads": threads,
         }

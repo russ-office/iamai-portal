@@ -190,6 +190,8 @@ def main():
 
     sz_groups = [g for g in groups if first(g["fields"].get("client")) == SZ]
     gname = {g["id"]: g["fields"].get("name", "") for g in sz_groups}
+    # Поля группы целиком: ссылка бэклога живёт на ГРУППЕ, не на цикле (M-046).
+    gfields = {g["id"]: g["fields"] for g in sz_groups}
     gids = set(gname)
 
     # current cycle per group (max cycle_no)
@@ -287,7 +289,10 @@ def main():
             "sprint_no": (cyc["fields"].get("cycle_no") if cyc else 1) or 1,
             "subject": {"id": uid, "name": name, "group": gname.get(gid, ""), "client": "SZ"},
             # «Новая проблема» = чистая форма бэклога с hidden client/group/cycle (без prefill)
-            "url_backlog": (cyc or {}).get("fields", {}).get("url_backlog_T1", ""),
+            # Берём с ГРУППЫ. На цикле формула при общем спринте склеивает все группы
+            # компании в один &group=... — сабмит уходил бы с принадлежностью к десяти
+            # группам разом. Пусто → фронт не рисует кнопку (инвариант рельса).
+            "url_backlog": gfields.get(gid, {}).get("url_backlog_T1", ""),
             "status_light": status_light(dates, today),
             "events": events,
             "tasks": [],  # LabTasks пока пусты в базе — деградирует в c-empty
