@@ -246,6 +246,25 @@
     wireTaskRows(body, D);
   }
 
+  // Действия карточки бэклога. Два РАЗНЫХ шага, и их легко перепутать:
+  //   edit → форма БЭКЛОГ с thread_key → новая ВЕРСИЯ той же проблемы (version_no+1);
+  //   take → форма ЗАДАЧИ (T2) → следующий шаг треда, работа над проблемой.
+  // До M-045 кнопка была одна: подписана «редактировать», а вела на take — участник,
+  // желавший дописать формулировку, заводил себе задачу. Подпись теперь называет шаг.
+  // Нет ссылки — нет кнопки (url_edit пуст без thread_key: правка без него порвала бы тред).
+  var CARD_ACTS = [
+    { act: "edit", link: "edit", label: "поправить →",     eyebrow: "Поправить проблему" },
+    { act: "take", link: "take", label: "взять в работу →", eyebrow: "Взять в работу" },
+  ];
+
+  function cardActions(b) {
+    var links = b.links || {};
+    var btns = CARD_ACTS.filter(function (a) { return formLink(links[a.link]); }).map(function (a) {
+      return '<button type="button" data-card="' + esc(b.id) + '" data-act="' + a.act + '">' + esc(a.label) + '</button>';
+    }).join("");
+    return btns ? '<div class="p-backlog-card__edit">' + btns + '</div>' : '';
+  }
+
   function renderBacklog(body, D) {
     var total = Math.round(D.backlog.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0) * 10) / 10;
     var cards = D.backlog.length === 0
@@ -257,9 +276,7 @@
             // Карточка = название + часы + выжимка. Полный текст живёт в форме, не здесь:
             // стена markdown-а ломала вёрстку карточки (улов Ruslan, M-042).
             '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 180)) + '</p>' +
-            (formLink((b.links || {}).take)
-              ? '<div class="p-backlog-card__edit"><button type="button" data-edit-backlog="' + esc(b.id) + '">редактировать →</button></div>'
-              : '') +
+            cardActions(b) +
           '</div>';
         }).join("") + '</div>';
 
@@ -271,13 +288,16 @@
         '</div>' + cards +
       '</div>';
 
-    // edit → same right-drawer write-path as tasks. Ссылка берётся из снапшота:
-    // она несёт hidden-принадлежность И значения (p_*), чтобы человек видел, что писал.
-    body.querySelectorAll("[data-edit-backlog]").forEach(function (btn) {
-      var b = D.backlog.filter(function (x) { return x.id === btn.getAttribute("data-edit-backlog"); })[0];
-      var src = b && formLink((b.links || {}).take);
+    // Обе кнопки открывают форму в правой шторке (канон write-path = c-drawer).
+    // Ссылка берётся из снапшота: она несёт hidden-принадлежность И значения (p_*),
+    // чтобы человек увидел свой текст, а не пустую форму.
+    body.querySelectorAll("[data-card][data-act]").forEach(function (btn) {
+      var id = btn.getAttribute("data-card"), act = btn.getAttribute("data-act");
+      var b = D.backlog.filter(function (x) { return x.id === id; })[0];
+      var meta = CARD_ACTS.filter(function (a) { return a.act === act; })[0];
+      var src = b && meta && formLink((b.links || {})[meta.link]);
       if (!src) return;
-      btn.addEventListener("click", function () { openDrawer("Редактировать проблему", b.title || "Бэклог", src); });
+      btn.addEventListener("click", function () { openDrawer(meta.eyebrow, b.title || "Бэклог", src); });
     });
   }
 
