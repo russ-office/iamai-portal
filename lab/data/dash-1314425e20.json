@@ -1,24 +1,196 @@
 {
  "client": "DAN Partners",
- "generated_at": "2026-07-22T11:18:56+05:00",
+ "generated_at": "2026-07-22T14:05:13+05:00",
  "kpi": {
   "groups": 1,
-  "people": 0,
-  "threads": 0,
-  "hours_month": 0,
-  "hours_year": 0
+  "people": 16,
+  "threads": 43,
+  "hours_month": 3015.1,
+  "hours_year": 36181.2
  },
  "groups": [
   {
    "group": "DAN_LAB_1_Intake",
    "group_id": "recIS4AAapP5XL737",
    "cycle": "DAN_LAB_1_Intake-C1",
-   "threads": 0,
-   "people": 0,
-   "hours_month": 0
+   "threads": 43,
+   "people": 16,
+   "hours_month": 3015.1
   }
  ],
- "funnel": {},
- "top": [],
- "board": []
+ "funnel": {
+  "Проблема": 43
+ },
+ "top": [
+  {
+   "title": "Спецификацию быстро заполнить надо",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 1200,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P18"
+  },
+  {
+   "title": "Коммуникация топ- и мидл-менеджеров",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 240,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P2"
+  },
+  {
+   "title": "Оценка компетенций 360 градусов по отделам",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 166.66666666666666,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P38"
+  },
+  {
+   "title": "Оценка 360: автоматизация через Битрикс",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 166.66666666666666,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P40"
+  },
+  {
+   "title": "Согласование задач между уровнями",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 160,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P6"
+  },
+  {
+   "title": "Исходно разрешительная документация",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 100,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P13"
+  },
+  {
+   "title": "Трекинг статуса проектов",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 100,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P24"
+  },
+  {
+   "title": "Сбор информации в data lake",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 90,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P16"
+  },
+  {
+   "title": "Оцифровка процессов отделов",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 90,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P26"
+  },
+  {
+   "title": "Инфраструктура и архитектура автоматизации",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P29"
+  },
+  {
+   "title": "Постановка задач через ИИ-чат в дэшборде",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P31"
+  },
+  {
+   "title": "Структуризация данных",
+   "group": "DAN_LAB_1_Intake",
+   "hours_month": 60,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P22"
+  }
+ ],
+ "board": [
+  {
+   "email": "aldierov_yes@bk.ru",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 1200,
+   "rows": 1
+  },
+  {
+   "email": "info@aidanfamily.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 15,
+   "hours_month": 1132.3333333333335,
+   "rows": 15
+  },
+  {
+   "email": "s.ormanova@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 7,
+   "hours_month": 428.3333333333333,
+   "rows": 7
+  },
+  {
+   "email": "e.ospanov@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 2,
+   "hours_month": 118,
+   "rows": 2
+  },
+  {
+   "email": "zh.nurpeisov@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 46.666666666666664,
+   "rows": 1
+  },
+  {
+   "email": "e.balagazin@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 40,
+   "rows": 1
+  },
+  {
+   "email": "a.hahanyan@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 6,
+   "hours_month": 19.249999999999996,
+   "rows": 6
+  },
+  {
+   "email": "a.brilz@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 10,
+   "rows": 1
+  },
+  {
+   "email": "s.kabzhalov@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 9,
+   "rows": 1
+  },
+  {
+   "email": "n.aronova@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 3,
+   "hours_month": 4.166666666666667,
+   "rows": 3
+  },
+  {
+   "email": "d.alimov@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 4.166666666666667,
+   "rows": 1
+  },
+  {
+   "email": "a.kaiyrbek@danpartners.com",
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 2.5,
+   "rows": 1
+  }
+ ]
 }

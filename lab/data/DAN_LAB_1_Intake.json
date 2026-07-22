@@ -4,6 +4,997 @@
  "client": "recFZuQiqAJAsyL6U",
  "cycle": "DAN_LAB_1_Intake-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&type=T1_idea&author_email=",
- "generated_at": "2026-07-22T11:18:56+05:00",
- "threads": []
+ "generated_at": "2026-07-22T14:05:13+05:00",
+ "threads": [
+  {
+   "thread_key": "DAN_LAB_1_Intake-P18",
+   "title": "Спецификацию быстро заполнить надо",
+   "content": "У всех семейсвах есть свои данные. Все семейство это считается в спецификациях. И там мы ручное заполняем все коды по АГСК-3. И там потом надо еще по этими агск кодами заполнит и наименование. \n",
+   "author_email": "aldierov_yes@bk.ru",
+   "contributors": [
+    "aldierov_yes@bk.ru"
+   ],
+   "edits": 1,
+   "last_author": "aldierov_yes@bk.ru",
+   "last_at": "2026-07-22 06:45",
+   "hours_month": 1200,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P18&type=T2_task&p_title=%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%BE%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%B4%D0%BE&p_content=%D0%A3%20%D0%B2%D1%81%D0%B5%D1%85%20%D1%81%D0%B5%D0%BC%D0%B5%D0%B9%D1%81%D0%B2%D0%B0%D1%85%20%D0%B5%D1%81%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5.%20%D0%92%D1%81%D0%B5%20%D1%81%D0%B5%D0%BC%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%BE%20%D1%8D%D1%82%D0%BE%20%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%D1%85.%20%D0%98%20%D1%82%D0%B0%D0%BC%20%D0%BC%D1%8B%20%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%20%D0%B2%D1%81%D0%B5%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%BF%D0%BE%20%D0%90%D0%93%D0%A1%D0%9A-3.%20%D0%98%20%D1%82%D0%B0%D0%BC%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BC%20%D0%BD%D0%B0%D0%B4%D0%BE%20%D0%B5%D1%89%D0%B5%20%D0%BF%D0%BE%20%D1%8D%D1%82%D0%B8%D0%BC%D0%B8%20%D0%B0%D0%B3%D1%81%D0%BA%20%D0%BA%D0%BE%D0%B4%D0%B0%D0%BC%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%20%D0%B8%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%0A&p_freq=2&p_time=36000&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P2",
+   "title": "Коммуникация топ- и мидл-менеджеров",
+   "content": "Нет единого прозрачного канала коммуникации между топ- и мидл-менеджерами. Договорённости передаются устно, теряются и искажаются, решения не фиксируются в едином месте. Из-за этого возникают рассинхрон, дублирование задач и потеря контекста между уровнями управления.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:38",
+   "hours_month": 240,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P2&type=T2_task&p_title=%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20%D1%82%D0%BE%D0%BF-%20%D0%B8%20%D0%BC%D0%B8%D0%B4%D0%BB-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2&p_content=%D0%9D%D0%B5%D1%82%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%82%D0%BE%D0%BF-%20%D0%B8%20%D0%BC%D0%B8%D0%B4%D0%BB-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%91%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20%D1%83%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%82%D0%B5%D1%80%D1%8F%D1%8E%D1%82%D1%81%D1%8F%20%D0%B8%20%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B0%D1%8E%D1%82%D1%81%D1%8F%2C%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B5%20%D1%84%D0%B8%D0%BA%D1%81%D0%B8%D1%80%D1%83%D1%8E%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%BC%20%D0%BC%D0%B5%D1%81%D1%82%D0%B5.%20%D0%98%D0%B7-%D0%B7%D0%B0%20%D1%8D%D1%82%D0%BE%D0%B3%D0%BE%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%B0%D1%8E%D1%82%20%D1%80%D0%B0%D1%81%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%2C%20%D0%B4%D1%83%D0%B1%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%B8%20%D0%BF%D0%BE%D1%82%D0%B5%D1%80%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F%D0%BC%D0%B8%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.%0A&p_freq=60&p_time=30&p_emp=8",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P38",
+   "title": "Оценка компетенций 360 градусов по отделам",
+   "content": "Автоматизация Оценки 360 через опросники в гугл форм и подключением взаимодействия через Битрикс.\n\n1. Гугл-формы опросников готовы\n2. Результаты выгружаются в Эксель\n3. Нужно проводить анализ ответов, на основе ДИ и карты компетенций определять уровень хард и софт скиллов\n4. Через ИИ формировать рекомендации по улучшению, формирование ИПР на сотрудников для дальнейшего прогресса.\n5. Отправка эл писем.\n6. Необходимо создать дашборд на каждого сотрудника и объединенной дашборд по отделу, отслеживать динамику.\n\n&nbsp;\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 08:46",
+   "hours_month": 166.66666666666666,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P38&type=T2_task&p_title=%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B5%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B9%20360%20%D0%B3%D1%80%D0%B0%D0%B4%D1%83%D1%81%D0%BE%D0%B2%20%D0%BF%D0%BE%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC&p_content=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20360%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%B2%20%D0%B3%D1%83%D0%B3%D0%BB%20%D1%84%D0%BE%D1%80%D0%BC%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81.%0A%0A1.%20%D0%93%D1%83%D0%B3%D0%BB-%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%0A2.%20%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B6%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%AD%D0%BA%D1%81%D0%B5%D0%BB%D1%8C%0A3.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2%2C%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%94%D0%98%20%D0%B8%20%D0%BA%D0%B0%D1%80%D1%82%D1%8B%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B5%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B9%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F%D1%82%D1%8C%20%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C%20%D1%85%D0%B0%D1%80%D0%B4%20%D0%B8%20%D1%81%D0%BE%D1%84%D1%82%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%0A4.%20%D0%A7%D0%B5%D1%80%D0%B5%D0%B7%20%D0%98%D0%98%20%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D0%BE%20%D1%83%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%BD%D0%B8%D1%8E%2C%20%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%98%D0%9F%D0%A0%20%D0%BD%D0%B0%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%B5%D0%B9%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81%D0%B0.%0A5.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0%20%D1%8D%D0%BB%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC.%0A6.%20%D0%9D%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%B4%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%B4%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%20%D0%BF%D0%BE%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%83%2C%20%D0%BE%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D1%83.%0A%0A%26nbsp%3B%0A&p_freq=5&p_time=2000&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P40",
+   "title": "Оценка 360: автоматизация через Битрикс",
+   "content": "1\\.      Перевести в Битрикс и автоматизировать на основе разработанных опросников в гугл-форм\n\n1. задача ранее отправлена\n2. в приложении БП в BPMN\n\n&nbsp;\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 08:53",
+   "hours_month": 166.66666666666666,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P40&type=T2_task&p_title=%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%20360%3A%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81&p_content=1%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%B2%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%B2%20%D0%B3%D1%83%D0%B3%D0%BB-%D1%84%D0%BE%D1%80%D0%BC%0A%0A1.%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%D1%80%D0%B0%D0%BD%D0%B5%D0%B5%20%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B0%0A2.%20%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%91%D0%9F%20%D0%B2%20BPMN%0A%0A%26nbsp%3B%0A&p_freq=5&p_time=2000&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P6",
+   "title": "Согласование задач между уровнями",
+   "content": "Согласование задач между менеджерами и отделами занимает много времени и итераций. Нет единого регламента, статусов и SLA согласования, поэтому задачи зависают на этапе утверждения, а ответственные не видят, на ком блокировка.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:40",
+   "hours_month": 160,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P6&type=T2_task&p_title=%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F%D0%BC%D0%B8&p_content=%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC%D0%B8%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%B8%20%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9.%20%D0%9D%D0%B5%D1%82%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D0%B3%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%BE%D0%B2%20%D0%B8%20SLA%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%2C%20%D0%BF%D0%BE%D1%8D%D1%82%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8%20%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D1%8E%D1%82%20%D0%BD%D0%B0%20%D1%8D%D1%82%D0%B0%D0%BF%D0%B5%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%B0%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BD%D0%B5%20%D0%B2%D0%B8%D0%B4%D1%8F%D1%82%2C%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BC%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0.%0A&p_freq=80&p_time=20&p_emp=6",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P13",
+   "title": "Исходно разрешительная документация",
+   "content": "Формируем список ИРД для разработки проекта и загрузки на портал ГЭ. Отслеживание наличия необходимых ИРД от Заказчика и ежедневное напоминание о требуемых документах.\n",
+   "author_email": "e.ospanov@danpartners.com",
+   "contributors": [
+    "e.ospanov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "e.ospanov@danpartners.com",
+   "last_at": "2026-07-22 06:43",
+   "hours_month": 100,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P13&type=T2_task&p_title=%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%BE%20%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F&p_content=%D0%A4%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D1%83%D0%B5%D0%BC%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%98%D0%A0%D0%94%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B8%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%20%D0%93%D0%AD.%20%D0%9E%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85%20%D0%98%D0%A0%D0%94%20%D0%BE%D1%82%20%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D0%B5%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%82%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D0%BC%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%85.%0A&p_freq=10&p_time=300&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P24",
+   "title": "Трекинг статуса проектов",
+   "content": "Нет сквозного трекинга статуса проектов. Сложно в реальном времени отследить прогресс, сроки, ответственных и узкие места, отчётность собирается вручную и с задержкой.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:49",
+   "hours_month": 100,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P24&type=T2_task&p_title=%D0%A2%D1%80%D0%B5%D0%BA%D0%B8%D0%BD%D0%B3%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2&p_content=%D0%9D%D0%B5%D1%82%20%D1%81%D0%BA%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%82%D1%80%D0%B5%D0%BA%D0%B8%D0%BD%D0%B3%D0%B0%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2.%20%D0%A1%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B2%20%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%BE%D1%82%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81%2C%20%D1%81%D1%80%D0%BE%D0%BA%D0%B8%2C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%20%D1%83%D0%B7%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%B5%D1%81%D1%82%D0%B0%2C%20%D0%BE%D1%82%D1%87%D1%91%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D1%81%D0%BE%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%B8%20%D1%81%20%D0%B7%D0%B0%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%BE%D0%B9.%0A&p_freq=60&p_time=20&p_emp=5",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P16",
+   "title": "Сбор информации в data lake",
+   "content": "Данные разрознены по отделам, системам и мессенджерам. Нет единого сбора всей информации в data lake, поэтому невозможно централизованно анализировать данные и строить на них аналитику и ИИ-сценарии.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:44",
+   "hours_month": 90,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P16&type=T2_task&p_title=%D0%A1%D0%B1%D0%BE%D1%80%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20data%20lake&p_content=%D0%94%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B7%D1%80%D0%BE%D0%B7%D0%BD%D0%B5%D0%BD%D1%8B%20%D0%BF%D0%BE%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC%2C%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D0%BC%20%D0%B8%20%D0%BC%D0%B5%D1%81%D1%81%D0%B5%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BC.%20%D0%9D%D0%B5%D1%82%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D0%B1%D0%BE%D1%80%D0%B0%20%D0%B2%D1%81%D0%B5%D0%B9%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20data%20lake%2C%20%D0%BF%D0%BE%D1%8D%D1%82%D0%BE%D0%BC%D1%83%20%D0%BD%D0%B5%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B8%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%BD%D0%B8%D1%85%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D1%83%20%D0%B8%20%D0%98%D0%98-%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B8.%0A&p_freq=30&p_time=60&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P26",
+   "title": "Оцифровка процессов отделов",
+   "content": "Рабочие процессы отделов существуют в устном и бумажном виде, не описаны формально. Нужна оцифровка рабочих процессов, чтобы их можно было анализировать, стандартизировать и автоматизировать.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:51",
+   "hours_month": 90,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P26&type=T2_task&p_title=%D0%9E%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2&p_content=%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%82%20%D0%B2%20%D1%83%D1%81%D1%82%D0%BD%D0%BE%D0%BC%20%D0%B8%20%D0%B1%D1%83%D0%BC%D0%B0%D0%B6%D0%BD%D0%BE%D0%BC%20%D0%B2%D0%B8%D0%B4%D0%B5%2C%20%D0%BD%D0%B5%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D1%8B%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BE%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%B8%D1%85%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%2C%20%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C.%0A&p_freq=15&p_time=90&p_emp=4",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P29",
+   "title": "Инфраструктура и архитектура автоматизации",
+   "content": "Требуется создание инфраструктуры и архитектуры для автоматизации и интеграции рабочих процессов между системами и отделами — единая платформа, коннекторы и стандарты обмена данными.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:54",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P29&type=T2_task&p_title=%D0%98%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%B8%20%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8&p_content=%D0%A2%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B%20%D0%B8%20%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D0%B8%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC%D0%B8%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0%2C%20%D0%BA%D0%BE%D0%BD%D0%BD%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D0%B8%20%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B%20%D0%BE%D0%B1%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8.%0A&p_freq=10&p_time=120&p_emp=4",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P31",
+   "title": "Постановка задач через ИИ-чат в дэшборде",
+   "content": "Постановка задач исполнителям должна выполняться через ИИ-чат в дэшборде: ИИ помогает формулировать, назначать, приоритизировать и контролировать задачи, снижая ручную нагрузку на менеджеров.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:57",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P31&type=T2_task&p_title=%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%98%D0%98-%D1%87%D0%B0%D1%82%20%D0%B2%20%D0%B4%D1%8D%D1%88%D0%B1%D0%BE%D1%80%D0%B4%D0%B5&p_content=%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%98%D0%98-%D1%87%D0%B0%D1%82%20%D0%B2%20%D0%B4%D1%8D%D1%88%D0%B1%D0%BE%D1%80%D0%B4%D0%B5%3A%20%D0%98%D0%98%20%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B0%D0%B5%D1%82%20%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%2C%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C%2C%20%D0%BF%D1%80%D0%B8%D0%BE%D1%80%D0%B8%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8%2C%20%D1%81%D0%BD%D0%B8%D0%B6%D0%B0%D1%8F%20%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2.%0A&p_freq=80&p_time=10&p_emp=6",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P22",
+   "title": "Структуризация данных",
+   "content": "Данные поступают в неструктурированном виде (текст, аудио, файлы). Требуется унифицированная структуризация — схемы, метаданные, теги и единые справочники, чтобы данные были пригодны для автоматической обработки.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:48",
+   "hours_month": 60,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P22&type=T2_task&p_title=%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&p_content=%D0%94%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%D1%8E%D1%82%20%D0%B2%20%D0%BD%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B2%D0%B8%D0%B4%D0%B5%20%28%D1%82%D0%B5%D0%BA%D1%81%D1%82%2C%20%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%2C%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%29.%20%D0%A2%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%83%D0%BD%D0%B8%D1%84%D0%B8%D1%86%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%E2%80%94%20%D1%81%D1%85%D0%B5%D0%BC%D1%8B%2C%20%D0%BC%D0%B5%D1%82%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%2C%20%D1%82%D0%B5%D0%B3%D0%B8%20%D0%B8%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B5%20%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%B8%20%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8.%0A&p_freq=40&p_time=30&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P36",
+   "title": "Заявление на отпуск",
+   "content": "1\\.      Формирование графиков отпусков по отделам (отделы формируют график отпусков самостоятельно и не передают в отдел кадров - нужно передавать HR/отдел кадров)\n\n2\\.      Нужно делать свод графиков отпусков (HR/отдел кадров)\n\n3\\.      Корректировка дат отпусков - утвержденный вариант с реальной действительностью из-а занятости по проектам.\n\n4\\.      Проверка заявлений отпусков по датам графика и согласование с руководителями отделов, ГИПами по проектам\n\n5\\.      Официальное согласование с руководителями – Выход Приказа на отпуск с согласованными подписями\n\n6\\.      Подпись гендира\n\n7\\.      Приказ в бухгалтерию\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 08:32",
+   "hours_month": 60,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P36&type=T2_task&p_title=%D0%97%D0%B0%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA&p_content=1%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC%20%28%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8B%20%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D1%83%D1%8E%D1%82%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%B8%20%D0%BD%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%8E%D1%82%20%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%20%D0%BA%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%20-%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%20HR%2F%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%20%D0%BA%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%29%0A%0A2%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B4%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2%20%28HR%2F%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%20%D0%BA%D0%B0%D0%B4%D1%80%D0%BE%D0%B2%29%0A%0A3%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9A%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B4%D0%B0%D1%82%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2%20-%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%20%D1%81%20%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%D0%B8%D0%B7-%D0%B0%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%D0%BC.%0A%0A4%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%BE%D0%B2%20%D0%BF%D0%BE%20%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%2C%20%D0%93%D0%98%D0%9F%D0%B0%D0%BC%D0%B8%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%D0%BC%0A%0A5%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8%20%E2%80%93%20%D0%92%D1%8B%D1%85%D0%BE%D0%B4%20%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%20%D1%81%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%8F%D0%BC%D0%B8%0A%0A6%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9F%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B3%D0%B5%D0%BD%D0%B4%D0%B8%D1%80%D0%B0%0A%0A7%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B2%20%D0%B1%D1%83%D1%85%D0%B3%D0%B0%D0%BB%D1%82%D0%B5%D1%80%D0%B8%D1%8E%0A&p_freq=10&p_time=120&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P11",
+   "title": "Протоколы совещаний заказчик–исполнитель",
+   "content": "Протоколы встреч между заказчиками и исполнителями не фиксируются системно. Договорённости, решения и зоны ответственности теряются, отсутствует единое хранилище протоколов, из-за чего возникают споры о том, что именно было согласовано.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:42",
+   "hours_month": 53.333333333333336,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P11&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B%20%D1%81%D0%BE%D0%B2%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%E2%80%93%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C&p_content=%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8%20%D0%BD%D0%B5%20%D1%84%D0%B8%D0%BA%D1%81%D0%B8%D1%80%D1%83%D1%8E%D1%82%D1%81%D1%8F%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D0%BE.%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%91%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%B7%D0%BE%D0%BD%D1%8B%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%82%D0%B5%D1%80%D1%8F%D1%8E%D1%82%D1%81%D1%8F%2C%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%B5%20%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5%20%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C%20%D0%B8%D0%B7-%D0%B7%D0%B0%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%B0%D1%8E%D1%82%20%D1%81%D0%BF%D0%BE%D1%80%D1%8B%20%D0%BE%20%D1%82%D0%BE%D0%BC%2C%20%D1%87%D1%82%D0%BE%20%D0%B8%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE.%0A&p_freq=20&p_time=40&p_emp=4",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P14",
+   "title": "Согласование отклонений от проекта",
+   "content": "Когда наступает этап строительства соотвествующий разделу АР наступает период согласований отклонений от этапа. В этот период приходят письма от заказчика со стройки, которые мы должны просмотреть по базам знаний заказчика и государства. После давать ответ. \n",
+   "author_email": "zh.nurpeisov@danpartners.com",
+   "contributors": [
+    "zh.nurpeisov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "zh.nurpeisov@danpartners.com",
+   "last_at": "2026-07-22 06:44",
+   "hours_month": 46.666666666666664,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P14&type=T2_task&p_title=%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%D1%82%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&p_content=%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BD%D0%B0%D1%81%D1%82%D1%83%D0%BF%D0%B0%D0%B5%D1%82%20%D1%8D%D1%82%D0%B0%D0%BF%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B0%20%D1%81%D0%BE%D0%BE%D1%82%D0%B2%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%83%20%D0%90%D0%A0%20%D0%BD%D0%B0%D1%81%D1%82%D1%83%D0%BF%D0%B0%D0%B5%D1%82%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%D1%82%20%D1%8D%D1%82%D0%B0%D0%BF%D0%B0.%20%D0%92%20%D1%8D%D1%82%D0%BE%D1%82%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%20%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D1%8F%D1%82%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%B0%20%D0%BE%D1%82%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BC%D1%8B%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D1%8B%20%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%B1%D0%B0%D0%B7%D0%B0%D0%BC%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%20%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82.%20%0A&p_freq=40&p_time=10&p_emp=7",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P20",
+   "title": "Хранение и векторизация данных",
+   "content": "Нужно организовать надёжное хранение данных и их векторизацию (embeddings) для семантического поиска и работы RAG/ИИ. Сейчас данные не подготовлены для векторного поиска, что ограничивает использование ИИ.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:46",
+   "hours_month": 45,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P20&type=T2_task&p_title=%D0%A5%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&p_content=%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%D0%B4%D1%91%D0%B6%D0%BD%D0%BE%D0%B5%20%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B8%20%D0%B8%D1%85%20%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E%20%28embeddings%29%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20RAG%2F%D0%98%D0%98.%20%D0%A1%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%2C%20%D1%87%D1%82%D0%BE%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%98%D0%98.%0A&p_freq=30&p_time=45&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P25",
+   "title": "Транскрибация записей совещаний",
+   "content": "Записи совещаний не переводятся в текст. Невозможно быстро найти принятые решения и поручения, отсутствует база расшифровок для поиска и анализа.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:50",
+   "hours_month": 40,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P25&type=T2_task&p_title=%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D0%B1%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B5%D0%B9%20%D1%81%D0%BE%D0%B2%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B9&p_content=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D0%B8%20%D1%81%D0%BE%D0%B2%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BD%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%8F%D1%82%D1%81%D1%8F%20%D0%B2%20%D1%82%D0%B5%D0%BA%D1%81%D1%82.%20%D0%9D%D0%B5%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%BE%20%D0%BD%D0%B0%D0%B9%D1%82%D0%B8%20%D0%BF%D1%80%D0%B8%D0%BD%D1%8F%D1%82%D1%8B%D0%B5%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D0%BE%D1%80%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D0%B1%D0%B0%D0%B7%D0%B0%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B8%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0.%0A&p_freq=20&p_time=40&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P7",
+   "title": "График выполненных работ",
+   "content": "У нас имеется график который мы заполнять по выполненным задачам.  И подходить к каждому и переспрашивать и переправирять. И вести записи. 4 человека заполняют свою таблицу а я затем переношу в сводную. Либо есть одна общая без доступа сотрудников, приходится каждого вызывать и перепроверять и записывать.\n",
+   "author_email": "e.balagazin@danpartners.com",
+   "contributors": [
+    "e.balagazin@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "e.balagazin@danpartners.com",
+   "last_at": "2026-07-22 06:40",
+   "hours_month": 40,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P7&type=T2_task&p_title=%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82&p_content=%D0%A3%20%D0%BD%D0%B0%D1%81%20%D0%B8%D0%BC%D0%B5%D0%B5%D1%82%D1%81%D1%8F%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BC%D1%8B%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D0%BC.%20%20%D0%98%20%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BA%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D0%BF%D1%80%D0%B0%D1%88%D0%B8%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%80%D1%8F%D1%82%D1%8C.%20%D0%98%20%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8.%204%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D1%8E%D1%82%20%D1%81%D0%B2%D0%BE%D1%8E%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83%20%D0%B0%20%D1%8F%20%D0%B7%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%88%D1%83%20%D0%B2%20%D1%81%D0%B2%D0%BE%D0%B4%D0%BD%D1%83%D1%8E.%20%D0%9B%D0%B8%D0%B1%D0%BE%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BE%D0%B4%D0%BD%D0%B0%20%D0%BE%D0%B1%D1%89%D0%B0%D1%8F%20%D0%B1%D0%B5%D0%B7%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C%20%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%81%D1%8F%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE%20%D0%B2%D1%8B%D0%B7%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D1%82%D1%8C%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%82%D1%8C.%0A&p_freq=12&p_time=40&p_emp=5",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P27",
+   "title": "Выбор способа конвертации процессов",
+   "content": "Нужно выбрать оптимальный способ конвертации рабочих процессов в цифровой и автоматизированный формат — определить методологию, инструменты и критерии выбора для перевода процессов «как есть» в целевую модель.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:52",
+   "hours_month": 30,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P27&type=T2_task&p_title=%D0%92%D1%8B%D0%B1%D0%BE%D1%80%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%B0%20%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2&p_content=%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%20%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%B2%20%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%E2%80%94%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8E%2C%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D0%B8%20%D0%BA%D1%80%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%C2%AB%D0%BA%D0%B0%D0%BA%20%D0%B5%D1%81%D1%82%D1%8C%C2%BB%20%D0%B2%20%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%83%D1%8E%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.%0A&p_freq=5&p_time=120&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P30",
+   "title": "Быстрая точечная транскрибация аудио",
+   "content": "Нужен лёгкий, быстрый и точечный способ транскрибации аудиозаписей — по требованию, с высокой точностью и минимальной задержкой, чтобы оперативно превращать короткие аудио в текст.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:56",
+   "hours_month": 30,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P30&type=T2_task&p_title=%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F%20%D1%82%D0%BE%D1%87%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D0%B1%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B0%D1%83%D0%B4%D0%B8%D0%BE&p_content=%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BB%D1%91%D0%B3%D0%BA%D0%B8%D0%B9%2C%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9%20%D0%B8%20%D1%82%D0%BE%D1%87%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D0%B1%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B5%D0%B9%20%E2%80%94%20%D0%BF%D0%BE%20%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E%2C%20%D1%81%20%D0%B2%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B9%20%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%D0%B8%20%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%BE%D0%B9%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%20%D0%BF%D1%80%D0%B5%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D0%B5%20%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%20%D0%B2%20%D1%82%D0%B5%D0%BA%D1%81%D1%82.%0A&p_freq=40&p_time=15&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P32",
+   "title": "Данные дэшборда в RAG-систему",
+   "content": "Все данные, попадающие в дэшборд, должны автоматически переводиться в машиночитаемый формат и сохраняться в структурированных папках RAG-системы для дальнейшего поиска, анализа и работы ИИ.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 06:59",
+   "hours_month": 30,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P32&type=T2_task&p_title=%D0%94%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B4%D1%8D%D1%88%D0%B1%D0%BE%D1%80%D0%B4%D0%B0%20%D0%B2%20RAG-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83&p_content=%D0%92%D1%81%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%2C%20%D0%BF%D0%BE%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B5%20%D0%B2%20%D0%B4%D1%8D%D1%88%D0%B1%D0%BE%D1%80%D0%B4%2C%20%D0%B4%D0%BE%D0%BB%D0%B6%D0%BD%D1%8B%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%B8%20%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%D1%85%20RAG-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%B5%D0%B9%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%2C%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%B8%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%98%D0%98.%0A&p_freq=60&p_time=15&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P1",
+   "title": "Опросные листы",
+   "content": "Формируем опросный лист с указанием наименования проекта, ТЭПа и ИРД. Делаем расчеты по каждому разделу. Прописываем нагрузки от всех разделов согласно исходных данных. \n",
+   "author_email": "e.ospanov@danpartners.com",
+   "contributors": [
+    "e.ospanov@danpartners.com",
+    "j.elmuratov@danpartners.com"
+   ],
+   "edits": 2,
+   "last_author": "j.elmuratov@danpartners.com",
+   "last_at": "2026-07-22 06:38",
+   "hours_month": 18,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P1&type=T2_task&p_title=%D0%9E%D0%BF%D1%80%D0%BE%D1%81%D0%BD%D1%8B%D0%B5%20%D0%BB%D0%B8%D1%81%D1%82%D1%8B&p_content=%D0%A4%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D1%83%D0%B5%D0%BC%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BD%D1%8B%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82%20%D1%81%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%2C%20%D0%A2%D0%AD%D0%9F%D0%B0%20%D0%B8%20%D0%98%D0%A0%D0%94.%20%D0%94%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D1%8B%20%D0%BF%D0%BE%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%83.%20%D0%9F%D1%80%D0%BE%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D0%B5%D0%BC%20%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%20%D0%BE%D1%82%20%D0%B2%D1%81%D0%B5%D1%85%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.%20%0A&p_freq=3&p_time=90&p_emp=4",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P9",
+   "title": "Консолидация выписок",
+   "content": "Ежедневно, один раз в день, выгружаю выписки по всем расчетным счетам и провожу их в 1с, отдельно их собираю в ексель таблицу для руководителей\n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 06:41",
+   "hours_month": 15.5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P9&type=T2_task&p_title=%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BE%D0%BA&p_content=%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%2C%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D1%80%D0%B0%D0%B7%20%D0%B2%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B6%D0%B0%D1%8E%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BF%D0%BE%20%D0%B2%D1%81%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%BC%20%D1%81%D1%87%D0%B5%D1%82%D0%B0%D0%BC%20%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B6%D1%83%20%D0%B8%D1%85%20%D0%B2%201%D1%81%2C%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B2%20%D0%B5%D0%BA%D1%81%D0%B5%D0%BB%D1%8C%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83%20%D0%B4%D0%BB%D1%8F%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%0A&p_freq=31&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P37",
+   "title": "Табель рабочего времени в Битрикс",
+   "content": "Перенести процесс в Битрикс:\n\n1\\.      Сбор табелей по отделам\n\n2\\.      Уточнение по датам отработанных дней, больничным, отпускам, НБ\n\n3\\.      Подписание табелей\n\n4\\.      Табель в бухгалтерию\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 08:36",
+   "hours_month": 12,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P37&type=T2_task&p_title=%D0%A2%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%B2%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81&p_content=%D0%9F%D0%B5%D1%80%D0%B5%D0%BD%D0%B5%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%20%D0%B2%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%3A%0A%0A1%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%A1%D0%B1%D0%BE%D1%80%20%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D0%B5%D0%B9%20%D0%BF%D0%BE%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%D0%BC%0A%0A2%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%A3%D1%82%D0%BE%D1%87%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%20%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%20%D0%BE%D1%82%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BD%D0%B5%D0%B9%2C%20%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%2C%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%B0%D0%BC%2C%20%D0%9D%D0%91%0A%0A3%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%9F%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D0%B5%D0%B9%0A%0A4%5C.%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%D0%A2%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%20%D0%B2%20%D0%B1%D1%83%D1%85%D0%B3%D0%B0%D0%BB%D1%82%D0%B5%D1%80%D0%B8%D1%8E%0A&p_freq=1&p_time=360&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P23",
+   "title": "Отсматриваю кандидатов на открытые позиции",
+   "content": "В Head Hunter на открытые позиции прилетают отклики кандидатов. Нужно регулярно отсматривать и подбирать кандидатов соответсвующих опыту, навыкам, возрасту, образованию и пр.\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 06:48",
+   "hours_month": 10,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P23&type=T2_task&p_title=%D0%9E%D1%82%D1%81%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D0%B2%D0%B0%D1%8E%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8&p_content=%D0%92%20Head%20Hunter%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8%20%D0%BF%D1%80%D0%B8%D0%BB%D0%B5%D1%82%D0%B0%D1%8E%D1%82%20%D0%BE%D1%82%D0%BA%D0%BB%D0%B8%D0%BA%D0%B8%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%BE%D0%B2.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%20%D0%BE%D1%82%D1%81%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B8%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%BE%D0%B2%20%D1%81%D0%BE%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85%20%D0%BE%D0%BF%D1%8B%D1%82%D1%83%2C%20%D0%BD%D0%B0%D0%B2%D1%8B%D0%BA%D0%B0%D0%BC%2C%20%D0%B2%D0%BE%D0%B7%D1%80%D0%B0%D1%81%D1%82%D1%83%2C%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B8%20%D0%BF%D1%80.%0A&p_freq=20&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P34",
+   "title": "Переписка с кандидатами в ватсап",
+   "content": "1. Переписка с кандидатами, уточнение навыков, запрос портфолио, выполененных рабочих проектов, рекомендательных писем и пр.\n2. Назначение интервью (онлайн/офлайн).\n3. По итогам внутренних обсуждений по кандидатам, ответ в ватсап - приглашение на работу/стажировку, либо отказ, либо время на ожидание решения.\n\n&nbsp;\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 07:40",
+   "hours_month": 10,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P34&type=T2_task&p_title=%D0%9F%D0%B5%D1%80%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D1%81%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%20%D0%B2%20%D0%B2%D0%B0%D1%82%D1%81%D0%B0%D0%BF&p_content=1.%20%D0%9F%D0%B5%D1%80%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D1%81%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%2C%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%B2%D1%8B%D0%BA%D0%BE%D0%B2%2C%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE%2C%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%B5%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2%2C%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%BF%D1%80.%0A2.%20%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E%20%28%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%2F%D0%BE%D1%84%D0%BB%D0%B0%D0%B9%D0%BD%29.%0A3.%20%D0%9F%D0%BE%20%D0%B8%D1%82%D0%BE%D0%B3%D0%B0%D0%BC%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D1%85%20%D0%BE%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%2C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20%D0%B2%20%D0%B2%D0%B0%D1%82%D1%81%D0%B0%D0%BF%20-%20%D0%BF%D1%80%D0%B8%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%83%2F%D1%81%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83%2C%20%D0%BB%D0%B8%D0%B1%D0%BE%20%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%2C%20%D0%BB%D0%B8%D0%B1%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F.%0A%0A%26nbsp%3B%0A&p_freq=20&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P8",
+   "title": "1. Юридическая проверка договоров и других документов",
+   "content": "    Анализ документов на соответствие законодательству, выявление правовых рисков, проверка корректности условий, прав и обязанностей сторон, а также подготовка предложений по их доработке. Проверка контрагентов. Составление  новых договоров.\n",
+   "author_email": "a.brilz@danpartners.com",
+   "contributors": [
+    "a.brilz@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.brilz@danpartners.com",
+   "last_at": "2026-07-22 06:40",
+   "hours_month": 10,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P8&type=T2_task&p_title=1.%20%D0%AE%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D1%85%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2&p_content=%C2%A0%C2%A0%C2%A0%C2%A0%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20%D1%81%D0%BE%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D1%83%2C%20%D0%B2%D1%8B%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D0%B2%D1%8B%D1%85%20%D1%80%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%2C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9%2C%20%D0%BF%D1%80%D0%B0%D0%B2%20%D0%B8%20%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9%20%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%2C%20%D0%B0%20%D1%82%D0%B0%D0%BA%D0%B6%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%B8%D1%85%20%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5.%20%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.%20%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%C2%A0%D0%BD%D0%BE%D0%B2%D1%8B%D1%85%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2.%0A&p_freq=20&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P21",
+   "title": "генерация квартирографии",
+   "content": "Рисование и генерация квартирографии на основе посадки на ранних стадиях. Есть техническок задание от заказчика по процентому соотношению квартир, квадратному метру квартир\n",
+   "author_email": "s.kabzhalov@danpartners.com",
+   "contributors": [
+    "s.kabzhalov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.kabzhalov@danpartners.com",
+   "last_at": "2026-07-22 06:47",
+   "hours_month": 9,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P21&type=T2_task&p_title=%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8&p_content=%D0%A0%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D0%BF%D0%BE%D1%81%D0%B0%D0%B4%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%BD%D0%BD%D0%B8%D1%85%20%D1%81%D1%82%D0%B0%D0%B4%D0%B8%D1%8F%D1%85.%20%D0%95%D1%81%D1%82%D1%8C%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BA%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D0%BE%D0%BC%D1%83%20%D1%81%D0%BE%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%2C%20%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BC%D0%B5%D1%82%D1%80%D1%83%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%0A&p_freq=3&p_time=180&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P17",
+   "title": "Аналитика открытых замечании ",
+   "content": "В гугл таблице имеется список объектов , потом заходим в бим 360 по каждому проекту, проссматриваем, когда загружен пакет, когда получено замечание, сколько открытых замечании.И отправляется в группу Директоров с указанием где у нас какие проблемы\n",
+   "author_email": "n.aronova@danpartners.com",
+   "contributors": [
+    "n.aronova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "n.aronova@danpartners.com",
+   "last_at": "2026-07-22 06:44",
+   "hours_month": 4.166666666666667,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P17&type=T2_task&p_title=%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B8%20&p_content=%D0%92%20%D0%B3%D1%83%D0%B3%D0%BB%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B5%D1%82%D1%81%D1%8F%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2%20%2C%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BC%20%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%20%D0%B2%20%D0%B1%D0%B8%D0%BC%20360%20%D0%BF%D0%BE%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83%2C%20%D0%BF%D1%80%D0%BE%D1%81%D1%81%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BE%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B8.%D0%98%20%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%83%20%D0%94%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%20%D1%81%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%B3%D0%B4%D0%B5%20%D1%83%20%D0%BD%D0%B0%D1%81%20%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B%0A&p_freq=5&p_time=50&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P5",
+   "title": "Проверка писем отклонений вертикальных конструкций",
+   "content": "Проверка писем отклонений вертикальных конструкций на наполнение , присутствует всей необходимой информации и значений согласно НТД\n",
+   "author_email": "d.alimov@danpartners.com",
+   "contributors": [
+    "d.alimov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "d.alimov@danpartners.com",
+   "last_at": "2026-07-22 06:40",
+   "hours_month": 4.166666666666667,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P5&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9%20%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%2C%20%D0%BF%D1%80%D0%B8%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D0%B2%D1%81%D0%B5%D0%B9%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B9%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%20%D0%9D%D0%A2%D0%94%0A&p_freq=50&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P33",
+   "title": "Концепция «Путь Героя» на этапах",
+   "content": "На следующих этапах добавить концепцию «Пути Героя» — фреймворк для проектирования пользовательского и командного пути (онбординг, этапы развития, мотивация) в продукте и процессах.\n",
+   "author_email": "info@aidanfamily.com",
+   "contributors": [
+    "info@aidanfamily.com"
+   ],
+   "edits": 1,
+   "last_author": "info@aidanfamily.com",
+   "last_at": "2026-07-22 07:00",
+   "hours_month": 4,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P33&type=T2_task&p_title=%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F%20%C2%AB%D0%9F%D1%83%D1%82%D1%8C%20%D0%93%D0%B5%D1%80%D0%BE%D1%8F%C2%BB%20%D0%BD%D0%B0%20%D1%8D%D1%82%D0%B0%D0%BF%D0%B0%D1%85&p_content=%D0%9D%D0%B0%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B8%D1%85%20%D1%8D%D1%82%D0%B0%D0%BF%D0%B0%D1%85%20%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8E%20%C2%AB%D0%9F%D1%83%D1%82%D0%B8%20%D0%93%D0%B5%D1%80%D0%BE%D1%8F%C2%BB%20%E2%80%94%20%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%B8%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%83%D1%82%D0%B8%20%28%D0%BE%D0%BD%D0%B1%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B3%2C%20%D1%8D%D1%82%D0%B0%D0%BF%D1%8B%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F%2C%20%D0%BC%D0%BE%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D1%8F%29%20%D0%B2%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B5%20%D0%B8%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%D1%85.%0A&p_freq=2&p_time=60&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P35",
+   "title": "Рейтинг Утреннего челленджа",
+   "content": "1. Подсчет фиксированного времени прихода (сейчас в Эксель, нужно перейти в Битрикс).\n2. Выявление лучших показателей по командам (подсчет по баллам: команда приступает к работе вовремя вместе первой из отдела - 4 балла, команда приступает к работе вовремя вместе, но не первой из отдела - 3 балла, в команде 1 опоздавший - 1 балл, в команде более 1 опоздавшего - 0 баллов).\n3. Составление рейтинга в табличной форме с выявлением лучших показателей.\n4. Написание текста в корп чат с поздравлением команд-чемпионов и присуждением бонусных завтраков и походов в кино.\n5. Отправка поста в корп чат.\n\n&nbsp;\n",
+   "author_email": "s.ormanova@danpartners.com",
+   "contributors": [
+    "s.ormanova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.ormanova@danpartners.com",
+   "last_at": "2026-07-22 08:17",
+   "hours_month": 3,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P35&type=T2_task&p_title=%D0%A0%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%20%D0%A3%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B5%D0%B3%D0%BE%20%D1%87%D0%B5%D0%BB%D0%BB%D0%B5%D0%BD%D0%B4%D0%B6%D0%B0&p_content=1.%20%D0%9F%D0%BE%D0%B4%D1%81%D1%87%D0%B5%D1%82%20%D1%84%D0%B8%D0%BA%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%20%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B0%20%28%D1%81%D0%B5%D0%B9%D1%87%D0%B0%D1%81%20%D0%B2%20%D0%AD%D0%BA%D1%81%D0%B5%D0%BB%D1%8C%2C%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8%20%D0%B2%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%29.%0A2.%20%D0%92%D1%8B%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%85%20%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%D0%BC%20%28%D0%BF%D0%BE%D0%B4%D1%81%D1%87%D0%B5%D1%82%20%D0%BF%D0%BE%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%B0%D0%BC%3A%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%20%D0%BF%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0%D0%B5%D1%82%20%D0%BA%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%20%D0%B2%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B9%20%D0%B8%D0%B7%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%20-%204%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%B0%2C%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%20%D0%BF%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0%D0%B5%D1%82%20%D0%BA%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%20%D0%B2%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%2C%20%D0%BD%D0%BE%20%D0%BD%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B9%20%D0%B8%D0%B7%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B0%20-%203%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%B0%2C%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B5%201%20%D0%BE%D0%BF%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D1%88%D0%B8%D0%B9%20-%201%20%D0%B1%D0%B0%D0%BB%D0%BB%2C%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B5%20%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%201%20%D0%BE%D0%BF%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20-%200%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%BE%D0%B2%29.%0A3.%20%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3%D0%B0%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D0%B5%20%D1%81%20%D0%B2%D1%8B%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%85%20%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9.%0A4.%20%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D1%80%D0%BF%20%D1%87%D0%B0%D1%82%20%D1%81%20%D0%BF%D0%BE%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4-%D1%87%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%D0%BE%D0%B2%20%D0%B8%20%D0%BF%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%B8%D0%BD%D0%BE.%0A5.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D1%80%D0%BF%20%D1%87%D0%B0%D1%82.%0A%0A%26nbsp%3B%0A&p_freq=3&p_time=60&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P10",
+   "title": "Проверка листов чертежей",
+   "content": "Проверка элементов чертежа выходящие за границы листа, наслаивание элементов чертежа с друг другом\n",
+   "author_email": "a.kaiyrbek@danpartners.com",
+   "contributors": [
+    "a.kaiyrbek@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.kaiyrbek@danpartners.com",
+   "last_at": "2026-07-22 06:42",
+   "hours_month": 2.5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P10&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B5%D0%B9&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%20%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B%20%D0%BB%D0%B8%D1%81%D1%82%D0%B0%2C%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0%20%D1%81%20%D0%B4%D1%80%D1%83%D0%B3%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%0A&p_freq=5&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P42",
+   "title": "Проверка подписание АВР заказчиком",
+   "content": "После выставления ЭАВР на сайте Bnect, слежу за подписанием его стороной заказчика, как только он подписан обоюдно, выписываю в 1С ЭСФ и вношу сумму авр в таблицы ГИПам и общую (В колонку \"закрытых авр\") \n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 09:01",
+   "hours_month": 1.25,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P42&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%90%D0%92%D0%A0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%BE%D0%BC&p_content=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%20%D0%B2%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%AD%D0%90%D0%92%D0%A0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Bnect%2C%20%D1%81%D0%BB%D0%B5%D0%B6%D1%83%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%2C%20%D0%BA%D0%B0%D0%BA%20%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BE%D0%BD%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%20%D0%BE%D0%B1%D0%BE%D1%8E%D0%B4%D0%BD%D0%BE%2C%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%8E%20%D0%B2%201%D0%A1%20%D0%AD%D0%A1%D0%A4%20%D0%B8%20%D0%B2%D0%BD%D0%BE%D1%88%D1%83%20%D1%81%D1%83%D0%BC%D0%BC%D1%83%20%D0%B0%D0%B2%D1%80%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B%20%D0%93%D0%98%D0%9F%D0%B0%D0%BC%20%D0%B8%20%D0%BE%D0%B1%D1%89%D1%83%D1%8E%20%28%D0%92%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D1%83%20%22%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20%D0%B0%D0%B2%D1%80%22%29%20%0A&p_freq=15&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P39",
+   "title": "Проверка новых Договоров на сайте",
+   "content": "Слежу за поступлением новых Договоров на сайте, скидываю их на ознакомление ГИПам, после одобрения подписываю и вношу их в таблицы ГИПам и в общую таблицу\n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 08:53",
+   "hours_month": 0.8333333333333334,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P39&type=T2_task&p_title=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BD%D0%BE%D0%B2%D1%8B%D1%85%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5&p_content=%D0%A1%D0%BB%D0%B5%D0%B6%D1%83%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%BD%D0%BE%D0%B2%D1%8B%D1%85%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%2C%20%D1%81%D0%BA%D0%B8%D0%B4%D1%8B%D0%B2%D0%B0%D1%8E%20%D0%B8%D1%85%20%D0%BD%D0%B0%20%D0%BE%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%93%D0%98%D0%9F%D0%B0%D0%BC%2C%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D1%8E%20%D0%B8%20%D0%B2%D0%BD%D0%BE%D1%88%D1%83%20%D0%B8%D1%85%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B%20%D0%93%D0%98%D0%9F%D0%B0%D0%BC%20%D0%B8%20%D0%B2%20%D0%BE%D0%B1%D1%89%D1%83%D1%8E%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83%0A&p_freq=10&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P41",
+   "title": "Выписка АВР в 1С и на сайте электронных Договоров",
+   "content": "По условиям заказчика подписание ЭАВР происходит на том же сайте, где подписаны Договора, Поэтому сначала создается АВР в 1С, после этого этот же авр создается на сайте, прикрепленным непосредственно к нужному договору\n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 08:57",
+   "hours_month": 0.8333333333333334,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P41&type=T2_task&p_title=%D0%92%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%90%D0%92%D0%A0%20%D0%B2%201%D0%A1%20%D0%B8%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2&p_content=%D0%9F%D0%BE%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%AD%D0%90%D0%92%D0%A0%20%D0%BF%D1%80%D0%BE%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BD%D0%B0%20%D1%82%D0%BE%D0%BC%20%D0%B6%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%2C%20%D0%B3%D0%B4%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D1%8B%20%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%2C%20%D0%9F%D0%BE%D1%8D%D1%82%D0%BE%D0%BC%D1%83%20%D1%81%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B0%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%90%D0%92%D0%A0%20%D0%B2%201%D0%A1%2C%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D1%8D%D1%82%D0%BE%D0%B3%D0%BE%20%D1%8D%D1%82%D0%BE%D1%82%20%D0%B6%D0%B5%20%D0%B0%D0%B2%D1%80%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D1%80%D0%B8%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%BD%D0%B5%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%20%D0%BA%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%D0%BC%D1%83%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%83%0A&p_freq=10&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P43",
+   "title": "Отслеживание подписание АВР заказчиком",
+   "content": "Слежу за подписанием АВР на сайте Bnect, в случае длительного неподписания, напоминаю ГИПам, чтобы те в свою очередь напомнили заказчику о необходимости подписания АВР \n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 09:03",
+   "hours_month": 0.8333333333333334,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P43&type=T2_task&p_title=%D0%9E%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%90%D0%92%D0%A0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D0%BE%D0%BC&p_content=%D0%A1%D0%BB%D0%B5%D0%B6%D1%83%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC%20%D0%90%D0%92%D0%A0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20Bnect%2C%20%D0%B2%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B5%20%D0%B4%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B5%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%2C%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D1%8E%20%D0%93%D0%98%D0%9F%D0%B0%D0%BC%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D1%82%D0%B5%20%D0%B2%20%D1%81%D0%B2%D0%BE%D1%8E%20%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C%20%D0%BD%D0%B0%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%D1%83%20%D0%BE%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%90%D0%92%D0%A0%20%0A&p_freq=10&p_time=5&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P3",
+   "title": "ведение принятых проектных решении",
+   "content": "Требуется собирать и вести в течение продолжения проекта принятые проектные решения. Часто бывает что участники проекта ( сам заказчик тоже) не помнит/ неверно помнит все принятые отклонения или согласованные проектные решения. \n",
+   "author_email": "s.kabzhalelov@danpartners.com",
+   "contributors": [
+    "s.kabzhalelov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "s.kabzhalelov@danpartners.com",
+   "last_at": "2026-07-22 06:39",
+   "hours_month": 0.6666666666666666,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P3&type=T2_task&p_title=%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BD%D1%8F%D1%82%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D1%85%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B8&p_content=%D0%A2%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%81%D0%BE%D0%B1%D0%B8%D1%80%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%B2%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BD%D1%8F%D1%82%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F.%20%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B1%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%20%D1%87%D1%82%D0%BE%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%28%20%D1%81%D0%B0%D0%BC%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA%20%D1%82%D0%BE%D0%B6%D0%B5%29%20%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%2F%20%D0%BD%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%20%D0%B2%D1%81%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BD%D1%8F%D1%82%D1%8B%D0%B5%20%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%D0%BB%D0%B8%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F.%20%0A&p_freq=4&p_time=10&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P12",
+   "title": "Обработка замечании БИМ360",
+   "content": "Приходит на почту уведомление о получении замечании по одному проекту ,открываем бим 360,замечания направляем в ручную на отдел которому относится замечания, далее открываем Битрикс, отправляется в битрикс задача по полученным замечаниям в тот или иной раздел .\n",
+   "author_email": "n.aronova@danpartners.com",
+   "contributors": [
+    "n.aronova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "n.aronova@danpartners.com",
+   "last_at": "2026-07-22 06:43",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P12&type=T2_task&p_title=%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%91%D0%98%D0%9C360&p_content=%D0%9F%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%87%D1%82%D1%83%20%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83%20%2C%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D0%B5%D0%BC%20%D0%B1%D0%B8%D0%BC%20360%2C%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D0%BC%20%D0%B2%20%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%BE%D0%BC%D1%83%20%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%81%D1%8F%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F%2C%20%D0%B4%D0%B0%D0%BB%D0%B5%D0%B5%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D0%B5%D0%BC%20%D0%91%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%2C%20%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B1%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC%20%D0%B2%20%D1%82%D0%BE%D1%82%20%D0%B8%D0%BB%D0%B8%20%D0%B8%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%20.%0A&p_freq=25&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P15",
+   "title": "Заполнение общих указаний проекта",
+   "content": "Нужно вносить в текстовые данные изменения - адрес объекта, расположение оборудование, наименование помещений, что где стоит. Какое оборудование применяется, номер технических условий\n",
+   "author_email": "k.a.oganezov@danpartners.com",
+   "contributors": [
+    "k.a.oganezov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "k.a.oganezov@danpartners.com",
+   "last_at": "2026-07-22 06:44",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P15&type=T2_task&p_title=%D0%97%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B8%D1%85%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&p_content=%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B2%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%8C%20%D0%B2%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20-%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%2C%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B9%2C%20%D1%87%D1%82%D0%BE%20%D0%B3%D0%B4%D0%B5%20%D1%81%D1%82%D0%BE%D0%B8%D1%82.%20%D0%9A%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F%2C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9%0A&p_time=30&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P19",
+   "title": "Актуализация эксель таблиц по дебиторской задолженности для каждого ГИПа и общей",
+   "content": "По данным 1С проверяю все платежи, АВР и задолженности, вношу их в таблицы \n",
+   "author_email": "a.hahanyan@danpartners.com",
+   "contributors": [
+    "a.hahanyan@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.hahanyan@danpartners.com",
+   "last_at": "2026-07-22 06:45",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P19&type=T2_task&p_title=%D0%90%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%8D%D0%BA%D1%81%D0%B5%D0%BB%D1%8C%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%20%D0%BF%D0%BE%20%D0%B4%D0%B5%D0%B1%D0%B8%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE%20%D0%93%D0%98%D0%9F%D0%B0%20%D0%B8%20%D0%BE%D0%B1%D1%89%D0%B5%D0%B9&p_content=%D0%9F%D0%BE%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%201%D0%A1%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D1%8E%20%D0%B2%D1%81%D0%B5%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8%2C%20%D0%90%D0%92%D0%A0%20%D0%B8%20%D0%B7%D0%B0%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C%20%D0%B2%D0%BD%D0%BE%D1%88%D1%83%20%D0%B8%D1%85%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B%20%0A&p_time=30&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P28",
+   "title": "Опрос состояния проектных работ",
+   "content": "На синхронизацию по текущему состоянию объекта уходит время - опрос в чате, устройство рабочих совещаний, заполнение таблиц\n",
+   "author_email": "a.ahmetov@danpartners.com",
+   "contributors": [
+    "a.ahmetov@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "a.ahmetov@danpartners.com",
+   "last_at": "2026-07-22 06:53",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P28&type=T2_task&p_title=%D0%9E%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D1%85%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82&p_content=%D0%9D%D0%B0%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%BC%D1%83%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8E%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%20%D1%83%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20-%20%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%B2%20%D1%87%D0%B0%D1%82%D0%B5%2C%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D1%85%20%D1%81%D0%BE%D0%B2%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B9%2C%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%0A",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "DAN_LAB_1_Intake-P4",
+   "title": "Обработка и распределение писем.",
+   "content": " Действия: пришло письмо, вычитывается,сохраняется в папке с  шаблонным наименованием, создается задача в битриксе со сроком для того исполнителя кому относится это письмо. Уходит примерно 5-10 минут. В неделю примерно 600 минут\n",
+   "author_email": "n.aronova@danpartners.com",
+   "contributors": [
+    "n.aronova@danpartners.com"
+   ],
+   "edits": 1,
+   "last_author": "n.aronova@danpartners.com",
+   "last_at": "2026-07-22 06:39",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=rec3vNMdewvyE5RA7&thread_key=DAN_LAB_1_Intake-P4&type=T2_task&p_title=%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%81%D0%B5%D0%BC.&p_content=%20%D0%94%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%3A%20%D0%BF%D1%80%D0%B8%D1%88%D0%BB%D0%BE%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%2C%20%D0%B2%D1%8B%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%2C%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B5%20%D1%81%20%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC%2C%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%D0%B2%20%D0%B1%D0%B8%D1%82%D1%80%D0%B8%D0%BA%D1%81%D0%B5%20%D1%81%D0%BE%20%D1%81%D1%80%D0%BE%D0%BA%D0%BE%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%B3%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%BC%D1%83%20%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%81%D1%8F%20%D1%8D%D1%82%D0%BE%20%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE.%20%D0%A3%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%205-10%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82.%20%D0%92%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%20600%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82%0A&p_freq=500&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  }
+ ]
 }

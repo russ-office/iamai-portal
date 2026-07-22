@@ -1,6 +1,6 @@
 {
  "scope": "person",
- "generated_at": "2026-07-22T11:18:58+05:00",
+ "generated_at": "2026-07-22T14:05:15+05:00",
  "today": "2026-07-22",
  "sprint_no": 1,
  "subject": {
@@ -12,7 +12,7 @@
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=reccm0dmFpa2qcisr&type=T1_idea&author_email=",
  "status_light": {
   "days_idle": 8,
-  "done_7d": 1,
+  "done_7d": 0,
   "state": "bad"
  },
  "events": [
