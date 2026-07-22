@@ -32,6 +32,14 @@ STAGE_LABEL = {
 }
 STAGE_ORDER = list(STAGE_LABEL.keys())
 
+# Календарь = слияние на чтении (вердикт C, runbook_mateos_base): таблицы-агрегатора нет,
+# события собираются здесь из Sessions + Cycles. Фронт (kindLabel) знает три вида:
+# demo_day · session · other(=цикл). Всё, что не Demo Day, для участника — «Сессия».
+SESSION_KIND = {"demo_day": "demo_day"}
+# Прошедшие встречи держим неделю: «когда был прошлый статус-чек» — рабочий вопрос,
+# а не мусор. Дальше отсекаем, иначе к третьему спринту календарь станет простынёй.
+PAST_WINDOW_DAYS = 7
+
 
 def token():
     t = os.environ.get("AIRTABLE_PAT", "").strip()
@@ -98,6 +106,42 @@ def user_threads(arts):
     return out
 
 
+def session_events(rows, now):
+    """Sessions группы → события календаря. rows = записи Sessions одной группы.
+
+    `date` в базе — dateTime с таймзоной Asia/Almaty; API отдаёт UTC ISO, фронт
+    форматирует по локали участника. Время НЕ пересчитываем и не «чиним»: снапшот
+    показывает то, что стоит в базе (правка часов = зона LAB, не рельса).
+
+    Заголовок берём из primary-поля `demo_day` — это и есть название встречи,
+    которое заводит LAB. Своего `title` у таблицы нет.
+    """
+    out = []
+    for r in rows:
+        f = r["fields"]
+        start = f.get("date")
+        if not start:
+            continue
+        try:
+            dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if (now - dt).days > PAST_WINDOW_DAYS:
+            continue
+        out.append({
+            "id": r["id"],
+            "title": f.get("demo_day") or "Встреча",
+            "start": start,
+            "end": start,          # длительность в базе не хранится — конец = начало
+            "kind": SESSION_KIND.get(f.get("session_type"), "session"),
+            "all_day": False,      # цикл — единственное all_day событие, фронт им меряет спринт
+            "status": f.get("status") or "planned",
+            "notes": f.get("notes") or "",
+        })
+    out.sort(key=lambda e: e["start"])
+    return out
+
+
 def status_light(dates, today):
     """dates = list of ISO submitted_at (авторские артефакты). Пороги залочены (спека)."""
     if not dates:
@@ -142,6 +186,7 @@ def main():
     arts = fetch_all("Artifacts")
     members = fetch_all("GroupMembership")
     users = fetch_all("Users")
+    sessions = fetch_all("Sessions")
 
     sz_groups = [g for g in groups if first(g["fields"].get("client")) == SZ]
     gname = {g["id"]: g["fields"].get("name", "") for g in sz_groups}
@@ -154,6 +199,13 @@ def main():
         gid = first(f.get("group"))
         if gid in gids and (gid not in cyc_by_group or (f.get("cycle_no") or 0) > (cyc_by_group[gid]["fields"].get("cycle_no") or 0)):
             cyc_by_group[gid] = c
+
+    # встречи по группам (LAB заводит Sessions на группу, не на человека)
+    sess_by_group = {}
+    for r in sessions:
+        gid = first(r["fields"].get("group"))
+        if gid in gids:
+            sess_by_group.setdefault(gid, []).append(r)
 
     # artifacts by group + by author_email
     arts_by_group, arts_by_author = {}, {}
@@ -225,6 +277,9 @@ def main():
             end = cf.get("end_date") or cf.get("end") or ""
             events.append({"id": cyc["id"], "title": cf.get("cycle") or f"Cycle {cf.get('cycle_no','')}".strip(),
                            "start": start or now_iso, "end": end or now_iso, "kind": "other", "all_day": True})
+        # Встречи группы. Без них участник открывал Пульс и не видел ни одной сессии —
+        # «Лаборатория не началась» (блокер запуска SZ, lab_to_mos_pulse-blocks-sz-rollout).
+        events += session_events(sess_by_group.get(gid, []), now)
         snap = {
             "scope": "person",
             "generated_at": now_iso,
@@ -249,7 +304,8 @@ def main():
             snap["metrics"]["activity_to"] = ato
         (OUT_DIR / f"{tok}.json").write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
         written += 1
-        print(f"{gname.get(gid,''):<18} {name:<26} → {tok}.json  (threads={len(threads)}, state={snap['status_light']['state']})")
+        meetings = sum(1 for e in events if not e["all_day"])
+        print(f"{gname.get(gid,''):<20} {name:<26} → {tok}.json  (threads={len(threads)}, встреч={meetings}, state={snap['status_light']['state']})")
 
     print(f"\nwritten: {written} per-participant snapshots → pulse/data/")
     report_dropped()
