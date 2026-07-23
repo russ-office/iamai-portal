@@ -71,20 +71,28 @@
 
   // ── shell (c-shell + c-nav + c-nav-item + c-page-head) ─────────────────────
   function buildShell(view, meta, D) {
+    // Токен-гейт живёт в ?c=<token>. Относительный href меню НЕ несёт query —
+    // без этого клик по «Бэклог» уходит на page-list.html без токена, снапшот не
+    // находится, страница пустая (репорт Ruslan 23.07: «ссылки на бэклог физически нет»).
+    var tok = new URLSearchParams(location.search).get("c") || "";
+    var withTok = function (href) {
+      if (!tok) return href;
+      return href + (href.indexOf("?") === -1 ? "?" : "&") + "c=" + encodeURIComponent(tok);
+    };
     var nav = NAV.map(function (n) {
       var soon = n.state === "soon";
       var cls = "c-nav-item" + (view === n.id ? " is-active" : "") + (soon ? " is-soon" : "");
       if (soon) return '<span class="' + cls + '" title="Появится позже / база не подключена"><span>' + esc(n.label) + '</span></span>';
-      return '<a class="' + cls + '" href="' + esc(n.href) + '"><span>' + esc(n.label) + '</span></a>';
+      return '<a class="' + cls + '" href="' + esc(withTok(n.href)) + '"><span>' + esc(n.label) + '</span></a>';
     }).join("");
 
     return '' +
       '<div class="c-shell">' +
         '<aside class="c-shell__rail">' +
-          '<a class="c-shell__brand" href="page-person.html" style="text-decoration:none;cursor:pointer" title="На стартовую (Мой Пульс)"><b>MateOS</b><span>ПУЛЬС</span></a>' +
+          '<a class="c-shell__brand" href="' + esc(withTok("page-person.html")) + '" style="text-decoration:none;cursor:pointer" title="На стартовую (Мой Пульс)"><b>MateOS</b><span>ПУЛЬС</span></a>' +
           '<nav class="c-nav">' + nav + '</nav>' +
           '<div class="c-nav__foot">' +
-            '<a href="page-person.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">' +
+            '<a href="' + esc(withTok("page-person.html")) + '" style="display:flex;align-items:center;gap:10px;text-decoration:none">' +
               avatar(D.subject.name, 30) +
               '<span style="min-width:0"><span style="display:block;font-size:12px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(D.subject.name) + '</span>' +
               '<span style="display:block;font-family:var(--font-mono);font-size:10px;color:var(--muted)">' + esc(D.subject.client) + ' · ' + esc(D.subject.group) + '</span></span>' +
