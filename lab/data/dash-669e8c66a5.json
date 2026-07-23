@@ -1,24 +1,98 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-23T11:21:58+05:00",
+ "generated_at": "2026-07-23T14:04:17+05:00",
  "kpi": {
   "groups": 1,
-  "people": 0,
-  "threads": 0,
-  "hours_month": 0,
-  "hours_year": 0
+  "people": 5,
+  "threads": 5,
+  "hours_month": 590.2,
+  "hours_year": 7082.4
  },
  "groups": [
   {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 0,
-   "people": 0,
-   "hours_month": 0
+   "threads": 5,
+   "people": 5,
+   "hours_month": 590.2
   }
  ],
- "funnel": {},
- "top": [],
- "board": []
+ "funnel": {
+  "Проблема": 5
+ },
+ "top": [
+  {
+   "title": "Отправка статистической отчётности ежемесячно и поквартально, данные собираются по 1С, продажи, себестоимость, запасы, по филиалам и головной компании, в разрезе адресов точек. Отчетность по фин.показателям за квартал по головной компании",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 540,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P6"
+  },
+  {
+   "title": "чтение ",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 30,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P2"
+  },
+  {
+   "title": "Отчёт 1ТС",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 20,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P5"
+  },
+  {
+   "title": "Перенос наименований с файла ексель и проверка на наличие в подразделении ",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 0.16666666666666666,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P3"
+  },
+  {
+   "title": "Сверка инкассаций",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 0,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P4"
+  }
+ ],
+ "board": [
+  {
+   "email": "tatyana.sh0709@gmail.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 540,
+   "rows": 1
+  },
+  {
+   "email": "nurzhan.d@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 30,
+   "rows": 1
+  },
+  {
+   "email": "tatyana.v@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 20,
+   "rows": 1
+  },
+  {
+   "email": "takhmina.m@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 0.16666666666666666,
+   "rows": 1
+  },
+  {
+   "email": "olga.k@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 0,
+   "rows": 1
+  }
+ ]
 }

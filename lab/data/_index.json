@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-23T11:21:58+05:00",
+ "generated_at": "2026-07-23T14:04:17+05:00",
  "groups": [
   {
    "id": "recBoN3ZsXbY7AAGn",
@@ -90,7 +90,7 @@
    "group": "EVRIKA_LAB_1_1_Acc",
    "client": "rec7kIMmwjZ6j3ahS",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 0
+   "threads": 5
   },
   {
    "id": "recrhTXYnh0VnV2GD",
