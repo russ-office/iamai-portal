@@ -1,25 +1,25 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-23T14:04:17+05:00",
+ "generated_at": "2026-07-23T16:18:31+05:00",
  "kpi": {
   "groups": 1,
-  "people": 5,
-  "threads": 5,
-  "hours_month": 590.2,
-  "hours_year": 7082.4
+  "people": 8,
+  "threads": 8,
+  "hours_month": 689.2,
+  "hours_year": 8270.4
  },
  "groups": [
   {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 5,
-   "people": 5,
-   "hours_month": 590.2
+   "threads": 8,
+   "people": 8,
+   "hours_month": 689.2
   }
  ],
  "funnel": {
-  "Проблема": 5
+  "Проблема": 8
  },
  "top": [
   {
@@ -28,6 +28,13 @@
    "hours_month": 540,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P6"
+  },
+  {
+   "title": "Фильтры по приоритетности заказов в 1С и WMS",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 90,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P7"
   },
   {
    "title": "чтение ",
@@ -42,6 +49,20 @@
    "hours_month": 20,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P5"
+  },
+  {
+   "title": "Вбивание имей коды занимайся монографияның времени",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 5,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P8"
+  },
+  {
+   "title": "проверка расходов гсм и заполнение занимает около 6 часов",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 4,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P9"
   },
   {
    "title": "Перенос наименований с файла ексель и проверка на наличие в подразделении ",
@@ -67,6 +88,13 @@
    "rows": 1
   },
   {
+   "email": "zanggar.o@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 90,
+   "rows": 1
+  },
+  {
    "email": "nurzhan.d@evrika.com",
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
@@ -78,6 +106,20 @@
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
    "hours_month": 20,
+   "rows": 1
+  },
+  {
+   "email": "muhtar.a@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 5,
+   "rows": 1
+  },
+  {
+   "email": "gulfiya.i@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 4,
    "rows": 1
   },
   {
