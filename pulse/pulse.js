@@ -228,9 +228,7 @@
           '<div><div class="p-section">Вклад</div><div class="c-sheet c-sheet--pad">' +
             '<div class="p-metric-row">' +
               '<div class="c-metric"><span class="c-metric__value c-num">' + esc(D.metrics.total_hours) + '</span><span class="c-metric__label">часов / мес</span></div>' +
-              '<div class="c-metric"><span class="c-metric__value c-num">' + Math.round(D.metrics.impact_share * 100) + '%</span><span class="c-metric__label">доля вклада</span></div>' +
             '</div>' +
-            '<div class="p-contrib__divider">Квадрант: <span class="p-quadrant">' + esc(D.metrics.quadrant) + '</span></div>' +
           '</div></div>' +
         '</div>' +
 
@@ -447,7 +445,6 @@
           kpi("Цикл", "День " + day + "/14", cycle ? U.fmtDay(cycle.start) + " — " + U.fmtDay(cycle.end) : "") +
           kpi("Задачи", done + "/" + D.tasks.length, doing + " в работе") +
           kpi("Потенциал", potential, "часов / мес") +
-          kpi("Вклад", Math.round(D.metrics.impact_share * 100) + "%", D.metrics.quadrant) +
         '</div>' +
         '<div class="p-note" style="max-width:none;margin-top:0">«Один прототип закрыт, интервью в работе — экономия по треду считается ДО минус ПОСЛЕ.»</div>' +
         // Текущая задача (в работе) — спотлайт наверху, чтобы её было видно на Спринте
