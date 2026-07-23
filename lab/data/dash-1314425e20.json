@@ -1,12 +1,12 @@
 {
  "client": "DAN Partners",
- "generated_at": "2026-07-22T22:39:55+05:00",
+ "generated_at": "2026-07-23T11:21:58+05:00",
  "kpi": {
   "groups": 6,
   "people": 15,
-  "threads": 46,
-  "hours_month": 3026.7,
-  "hours_year": 36320.4
+  "threads": 47,
+  "hours_month": 3056.7,
+  "hours_year": 36680.4
  },
  "groups": [
   {
@@ -34,20 +34,20 @@
    "hours_month": 466.2
   },
   {
+   "group": "DAN_LAB_1_Intake",
+   "group_id": "recIS4AAapP5XL737",
+   "cycle": "DAN_LAB_1_Intake-C1",
+   "threads": 5,
+   "people": 4,
+   "hours_month": 126.3
+  },
+  {
    "group": "DAN_LAB_1_2",
    "group_id": "recrhTXYnh0VnV2GD",
    "cycle": "DAN_LAB_1_2-C1",
    "threads": 6,
    "people": 3,
    "hours_month": 122.2
-  },
-  {
-   "group": "DAN_LAB_1_Intake",
-   "group_id": "recIS4AAapP5XL737",
-   "cycle": "DAN_LAB_1_Intake-C1",
-   "threads": 4,
-   "people": 3,
-   "hours_month": 96.3
   },
   {
    "group": "DAN_LAB_1_3",
@@ -59,7 +59,7 @@
   }
  ],
  "funnel": {
-  "Проблема": 46
+  "Проблема": 47
  },
  "top": [
   {
@@ -164,10 +164,10 @@
   },
   {
    "email": "s.ormanova@danpartners.com",
-   "group": "DAN_LAB_1_4",
-   "ideas": 7,
-   "hours_month": 428.3333333333333,
-   "rows": 7
+   "group": "DAN_LAB_1_Intake",
+   "ideas": 8,
+   "hours_month": 458.3333333333333,
+   "rows": 8
   },
   {
    "email": "e.ospanov@danpartners.com",

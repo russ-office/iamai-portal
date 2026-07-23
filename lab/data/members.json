@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22T22:39:55+05:00",
+ "generated_at": "2026-07-23T11:21:58+05:00",
  "groups": {
   "recBoN3ZsXbY7AAGn": {
    "name": "SZ_LAB_1_4_IT",
@@ -17,7 +17,7 @@
    "name": "DAN_LAB_1_Intake",
    "client": "recFZuQiqAJAsyL6U",
    "cycle": "DAN_LAB_1_Intake-C1",
-   "threads": 4
+   "threads": 5
   },
   "recJTpyGqmXv0brvo": {
    "name": "SZ_LAB_1_6_HR",
