@@ -289,7 +289,6 @@
     body.innerHTML =
       '<div class="p-wrap--list">' +
         '<div class="c-filter-bar" style="margin-bottom:18px">' +
-          '<select class="p-select" style="width:170px"><option>Все треды</option><option>T0 · проблема</option><option>T1 · структура</option></select>' +
           '<span class="c-filter-bar__count">' + D.backlog.length + ' проблем · ' + total + ' ч/мес потенциал</span>' +
         '</div>' + cards +
       '</div>';
@@ -484,15 +483,10 @@
           '<iframe class="c-drawer__iframe" id="p-drawer-iframe" title="Форма" data-src=""></iframe>' +
           '<div class="p-guide" id="p-drawer-html" hidden></div>' +
         '</div>' +
-        '<div class="c-drawer__foot">' +
-          '<button class="c-btn is-ghost" id="p-drawer-cancel">Закрыть</button>' +
-          '<a class="c-btn is-primary" id="p-drawer-open" href="#" target="_blank" rel="noreferrer">Открыть форму</a>' +
-        '</div>' +
       '</aside>';
     while (wrap.firstChild) document.body.appendChild(wrap.firstChild);
     document.getElementById("p-scrim").addEventListener("click", closeDrawer);
     document.getElementById("p-drawer-close").addEventListener("click", closeDrawer);
-    document.getElementById("p-drawer-cancel").addEventListener("click", closeDrawer);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
   }
   // src → форма в iframe (write-path); html → текст (инструкции). Ровно одно из двух.
@@ -502,16 +496,13 @@
     document.getElementById("p-drawer-title").textContent = title || "";
     var f = document.getElementById("p-drawer-iframe");
     var h = document.getElementById("p-drawer-html");
-    var ol = document.getElementById("p-drawer-open");
-    // display, а не атрибут hidden: у .c-btn стоит display:inline-flex и перебивает hidden
+    // src → форма в iframe; html → текст инструкции. Подвал шторки убран (Ruslan 23.07),
+    // закрытие — крестиком в шапке ∨ Escape ∨ клик по затемнению.
     if (html) {
       h.innerHTML = html; h.hidden = false; f.style.display = "none";
-      if (ol) ol.style.display = "none";   // «Открыть форму» у текста смысла не имеет
     } else {
       h.hidden = true; f.style.display = "";
-      if (ol) ol.style.display = "";
       if (src && f.src !== src) f.src = src; // lazy-load; keeps offline double-click cheap
-      if (ol && src) ol.href = src;          // footer fallback = same form
     }
     document.getElementById("p-scrim").classList.add("is-open");
     var d = document.getElementById("p-drawer"); d.classList.add("is-open"); d.setAttribute("aria-hidden", "false");
