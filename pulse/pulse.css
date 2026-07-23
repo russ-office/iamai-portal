@@ -64,12 +64,15 @@
 .p-backlog-card__num { font-family: var(--font-mono); font-size: 22px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
 .p-backlog-card__unit { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
 .p-backlog-card__body { margin: 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
-/* два шага в подвале карточки (поправить · взять в работу) — в строку, с переносом на узком */
-.p-backlog-card__edit { margin-top: auto; padding-top: 6px; display: flex; gap: 16px; flex-wrap: wrap; }
-.p-backlog-card__edit a,
-.p-backlog-card__edit button { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-soft); border: none; background: transparent; padding: 0; cursor: pointer; }
-.p-backlog-card__edit a:hover,
-.p-backlog-card__edit button:hover { color: var(--action-hover); }
+/* часы/мес — акцентом справа в шапке карточки (Ruslan 23.07), вместо thread_key */
+.p-backlog-card__hchip { flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); white-space: nowrap; align-self: flex-start; }
+.p-backlog-card__hchip b { font-size: 18px; font-weight: 700; }
+/* два шага — разнесены по углам подвала (Поправить слева · Взять в работу справа), чтобы не путать */
+.p-backlog-card__acts { margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; gap: 12px; }
+.p-backlog-card__acts .c-btn { flex: 0 1 auto; }
+/* шторка формы — ~48% ширины (Ruslan 23.07); на узких экранах весь экран */
+.c-drawer { width: 48vw; }
+@media (max-width: 720px) { .c-drawer { width: 100%; } }
 
 /* Инструкции: читаемый текст в шторке. Ширина держится шторкой, здесь только ритм. */
 .p-guide { overflow-y: auto; font-size: 14px; line-height: 1.6; color: var(--ink); }

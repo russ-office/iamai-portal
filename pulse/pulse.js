@@ -260,16 +260,16 @@
   // желавший дописать формулировку, заводил себе задачу. Подпись теперь называет шаг.
   // Нет ссылки — нет кнопки (url_edit пуст без thread_key: правка без него порвала бы тред).
   var CARD_ACTS = [
-    { act: "edit", link: "edit", label: "поправить →",     eyebrow: "Поправить проблему" },
-    { act: "take", link: "take", label: "взять в работу →", eyebrow: "Взять в работу" },
+    { act: "edit", link: "edit", label: "Поправить",      eyebrow: "Поправить проблему", kind: "is-secondary" },
+    { act: "take", link: "take", label: "Взять в работу", eyebrow: "Взять в работу",     kind: "is-primary" },
   ];
 
   function cardActions(b) {
     var links = b.links || {};
     var btns = CARD_ACTS.filter(function (a) { return formLink(links[a.link]); }).map(function (a) {
-      return '<button type="button" data-card="' + esc(b.id) + '" data-act="' + a.act + '">' + esc(a.label) + '</button>';
+      return '<button type="button" class="c-btn ' + a.kind + '" data-card="' + esc(b.id) + '" data-act="' + a.act + '">' + esc(a.label) + '</button>';
     }).join("");
-    return btns ? '<div class="p-backlog-card__edit">' + btns + '</div>' : '';
+    return btns ? '<div class="p-backlog-card__acts">' + btns + '</div>' : '';
   }
 
   function renderBacklog(body, D) {
@@ -278,10 +278,9 @@
       ? '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму</div></div>'
       : '<div class="p-backlog-grid">' + D.backlog.map(function (b) {
           return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
-            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="c-chip">' + esc(b.thread_key) + '</span></div>' +
-            '<div class="p-backlog-card__hours"><span class="p-backlog-card__num">' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</span><span class="p-backlog-card__unit">часов / мес</span></div>' +
-            // Карточка = название + часы + выжимка. Полный текст живёт в форме, не здесь:
-            // стена markdown-а ломала вёрстку карточки (улов Ruslan, M-042).
+            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="p-backlog-card__hchip"><b>' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</b> ч / мес</span></div>' +
+            // Карточка = название + часы (акцент, справа) + выжимка. thread_key убран (Ruslan 23.07).
+            // Полный текст живёт в форме, не здесь: стена markdown-а ломала вёрстку (улов Ruslan, M-042).
             '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 180)) + '</p>' +
             cardActions(b) +
           '</div>';
