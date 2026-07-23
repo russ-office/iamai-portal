@@ -70,6 +70,9 @@
 /* два шага — разнесены по углам подвала (Поправить слева · Взять в работу справа), чтобы не путать */
 .p-backlog-card__acts { margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; gap: 12px; }
 .p-backlog-card__acts .c-btn { flex: 0 1 auto; }
+/* «Взять в работу» — бежевая кнопка, надпись терракотой (Ruslan 23.07): меньше терракоты в глаза */
+.c-btn.p-btn-take { color: var(--accent); }
+.c-btn.p-btn-take:hover { color: var(--action-hover); }
 /* шторка формы — ~48% ширины (Ruslan 23.07); на узких экранах весь экран */
 .c-drawer { width: 48vw; }
 @media (max-width: 720px) { .c-drawer { width: 100%; } }

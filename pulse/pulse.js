@@ -261,7 +261,7 @@
   // Нет ссылки — нет кнопки (url_edit пуст без thread_key: правка без него порвала бы тред).
   var CARD_ACTS = [
     { act: "edit", link: "edit", label: "Поправить",      eyebrow: "Поправить проблему", kind: "is-secondary" },
-    { act: "take", link: "take", label: "Взять в работу", eyebrow: "Взять в работу",     kind: "is-primary" },
+    { act: "take", link: "take", label: "Взять в работу", eyebrow: "Взять в работу",     kind: "is-secondary p-btn-take" },
   ];
 
   function cardActions(b) {
@@ -343,7 +343,7 @@
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(g.title) + '</span>' +
             '<span class="c-chip is-quiet">' + esc(g.meta || "") + '</span></div>' +
             '<p class="p-backlog-card__body">' + esc(g.subtitle || "") + '</p>' +
-            '<div class="p-backlog-card__edit"><button type="button">читать →</button></div>' +
+            '<div class="p-backlog-card__acts"><button type="button" class="c-btn is-secondary">Читать</button></div>' +
           '</div>';
         }).join("");
         body.innerHTML = '<div class="p-wrap--list">' +
