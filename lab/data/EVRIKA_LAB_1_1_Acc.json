@@ -4,7 +4,7 @@
  "client": "rec7kIMmwjZ6j3ahS",
  "cycle": "EVRIKA-BUH-F1-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
- "generated_at": "2026-07-23T16:18:31+05:00",
+ "generated_at": "2026-07-23T17:53:30+05:00",
  "threads": [
   {
    "thread_key": "EVRIKA_LAB_1_1_Acc-P6",
@@ -55,6 +55,30 @@
    "prototypes": []
   },
   {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P11",
+   "title": "Балансировка стока между складами",
+   "content": "Проверка достаточности товара на складах, нет ли перекосов (на одном товара больше чем на другом, или же товара на одном складе нет, а на втором есть)\n",
+   "author_email": "maxim.m@evrika.com",
+   "contributors": [
+    "maxim.m@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "maxim.m@evrika.com",
+   "last_at": "2026-07-23 12:00",
+   "hours_month": 67.5,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P11&p_title=%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%81%D1%82%D0%BE%D0%BA%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D0%BC%D0%B8&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D1%85%2C%20%D0%BD%D0%B5%D1%82%20%D0%BB%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BE%D1%81%D0%BE%D0%B2%20%28%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%BD%D0%B0%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%2C%20%D0%B8%D0%BB%D0%B8%20%D0%B6%D0%B5%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B5%20%D0%BD%D0%B5%D1%82%2C%20%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%BC%20%D0%B5%D1%81%D1%82%D1%8C%29%0A&p_freq=15&p_time=15&p_emp=18",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P11&type=T2_task&p_title=%D0%91%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%81%D1%82%D0%BE%D0%BA%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D0%BC%D0%B8&p_content=%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D1%85%2C%20%D0%BD%D0%B5%D1%82%20%D0%BB%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BE%D1%81%D0%BE%D0%B2%20%28%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%BD%D0%B0%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%2C%20%D0%B8%D0%BB%D0%B8%20%D0%B6%D0%B5%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B5%20%D0%BD%D0%B5%D1%82%2C%20%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%BC%20%D0%B5%D1%81%D1%82%D1%8C%29%0A&p_freq=15&p_time=15&p_emp=18",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
    "thread_key": "EVRIKA_LAB_1_1_Acc-P2",
    "title": "чтение ",
    "content": "Я трачу 05:00 в неделю минимум на чтение нормативных постановлений и законов\n",
@@ -79,6 +103,30 @@
    "prototypes": []
   },
   {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P12",
+   "title": "Составление потребности перед поставщиком",
+   "content": "Каждую неделю требуется расчет потребности на основе учета матрицы товара и фактического остатка. \n",
+   "author_email": "nurbolat.s@evrika.com",
+   "contributors": [
+    "nurbolat.s@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "nurbolat.s@evrika.com",
+   "last_at": "2026-07-23 12:00",
+   "hours_month": 24,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P12&p_title=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%BE%D0%BC&p_content=%D0%9A%D0%B0%D0%B6%D0%B4%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%20%D1%82%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D1%83%D1%87%D0%B5%D1%82%D0%B0%20%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%B8%20%D1%84%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0.%20%0A&p_freq=4&p_time=20&p_emp=18",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P12&type=T2_task&p_title=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%BE%D0%BC&p_content=%D0%9A%D0%B0%D0%B6%D0%B4%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%20%D1%82%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5%20%D1%83%D1%87%D0%B5%D1%82%D0%B0%20%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%20%D0%B8%20%D1%84%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0.%20%0A&p_freq=4&p_time=20&p_emp=18",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
    "thread_key": "EVRIKA_LAB_1_1_Acc-P5",
    "title": "Отчёт 1ТС",
    "content": "Составление отчёта по данным документов и данных с 1С\n",
@@ -95,6 +143,30 @@
    "links": {
     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P5&p_title=%D0%9E%D1%82%D1%87%D1%91%D1%82%201%D0%A2%D0%A1&p_content=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D1%91%D1%82%D0%B0%20%D0%BF%D0%BE%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%201%D0%A1%0A&p_freq=10&p_time=120&p_emp=1",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P5&type=T2_task&p_title=%D0%9E%D1%82%D1%87%D1%91%D1%82%201%D0%A2%D0%A1&p_content=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D1%91%D1%82%D0%B0%20%D0%BF%D0%BE%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%201%D0%A1%0A&p_freq=10&p_time=120&p_emp=1",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P13",
+   "title": "Фильтрация рабочего стола от разных документов",
+   "content": "Фильтрация документов из рабочего стола по папкам.\n",
+   "author_email": "nurbolat.s@evrika.com",
+   "contributors": [
+    "nurbolat.s@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "nurbolat.s@evrika.com",
+   "last_at": "2026-07-23 12:01",
+   "hours_month": 6.666666666666667,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P13&p_title=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D0%BE%D0%BB%D0%B0%20%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2&p_content=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D0%BE%D0%BB%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%D0%BC.%0A&p_freq=4&p_time=20&p_emp=5",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P13&type=T2_task&p_title=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D0%BE%D0%BB%D0%B0%20%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2&p_content=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B8%D0%B7%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE%20%D1%81%D1%82%D0%BE%D0%BB%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%D0%BC.%0A&p_freq=4&p_time=20&p_emp=5",
     "research": null,
     "hypothesis": null,
     "prototype": null,
@@ -143,6 +215,54 @@
    "links": {
     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P9&p_title=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B3%D1%81%D0%BC%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%206%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2&p_content=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B3%D1%81%D0%BC%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%206%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%2C%20%D1%81%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D1%87%D0%B5%D0%BA%D0%B0%D0%BC%20%D0%B8%20%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%0A&p_freq=8&p_time=15&p_emp=2",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P9&type=T2_task&p_title=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B3%D1%81%D0%BC%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%206%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2&p_content=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B3%D1%81%D0%BC%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%206%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%2C%20%D1%81%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D1%87%D0%B5%D0%BA%D0%B0%D0%BC%20%D0%B8%20%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%0A&p_freq=8&p_time=15&p_emp=2",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P14",
+   "title": "Поиск оптимального варианта у одного из партнеров",
+   "content": "При наличии трех партнеров продающих одни и те же позиции, автоматическое сравнение на основании артикулов. Актуальный остаток, цены и рекомендации, у кого что лучше\n",
+   "author_email": "nurbolat.s@evrika.com",
+   "contributors": [
+    "nurbolat.s@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "nurbolat.s@evrika.com",
+   "last_at": "2026-07-23 12:03",
+   "hours_month": 2,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P14&p_title=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%D1%83%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%B7%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2&p_content=%D0%9F%D1%80%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B8%20%D1%82%D1%80%D0%B5%D1%85%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D1%85%20%D0%BE%D0%B4%D0%BD%D0%B8%20%D0%B8%20%D1%82%D0%B5%20%D0%B6%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8%2C%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B0%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB%D0%BE%D0%B2.%20%D0%90%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%BA%2C%20%D1%86%D0%B5%D0%BD%D1%8B%20%D0%B8%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8%2C%20%D1%83%20%D0%BA%D0%BE%D0%B3%D0%BE%20%D1%87%D1%82%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5%0A&p_freq=4&p_time=10&p_emp=3",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P14&type=T2_task&p_title=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%D1%83%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%B7%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2&p_content=%D0%9F%D1%80%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B8%20%D1%82%D1%80%D0%B5%D1%85%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D1%85%20%D0%BE%D0%B4%D0%BD%D0%B8%20%D0%B8%20%D1%82%D0%B5%20%D0%B6%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8%2C%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B0%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB%D0%BE%D0%B2.%20%D0%90%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%BA%2C%20%D1%86%D0%B5%D0%BD%D1%8B%20%D0%B8%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8%2C%20%D1%83%20%D0%BA%D0%BE%D0%B3%D0%BE%20%D1%87%D1%82%D0%BE%20%D0%BB%D1%83%D1%87%D1%88%D0%B5%0A&p_freq=4&p_time=10&p_emp=3",
+    "research": null,
+    "hypothesis": null,
+    "prototype": null,
+    "prd": null
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P10",
+   "title": "Составление отчетов",
+   "content": "Составление отчетов поставщикам по продажам и остаткам за прошедшие периоды.\n",
+   "author_email": "sergei.k@evrika.com",
+   "contributors": [
+    "sergei.k@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "sergei.k@evrika.com",
+   "last_at": "2026-07-23 11:55",
+   "hours_month": 0.3333333333333333,
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P10&p_title=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2&p_content=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%D0%BC%20%D0%B8%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0%D0%BC%20%D0%B7%D0%B0%20%D0%BF%D1%80%D0%BE%D1%88%D0%B5%D0%B4%D1%88%D0%B8%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D1%8B.%0A&p_freq=4&p_time=5&p_emp=1",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P10&type=T2_task&p_title=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2&p_content=%D0%A1%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%D0%BC%20%D0%B8%20%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0%D0%BC%20%D0%B7%D0%B0%20%D0%BF%D1%80%D0%BE%D1%88%D0%B5%D0%B4%D1%88%D0%B8%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D1%8B.%0A&p_freq=4&p_time=5&p_emp=1",
     "research": null,
     "hypothesis": null,
     "prototype": null,

@@ -1,25 +1,25 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-23T16:18:31+05:00",
+ "generated_at": "2026-07-23T17:53:30+05:00",
  "kpi": {
   "groups": 1,
-  "people": 8,
-  "threads": 8,
-  "hours_month": 689.2,
-  "hours_year": 8270.4
+  "people": 11,
+  "threads": 13,
+  "hours_month": 789.7,
+  "hours_year": 9476.4
  },
  "groups": [
   {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 8,
-   "people": 8,
-   "hours_month": 689.2
+   "threads": 13,
+   "people": 11,
+   "hours_month": 789.7
   }
  ],
  "funnel": {
-  "Проблема": 8
+  "Проблема": 13
  },
  "top": [
   {
@@ -37,6 +37,13 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P7"
   },
   {
+   "title": "Балансировка стока между складами",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 67.5,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P11"
+  },
+  {
    "title": "чтение ",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 30,
@@ -44,11 +51,25 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P2"
   },
   {
+   "title": "Составление потребности перед поставщиком",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 24,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P12"
+  },
+  {
    "title": "Отчёт 1ТС",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 20,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P5"
+  },
+  {
+   "title": "Фильтрация рабочего стола от разных документов",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 6.666666666666667,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P13"
   },
   {
    "title": "Вбивание имей коды занимайся монографияның времени",
@@ -65,18 +86,25 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P9"
   },
   {
+   "title": "Поиск оптимального варианта у одного из партнеров",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 2,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P14"
+  },
+  {
+   "title": "Составление отчетов",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 0.3333333333333333,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P10"
+  },
+  {
    "title": "Перенос наименований с файла ексель и проверка на наличие в подразделении ",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 0.16666666666666666,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P3"
-  },
-  {
-   "title": "Сверка инкассаций",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 0,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P4"
   }
  ],
  "board": [
@@ -93,6 +121,20 @@
    "ideas": 1,
    "hours_month": 90,
    "rows": 1
+  },
+  {
+   "email": "maxim.m@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 67.5,
+   "rows": 1
+  },
+  {
+   "email": "nurbolat.s@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 3,
+   "hours_month": 32.66666666666667,
+   "rows": 3
   },
   {
    "email": "nurzhan.d@evrika.com",
@@ -120,6 +162,13 @@
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
    "hours_month": 4,
+   "rows": 1
+  },
+  {
+   "email": "sergei.k@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 0.3333333333333333,
    "rows": 1
   },
   {
