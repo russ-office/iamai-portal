@@ -9,7 +9,9 @@
 Безопасность: AIRTABLE_PAT из окружения (Infisical). Email в снимок НЕ кладём
 (как и lab_snapshot — публичный GH Pages). Токен в URL = единственный гейт.
 
-Скоуп: только клиент SZ (recTHD8qGCMvvoznH). Stdlib only.
+Скоуп: ВСЕ клиенты Lab (по группам). Участник попадает в снимок, только если он в
+GroupMembership группы клиента И имеет pulse_token. Раньше был SZ-only (M-041);
+обобщён 2026-07-24 под pulse-раскатку EVRIKA/DAN. Stdlib only.
 """
 import json, os, sys, urllib.parse, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
@@ -23,7 +25,6 @@ API = "https://api.airtable.com/v0"
 ALMATY = timezone(timedelta(hours=5))
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "pulse" / "data"
-SZ = "recTHD8qGCMvvoznH"
 
 STAGE_LABEL = {
     "T0_function_map": "Карта функций", "T1_idea": "Проблема", "T2_task": "В работе",
@@ -187,12 +188,20 @@ def main():
     members = fetch_all("GroupMembership")
     users = fetch_all("Users")
     sessions = fetch_all("Sessions")
+    orgs = fetch_all("Organizations")
 
-    sz_groups = [g for g in groups if first(g["fields"].get("client")) == SZ]
-    gname = {g["id"]: g["fields"].get("name", "") for g in sz_groups}
+    # Мультиклиент: обрабатываем ВСЕ группы. Участник попадёт в снимок только если он
+    # в GroupMembership группы (цикл ниже) И имеет pulse_token — клиент без членства
+    # (напр. EVRIKA с плейсхолдер-группой без людей) молча даёт 0 файлов, это ок.
+    oname = {o["id"]: o["fields"].get("Name", "") for o in orgs}
+    gname = {g["id"]: g["fields"].get("name", "") for g in groups}
     # Поля группы целиком: ссылка бэклога живёт на ГРУППЕ, не на цикле (M-046).
-    gfields = {g["id"]: g["fields"] for g in sz_groups}
+    gfields = {g["id"]: g["fields"] for g in groups}
     gids = set(gname)
+
+    def client_label(gid):
+        # Лейбл клиента = Organizations.Name группы (SZ→"SZ", DAN→"DAN Partners").
+        return oname.get(first(gfields.get(gid, {}).get("client")), "")
 
     # current cycle per group (max cycle_no)
     cyc_by_group = {}
@@ -287,7 +296,7 @@ def main():
             "generated_at": now_iso,
             "today": today.isoformat(),
             "sprint_no": (cyc["fields"].get("cycle_no") if cyc else 1) or 1,
-            "subject": {"id": uid, "name": name, "group": gname.get(gid, ""), "client": "SZ"},
+            "subject": {"id": uid, "name": name, "group": gname.get(gid, ""), "client": client_label(gid)},
             # «Новая проблема» = чистая форма бэклога с hidden client/group/cycle (без prefill)
             # Берём с ГРУППЫ. На цикле формула при общем спринте склеивает все группы
             # компании в один &group=... — сабмит уходил бы с принадлежностью к десяти
@@ -297,7 +306,7 @@ def main():
             "events": events,
             "tasks": [],  # LabTasks пока пусты в базе — деградирует в c-empty
             "profile": {"name": name, "role": (uf.get("Role") or ""), "group": gname.get(gid, ""),
-                        "org": "SZ", "skills": [], "work_style": "", "format_pref": "",
+                        "org": client_label(gid), "skills": [], "work_style": "", "format_pref": "",
                         "country": "", "city_residence": "", "os": "", "device": ""},
             "metrics": {"total_hours": total_hours, "impact_share": impact, "quadrant": "",
                         "threads": threads},
