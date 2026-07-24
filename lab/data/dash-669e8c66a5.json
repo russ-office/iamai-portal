@@ -1,25 +1,25 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-23T22:52:11+05:00",
+ "generated_at": "2026-07-24T11:16:24+05:00",
  "kpi": {
   "groups": 1,
-  "people": 11,
-  "threads": 13,
-  "hours_month": 789.7,
-  "hours_year": 9476.4
+  "people": 19,
+  "threads": 25,
+  "hours_month": 2426.8,
+  "hours_year": 29121.6
  },
  "groups": [
   {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 13,
-   "people": 11,
-   "hours_month": 789.7
+   "threads": 25,
+   "people": 19,
+   "hours_month": 2426.8
   }
  ],
  "funnel": {
-  "Проблема": 13
+  "Проблема": 25
  },
  "top": [
   {
@@ -30,11 +30,46 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P6"
   },
   {
+   "title": "Автоматизация контент-плана",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 520,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P25"
+  },
+  {
+   "title": "Внесение данных кандидата в excel",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 472.5,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P22"
+  },
+  {
+   "title": "Первичный скрининг резюме ",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 200,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P15"
+  },
+  {
+   "title": "Восстановление отчетности за предыдущие годы",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 150,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P24"
+  },
+  {
    "title": "Фильтры по приоритетности заказов в 1С и WMS",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 90,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P7"
+  },
+  {
+   "title": "Написание ежемесячные курсов ",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P21"
   },
   {
    "title": "Балансировка стока между складами",
@@ -44,67 +79,32 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P11"
   },
   {
+   "title": "Просмотр резюме",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 55,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P18"
+  },
+  {
+   "title": "Автоматизация организации мероприятий",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 50,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P26"
+  },
+  {
+   "title": "Поиск поставщиков",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 40,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P23"
+  },
+  {
    "title": "чтение ",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 30,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P2"
-  },
-  {
-   "title": "Составление потребности перед поставщиком",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 24,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P12"
-  },
-  {
-   "title": "Отчёт 1ТС",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 20,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P5"
-  },
-  {
-   "title": "Фильтрация рабочего стола от разных документов",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 6.666666666666667,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P13"
-  },
-  {
-   "title": "Вбивание имей коды занимайся монографияның времени",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 5,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P8"
-  },
-  {
-   "title": "проверка расходов гсм и заполнение занимает около 6 часов",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 4,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P9"
-  },
-  {
-   "title": "Поиск оптимального варианта у одного из партнеров",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 2,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P14"
-  },
-  {
-   "title": "Составление отчетов",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 0.3333333333333333,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P10"
-  },
-  {
-   "title": "Перенос наименований с файла ексель и проверка на наличие в подразделении ",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 0.16666666666666666,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P3"
   }
  ],
  "board": [
@@ -114,6 +114,34 @@
    "ideas": 1,
    "hours_month": 540,
    "rows": 1
+  },
+  {
+   "email": "milana.b@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 520,
+   "rows": 1
+  },
+  {
+   "email": "umit.d@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 472.5,
+   "rows": 1
+  },
+  {
+   "email": "sofya.s@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 2,
+   "hours_month": 156.25,
+   "rows": 2
+  },
+  {
+   "email": "dinara.bo@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 2,
+   "hours_month": 120,
+   "rows": 2
   },
   {
    "email": "zanggar.o@evrika.com",
@@ -127,6 +155,13 @@
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
    "hours_month": 67.5,
+   "rows": 1
+  },
+  {
+   "email": "ayaulym.t@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 1,
+   "hours_month": 55,
    "rows": 1
   },
   {
@@ -144,45 +179,17 @@
    "rows": 1
   },
   {
-   "email": "tatyana.v@evrika.com",
+   "email": "nazym.i@evrika.com",
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
-   "hours_month": 20,
+   "hours_month": 25,
    "rows": 1
   },
   {
-   "email": "muhtar.a@evrika.com",
+   "email": "azhar.m@evrika.com",
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
-   "hours_month": 5,
-   "rows": 1
-  },
-  {
-   "email": "gulfiya.i@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "ideas": 1,
-   "hours_month": 4,
-   "rows": 1
-  },
-  {
-   "email": "sergei.k@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "ideas": 1,
-   "hours_month": 0.3333333333333333,
-   "rows": 1
-  },
-  {
-   "email": "takhmina.m@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "ideas": 1,
-   "hours_month": 0.16666666666666666,
-   "rows": 1
-  },
-  {
-   "email": "olga.k@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "ideas": 1,
-   "hours_month": 0,
+   "hours_month": 23.333333333333332,
    "rows": 1
   }
  ]
