@@ -79,6 +79,12 @@
       if (!tok) return href;
       return href + (href.indexOf("?") === -1 ? "?" : "&") + "c=" + encodeURIComponent(tok);
     };
+    // Feedback-форма (#30): Airtable form, submitter_token = pulse_token участника (prefill),
+    // status/submitter_token скрыты через URL (hide_ работает в новом form builder, verified по эффекту).
+    var feedbackUrl = "https://airtable.com/appi7h7PZhQ5riAIu/pag6XCgMux9APWHHN/form"
+      + "?prefill_submitter_token=" + encodeURIComponent(tok)
+      + "&hide_submitter_token=true&hide_status=true"
+      + "&prefill_surface=" + encodeURIComponent("Пульс");
     var nav = NAV.map(function (n) {
       var soon = n.state === "soon";
       var cls = "c-nav-item" + (view === n.id ? " is-active" : "") + (soon ? " is-soon" : "");
@@ -97,6 +103,7 @@
               '<span style="min-width:0"><span style="display:block;font-size:12px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(D.subject.name) + '</span>' +
               '<span style="display:block;font-family:var(--font-mono);font-size:10px;color:var(--muted)">' + esc(D.subject.client) + ' · ' + esc(D.subject.group) + '</span></span>' +
             '</a>' +
+            '<a href="' + esc(feedbackUrl) + '" target="_blank" rel="noopener" style="display:block;margin-top:10px;font-size:11px;color:var(--muted);text-decoration:none;text-align:center" title="Сообщить о проблеме или идее по MateOS">Сообщить о проблеме</a>' +
           '</div>' +
         '</aside>' +
         '<div class="c-shell__main">' +
