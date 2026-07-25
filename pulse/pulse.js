@@ -83,7 +83,7 @@
     // status/submitter_token скрыты через URL (hide_ работает в новом form builder, verified по эффекту).
     var feedbackUrl = "https://airtable.com/appi7h7PZhQ5riAIu/pag6XCgMux9APWHHN/form"
       + "?prefill_submitter_token=" + encodeURIComponent(tok)
-      + "&hide_submitter_token=true&hide_status=true"
+      + "&prefill_status=new&hide_status=true&hide_submitter_token=true"
       + "&prefill_surface=" + encodeURIComponent("Пульс");
     var nav = NAV.map(function (n) {
       var soon = n.state === "soon";
