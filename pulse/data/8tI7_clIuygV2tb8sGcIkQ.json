@@ -1,11 +1,11 @@
 {
  "scope": "person",
- "generated_at": "2026-07-24T22:18:03+05:00",
- "today": "2026-07-24",
+ "generated_at": "2026-07-25T11:08:05+05:00",
+ "today": "2026-07-25",
  "sprint_no": 1,
  "subject": {
   "id": "rec6o4A4godhLlHu4",
-  "name": "Victoria Druzhinina",
+  "name": "Виктория Дружинина",
   "group": "SZ_LAB_1_5_Ecom",
   "client": "SZ"
  },
@@ -37,7 +37,7 @@
  ],
  "tasks": [],
  "profile": {
-  "name": "Victoria Druzhinina",
+  "name": "Виктория Дружинина",
   "role": "",
   "group": "SZ_LAB_1_5_Ecom",
   "org": "SZ",
