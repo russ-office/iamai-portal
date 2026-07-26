@@ -27,10 +27,10 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "pulse" / "data"
 
 STAGE_LABEL = {
-    "T0_function_map": "Карта функций", "T1_idea": "Проблема", "T2_task": "В работе",
-    "T3_research": "Исследование", "T4_hypothesis": "Гипотеза", "T5_prototype": "Прототип",
-    "T6_test": "Тест", "T7_prd": "PRD",
-}
+    "T0_function_map": "Карта функций", "T1_idea": "Проблема", "T2_task": "Решение",
+    "T3_research": "Поиск", "T5_prototype": "Прототип",
+    "T6_test": "Тесты", "T7_prd": "Демо",
+}  # T4_hypothesis упразднён (машина 2026-07-26): гипотеза свёрнута в Прототип; choice остаётся в базе, из Пульса скрыт
 STAGE_ORDER = list(STAGE_LABEL.keys())
 
 # Календарь = слияние на чтении (вердикт C, runbook_mateos_base): таблицы-агрегатора нет,

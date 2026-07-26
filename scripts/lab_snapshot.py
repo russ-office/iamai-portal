@@ -36,12 +36,12 @@ OUT_DIR = ROOT / "lab" / "data"
 STAGE_LABEL = {
     "T0_function_map": "Карта функций",
     "T1_idea": "Проблема",
-    "T2_task": "В работе",
-    "T3_research": "Исследование",
-    "T4_hypothesis": "Гипотеза",
+    "T2_task": "Решение",
+    "T3_research": "Поиск",
+    # T4_hypothesis упразднён (машина 2026-07-26): гипотеза свёрнута в Прототип; choice в базе, из Пульса скрыт
     "T5_prototype": "Прототип",
-    "T6_test": "Тест",
-    "T7_prd": "PRD",
+    "T6_test": "Тесты",
+    "T7_prd": "Демо",
 }
 STAGE_ORDER = list(STAGE_LABEL.keys())
 

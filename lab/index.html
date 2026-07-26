@@ -141,12 +141,12 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 
 function card(t){
   const acts=[
-    ["take","Взять в работу"],["research","Исследование"],["hypothesis","Гипотеза"],
-    ["prototype","Прототип"],["prd","PRD"]
+    ["take","Взять в работу"],["research","Поиск"],
+    ["prototype","Прототип"],["prd","Демо"]
   ].filter(([k])=>t.links[k])
    .map(([k,label])=>`<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').links.${k},'${label}')">${label}</button>`);
   const tests=(t.prototypes||[]).filter(p=>p.url_test).map((p,i)=>
-    `<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').prototypes[${i}].url_test,'Тест прототипа')">Тест · ${esc(p.artifact_key||"")}</button>`);
+    `<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').prototypes[${i}].url_test,'Тесты')">Тесты · ${esc(p.artifact_key||"")}</button>`);
   return `<div class="card">
     <div class="top">
       <div>
