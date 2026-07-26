@@ -7,73 +7,133 @@
 <title>MateOS Lab · Консоль</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
 <style>
+/* Дизайн-код Пульса (lab/index.html) — тот же язык: тёплая бумага, терракота, неоморфизм-плашки. */
 :root{
   --paper:#F1ECE2; --surface:#F2EDE3; --ink:#2B2925; --ink-soft:#5A564E;
   --muted:#9A958A; --line:#E0DACE; --terra:#C2613C; --sage:#8C9A84; --amber:#C99A3C; --cta:#322F2A;
   --nm-light:rgba(255,255,255,.95); --nm-dark:rgba(197,186,165,.5);
   --raised:5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light);
-  --inset:inset 3px 3px 7px var(--nm-dark), inset -3px -3px 7px var(--nm-light);
+  --inset:inset 4px 4px 9px var(--nm-dark), inset -4px -4px 9px var(--nm-light);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:34px clamp(16px,4vw,40px) 70px}
+.wrap{max-width:1020px;margin:0 auto;padding:30px clamp(16px,4vw,40px) 70px}
 .kicker{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
-h1{font-weight:300;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;margin:12px 0 6px}
+h1{font-weight:300;font-size:clamp(24px,4vw,36px);letter-spacing:-.02em;margin:10px 0 6px}
 h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
-h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:34px 0 14px}
 .sub{color:var(--ink-soft);font-size:14px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:24px}
-.kpi{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:18px 20px}
-.kpi b{display:block;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1}
+.crumb{font-size:12.5px;color:var(--muted);margin:2px 0 4px;min-height:18px}
+.crumb a{color:var(--terra);font-weight:600;cursor:pointer;text-decoration:none}
+
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;border-radius:12px;
+  padding:11px 18px;background:var(--cta);color:#F4F1EA;transition:transform .18s,box-shadow .18s;text-decoration:none;display:inline-block;line-height:1}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,36,31,.2)}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--raised)}
+.btn.sm{padding:9px 14px;font-size:12.5px;border-radius:11px}
+
+/* Верхние вкладки Консоли: Обзор | Задачи */
+.tabs{display:flex;gap:8px;margin:18px 0 6px}
+.tabs button{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--ink-soft);
+  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:9px 20px;cursor:pointer}
+.tabs button.on{color:#F4F1EA;background:var(--terra);box-shadow:var(--inset)}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.filters button{font-family:inherit;font-size:12px;font-weight:600;color:var(--ink-soft);
+  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:7px 16px;cursor:pointer}
+.filters button.on{color:#F4F1EA;background:var(--cta);box-shadow:var(--inset)}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:18px}
+.kpi{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 18px}
+.kpi b{display:block;font-size:26px;font-weight:700;line-height:1.1}
 .kpi.hot b{color:var(--terra)}
-.kpi span{display:block;margin-top:6px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
-.filters button{font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--ink-soft);
-  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:8px 18px;cursor:pointer;transition:.15s}
-.filters button.on{color:#F4F1EA;background:var(--terra);box-shadow:var(--inset)}
-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:18px;box-shadow:var(--raised);overflow:hidden}
-th{text-align:left;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
-td{padding:13px 16px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:middle}
-tr:last-child td{border-bottom:none}
-td.n{text-align:right;font-variant-numeric:tabular-nums}
-td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums}
-tr.row{cursor:pointer;transition:.12s}
-tr.row:hover td{background:rgba(197,186,165,.16)}
-.temp{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
-  border-radius:999px;padding:4px 10px;white-space:nowrap;color:#F4F1EA}
-.temp.ok{background:var(--sage)} .temp.warn{background:var(--amber)} .temp.bad{background:var(--terra)}
-.temp.none{background:var(--muted)}
-.step{display:inline-flex;gap:3px}
-.step i{width:12px;height:7px;border-radius:2px;background:rgba(197,186,165,.4);display:inline-block}
-.step i.on{background:var(--sage)} .step i.cur{background:var(--terra)}
-.badge{display:inline-block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;
-  border-radius:999px;padding:3px 8px;margin-left:6px;white-space:nowrap;color:#7A4A1E;background:rgba(201,154,60,.22)}
+.kpi span{display:block;margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* Компания → команды */
+.company{margin-top:28px}
+.company-h{display:flex;align-items:baseline;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
+.company-h b{color:var(--ink);font-size:15px;letter-spacing:0;text-transform:none}
+.team{display:flex;align-items:center;gap:14px;background:var(--surface);box-shadow:var(--raised);border-radius:14px;
+  padding:14px 18px;margin-bottom:9px;cursor:pointer;transition:transform .14s}
+.team:hover{transform:translateY(-2px)}
+.dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto}
+.dot.ok{background:var(--sage)} .dot.warn{background:var(--amber)} .dot.bad{background:var(--terra)} .dot.none{background:var(--muted)}
+.team .nm{font-weight:600;font-size:14.5px;flex:0 0 auto}
+.team .mt{font-size:12px;color:var(--muted);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .st{margin-left:auto;flex:0 0 auto}
+.badge{display:inline-block;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;
+  border-radius:999px;padding:3px 8px;white-space:nowrap;color:#7A4A1E;background:rgba(201,154,60,.22)}
 .badge.col{color:#7A2E1E;background:rgba(194,97,60,.18)}
-.tag{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
-  color:#F4F1EA;background:var(--sage);border-radius:999px;padding:4px 10px;white-space:nowrap}
-.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:22px}
-.card h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
-.card .note{font-size:11px;color:var(--muted);margin-bottom:16px}
-.hbar{margin-bottom:11px}
-.hbar .top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
-.hbar .top .who{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-soft)}
-.hbar .top .val{font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums;padding-left:10px}
-.hbar .track{height:10px;border-radius:999px;background:rgba(197,186,165,.35);overflow:hidden}
-.hbar .fill{height:100%;border-radius:999px;background:var(--terra)}
-.ghead{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-top:10px}
-.ghead .m{font-size:12.5px;color:var(--ink-soft)} .ghead .m b{color:var(--ink)}
-.back{display:inline-block;font-size:12px;font-weight:600;color:var(--terra);cursor:pointer;margin-top:18px}
-.empty{background:var(--surface);border-radius:18px;box-shadow:var(--raised);text-align:center;padding:34px 20px;color:var(--muted);font-size:13px}
-.foot{margin-top:36px;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.gaps{margin-top:14px;font-size:11.5px;color:var(--muted);line-height:1.7}
+
+/* Мини-степпер T0→T7 */
+.step{display:inline-flex;gap:3px}
+.step i{width:12px;height:7px;border-radius:2px;background:rgba(197,186,165,.45)}
+.step i.on{background:var(--sage)} .step i.cur{background:var(--terra)}
+
+/* Stagebar (пайплайн-навигатор) — из Пульса */
+.stagebar{display:flex;flex-wrap:wrap;gap:5px;margin:14px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
+.chev{position:relative;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:var(--surface);box-shadow:var(--raised);padding:11px 22px 11px 18px;transition:transform .16s,color .16s;
+  clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%);}
+.chev.notch{padding-left:28px;clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%, 13px 50%);}
+.chev:hover{color:var(--terra);transform:translateY(-1px)}
+.chev .n{display:inline-block;min-width:16px;text-align:center;margin-left:7px;font-size:11px;font-weight:700;color:var(--muted)}
+.chev.act{background:var(--cta);color:#F4F1EA} .chev.act .n{color:#E7C9B8}
+.chev.done{color:var(--terra)} .chev.done .n{color:var(--terra)}
+.chev.disabled{opacity:.4;cursor:not-allowed;background:transparent;color:var(--muted);box-shadow:none}
+@media(max-width:560px){.chev{font-size:12px;padding:10px 16px 10px 14px}.chev.notch{padding-left:22px}}
+
+/* Пайплайн-страница задачи: слева накопительные брифы, справа мета */
+.pipe{display:flex;gap:22px;align-items:flex-start}
+@media(max-width:720px){.pipe{flex-direction:column-reverse}}
+.brief{flex:1;min-width:0}.side{flex:0 0 240px}
+@media(max-width:720px){.side{flex:1;width:100%}}
+.brk{margin-bottom:16px}
+.brk-h{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+.brk.cur .brk-h{color:var(--terra)}
+.brk-b{background:var(--surface);box-shadow:var(--inset);border-radius:14px;padding:14px 17px;font-size:13.5px;line-height:1.6;color:var(--ink-soft);white-space:pre-wrap}
+.brk.cur .brk-b{box-shadow:var(--inset),inset 3px 0 0 var(--terra)}
+.metacard{background:var(--surface);box-shadow:var(--raised);border-radius:16px;padding:16px 18px;position:sticky;top:16px}
+.metacard h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
+.metacard .row{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:5px 0;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+.metacard .row:last-child{border-bottom:none} .metacard .row b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* Карточка бэклога/задачи — из Пульса */
+.card{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 20px;margin-bottom:12px;cursor:pointer;transition:transform .14s}
+.card:hover{transform:translateY(-2px)}
+.card.rec{box-shadow:var(--raised),inset 3px 0 0 var(--terra)}
+.card .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.card h3{font-size:16px;font-weight:600;line-height:1.35}
+.recbadge{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--terra);margin-bottom:4px}
+.desc{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin-top:5px}
+.meta{font-size:11.5px;color:var(--muted);margin-top:6px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.chip{font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--surface);box-shadow:var(--inset);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#F4F1EA;background:var(--sage);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.hours{font-size:20px;font-weight:700;color:var(--terra);white-space:nowrap;text-align:right}
+.hours small{display:block;font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+
+.card2{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:20px 22px}
+.empty{text-align:center;padding:46px 20px;color:var(--muted);font-size:13.5px;line-height:1.6}
+.empty b{color:var(--ink-soft)}
+h2{font-weight:300;font-size:20px;letter-spacing:-.01em;margin:20px 0 6px}
+h2 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+.hint{font-size:13px;color:var(--ink-soft);margin:4px 0 10px;line-height:1.55}
+.gaps{margin-top:16px;font-size:11.5px;color:var(--muted);line-height:1.7}
 .gaps b{color:var(--ink-soft)}
+.foot{margin-top:30px;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="kicker">MateOS Lab · оператор</div>
-  <h1>Консоль <em>Лаборатории</em></h1>
+  <h1 id="h1">Консоль <em>Лаборатории</em></h1>
   <div class="sub" id="sub">Загрузка…</div>
+  <div class="tabs" id="tabs" style="display:none">
+    <button data-tab="overview" class="on">Обзор</button>
+    <button data-tab="tasks">Задачи</button>
+  </div>
+  <div class="crumb" id="crumb"></div>
   <div id="body"></div>
   <div class="foot" id="gen"></div>
 </div>
@@ -81,158 +141,223 @@ tr.row:hover td{background:rgba(197,186,165,.16)}
 const K=(new URLSearchParams(location.search).get("k")||"").trim();
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const n=v=>Math.round((v||0)*10)/10;
-let DATA=null, FILTER="Все", VIEW={s:"overview"};
+const clip=(s,m)=>{s=(s||"").replace(/\s+/g," ").trim();return s.length>m?s.slice(0,m-1)+"…":s;};
+let DATA=null, TAB="overview", NAV={l:"home"}, CACHE={};
 
-function hbars(items){
-  items=items.filter(i=>i.value>0);
-  if(!items.length) return `<div class="note">Пока нет данных.</div>`;
-  const max=Math.max(...items.map(i=>i.value));
-  return items.map(i=>`<div class="hbar">
-    <div class="top"><span class="who">${esc(i.label)}</span><span class="val">${n(i.value)}</span></div>
-    <div class="track"><div class="fill" style="width:${Math.max(3,i.value/max*100)}%"></div></div>
-  </div>`).join("");
+/* Пайплайн-стадии = как в Пульсе (Бэклог·Решение·Поиск·Прототип·Тест·PRD) */
+const TABS=[
+ {code:"backlog",     label:"Бэклог",    codes:["T0_function_map","T1_idea"]},
+ {code:"T2_task",     label:"Решение",   codes:["T2_task"]},
+ {code:"T3_research", label:"Поиск",     codes:["T3_research"]},
+ {code:"T5_prototype",label:"Прототип",  codes:["T5_prototype"]},
+ {code:"T6_test",     label:"Тест",      codes:["T6_test"]},
+ {code:"T7_prd",      label:"PRD",       codes:["T7_prd"]},
+];
+const BRIEF_LABEL={backlog:"проблема",T2_task:"решение",T3_research:"поиск",T5_prototype:"прототип",T6_test:"тест",T7_prd:"PRD"};
+
+/* ── навигация ── */
+function go(nav){NAV=nav;window.scrollTo(0,0);render();}
+function crumb(){
+  const c=document.getElementById("crumb");
+  if(TAB==="tasks"||NAV.l==="home"){c.innerHTML="";return;}
+  let parts=[`<a data-home="1">Обзор</a>`];
+  if(NAV.l==="group"||NAV.l==="thread"){const g=grp(NAV.gid);parts.push(NAV.l==="group"?`<span>${esc(g?g.client:"")} · ${esc(g?g.group:"")}</span>`:`<a data-g="${esc(NAV.gid)}">${esc(g?g.group:"")}</a>`);}
+  if(NAV.l==="thread"){parts.push(`<span>задача</span>`);}
+  c.innerHTML=parts.join(" › ");
 }
-function tempChip(t){
-  const L={ok:"активна",warn:"остывает",bad:"холодная",none:"нет данных"};
-  return `<span class="temp ${t.state}">${L[t.state]||t.state}</span>`;
+const grp=gid=>DATA.groups.find(g=>g.group_id===gid);
+const visGroups=()=>DATA.groups.filter(g=>g.client!=="Демо");
+
+/* ── экран: Обзор (компании → команды) ── */
+function renderOverview(){
+  const gs=visGroups();
+  const kpi={active:gs.filter(g=>g.threads>0).length,backlog:gs.reduce((s,g)=>s+(g.backlog_count||0),0),
+             cold:gs.filter(g=>g.temp.state==="bad").length,sprint:gs.filter(g=>g.in_sprint).length};
+  let h=`<div class="kpis">
+    <div class="kpi"><b>${kpi.active}</b><span>активных команд</span></div>
+    <div class="kpi"><b>${kpi.backlog}</b><span>проблем в бэклоге</span></div>
+    <div class="kpi hot"><b>${kpi.cold}</b><span>холодных · idle≥4д</span></div>
+    <div class="kpi"><b>${kpi.sprint}</b><span>в спринте</span></div></div>`;
+
+  const companies=DATA.clients.filter(c=>c!=="Демо");
+  const rank={bad:0,warn:1,none:2,ok:3};
+  companies.forEach(co=>{
+    const teams=gs.filter(g=>g.client===co).sort((a,b)=>(rank[a.temp.state]??4)-(rank[b.temp.state]??4));
+    h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b> · ${teams.length} команд · холодные наверх</div>`;
+    h+=teams.map(g=>{
+      const dirty=g.dirty_count>0?`<span class="badge">⚠ метрика ${g.dirty_count}</span>`:"";
+      return `<div class="team" data-g="${esc(g.group_id)}">
+        <span class="dot ${g.temp.state}" title="${esc(g.temp.state)}"></span>
+        <span class="nm">${esc(g.group)}</span>
+        <span class="mt">${g.threads} проблем · ${g.backlog_count} в бэклоге${g.temp.days_idle!=null?` · ${g.temp.days_idle} дн. назад`:""} ${dirty}</span>
+        <span class="st">${stepper(g.stepper)}</span>
+      </div>`;
+    }).join("");
+    h+=`</div>`;
+  });
+  h+=`<div class="gaps"><b>Что честно НЕ мерим (v1):</b><br>`+(DATA.gaps||[]).map(g=>"· "+esc(g)).join("<br>")+`</div>`;
+  return h;
 }
-function freshness(g){
-  const d=g.temp.days_idle;
-  if(d==null) return "—";
-  if(d===0) return "сегодня";
-  return `${d} дн. назад`;
-}
-function stepper(g){
-  return `<span class="step">`+DATA.stage_order.map(code=>{
-    const c=(g.stepper||{})[code]||0;
-    const cur=code===g.last_stage;
+function stepper(sm){
+  return `<span class="step">`+DATA.stage_order.map((code,i)=>{
+    const c=(sm||{})[code]||0;
+    const codesDone=DATA.stage_order.filter(x=>(sm||{})[x]>0);
+    const cur=codesDone.length&&code===codesDone[codesDone.length-1];
     return `<i class="${c>0?(cur?"cur":"on"):""}" title="${esc(DATA.stage_label[code]||code)}: ${c}"></i>`;
   }).join("")+`</span>`;
 }
-function visibleGroups(){
-  return DATA.groups.filter(g=>g.client!=="Демо" && (FILTER==="Все"||g.client===FILTER));
+
+/* ── экран: группа (бэклог как в Пульсе) ── */
+async function loadGroup(gid){
+  if(CACHE[gid]) return CACHE[gid];
+  const r=await fetch(`data/${encodeURIComponent(gid)}.json?ts=${Date.now()}`);
+  if(!r.ok) throw new Error(r.status);
+  const d=await r.json(); d.threads=d.threads||[]; CACHE[gid]=d; return d;
 }
-
-function renderOverview(){
-  const gs=visibleGroups();
-  const kpi={
-    active:gs.filter(g=>g.threads>0).length,
-    backlog:gs.reduce((s,g)=>s+(g.backlog_count||0),0),
-    cold:gs.filter(g=>g.temp.state==="bad").length,
-    sprint:gs.filter(g=>g.in_sprint).length,
-  };
-  let h=`<div class="kpis">
-    <div class="kpi"><b>${kpi.active}</b><span>активных групп</span></div>
-    <div class="kpi"><b>${kpi.backlog}</b><span>проблем в бэклоге</span></div>
-    <div class="kpi hot"><b>${kpi.cold}</b><span>холодных · idle≥4д</span></div>
-    <div class="kpi"><b>${kpi.sprint}</b><span>в спринте</span></div>
-  </div>`;
-
-  const clients=["Все",...DATA.clients.filter(c=>c!=="Демо")];
-  h+=`<div class="filters">`+clients.map(c=>`<button class="${c===FILTER?"on":""}" data-f="${esc(c)}">${esc(c)}</button>`).join("")+`</div>`;
-
-  h+=`<h2>Группы · холодные наверх</h2>`;
-  if(!gs.length){ h+=`<div class="empty">Нет групп по фильтру «${esc(FILTER)}».</div>`; }
-  else{
-    h+=`<table><tr><th>Группа</th><th>Клиент</th><th>Температура</th><th>Свежесть</th>
-      <th style="text-align:right">Проблем</th><th>Прогресс T0→T7</th><th></th></tr>`;
-    h+=gs.map(g=>`<tr class="row" data-g="${esc(g.group_id)}">
-      <td>${esc(g.group)}${g.orphan?`<span class="badge">без клиента</span>`:""}</td>
-      <td>${esc(g.client)}</td>
-      <td>${tempChip(g.temp)}</td>
-      <td>${freshness(g)}</td>
-      <td class="n">${g.threads}</td>
-      <td>${stepper(g)}</td>
-      <td>${g.dirty_count>0?`<span class="badge">⚠ метрика ${g.dirty_count}</span>`:""}</td>
-    </tr>`).join("");
-    h+=`</table>`;
-  }
-
-  const freq=DATA.stage_order.map(code=>({
-    label:DATA.stage_label[code]||code,
-    value:gs.reduce((s,g)=>s+((g.stepper||{})[code]||0),0),
-  }));
-  h+=`<h2>Частотность по этапам</h2>
-    <div class="card"><h3>Где стоит поток</h3>
-      <div class="note">частотность = сабмиты форм, не обращения (бот слеп, user_id пуст)</div>
-      ${hbars(freq)}</div>`;
-
-  h+=`<div class="gaps"><b>Что честно НЕ мерим (v1):</b><br>`+
-     (DATA.gaps||[]).map(g=>"· "+esc(g)).join("<br>")+`</div>`;
-  return h;
+function recRank(list){
+  const scored=list.filter(t=>(t.ease||0)>0);
+  if(!scored.length) return {};
+  const ord=[...scored].sort((a,b)=>((b.hours_month||0)*(b.ease||0))-((a.hours_month||0)*(a.ease||0)));
+  const r={}; ord.slice(0,3).forEach((t,i)=>r[t.thread_key]=i+1); return r;
 }
-
-function renderGroup(gid){
-  const g=DATA.groups.find(x=>x.group_id===gid);
-  if(!g) return `<div class="empty">Группа не найдена.</div>`;
+async function renderGroup(gid){
+  const body=document.getElementById("body");
+  let d; try{d=await loadGroup(gid);}catch(e){body.innerHTML=`<div class="empty">Данные группы недоступны.</div>`;return;}
+  const g=grp(gid)||{};
+  const sum=d.threads.reduce((a,t)=>a+(t.hours_month||0),0);
+  const sorted=[...d.threads].sort((a,b)=>(b.hours_month||0)-(a.hours_month||0));
+  const rec=recRank(sorted);
   const col=new Set(DATA.collisions||[]);
-  let h=`<div class="back" data-back="1">← Обзор</div>
-    <h2 style="margin-top:16px">${esc(g.group)}</h2>
-    <div class="ghead">
-      <span class="m">клиент <b>${esc(g.client)}</b></span>
-      <span class="m">цикл <b>${esc(g.cycle||"—")}</b></span>
-      <span class="m">участников <b>${g.people}</b></span>
-      <span class="m">проблем <b>${g.threads}</b></span>
-      <span class="m">${tempChip(g.temp)} · ${freshness(g)}</span>
+  let h=`<h2>${esc(d.group)}</h2>
+    <div class="hint">${esc(g.client||d.client||"")} · цикл ${esc(d.cycle||"—")} · ${d.threads.length} проблем · ${n(sum)} ч/мес потенциал. Клик по задаче — вся цепочка этапов.</div>`;
+  h+=sorted.map(t=>{
+    const r=rec[t.thread_key];
+    const badge=r?`<div class="recbadge">★ Рекомендация №${r}</div>`:"";
+    const chips=[];
+    if((t.ease||0)>0) chips.push(`<span class="chip">лёгкость ${t.ease}/5</span>`);
+    if(t.priority_quadrant) chips.push(`<span class="chip">${esc(t.priority_quadrant)}</span>`);
+    if(!t.hours_month) chips.push(`<span class="badge">⚠ проверить метрику</span>`);
+    if(col.has(t.thread_key)) chips.push(`<span class="badge col">коллизия ключа</span>`);
+    const nreached=(t.reached||[]).length;
+    return `<div class="card${r?" rec":""}" data-t="${esc(t.thread_key)}">
+      <div class="top"><div>${badge}<h3>${esc(t.title)}</h3>
+        <div class="desc">${esc(clip(t.content,150))}</div>
+        <div class="chips">${chips.join("")}</div>
+        <div class="meta">${esc(t.thread_key)} · стадия: ${esc(t.stage)} · пройдено этапов: ${nreached} · вклад: ${t.edits}</div>
+      </div><div class="hours">${n(t.hours_month)}<small>ч / мес</small></div></div>
     </div>`;
+  }).join("")||`<div class="empty">Бэклог пуст.</div>`;
+  body.innerHTML=h;
+}
 
-  h+=`<h2>Бэклог — проблемы (T0/T1)</h2>`;
-  if(!(g.backlog||[]).length){ h+=`<div class="empty">Бэклог пуст.</div>`; }
-  else{
-    h+=`<table><tr><th>Проблема</th><th style="text-align:right">Часов/мес</th>
-      <th style="text-align:right">Выполнимость</th><th>Рекомендация</th><th>Стадия</th><th>Свежесть</th></tr>`;
-    h+=g.backlog.map(r=>`<tr>
-      <td>${esc(r.title)}
-        ${r.dirty?`<span class="badge">⚠ проверить метрику</span>`:""}
-        ${col.has(r.thread_key)?`<span class="badge col">коллизия ключа</span>`:""}</td>
-      <td class="h">${n(r.hours_month)}</td>
-      <td class="n">${r.ease?`${r.ease}/5`:"—"}</td>
-      <td>${esc(r.recommendation||"—")}</td>
-      <td><span class="tag">${esc(r.stage)}</span></td>
-      <td>${esc(r.last_at||"—")}</td>
-    </tr>`).join("");
-    h+=`</table><div class="note" style="margin-top:8px">Рекомендация = приоритет (часы × лёгкость), совет не гейт. Ворота «взять в работу» — участник в Пульсе.</div>`;
-  }
+/* ── экран: задача (вся цепочка T0→T7) ── */
+async function renderThread(gid,tk){
+  const body=document.getElementById("body");
+  let d; try{d=await loadGroup(gid);}catch(e){body.innerHTML=`<div class="empty">Данные недоступны.</div>`;return;}
+  const t=d.threads.find(x=>x.thread_key===tk);
+  if(!t){body.innerHTML=`<div class="empty">Задача не найдена.</div>`;return;}
+  const R=new Set(t.reached||[]);
+  const reachedTabs=TABS.map((s,i)=>({s,i})).filter(x=>x.s.codes.some(c=>R.has(c)));
+  // stagebar: пройденные = активны, текущая = терракота, остальные = заперты
+  const curIdx=reachedTabs.length?reachedTabs[reachedTabs.length-1].i:0;
+  const bar=TABS.map((s,i)=>{
+    const done=s.codes.some(c=>R.has(c));
+    const cls=["chev",i>0?"notch":""];
+    if(!done)cls.push("disabled"); else if(i===curIdx)cls.push("act"); else cls.push("done");
+    return `<button class="${cls.filter(Boolean).join(" ")}" ${done?"":"disabled"}>${esc(s.label)}</button>`;
+  }).join("");
+  const briefMap={}; (t.brief||[]).forEach(b=>briefMap[b.code]=b.text);
+  const blocks=reachedTabs.map(x=>{
+    const code=x.s.codes.find(c=>R.has(c));
+    const txt=(briefMap[code]||"").trim();
+    const cur=x.i===curIdx;
+    return `<div class="brk${cur?" cur":""}"><div class="brk-h"><span>${esc(BRIEF_LABEL[x.s.code]||x.s.label)}</span></div>
+      <div class="brk-b">${txt?esc(txt).replace(/\n/g,"<br>"):"—"}</div></div>`;
+  }).join("")||`<div class="empty">Цепочка пока пуста — задача только в бэклоге.</div>`;
+  const contribs=(t.contributors||[]).length;
+  let h=`<h2>${esc(t.title)}</h2>
+     <div class="hint">${esc(d.group)} · ключ ${esc(t.thread_key)} · стадия: ${esc(t.stage)}</div>
+     <div class="stagebar">${bar}</div>
+     <div class="pipe"><div class="brief">${blocks}</div>
+       <div class="side"><div class="metacard"><h4>Метрика</h4>
+         <div class="row"><span>Часов / мес</span><b>${n(t.hours_month)}</b></div>
+         <div class="row"><span>Лёгкость</span><b>${t.ease?t.ease+"/5":"—"}</b></div>
+         <div class="row"><span>Рекомендация</span><b>${esc(t.priority_quadrant||"—")}</b></div>
+         <div class="row"><span>Правок</span><b>${t.edits||0}</b></div>
+         <div class="row"><span>Участников</span><b>${contribs||1}</b></div>
+       </div></div></div>`;
+  body.innerHTML=h;
+}
 
-  h+=`<h2>Задачи этапа (LabTasks)</h2>`;
-  if(!(g.tasks||[]).length){
-    h+=`<div class="empty">Слой задач пока пуст — форма задач в разработке (M-042).</div>`;
+/* ── вкладка: Задачи (LabTasks) — группировка компания → команда ── */
+function renderTasks(){
+  const gs=visGroups();
+  const companies=DATA.clients.filter(c=>c!=="Демо");
+  const total=gs.reduce((s,g)=>s+((g.tasks||[]).length),0);
+  let h=`<h2>Задачи <em>по командам</em></h2>
+    <div class="hint">Операционные задачи участников (LabTasks: К выполнению → В работе → Готово), сгруппированы компания → команда и связаны с бэклогом/пайплайном.</div>`;
+  if(!total){
+    h+=`<div class="card2 empty" style="text-align:left"><b>Слой задач пока пуст.</b><br>
+      Форма задач в разработке (M-042) — параллельная сессия её строит. Как только LabTasks начнут писаться,
+      здесь появятся задачи с привязкой к задаче бэклога и текущему этапу. Структура (компания → команда) готова.</div>`;
+    // покажем скелет группировки, чтобы было видно охват
+    companies.forEach(co=>{
+      const teams=gs.filter(g=>g.client===co);
+      h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b> · ${teams.length} команд · 0 задач</div>`;
+      h+=teams.map(g=>`<div class="team"><span class="dot ${g.temp.state}"></span><span class="nm">${esc(g.group)}</span><span class="mt">задач нет</span></div>`).join("");
+      h+=`</div>`;
+    });
+    return h;
   }
+  // когда задачи появятся — рендер по компаниям/командам
+  companies.forEach(co=>{
+    const teams=gs.filter(g=>g.client===co&&(g.tasks||[]).length);
+    if(!teams.length) return;
+    h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b></div>`;
+    teams.forEach(g=>{
+      h+=`<div class="meta" style="margin:8px 0 4px;font-weight:700;color:var(--ink)">${esc(g.group)}</div>`;
+      h+=(g.tasks||[]).map(t=>`<div class="card2" style="margin-bottom:8px"><b>${esc(t.title||t.thread_key)}</b>
+        <div class="meta">${esc(t.status||"todo")}${t.artifact?" · задача: "+esc(t.artifact):""}</div></div>`).join("");
+    });
+    h+=`</div>`;
+  });
   return h;
 }
 
-function render(){
-  document.getElementById("body").innerHTML =
-    VIEW.s==="group" ? renderGroup(VIEW.gid) : renderOverview();
+async function render(){
+  document.getElementById("tabs").style.display=NAV.l==="home"||TAB==="tasks"?"flex":"flex";
+  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.getAttribute("data-tab")===TAB));
+  crumb();
+  const body=document.getElementById("body");
+  if(TAB==="tasks"){body.innerHTML=renderTasks();return;}
+  if(NAV.l==="group"){body.innerHTML=`<div class="empty">Загрузка…</div>`;await renderGroup(NAV.gid);return;}
+  if(NAV.l==="thread"){body.innerHTML=`<div class="empty">Загрузка…</div>`;await renderThread(NAV.gid,NAV.tk);return;}
+  body.innerHTML=renderOverview();
 }
 
 document.addEventListener("click",e=>{
-  const f=e.target.closest("[data-f]");
-  if(f){ FILTER=f.getAttribute("data-f"); VIEW={s:"overview"}; render(); return; }
-  const r=e.target.closest("[data-g]");
-  if(r){ VIEW={s:"group",gid:r.getAttribute("data-g")}; window.scrollTo(0,0); render(); return; }
-  if(e.target.closest("[data-back]")){ VIEW={s:"overview"}; render(); }
+  const tab=e.target.closest("[data-tab]");
+  if(tab){TAB=tab.getAttribute("data-tab");NAV={l:"home"};render();return;}
+  if(e.target.closest("[data-home]")){TAB="overview";go({l:"home"});return;}
+  const th=e.target.closest("[data-t]");
+  if(th && NAV.l==="group"){go({l:"thread",gid:NAV.gid,tk:th.getAttribute("data-t")});return;}
+  const g=e.target.closest("[data-g]");
+  if(g){TAB="overview";go({l:"group",gid:g.getAttribute("data-g")});return;}
 });
 
 async function boot(){
   if(!K){document.getElementById("sub").textContent="Ссылка неполная (нет ?k=).";return;}
   let d;
-  try{
-    const r=await fetch(`data/console-${encodeURIComponent(K)}.json?ts=${Date.now()}`);
-    if(!r.ok) throw 0;
-    d=await r.json();
-  }catch(e){document.getElementById("sub").textContent="Консоль не найдена. Проверь ссылку.";return;}
-  // last_stage для подсветки текущего сегмента степпера
-  d.groups.forEach(g=>{
-    const reached=(d.stage_order||[]).filter(c=>(g.stepper||{})[c]>0);
-    g.last_stage=reached.length?reached[reached.length-1]:null;
-  });
+  try{const r=await fetch(`data/console-${encodeURIComponent(K)}.json?ts=${Date.now()}`);if(!r.ok)throw 0;d=await r.json();}
+  catch(e){document.getElementById("sub").textContent="Консоль не найдена. Проверь ссылку.";return;}
   DATA=d;
   const gs=d.groups.filter(g=>g.client!=="Демо");
-  document.getElementById("sub").textContent=`${gs.length} групп · ${d.clients.filter(c=>c!=="Демо").join(" · ")} · холодные требуют внимания первыми`;
+  document.getElementById("sub").textContent=`${gs.length} команд · ${d.clients.filter(c=>c!=="Демо").join(" · ")} · снапшот всех команд всех компаний`;
   document.getElementById("gen").textContent="Обновлено: "+(d.generated_at||"").replace("T"," ").slice(0,16);
-  const g=(new URLSearchParams(location.search).get("g")||"").trim();
-  if(g && d.groups.some(x=>x.group_id===g)) VIEW={s:"group",gid:g};
+  document.getElementById("tabs").style.display="flex";
+  const gp=(new URLSearchParams(location.search).get("g")||"").trim();
+  const tp=(new URLSearchParams(location.search).get("t")||"").trim();
+  if(gp&&d.groups.some(x=>x.group_id===gp)) NAV=tp?{l:"thread",gid:gp,tk:tp}:{l:"group",gid:gp};
   render();
 }
 boot();
