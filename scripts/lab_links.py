@@ -28,6 +28,12 @@ PREFILL_MAP = {
     "p_emp": "employees",
     "p_calc": "calc_notes",
     "p_verif": "verification_source",
+    # Read-only брифы следующего этапа (lab_stage_forms_spec §7.4/§7.5). Добавляются только
+    # если непусты на записи-источнике (T2 несёт output_info; T5 несёт test_criteria) — на голове-T1
+    # пусты, поэтому в edit/take не попадают. Активируются, когда в Fillout привязан параметр.
+    "p_input": "input_info",
+    "p_output": "output_info",
+    "p_criteria": "test_criteria",
 }
 
 
@@ -114,6 +120,11 @@ def step_links(f):
     Формула Artifacts.url_edit отдаёт пустую строку, когда у записи нет thread_key:
     без него сабмит родил бы новую проблему вместо версии. Лучше отсутствие кнопки,
     чем кнопка, тихо рвущая цепочку версий (M-044).
+
+    NB: читает ссылки с ОДНОЙ записи (головы). Формулы url_research_T3/url_prototype_T5/
+    url_prd_T7 гейтятся по стадии (см. nav_links) и на голове-T1 пусты — поэтому для
+    навигатора этапов используется nav_links(), а не эта функция. step_links оставлен
+    для плоского списка проблем бэклога (там нужны только edit+take).
     """
     return {
         "edit": add_prefill(f.get("url_edit"), f),
@@ -123,3 +134,40 @@ def step_links(f):
         "prototype": add_prefill(f.get("url_prototype_T5"), f),
         "prd": add_prefill(f.get("url_prd_T7"), f),
     }
+
+
+def _qual(f, *fields):
+    """Этап КВАЛИФИЦИРОВАН, если все обязательные поля непусты (текст ∨ выбор)."""
+    return all(str((f or {}).get(x) or "").strip() for x in fields)
+
+
+def nav_links(cur_by_type):
+    """Ссылки этап-навигатора: chain-forward, гейт по КВАЛИФИКАЦИИ (Ruslan 2026-07-26).
+
+    Инвариант рельса: формулы url_* гейтятся по стадии — ссылка на СЛЕДУЮЩИЙ этап живёт
+    на записи ТЕКУЩЕГО (url_research_T3/url_prototype_T5 на T2, url_prd_T7 на T6, url_test_T6
+    на T5). Раскрываем следующий этап, ТОЛЬКО если текущий квалифицирован своей информацией
+    (не «строка есть», а «поля заполнены») — иначе хаос прыжков. Тесты (T6) идут per-prototype,
+    их ссылка собирается в снапшоте отдельно (несколько прототипов = несколько записей T5).
+
+    cur_by_type: {type -> fields текущей (is_current) записи этого типа}.
+    """
+    head = cur_by_type.get("T1_idea") or cur_by_type.get("T0_function_map") or {}
+    t2 = cur_by_type.get("T2_task")
+    t6 = cur_by_type.get("T6_test")
+    links = {
+        # правка проблемы и «взять в Решение» — доступны всегда, пока тред существует
+        "edit": add_prefill(head.get("url_edit"), head),
+        "take": add_prefill(head.get("url_take_T2"), head),
+        "research": "",
+        "prototype": "",
+        "prd": "",
+    }
+    # T2 «Решение» квалифицирован (триада полна: вход + выход) → Поиск(T3) и Прототип(T5)
+    if _qual(t2, "input_info", "output_info"):
+        links["research"] = add_prefill(t2.get("url_research_T3"), t2)
+        links["prototype"] = add_prefill(t2.get("url_prototype_T5"), t2)
+    # T6 «Тесты» прошёл (result=прошло) → Демо(T7). Не прошло/частично → петля в Прототип, Демо заперт.
+    if t6 and str(t6.get("test_result") or "").strip() == "прошло":
+        links["prd"] = add_prefill(t6.get("url_prd_T7"), t6)
+    return links

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MateOS Lab · Бэклог группы</title>
+<title>MateOS Lab · Спринт</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -20,37 +20,125 @@ body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-
 h1{font-weight:300;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;margin:12px 0 6px}
 h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 .sub{color:var(--ink-soft);font-size:14px}
-.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:26px 0 30px}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0 22px}
 .btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;border-radius:14px;
   padding:14px 22px;background:var(--cta);color:#F4F1EA;transition:transform .2s,box-shadow .2s;
   text-decoration:none;display:inline-block;line-height:1}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,36,31,.2)}
 .btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--raised)}
+.btn.sm{padding:10px 16px;font-size:13px;border-radius:12px}
+.btn[disabled]{cursor:not-allowed;opacity:.45;box-shadow:none;transform:none}
+.btn[disabled]:hover{transform:none;box-shadow:none}
 .stat{margin-left:auto;font-size:12px;color:var(--muted);letter-spacing:.06em}
-.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:20px 22px;margin-bottom:14px}
+
+/* ── Полоса стадий = навигация спринт-страницы (макап Ruslan) ──
+   Клик по стадии переключает СПИСОК записей этой стадии (канбан-колонка),
+   а не открывает форму. Бэклог = все проблемы; взял одну → уходит вперёд. */
+.stagebar{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.chev{position:relative;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
+  color:var(--ink-soft);background:var(--surface);box-shadow:var(--raised);
+  padding:12px 24px 12px 20px;transition:transform .16s,box-shadow .16s,color .16s;
+  clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%);}
+.chev.notch{padding-left:30px;clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%, 13px 50%);}
+.chev:hover{color:var(--terra);transform:translateY(-1px)}
+.chev .n{display:inline-block;min-width:18px;text-align:center;margin-left:8px;font-size:11px;font-weight:700;
+  color:var(--muted)}
+.chev.act{background:var(--cta);color:#F4F1EA;box-shadow:0 6px 16px rgba(38,36,31,.24)}
+.chev.act .n{color:#E7C9B8}
+.chev.empty{opacity:.62}
+.chev.empty .n{color:var(--line)}
+.chev.cur{background:var(--terra);color:#F9F3EE;box-shadow:0 6px 16px rgba(194,97,60,.32)}
+.chev.frontier{color:var(--terra)}
+.chev.frontier:hover{color:var(--terra)}
+.chev.disabled{opacity:.4;cursor:not-allowed;box-shadow:none;background:transparent;color:var(--muted)}
+.chev.disabled:hover{transform:none;color:var(--muted)}
+@media(max-width:560px){.chev{font-size:12px;padding:10px 18px 10px 15px}.chev.notch{padding-left:24px}}
+
+/* ── Страница этапа (пайплайн): слева накопительный read-only бриф, справа «+ Добавить» ── */
+.pipe{display:flex;gap:22px;align-items:flex-start}
+@media(max-width:720px){.pipe{flex-direction:column-reverse}}
+.brief{flex:1;min-width:0}
+.side{flex:0 0 258px}
+@media(max-width:720px){.side{flex:1;width:100%}}
+.brk{margin-bottom:16px}
+.brk-h{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+.brk.own .brk-h{color:var(--terra)}
+.brk-edit{font-size:11px;letter-spacing:0;text-transform:none;font-weight:600;color:var(--muted);
+  text-decoration:none;border-bottom:1px dotted var(--muted);cursor:pointer}
+.brk-edit:hover{color:var(--terra)}
+.brk-b{background:var(--surface);box-shadow:var(--inset);border-radius:14px;padding:15px 18px;
+  font-size:13.5px;line-height:1.6;color:var(--ink-soft);white-space:pre-wrap}
+.brk.own .brk-b{box-shadow:var(--inset),inset 3px 0 0 var(--terra)}
+.actcard{background:var(--surface);box-shadow:var(--raised);border-radius:16px;padding:16px 16px 18px;position:sticky;top:16px}
+.actcard-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+.actcard .sub2{font-size:12px;line-height:1.5;color:var(--muted);margin-bottom:13px}
+.addbtn{width:100%;text-align:center;background:#F6E2D6;color:var(--terra);box-shadow:var(--raised)}
+.addbtn:hover{background:#F1D4C2;color:var(--terra)}
+
+/* Шапка выбранной стадии: что тут делают + баннер блокировки бэклога */
+.viewhead{margin:8px 0 16px}
+.viewhead h2{font-weight:300;font-size:20px;letter-spacing:-.01em}
+.viewhead h2 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+.viewhead .hint{font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.55}
+.lockban{display:flex;gap:10px;align-items:flex-start;background:var(--surface);box-shadow:var(--inset);
+  border-radius:13px;padding:12px 15px;margin-top:12px;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+.lockban b{color:var(--ink)}
+.lockban .ic{color:var(--terra);font-weight:700;flex:0 0 auto}
+
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:18px 22px;margin-bottom:13px}
+.card.rec{box-shadow:var(--raised),inset 3px 0 0 var(--terra)}
 .card .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
 .card h3{font-size:17px;font-weight:600;line-height:1.35}
+.recbadge{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:var(--terra);margin-bottom:5px}
+.desc{font-size:13px;color:var(--ink-soft);line-height:1.5;margin-top:6px}
 .meta{font-size:12px;color:var(--muted);margin-top:6px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.chip{font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--surface);box-shadow:var(--inset);
+  border-radius:999px;padding:5px 11px;white-space:nowrap}
 .tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
   color:#F4F1EA;background:var(--sage);border-radius:999px;padding:5px 11px;white-space:nowrap}
-.hours{font-size:22px;font-weight:700;color:var(--terra);white-space:nowrap}
+.hours{font-size:22px;font-weight:700;color:var(--terra);white-space:nowrap;text-align:right}
 .hours small{display:block;font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
-.act{border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:600;border-radius:11px;
-  padding:9px 14px;background:transparent;color:var(--ink-soft);box-shadow:var(--raised);transition:color .2s,transform .2s}
-.act:hover{color:var(--terra);transform:translateY(-1px)}
-.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.rowact{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}
+
+.empty{text-align:center;padding:52px 20px;color:var(--muted);font-size:14px;line-height:1.6}
+.empty b{color:var(--ink-soft)}
 .scrim{position:fixed;inset:0;background:rgba(30,28,25,.45);opacity:0;pointer-events:none;transition:.25s;z-index:10}
 .scrim.on{opacity:1;pointer-events:auto}
-/* Шторка справа на половину экрана (M-034) */
+/* Шторка справа на половину экрана — форма Fillout ∨ гайд */
 .modal{position:fixed;inset:0 0 0 auto;width:min(50vw,780px);min-width:420px;height:100dvh;background:var(--paper);
   border-radius:22px 0 0 22px;box-shadow:-18px 0 44px rgba(38,36,31,.20);
   transform:translateX(105%);transition:transform .35s cubic-bezier(.22,.61,.36,1);z-index:11;display:flex;flex-direction:column}
 .modal.on{transform:none}
 @media(max-width:820px){.modal{width:100vw;min-width:0;border-radius:0}}
-.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 20px 12px;border-bottom:1px solid var(--line)}
+.modal-head .m-sub{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:600}
 .modal iframe{flex:1;width:100%;border:none}
-.x{border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted)}
+.x{border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted);flex:0 0 auto}
+.tip-inline{font-size:12.5px;line-height:1.55;color:var(--ink-soft);background:var(--surface);
+  margin:12px 20px 0;padding:11px 14px;border-radius:12px;box-shadow:var(--inset)}
+.tip-inline:empty{display:none}
+.tip-inline b{display:block;color:var(--ink);font-weight:700;margin-bottom:2px;font-size:12px}
+.guide{flex:1;overflow-y:auto;padding:22px 26px 40px}
+.guide h2{font-weight:300;font-size:22px;margin:0 0 6px}
+.guide h2 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+.guide h3{font-size:15px;font-weight:700;margin:22px 0 6px;color:var(--ink)}
+.guide p{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 10px}
+.guide ul{margin:0 0 12px;padding-left:18px}
+.guide li{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:6px}
+.guide b{color:var(--ink)}
+.guide .out{color:var(--terra);font-weight:600}
+.guide .note{background:var(--surface);box-shadow:var(--inset);border-radius:12px;padding:14px 16px;margin:14px 0}
+.guide .flow{background:var(--surface);box-shadow:var(--inset);border-radius:12px;padding:14px 16px;margin:14px 0;
+  font-size:12px;line-height:1.7;color:var(--ink-soft);white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace}
+.pop{position:fixed;max-width:270px;background:var(--cta);color:#F4F1EA;font-size:12px;line-height:1.5;
+  padding:10px 13px;border-radius:12px;box-shadow:0 10px 28px rgba(38,36,31,.3);z-index:20;
+  opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;transform:translateY(4px)}
+.pop.on{opacity:1;transform:none}
+.pop b{display:block;margin-bottom:3px;font-weight:700}
+.link-tip{cursor:help;color:var(--muted);font-size:12px;border-bottom:1px dotted var(--muted)}
 .foot{margin-top:34px;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
 </style>
 </head>
@@ -58,50 +146,73 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 <div class="wrap">
   <img src="logo.png" alt="MateOS" style="height:32px;width:auto;display:block;margin-bottom:10px">
   <div class="kicker">MateOS Lab</div>
-  <h1>Бэклог группы <em id="g-name">—</em></h1>
+  <h1>Спринт <em id="g-name">—</em></h1>
   <div class="sub" id="g-sub">Загрузка…</div>
 
   <div class="bar">
-    <button class="btn" id="btn-add">＋ Добавить проблему</button>
+    <button class="btn ghost" id="btn-guide" onclick="openGuide()">Инструкции</button>
     <span class="sub" style="font-size:12.5px;color:var(--ink-soft)">Ты: <span id="who">—</span></span>
     <span class="stat" id="g-stat"></span>
   </div>
 
+  <nav class="stagebar" id="stagebar"></nav>
+  <div class="viewhead" id="viewhead"></div>
   <div id="list"></div>
   <div class="foot" id="g-gen"></div>
 </div>
 
+<div class="pop" id="pop"></div>
 <div class="scrim" id="scrim" onclick="closeModal()"></div>
 <aside class="modal" id="modal" aria-hidden="true">
   <div class="modal-head">
-    <strong id="m-title">Форма</strong>
+    <div><strong id="m-title">Форма</strong><div class="m-sub" id="m-sub"></div></div>
     <button class="x" onclick="closeModal()" aria-label="Закрыть">✕</button>
   </div>
+  <div class="tip-inline" id="m-tip"></div>
   <iframe id="m-frame" src="about:blank" title="Форма"></iframe>
+  <div class="guide" id="m-guide" hidden></div>
 </aside>
 
 <script>
 const Q=new URLSearchParams(location.search);
-/* M-034: стабильный ключ = Groups.rec_id (?g=recXXX). ?group=<имя> оставлен как legacy —
-   старые ссылки не ломаем, но новые раздаём только через ?g=. */
+/* Стабильный ключ = Groups.rec_id (?g=recXXX). ?group=<имя> — legacy, не ломаем. */
 const GID=(Q.get("g")||"").trim();
 const GROUP=(Q.get("group")||"").trim();
-const KEY=GID||GROUP;            // имя файла снимка
-let DATA=null;
+const KEY=GID||GROUP;
+let DATA=null, VIEW=0;
 
-/* sha256(email в нижнем регистре) — в _members.json лежат ТОЛЬКО хэши,
-   открытые email на GH Pages не публикуются. */
+/* ── Стадии = вкладки навигации (макап Ruslan: Бэклог·Решение·Поиск·Прототип·Тест·PRD).
+   codes = какие Artifacts.type попадают в колонку. th/tt = тултип гайда участника.
+   Порядок = ратифицированная методика lab_method_process_v01 (T4 упразднён; T0/T1 = Бэклог). ── */
+const TABS=[
+ {code:"backlog",     label:"Бэклог",   codes:["T0_function_map","T1_idea"],
+   th:"Что на Бэклоге", tt:"Все проблемы группы. Опишите задачу, что съедает время, и её цену в часах. Возьмите ОДНУ в работу — она уйдёт в Решение, остальные ждут."},
+ {code:"T2_task",     label:"Решение",  codes:["T2_task"],
+   th:"Что на Решении", tt:"Соберите триаду: проблема · вход · выход. «Выход» станет критериями приёмки — фиксируем и потом не меняем."},
+ {code:"T3_research", label:"Поиск",    codes:["T3_research"],
+   th:"Что на Поиске",  tt:"Сами найдите готовые аналоги под задачу (своим ИИ) и занесите вердикт: подходит/нет и почему. На выходе — аналоги в общий каталог."},
+ {code:"T5_prototype",label:"Прототип", codes:["T5_prototype"],
+   th:"Что на Прототипе",tt:"Готовое не подошло — опишите, что сделать, каким подходом, на чём и как проверять. Аналог подошёл — шаг пропускаете."},
+ {code:"T6_test",     label:"Тест",     codes:["T6_test"],
+   th:"Что на Тесте",   tt:"Проверьте решение по критериям из триады, зафиксируйте «до/после». Не прошло — назад в Прототип. Итог: прошло / не прошло / частично."},
+ {code:"T7_prd",      label:"PRD",      codes:["T7_prd"],
+   th:"Что на PRD",     tt:"Сдайте готовое + факт экономии: сколько времени теперь экономит решение. На выходе — результат и цифра сэкономленных часов."},
+];
+const BACKLOG_CODES=new Set(TABS[0].codes);
+/* Метка блока брифа (нижний регистр, как в макапе) + ключ формы add/edit по стадии. */
+const BRIEF_LABEL={backlog:"проблема",T2_task:"решение",T3_research:"поиск",T5_prototype:"прототип",T6_test:"тест",T7_prd:"PRD"};
+const ADDKEY={T2_task:"take",T3_research:"research",T5_prototype:"prototype",T6_test:"__test",T7_prd:"prd"};
+
 async function mailHash(m){
   const b=new TextEncoder().encode(m.trim().toLowerCase());
   const d=await crypto.subtle.digest("SHA-256",b);
   return [...new Uint8Array(d)].map(x=>x.toString(16).padStart(2,"0")).join("");
 }
-
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const h=n=>Math.round((n||0)*10)/10;
+const clip=(s,n)=>{s=(s||"").replace(/\s+/g," ").trim();return s.length>n?s.slice(0,n-1)+"…":s;};
 
-/* Автор = тот, кто подаёт СТРОКУ. Email спрашиваем один раз на группе
-   и подставляем в любую форму. Перезаписи нет: каждый сабмит = новая строка. */
+/* Автор = тот, кто подаёт СТРОКУ. Email спрашиваем один раз на группе. */
 const MAILKEY="mateos_lab_email";
 function myMail(){return (localStorage.getItem(MAILKEY)||"").trim();}
 function askMail(force){
@@ -116,6 +227,8 @@ function renderWho(){
   el.innerHTML = m
     ? `${esc(m)} · <a href="#" onclick="askMail(true);return false" style="color:var(--muted)">сменить</a>`
     : `<a href="#" onclick="askMail(true);return false" style="color:var(--terra);font-weight:600">указать свой email</a>`;
+  el.insertAdjacentHTML("afterend",
+    ` <span class="link-tip" onmouseenter="showPop(this,'<b>Ваша личная ссылка</b>Вход без пароля. Не пересылайте её никому: кто открыл — видит ваши данные. Утекла — скажите куратору, дадим новую.')" onmouseleave="hidePop()">?</span>`);
 }
 function withMe(url){
   if(!url) return url;
@@ -124,13 +237,54 @@ function withMe(url){
   return url+(url.includes("?")?"&":"?")+"author_email="+encodeURIComponent(m);
 }
 
-function openModal(url,title){
+function showPop(el,html){
+  const p=document.getElementById("pop");
+  p.innerHTML=html;
+  const r=el.getBoundingClientRect();
+  p.style.left=Math.max(8,Math.min(r.left,window.innerWidth-286))+"px";
+  p.style.top=(r.bottom+8)+"px";
+  p.classList.add("on");
+}
+function hidePop(){document.getElementById("pop").classList.remove("on");}
+
+/* ── Шторка: форма (iframe) ∨ гайд ── */
+function showFrame(){document.getElementById("m-guide").hidden=true;document.getElementById("m-frame").style.display="";}
+function showGuidePane(){document.getElementById("m-frame").style.display="none";document.getElementById("m-frame").src="about:blank";document.getElementById("m-guide").hidden=false;}
+function openShell(){document.getElementById("modal").classList.add("on");document.getElementById("scrim").classList.add("on");}
+
+/* Открыть форму этапа в шторке. tip = подсказка стадии (th/tt). Навигация ≠ сабмит:
+   строка Airtable пишется ТОЛЬКО на submit внутри Fillout. */
+function openForm(url,title,sub,tip){
   const u=withMe(url);
   if(!u){alert("Без email вклад не запишется. Укажи email и попробуй снова.");return;}
   document.getElementById("m-title").textContent=title;
+  document.getElementById("m-sub").textContent=sub||"";
+  document.getElementById("m-tip").innerHTML=tip?`<b>${esc(tip.th)}</b>${esc(tip.tt)}`:"";
+  showFrame();
   document.getElementById("m-frame").src=u;
-  document.getElementById("modal").classList.add("on");
-  document.getElementById("scrim").classList.add("on");
+  openShell();
+}
+const thread=tk=>DATA&&DATA.threads.find(x=>x.thread_key===tk);
+function edit(tk){const t=thread(tk);if(t)openForm(t.links&&t.links.edit,t.title,"Правка проблемы",null);}
+function take(tk){
+  if(taken()){alert("В этом цикле уже взята задача в работу. Заверши её, чтобы взять новую.");return;}
+  const t=thread(tk);if(t)openForm(t.links&&t.links.take,t.title,"Взять в работу → Решение",TABS[1]);
+}
+/* Открыть форму след. этапа (advance) по ключу link (research/prototype/prd/url_test). */
+function advance(tk,linkKey,tabIdx){
+  const t=thread(tk);if(!t)return;
+  let url=(t.links&&t.links[linkKey])||"";
+  if(linkKey==="__test"){const p=(t.prototypes||[]).find(p=>p.url_test);url=p?p.url_test:"";}
+  openForm(url,t.title,"Этап: "+TABS[tabIdx].label,TABS[tabIdx]);
+}
+
+function openGuide(){
+  document.getElementById("m-tip").innerHTML="";
+  document.getElementById("m-title").textContent="Как работает Лаборатория";
+  document.getElementById("m-sub").textContent="Инструкции";
+  document.getElementById("m-guide").innerHTML=GUIDE_HTML;
+  showGuidePane();
+  openShell();
 }
 function closeModal(){
   document.getElementById("modal").classList.remove("on");
@@ -139,35 +293,145 @@ function closeModal(){
 }
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 
-function card(t){
-  const acts=[
-    ["take","Взять в работу"],["research","Поиск"],
-    ["prototype","Прототип"],["prd","Демо"]
-  ].filter(([k])=>t.links[k])
-   .map(([k,label])=>`<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').links.${k},'${label}')">${label}</button>`);
-  const tests=(t.prototypes||[]).filter(p=>p.url_test).map((p,i)=>
-    `<button class="act" onclick="openModal(DATA.threads.find(x=>x.thread_key==='${t.thread_key}').prototypes[${i}].url_test,'Тесты')">Тесты · ${esc(p.artifact_key||"")}</button>`);
-  return `<div class="card">
+/* ── Данные по стадиям ── */
+const threadsAt=code=>{
+  const t=TABS.find(x=>x.code===code); const set=new Set(t.codes);
+  return DATA.threads.filter(x=>set.has(x.stage_code));
+};
+/* «Взята задача в работу» = есть тред за пределами Бэклога (одна задача на цикл). */
+function taken(){return DATA.threads.some(t=>!BACKLOG_CODES.has(t.stage_code));}
+function takenThread(){return DATA.threads.find(t=>!BACKLOG_CODES.has(t.stage_code));}
+
+/* Рекомендация Матеуса: пара (экономия × лёгкость). Топ-3 backlog по score получают №1/№2/№3.
+   Не обязаны стоять в первых строках (список сортируем по экономии). ease нет — рекомендация скрыта. */
+function recRank(list){
+  const scored=list.filter(t=>(t.ease||0)>0);
+  if(!scored.length) return {};
+  const ord=[...scored].sort((a,b)=>((b.hours_month||0)*(b.ease||0))-((a.hours_month||0)*(a.ease||0)));
+  const r={}; ord.slice(0,3).forEach((t,i)=>r[t.thread_key]=i+1); return r;
+}
+
+function backlogRow(t,rec){
+  const lock=taken();
+  const badge=rec?`<div class="recbadge">★ Рекомендация Матеуса №${rec}</div>`:"";
+  const chips=[];
+  if((t.ease||0)>0) chips.push(`<span class="chip">лёгкость ${t.ease}/5</span>`);
+  if(t.priority_quadrant) chips.push(`<span class="chip">${esc(t.priority_quadrant)}</span>`);
+  const chipsHtml=chips.length?`<div class="chips">${chips.join("")}</div>`:"";
+  const takeBtn=lock
+    ? `<button class="btn sm" disabled title="Уже взята задача в работу">взять в работу</button>`
+    : `<button class="btn sm" onclick="take('${t.thread_key}')">взять в работу</button>`;
+  return `<div class="card${rec?" rec":""}">
     <div class="top">
-      <div>
-        <h3>${esc(t.title)}</h3>
-        <div class="meta">${esc(t.thread_key)} · вклад: ${t.edits} ${t.edits===1?"запись":"записей"} · участники: ${esc((t.contributors||[]).join(", "))||"—"}</div>
-        <div class="meta">последняя правка: ${esc(t.last_author)||"—"} · ${esc(t.last_at)}</div>
+      <div>${badge}<h3>${esc(t.title)}</h3>
+        <div class="desc">${esc(clip(t.content,150))}</div>${chipsHtml}
+        <div class="meta">${esc(t.thread_key)} · вклад: ${t.edits} ${t.edits===1?"запись":"записей"}</div>
       </div>
-      <div style="text-align:right">
-        <span class="tag">${esc(t.stage)}</span>
-        <div class="hours" style="margin-top:10px">${h(t.hours_month)}<small>часов / мес</small></div>
-      </div>
+      <div class="hours">${h(t.hours_month)}<small>часов / мес</small></div>
     </div>
-    <div class="acts">${acts.join("")}${tests.join("")}</div>
+    <div class="rowact">${takeBtn}
+      <button class="btn ghost sm" onclick="edit('${t.thread_key}')">править</button>
+    </div>
   </div>`;
 }
 
-/* ── Вход по email: одна ссылка на всю компанию (.../lab/ без параметров) ──
-   Человек вводит email → видит ТОЛЬКО свои группы (по GroupMembership). */
-async function home(){
+/* ── Пайплайн одного взятого решения (макап стр.2) ──
+   Страница этапа = накопительный read-only бриф по всем пройденным этапам (текст из Airtable,
+   через снапшот t.brief) + панель «+ Добавить <Этап>» на текущем. Правка куска = уйти на его вкладку. */
+const pipelineThread=()=>takenThread()||null;   // одно решение на цикл
+const reachedSet=t=>new Set(t.reached||[]);
+const stageReached=(t,tab)=>tab.codes.some(c=>reachedSet(t).has(c));
+/* URL формы, которая создаёт/дополняет запись этой стадии (chain-forward-цель). */
+function targetLink(t,code){
+  const L=t.links||{};
+  if(code==="T6_test"){const p=(t.prototypes||[]).find(p=>p.url_test);return p?p.url_test:"";}
+  const k=ADDKEY[code]; return k?(L[k]||""):"";
+}
+/* Стадия доступна = уже пройдена ∨ есть форма-цель (фронтир). Иначе — заперта. */
+function stageActive(t,i){
+  if(i===0) return true;
+  return !!t && (stageReached(t,TABS[i]) || !!targetLink(t,TABS[i].code));
+}
+function stageFrontier(t,i){return !!t && i>0 && !stageReached(t,TABS[i]) && !!targetLink(t,TABS[i].code);}
+
+function renderStagePage(i){
+  const s=TABS[i], vh=document.getElementById("viewhead"), list=document.getElementById("list");
   document.getElementById("btn-add").style.display="none";
+  const t=pipelineThread();
+  vh.innerHTML=`<h2>${esc(s.label)}</h2><div class="hint">${esc(s.tt)}</div>`;
+  if(!t){
+    list.innerHTML=`<div class="empty">Пока никто не взят в работу.<br>Возьмите задачу на <a href="#" onclick="setView(0);return false" style="color:var(--terra);font-weight:600">Бэклоге</a> — решение пойдёт по этапам здесь.</div>`;
+    return;
+  }
+  const R=reachedSet(t), briefMap={};
+  (t.brief||[]).forEach(b=>{briefMap[b.code]=b.text;});
+  // Полный бриф: блок на каждый пройденный этап (в порядке пайплайна)
+  const blocks=TABS.map((st,idx)=>({st,idx})).filter(x=>x.st.codes.some(c=>R.has(c)));
+  const blocksHtml=blocks.map(x=>{
+    const code=x.st.codes.find(c=>R.has(c));
+    const txt=(briefMap[code]||"").trim();
+    const own=x.idx===i;
+    const editL=x.idx!==i?`<a class="brk-edit" onclick="setView(${x.idx})">изменить</a>`:"";
+    return `<div class="brk${own?" own":""}">
+      <div class="brk-h"><span>${esc(BRIEF_LABEL[x.st.code]||x.st.label)}</span>${editL}</div>
+      <div class="brk-b">${txt?esc(txt).replace(/\n/g,"<br>"):"—"}</div></div>`;
+  }).join("");
+  // Панель действия для просматриваемого этапа
+  const url=targetLink(t,s.code), isReached=stageReached(t,s);
+  let action, sub2;
+  if(url&&isReached){action=`<button class="btn addbtn" onclick="advance('${t.thread_key}','${ADDKEY[s.code]||""}',${i})">Изменить · ${esc(s.label)}</button>`;sub2="Этап заполнен. Можно дополнить (новая версия, старое не теряется).";}
+  else if(url){action=`<button class="btn addbtn" onclick="advance('${t.thread_key}','${ADDKEY[s.code]||""}',${i})">＋ Добавить ${esc(s.label)}</button>`;sub2="Добавьте информацию этого этапа — она ляжет к решению.";}
+  else if(isReached){action="";sub2="Этап заполнен. Правка — на его вкладке.";}
+  else{action="";sub2="Откроется, когда будет заполнен предыдущий этап.";}
+  list.innerHTML=`<div class="pipe">
+    <div class="brief">${blocksHtml||'<div class="empty">Пока пусто.</div>'}</div>
+    <div class="side"><div class="actcard"><div class="actcard-h">${esc(s.label)}</div>
+      <div class="sub2">${esc(sub2)}</div>${action}</div></div>
+  </div>`;
+}
+
+/* ── Полоса стадий = пайплайн-навигация. Пройдено/фронтир = активно; фронтир (текущий рабочий) =
+   оранжевый; будущее (нет формы-цели) = заперто. Бэклог всегда активен + счётчик проблем. ── */
+function renderStagebar(){
+  const bar=document.getElementById("stagebar");
+  const t=pipelineThread();
+  bar.innerHTML=TABS.map((s,i)=>{
+    const active=stageActive(t,i), frontier=stageFrontier(t,i), sel=i===VIEW;
+    const cls=["chev",i>0?"notch":""];
+    if(!active)cls.push("disabled");
+    if(sel&&frontier)cls.push("cur"); else if(sel)cls.push("act"); else if(frontier)cls.push("frontier");
+    const nHtml=i===0?`<span class="n">${threadsAt("backlog").length}</span>`:"";
+    const pop=`showPop(this,'<b>${esc(s.th)}</b>${esc(s.tt)}')`;
+    const handler=active?`onclick="setView(${i})"`:`disabled title="Этап ещё не начат"`;
+    return `<button class="${cls.filter(Boolean).join(" ")}" ${handler} onmouseenter="${pop}" onmouseleave="hidePop()">${esc(s.label)}${nHtml}</button>`;
+  }).join("");
+}
+function setView(i){VIEW=i;renderStagebar();renderView();}
+function renderView(){
+  const s=TABS[VIEW], vh=document.getElementById("viewhead"), list=document.getElementById("list");
+  const rows=threadsAt(s.code);
+  if(VIEW===0){
+    // Бэклог: сорт по экономии, рекомендация топ-3 по (экономия×лёгкость), замок «одна задача на цикл»
+    const sorted=[...rows].sort((a,b)=>(b.hours_month||0)-(a.hours_month||0));
+    const rec=recRank(sorted);
+    let ban="";
+    if(taken()){const tt=takenThread();
+      ban=`<div class="lockban"><span class="ic">▲</span><div>В работе уже: <b>${esc(tt.title)}</b> (${esc(tt.stage)}). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div></div>`;}
+    vh.innerHTML=`<h2>Бэклог <em>группы</em></h2>
+      <div class="hint">Все проблемы группы. Сортировка — по экономии времени. Рекомендация Матеуса (★) учитывает пару «экономия + лёгкость» и может стоять не в первых строках. Возьмите одну в работу — она уйдёт в Решение.</div>
+      ${ban}`;
+    document.getElementById("btn-add").style.display="";
+    list.innerHTML=sorted.length?sorted.map(t=>backlogRow(t,rec[t.thread_key])).join("")
+      :`<div class="empty"><b>Пока пусто.</b><br>Нажми «Добавить проблему» — и она появится здесь.</div>`;
+  }else{
+    renderStagePage(VIEW);
+  }
+}
+
+/* ── Вход по email: одна ссылка на компанию (.../lab/) → человек видит свои группы ── */
+async function home(){
   document.querySelector("h1").innerHTML='MateOS <em>Lab</em>';
+  document.getElementById("stagebar").style.display="none";
   const list=document.getElementById("list");
   const m=myMail();
   if(!m){
@@ -177,15 +441,10 @@ async function home(){
   }
   document.getElementById("g-sub").textContent="Твои группы";
   let mem;
-  try{
-    const r=await fetch(`data/members.json?ts=${Date.now()}`);
-    mem=await r.json();
-  }catch(e){ list.innerHTML=`<div class="empty">Список групп недоступен. Попробуй позже.</div>`; return; }
+  try{const r=await fetch(`data/members.json?ts=${Date.now()}`);mem=await r.json();}
+  catch(e){list.innerHTML=`<div class="empty">Список групп недоступен. Попробуй позже.</div>`;return;}
   const mine=mem.members[await mailHash(m)]||[];
-  if(!mine.length){
-    list.innerHTML=`<div class="empty">Для <b>${esc(m)}</b> групп не найдено.<br>Проверь email или напиши куратору.</div>`;
-    return;
-  }
+  if(!mine.length){list.innerHTML=`<div class="empty">Для <b>${esc(m)}</b> групп не найдено.<br>Проверь email или напиши куратору.</div>`;return;}
   list.innerHTML=mine.map(id=>{
     const g=mem.groups[id]||{};
     return `<div class="card"><div class="top">
@@ -207,16 +466,56 @@ async function boot(){
     document.getElementById("g-sub").textContent="Группа не найдена. Проверь ссылку.";
     return;
   }
-  document.getElementById("g-name").textContent=DATA.group;
-  document.getElementById("g-sub").textContent=`Цикл ${DATA.cycle||"—"} · всё, что группа уже накидала`;
+  DATA.threads=DATA.threads||[];
+  document.getElementById("g-name").textContent="· "+DATA.group;
+  document.getElementById("g-sub").textContent=`Цикл ${DATA.cycle||"—"} · ${DATA.client||""}`;
   const sum=DATA.threads.reduce((a,t)=>a+(t.hours_month||0),0);
   document.getElementById("g-stat").textContent=`${DATA.threads.length} проблем · ${h(sum)} ч/мес потенциал`;
   document.getElementById("g-gen").textContent="Обновлено: "+(DATA.generated_at||"").replace("T"," ").slice(0,16);
-  document.getElementById("btn-add").onclick=()=>openModal(DATA.url_backlog,"Новая проблема в бэклог");
-  document.getElementById("list").innerHTML =
-    DATA.threads.length ? DATA.threads.map(card).join("")
-    : `<div class="empty">Пока пусто. Нажми «Добавить проблему» — и она появится здесь.</div>`;
+  // Кнопка «Добавить проблему» живёт в баре, видна только на Бэклоге
+  const add=document.createElement("button");
+  add.className="btn";add.id="btn-add";add.textContent="＋ Добавить проблему";
+  add.onclick=()=>openForm(DATA.url_backlog,"Новая проблема в бэклог","Бэклог",TABS[0]);
+  document.querySelector(".bar").prepend(add);
+  VIEW=0;
+  renderStagebar();
+  renderView();
 }
+
+/* ── Раздел «Инструкции» = гайд участника (lab_participant_guide_v01, одобрен Ruslan) ── */
+const GUIDE_HTML=`
+<h2>Лаборатория: <em>как это работает</em></h2>
+<p>Здесь вы своими руками превращаете рабочие задачи, которые съедают время, в готовые решения — и измеряете результат в сэкономленных часах.</p>
+<ul>
+  <li><b>Вы ведёте свою задачу сами.</b> Лаборатория даёт метод, витрину (Пульс), формы и поддержку. Думаете, ищете и пробуете — вы, своими инструментами.</li>
+  <li><b>Каждый шаг что-то добавляет.</b> Задача проходит этапы, на каждом вы дописываете к ней один кусок. Сумма кусков превращает «проблему» в готовое решение.</li>
+  <li><b>Всё сохраняется.</b> Ничего не теряется между этапами — всё копится в одном месте, привязанное к вашей задаче.</li>
+</ul>
+<div class="note"><b>Ваша личная ссылка — это ваш вход.</b> Логина и пароля нет. Не пересылайте ссылку никому: за ней нет пароля, кто открыл — видит ваши данные. Если ссылка утекла — скажите куратору: выпустим новую и отключим старую (сама она не сгорает, пока мы её не заменим).</div>
+<h3>1. Бэклог — вы называете проблему</h3>
+<p>Описываете задачу, которая отнимает время, и оцениваете, сколько времени она съедает (частота × минуты × люди). <span class="out">На выходе:</span> проблема с её ценой в часах. Рядом — рекомендация Матеуса (крупная победа × лёгкость): подсказка, а не приказ.</p>
+<h3>2. Решение — берёте задачу в работу и собираете триаду</h3>
+<p>Нажимаете «взять в работу» и дополняете проблему до триады: проблема · что на входе · что на выходе. <span class="out">На выходе:</span> полная триада. «Выход» = будущие критерии приёмки, фиксируем один раз и не переписываем. Взять можно одну задачу на цикл — фокус даёт результат.</p>
+<h3>3. Поиск (Аналоги) — ищете готовые решения</h3>
+<p>Сами ищете аналоги своим ИИ и заносите вердикт по каждому: подходит или нет и почему. <span class="out">На выходе:</span> аналоги в общий каталог — следующий с похожей задачей не ищет заново.</p>
+<h3>4. Прототип — если готовое не подошло, пробуете сами</h3>
+<p>Формулируете, что нужно сделать (JTBD), каким подходом, на каких инструментах и по каким критериям проверять. <span class="out">На выходе:</span> описание решения + критерии. Аналог подошёл — этап пропускаете.</p>
+<h3>5. Тест — проверяете, что решение работает</h3>
+<p>Проверяете решение по критериям из триады, фиксируете «до/после». <span class="out">На выходе:</span> итог прошло / не прошло / частично. Не прошло — назад в Прототип (кругов может быть несколько, это нормально).</p>
+<h3>6. PRD — сдаёте результат</h3>
+<p>Собираете финальное: готовое описание решения + факт экономии — сколько времени теперь экономит решение. <span class="out">На выходе:</span> результат и цифра сэкономленных часов. Это и есть победа Лаборатории.</p>
+<div class="flow">Бэклог (проблемы) → взять в работу ОДНУ → Решение (триада) → Поиск аналогов
+   ├─ аналог подошёл ───────────────→ Тест → PRD
+   └─ не нашлось → Прототип ─────────→ Тест → PRD
+                        (не прошло тест → назад в Прототип)</div>
+<h3>Что важно помнить</h3>
+<ul>
+  <li><b>Одна группа — одна задача за цикл.</b> Взяли одну в работу — остальные ждут в бэклоге и не теряются.</li>
+  <li><b>Приоритет — подсказка, а не приказ.</b> Рядом с задачей видите рекомендацию (крупная победа × лёгкость); финальный выбор за вами.</li>
+  <li><b>Критерии приёмки фиксируются один раз</b> (на «Решении») и не переписываются — чтобы проверка была честной.</li>
+  <li><b>Вы не одни.</b> На каждом этапе рядом куратор Лаборатории.</li>
+</ul>`;
+
 boot();
 </script>
 </body>

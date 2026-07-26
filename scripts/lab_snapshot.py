@@ -22,7 +22,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lab_links import add_prefill, report_dropped, step_links  # noqa: E402
+from lab_links import add_prefill, nav_links, report_dropped, step_links  # noqa: E402
 
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
@@ -40,8 +40,8 @@ STAGE_LABEL = {
     "T3_research": "Поиск",
     # T4_hypothesis упразднён (машина 2026-07-26): гипотеза свёрнута в Прототип; choice в базе, из Пульса скрыт
     "T5_prototype": "Прототип",
-    "T6_test": "Тесты",
-    "T7_prd": "Демо",
+    "T6_test": "Тест",
+    "T7_prd": "PRD",   # ratified Ruslan 2026-07-26 (было «Демо»; Cleo уведомлена через Ящик)
 }
 STAGE_ORDER = list(STAGE_LABEL.keys())
 
@@ -77,6 +77,30 @@ def first(v):
     return v[0] if isinstance(v, list) and v else (v if not isinstance(v, list) else None)
 
 
+def stage_brief(code, f):
+    """Read-only текст этапа для брифа Пульса (макап стр.2): собираем из структурных ячеек
+    записи стадии; если их нет — падаем на free-text content."""
+    def g(k):
+        return str(f.get(k) or "").strip()
+
+    def joined(pairs):
+        out = [f"{lbl}: {g(k)}" for lbl, k in pairs if g(k)]
+        return "\n".join(out) or g("content")
+
+    if code == "T2_task":
+        return joined([("Вход", "input_info"), ("Выход", "output_info")])
+    if code == "T5_prototype":
+        return joined([("Задача", "jtbd"), ("Подход", "approach_method"),
+                       ("Инструменты", "tech_stack"), ("Критерии приёмки", "test_criteria")])
+    if code == "T6_test":
+        return joined([("Результат", "test_result"), ("План", "test_plan"),
+                       ("Протокол", "test_protocol")])
+    if code == "T7_prd":
+        return g("content") or g("prd_ts")
+    # T1_idea / T0_function_map / T3_research — свободный текст
+    return g("content")
+
+
 
 
 def build_threads(rows):
@@ -105,8 +129,14 @@ def build_threads(rows):
                     arts[0])
         last = arts[-1]
         hf, lf = head["f"], last["f"]
+        # cur_by_type: текущая (is_current) запись каждого этапа — источник chain-forward ссылок.
+        cur_by_type = {a["f"].get("type"): a["f"] for a in arts if a["f"].get("type")}
+        reached = [ty for ty in STAGE_ORDER if ty in cur_by_type]
+        # Тесты (T6) per-prototype: ссылка живёт на записи T5, открывается только если
+        # прототип квалифицирован (test_criteria задан = lock-выход, §7.4).
         protos = [{"artifact_key": a["f"].get("artifact_key"),
-                   "url_test": add_prefill(a["f"].get("url_test_T6"), a["f"])}
+                   "url_test": add_prefill(a["f"].get("url_test_T6"), a["f"])
+                   if str(a["f"].get("test_criteria") or "").strip() else ""}
                   for a in arts if a["f"].get("type") == "T5_prototype"]
         allrows = sorted(t["all"], key=lambda r: r["fields"].get("submitted_at") or "")
         contributors = []
@@ -125,9 +155,14 @@ def build_threads(rows):
             "last_author": last_row.get("author_email") or "",
             "last_at": (last_row.get("submitted_at") or "")[:16].replace("T", " "),
             "hours_month": hf.get("total_hours") or 0,
+            "ease": hf.get("ease") or 0,                    # сложность 1-5 → рекомендация Матеуса (пара часы×лёгкость)
+            "priority_quadrant": hf.get("priority_quadrant") or "",
             "stage": STAGE_LABEL.get(lf.get("type"), lf.get("type") or "—"),
             "stage_code": lf.get("type") or "",
-            "links": step_links(hf),
+            "reached": reached,
+            # brief: накопительный read-only текст по каждому пройденному этапу (макап стр.2)
+            "brief": [{"code": ty, "text": stage_brief(ty, cur_by_type[ty])} for ty in reached],
+            "links": nav_links(cur_by_type),
             "prototypes": protos,
         })
     out.sort(key=lambda t: (-(t["hours_month"] or 0), t["thread_key"]))
