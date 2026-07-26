@@ -9,7 +9,11 @@
   "events": [
     { "all_day": true, "start": "2026-07-14", "end": "2026-07-28", "title": "Цикл 1", "kind": "other" }
   ],
-  "tasks": [],
+  "tasks": [
+    { "id": "tk1", "title": "Собрать 5 записей созвонов для теста прототипа", "status": "doing", "artifact": "Сводка встреч", "priority": "high", "due": "2026-07-27" },
+    { "id": "tk2", "title": "Написать промпт под наш формат задач", "status": "todo", "artifact": "Сводка встреч", "priority": "normal", "due": "2026-07-29" },
+    { "id": "tk3", "title": "Согласовать формат резюме с командой", "status": "done", "artifact": "Сводка встреч", "priority": "normal", "due": "2026-07-24" }
+  ],
   "profile": { "name": "Демо Участник", "group": "Демо", "skills": [] },
   "metrics": {
     "total_hours": 90,

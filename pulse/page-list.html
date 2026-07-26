@@ -13,9 +13,11 @@
 <script src="./snapshot.js"></script>
 <script src="./pulse.js"></script>
 <script>
-  // page-list archetype serves three roles from one file: backlog (default) / calendar / leaderboard.
+  // page-list archetype multiplexes several roles from one file via ?view=.
   var v = (new URLSearchParams(location.search).get("view") || "").toLowerCase();
-  Pulse.mount(v === "calendar" ? "calendar" : v === "leaderboard" ? "leaderboard" : "list");
+  var MAP = { calendar: "calendar", leaderboard: "leaderboard", tasks: "tasks",
+              library: "library", market: "marketplace", marketplace: "marketplace" };
+  Pulse.mount(MAP[v] || "list");
 </script>
 </body>
 </html>

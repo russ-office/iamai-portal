@@ -48,15 +48,16 @@
 
   // Navigation exactly as the spec enumerates it. active → its page; soon → not a link.
   var NAV = [
-    { id: "person",      label: "Мой Пульс",   href: "page-person.html",              state: "active" },
-    { id: "list",        label: "Бэклог",      href: "page-list.html",                state: "active" },
-    { id: "overview",    label: "Спринт",      href: "page-overview.html",            state: "active" },
-    { id: "calendar",    label: "Календарь",   href: "page-list.html?view=calendar",  state: "active" },
-    { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard", state: "active" },
-    { id: "guides",      label: "Инструкции",  href: "page-guides.html",               state: "active" },
+    { id: "person",      label: "Мой Пульс",   href: "page-person.html",                 state: "active" },
+    { id: "overview",    label: "Спринт",      href: "page-overview.html",               state: "active" },
+    { id: "tasks",       label: "Задачи",      href: "page-list.html?view=tasks",        state: "active" },
+    { id: "list",        label: "Бэклог",      href: "page-list.html",                   state: "active" },
+    { id: "calendar",    label: "Календарь",   href: "page-list.html?view=calendar",     state: "active" },
+    { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard",  state: "active" },
+    { id: "library",     label: "Библиотека",  href: "page-list.html?view=library",      state: "active" },
+    { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "active" },
+    { id: "guides",      label: "Инструкции",  href: "page-guides.html",                 state: "active" },
     { id: "history",     label: "История",     state: "soon" },
-    { id: "library",     label: "Библиотека",  state: "soon" },
-    { id: "marketplace", label: "Marketplace", state: "soon" },
   ];
 
   function loadSnapshot(token) {
@@ -432,6 +433,77 @@
       '</div>';
   }
 
+  // ── Задачи (LabTasks) — где сотрудник видит текущую задачу и очередь ─────────
+  function renderTasks(body, D) {
+    var tasks = D.tasks || [];
+    var doing = tasks.filter(function (t) { return t.status === "doing"; });
+    var todo  = tasks.filter(function (t) { return t.status !== "doing" && t.status !== "done"; });
+    var done  = tasks.filter(function (t) { return t.status === "done"; });
+    function section(title, arr, empty) {
+      return '<div><div class="p-section">' + esc(title) + '</div><div class="c-sheet c-sheet--flush">' +
+        (arr.length ? arr.map(taskRowHTML).join("") : '<div class="c-empty">' + esc(empty) + '</div>') + '</div></div>';
+    }
+    // Рамка Ruslan: задачи подаются как «от Матеуса» — часть ставит сам участник, часть куратор
+    // (Ruslan/Cleo) через Матеуса. Участник взаимодействует с агентом, а не напрямую с людьми.
+    var intro = '<div class="p-note" style="max-width:none;margin:0 0 18px">Матеус ведёт твои задачи. Часть ты ставишь себе сам, часть — куратор Лаборатории; всё приходит одним потоком от Матеуса.</div>';
+    body.innerHTML = '<div class="p-wrap--list">' + intro +
+      '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
+        tasks.length + ' задач · ' + doing.length + ' в работе · ' + done.length + ' готово</span></div>' +
+      (tasks.length
+        ? section("В работе", doing, "Нет активной задачи в работе") +
+          section("К выполнению", todo, "Очередь пуста") +
+          section("Готово", done, "Пока ничего не завершено")
+        : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Задач пока нет. Матеус поставит первую — сам или вместе с куратором — и она появится здесь.</div></div>') +
+    '</div>';
+    wireTaskRows(body, D);
+  }
+
+  // ── Библиотека / Marketplace — карточки из общего JSON (как guides.json) ──────
+  function renderCatalog(body, url, opts) {
+    body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Загружаем…</div></div>';
+    fetch(url + "?ts=" + Date.now())
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (J) {
+        var items = J.items || [];
+        var cards = items.map(function (x) {
+          return '<div class="c-sheet c-sheet--pad p-backlog-card p-guide-card" role="button" tabindex="0" data-cat="' + esc(x.id) + '">' +
+            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(x.title) + '</span>' +
+            (x.meta ? '<span class="c-chip is-quiet">' + esc(x.meta) + '</span>' : '') + '</div>' +
+            '<p class="p-backlog-card__body">' + esc(x.subtitle || "") + '</p></div>';
+        }).join("");
+        body.innerHTML = '<div class="p-wrap--list">' +
+          '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
+            (items.length ? items.length + ' · ' + esc(opts.count) : esc(opts.empty_count)) + '</span></div>' +
+          (items.length ? '<div class="p-backlog-grid">' + cards + '</div>'
+            : '<div class="c-sheet c-sheet--flush"><div class="c-empty">' + esc(opts.empty) + '</div></div>') + '</div>';
+        body.querySelectorAll("[data-cat]").forEach(function (card) {
+          var x = items.filter(function (i) { return i.id === card.getAttribute("data-cat"); })[0];
+          if (!x) return;
+          var bodyHtml = mdToHtml(x.body || x.subtitle || "") + (x.link ? '<p><a href="' + esc(x.link) + '" target="_blank" rel="noopener">Открыть решение →</a></p>' : "");
+          function open() { openDrawer(x.meta || opts.eyebrow, x.title, null, bodyHtml); }
+          card.addEventListener("click", open);
+          card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+        });
+      })
+      .catch(function () { body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">' + esc(opts.fail) + '</div></div>'; });
+  }
+  function renderLibrary(body) {
+    renderCatalog(body, "library.json", {
+      count: "готовых решений · переиспользуй, не изобретай заново", eyebrow: "Готовое решение",
+      empty_count: "библиотека наполняется",
+      empty: "Сюда попадут решения, прошедшие Демо — с описанием и ссылкой, чтобы другие команды переиспользовали их, а не изобретали заново. Первое готовое решение появится здесь.",
+      fail: "Библиотека не загрузилась. Обнови страницу.",
+    });
+  }
+  function renderMarket(body) {
+    renderCatalog(body, "marketplace.json", {
+      count: "решений и инструментов в витрине", eyebrow: "Витрина",
+      empty_count: "витрина готовится",
+      empty: "Витрина решений и инструментов. Здесь команды будут находить и подключать готовое — раздел наполняется.",
+      fail: "Marketplace не загрузился. Обнови страницу.",
+    });
+  }
+
   // ── Спринт = пайплайн-подразделы (макап Ruslan) ──────────────────────────────
   // Полоса стадий = навигация страницы; Бэклог = список проблем (рекомендация+замок),
   // форвард-этапы = накопительный read-only бриф по взятому решению + «+ Добавить».
@@ -626,6 +698,9 @@
       list:        { title: "Бэклог",       eyebrow: "ARTIFACTS · T0 / T1",                                 action: backlogAction() },
       overview:    { title: "Спринт",       eyebrow: "CYCLE " + D.sprint_no + " · " + range,                action: updatedAction(D) },
       calendar:    { title: "Календарь",    eyebrow: "SESSIONS + CYCLES + LABTASKS",                        action: updatedAction(D) },
+      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: updatedAction(D) },
+      library:     { title: "Библиотека",   eyebrow: "ГОТОВЫЕ РЕШЕНИЯ · ПЕРЕИСПОЛЬЗОВАНИЕ",                 action: "" },
+      marketplace: { title: "Marketplace",  eyebrow: "ВИТРИНА РЕШЕНИЙ И ИНСТРУМЕНТОВ",                      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
       leaderboard: { title: "Leaderboard",  eyebrow: "ПРОИЗВОДНОЕ · GROUPMEMBERSHIP + ARTIFACTS",           action: updatedAction(D) },
     };
@@ -647,7 +722,10 @@
       if (view === "person") renderPerson(body, D);
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);
+      else if (view === "tasks") renderTasks(body, D);
       else if (view === "calendar") renderCalendar(body, D);
+      else if (view === "library") renderLibrary(body);
+      else if (view === "marketplace") renderMarket(body);
       else if (view === "guides") renderGuides(body);
       else if (view === "leaderboard") renderLeaderboard(body, D);
       else body.innerHTML = '<div class="c-empty">Экран появится позже</div>';
