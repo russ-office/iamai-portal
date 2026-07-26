@@ -18,7 +18,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lab_links import add_prefill, report_dropped, step_links  # noqa: E402
+from lab_links import add_prefill, nav_links, report_dropped, step_links  # noqa: E402
 
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
@@ -75,6 +75,28 @@ def stage_progress(code):
     return 0.0
 
 
+def stage_brief(code, f):
+    """Read-only текст этапа для брифа Пульса (пайплайн-страница): из структурных ячеек
+    записи стадии; нет — падаем на free-text content."""
+    def g(k):
+        return str(f.get(k) or "").strip()
+
+    def joined(pairs):
+        return "\n".join(f"{lbl}: {g(k)}" for lbl, k in pairs if g(k)) or g("content")
+
+    if code == "T2_task":
+        return joined([("Вход", "input_info"), ("Выход", "output_info")])
+    if code == "T5_prototype":
+        return joined([("Задача", "jtbd"), ("Подход", "approach_method"),
+                       ("Инструменты", "tech_stack"), ("Критерии приёмки", "test_criteria")])
+    if code == "T6_test":
+        return joined([("Результат", "test_result"), ("План", "test_plan"),
+                       ("Протокол", "test_protocol")])
+    if code == "T7_prd":
+        return g("content") or g("prd_ts")
+    return g("content")
+
+
 def user_threads(arts):
     """arts = артефакты, авторские для участника. Тред = группировка по thread_key;
     карточка из is_current; стадия = самая продвинутая; часы/заголовок = head (T1/T0)."""
@@ -91,16 +113,24 @@ def user_threads(arts):
         cur_sorted = sorted(cur, key=lambda f: STAGE_ORDER.index(f.get("type")) if f.get("type") in STAGE_ORDER else 99)
         head = next((f for f in cur_sorted if f.get("type") in ("T1_idea", "T0_function_map")), cur_sorted[0])
         last = cur_sorted[-1]
+        cur_by_type = {f.get("type"): f for f in cur_sorted if f.get("type")}
+        reached = [ty for ty in STAGE_ORDER if ty in cur_by_type]
         out.append({
             "thread_key": tk,
             "thread": head.get("title") or tk,
             "progress": stage_progress(last.get("type")),
             "hours": head.get("total_hours") or 0,
             "stage": STAGE_LABEL.get(last.get("type"), last.get("type") or "—"),
-            # ссылки собирает рельс (lab_links), фронт их только открывает
-            "links": step_links(head),
+            "stage_code": last.get("type") or "",
+            "reached": reached,
+            # brief: накопительный read-only текст по каждому пройденному этапу (пайплайн-страница)
+            "brief": [{"code": ty, "text": stage_brief(ty, cur_by_type[ty])} for ty in reached],
+            # ссылки собирает рельс (lab_links): chain-forward, гейт по квалификации этапа
+            "links": nav_links(cur_by_type),
+            # Тесты (T6) per-prototype — открываются только у квалифицированного прототипа (test_criteria)
             "prototypes": [{"artifact_key": f.get("artifact_key"),
-                            "url_test": add_prefill(f.get("url_test_T6"), f)}
+                            "url_test": add_prefill(f.get("url_test_T6"), f)
+                            if str(f.get("test_criteria") or "").strip() else ""}
                            for f in cur_sorted if f.get("type") == "T5_prototype"],
         })
     out.sort(key=lambda t: (-(t["hours"] or 0), t["thread"]))
@@ -239,6 +269,8 @@ def main():
                             "total_hours": f.get("total_hours") or 0,
                             "thread_key": f.get("thread_key") or "",
                             "content": f.get("content") or "",
+                            "ease": f.get("ease") or 0,                       # рекомендация Матеуса (пара часы×лёгкость)
+                            "priority_quadrant": f.get("priority_quadrant") or "",
                             # готовые ссылки со значениями — фронт свои не собирает
                             "links": step_links(f)})
         out.sort(key=lambda b: -(b["total_hours"] or 0))

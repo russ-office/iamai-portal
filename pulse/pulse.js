@@ -432,46 +432,130 @@
       '</div>';
   }
 
-  function renderOverview(body, D) {
-    var cycle = D.events.filter(function (e) { return e.all_day; })[0];
-    var done = D.tasks.filter(function (t) { return t.status === "done"; }).length;
-    var doingTasks = D.tasks.filter(function (t) { return t.status === "doing"; });
-    var doing = doingTasks.length;
-    var potential = Math.round(D.backlog.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0) * 10) / 10;
-    var day = cycle ? U.daysBetween(cycle.start, D.today) + 1 : 1;
+  // ── Спринт = пайплайн-подразделы (макап Ruslan) ──────────────────────────────
+  // Полоса стадий = навигация страницы; Бэклог = список проблем (рекомендация+замок),
+  // форвард-этапы = накопительный read-only бриф по взятому решению + «+ Добавить».
+  // Рельс тот же chain-forward (nav_links); тут только представление.
+  var PSTAGES = [
+    { code: "backlog",      label: "Бэклог",   codes: ["T0_function_map", "T1_idea"], brief: "проблема" },
+    { code: "T2_task",      label: "Решение",  codes: ["T2_task"],       brief: "решение" },
+    { code: "T3_research",  label: "Поиск",    codes: ["T3_research"],    brief: "поиск" },
+    { code: "T5_prototype", label: "Прототип", codes: ["T5_prototype"],   brief: "прототип" },
+    { code: "T6_test",      label: "Тест",     codes: ["T6_test"],        brief: "тест" },
+    { code: "T7_prd",       label: "PRD",      codes: ["T7_prd"],         brief: "PRD" },
+  ];
+  var PADDKEY = { T2_task: "take", T3_research: "research", T5_prototype: "prototype", T6_test: "__test", T7_prd: "prd" };
+  var PBACKLOG = { T0_function_map: 1, T1_idea: 1 };
 
-    function kpi(label, value, sub) {
-      return '<div class="c-kpi-tile"><div class="c-kpi-tile__label">' + esc(label) + '</div>' +
-             '<div class="c-kpi-tile__value c-num">' + esc(value) + '</div>' +
-             '<div class="c-kpi-tile__sub">' + esc(sub) + '</div></div>';
+  function pThreads(D) { return (D.metrics && D.metrics.threads) || []; }
+  function pPipeThread(D) { return pThreads(D).filter(function (t) { return !PBACKLOG[t.stage_code]; })[0] || null; }
+  function pStageReached(t, st) { return !!t && st.codes.some(function (c) { return (t.reached || []).indexOf(c) >= 0; }); }
+  function pTargetLink(t, code) {
+    var L = t.links || {};
+    if (code === "T6_test") { var p = (t.prototypes || []).filter(function (x) { return x.url_test; })[0]; return p ? formLink(p.url_test) : ""; }
+    var k = PADDKEY[code]; return k ? formLink(L[k]) : "";
+  }
+  // Рекомендация Матеуса: топ-3 backlog по паре (экономия × лёгкость). Не обязаны стоять в первых строках.
+  function pRecRank(list) {
+    var scored = list.filter(function (b) { return (b.ease || 0) > 0; });
+    if (!scored.length) return {};
+    var ord = scored.slice().sort(function (a, b) { return ((b.total_hours || 0) * (b.ease || 0)) - ((a.total_hours || 0) * (a.ease || 0)); });
+    var r = {}; ord.slice(0, 3).forEach(function (b, i) { r[b.id] = i + 1; }); return r;
+  }
+  var h1 = function (n) { return Math.round((n || 0) * 10) / 10; };
+
+  function pBacklogPane(D, t) {
+    var list = (D.backlog || []).slice().sort(function (a, b) { return (b.total_hours || 0) - (a.total_hours || 0); });
+    var rec = pRecRank(list), locked = !!t;
+    var total = h1(list.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
+    var ban = locked
+      ? '<div class="c-sheet c-sheet--pad p-lockban">В работе уже: <b>' + esc(t.thread) + '</b> (' + esc(t.stage) + '). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div>'
+      : '';
+    var cards = list.length
+      ? '<div class="p-backlog-grid">' + list.map(function (b) {
+          var r = rec[b.id];
+          var badges = (r ? '<span class="c-chip is-accent">★ Матеос №' + r + '</span>' : '')
+            + ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
+          var takeBtn = locked
+            ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
+            : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
+          var editBtn = formLink((b.links || {}).edit)
+            ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
+          return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
+            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
+              '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
+            (badges ? '<div class="p-badges">' + badges + '</div>' : '') +
+            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 150)) + '</p>' +
+            '<div class="p-backlog-card__acts">' + editBtn + takeBtn + '</div>' +
+          '</div>';
+        }).join("") + '</div>'
+      : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему.</div></div>';
+    return '<div class="c-filter-bar" style="margin-bottom:16px"><span class="c-filter-bar__count">' +
+      list.length + ' проблем · ' + total + ' ч/мес потенциал · сортировка по экономии</span></div>' + ban + cards;
+  }
+
+  function pStagePane(D, t, i) {
+    var st = PSTAGES[i];
+    if (!t) {
+      return '<div class="c-sheet c-sheet--flush"><div class="c-empty">Пока никто не взят в работу. Возьмите задачу на Бэклоге — решение пойдёт по этапам здесь.</div></div>';
     }
+    var reached = t.reached || [], briefMap = {};
+    (t.brief || []).forEach(function (b) { briefMap[b.code] = b.text; });
+    var blocks = PSTAGES.filter(function (s) { return s.codes.some(function (c) { return reached.indexOf(c) >= 0; }); }).map(function (s) {
+      var code = s.codes.filter(function (c) { return reached.indexOf(c) >= 0; })[0];
+      var txt = (briefMap[code] || "").trim(), own = s.code === st.code, pos = PSTAGES.indexOf(s);
+      var editL = !own ? '<span class="p-brk__edit" data-goto="' + pos + '">изменить</span>' : '';
+      return '<div class="c-sheet c-sheet--pad p-brk' + (own ? ' is-own' : '') + '">' +
+        '<div class="p-brk__h"><span>' + esc(s.brief) + '</span>' + editL + '</div>' +
+        '<div class="p-brk__body">' + (txt ? esc(txt) : "—") + '</div></div>';
+    }).join("");
+    var url = pTargetLink(t, st.code), isReached = pStageReached(t, st), action = "", sub = "";
+    if (url && isReached) { action = '<button type="button" class="c-btn is-primary" data-add="' + i + '">Изменить · ' + esc(st.label) + '</button>'; sub = "Этап заполнен. Можно дополнить — новая версия, старое не теряется."; }
+    else if (url) { action = '<button type="button" class="c-btn is-primary" data-add="' + i + '">+ Добавить ' + esc(st.label) + '</button>'; sub = "Добавьте информацию этого этапа — она ляжет к решению."; }
+    else if (isReached) { sub = "Этап заполнен. Правка — на его вкладке."; }
+    else { sub = "Откроется, когда будет заполнен предыдущий этап."; }
+    return '<div class="p-pipe"><div class="p-pipe__brief">' + (blocks || '<div class="c-empty">Пока пусто.</div>') + '</div>' +
+      '<div class="p-pipe__side"><div class="c-sheet c-sheet--pad"><div class="p-section" style="margin-bottom:8px">' + esc(st.label) + '</div>' +
+      '<p class="p-backlog-card__body" style="margin-bottom:' + (action ? "14px" : "0") + '">' + esc(sub) + '</p>' + action + '</div></div></div>';
+  }
 
-    var tasks = D.tasks.map(taskRowHTML).join("");
-    var threads = D.metrics.threads.length ? D.metrics.threads.map(function (th, i) {
-      var last = i === D.metrics.threads.length - 1;
-      return '<div style="margin-bottom:' + (last ? 0 : 16) + 'px">' + stageBarHTML(th.thread, th.progress, (Math.round((th.hours || 0) * 10) / 10) + " ч") + '</div>';
-    }).join("") : '<div class="c-empty">Пока нет тредов</div>';
-
-    body.innerHTML =
-      '<div class="p-wrap">' +
-        '<div class="p-metric-row">' +
-          kpi("Цикл", "День " + day + "/14", cycle ? U.fmtDay(cycle.start) + " — " + U.fmtDay(cycle.end) : "") +
-          kpi("Задачи", done + "/" + D.tasks.length, doing + " в работе") +
-          kpi("Потенциал", potential, "часов / мес") +
-        '</div>' +
-        '<div class="p-note" style="max-width:none;margin-top:0">«Один прототип закрыт, интервью в работе — экономия по треду считается ДО минус ПОСЛЕ.»</div>' +
-        // Текущая задача (в работе) — спотлайт наверху, чтобы её было видно на Спринте
-        '<div><div class="p-section">Текущая задача · в работе</div><div class="c-sheet c-sheet--flush">' +
-          (doingTasks.length ? doingTasks.map(taskRowHTML).join("") : '<div class="c-empty">Нет активной задачи в работе</div>') +
-        '</div></div>' +
-        '<div class="p-grid-2">' +
-          '<div><div class="p-section">Задачи спринта</div><div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
-          '<div><div class="p-section">Экономия по тредам</div><div class="c-sheet c-sheet--pad">' + threads + '</div></div>' +
-        '</div>' +
-        '<div class="p-hint">Состав метрик v1 — часть плейсхолдеры (placeholder), сетка гибкая под homepage/CEO-дашборд.</div>' +
-      '</div>';
-
-    wireTaskRows(body, D);
+  function renderOverview(body, D) {
+    var state = { view: 0 };
+    function draw() {
+      var t = pPipeThread(D);
+      var bar = PSTAGES.map(function (st, i) {
+        var active = i === 0 || (t && (pStageReached(t, st) || pTargetLink(t, st.code)));
+        var frontier = t && i > 0 && !pStageReached(t, st) && pTargetLink(t, st.code);
+        var sel = i === state.view, cls = "p-stage" + (i > 0 ? " notch" : "");
+        if (!active) cls += " is-disabled";
+        else if (sel && frontier) cls += " is-current";
+        else if (sel) cls += " is-selected";
+        else if (frontier) cls += " is-frontier";
+        var n = i === 0 ? '<span class="p-stage__n">' + ((D.backlog || []).length) + '</span>' : '';
+        var at = active ? ' data-stage="' + i + '"' : ' disabled';
+        return '<button type="button" class="' + cls + '"' + at + '>' + esc(st.label) + n + '</button>';
+      }).join("");
+      var content = state.view === 0 ? pBacklogPane(D, t) : pStagePane(D, t, state.view);
+      body.innerHTML = '<div class="p-wrap"><nav class="p-stagebar">' + bar + '</nav>' + content + '</div>';
+      // навигация по вкладкам + «изменить» (уйти на этап) — переключают view без перезагрузки
+      body.querySelectorAll("[data-stage]").forEach(function (btn) { btn.onclick = function () { state.view = +btn.getAttribute("data-stage"); draw(); }; });
+      body.querySelectorAll("[data-goto]").forEach(function (el) { el.onclick = function () { state.view = +el.getAttribute("data-goto"); draw(); }; });
+      // бэклог: взять/поправить → форма в шторке
+      body.querySelectorAll("[data-card][data-act]").forEach(function (btn) {
+        var b = (D.backlog || []).filter(function (x) { return x.id === btn.getAttribute("data-card"); })[0];
+        if (!b) return;
+        var act = btn.getAttribute("data-act"), link = formLink((b.links || {})[act === "take" ? "take" : "edit"]);
+        if (!link) return;
+        btn.addEventListener("click", function () { openDrawer(act === "take" ? "Взять в работу → Решение" : "Поправить проблему", b.title, link); });
+      });
+      // форвард-этап: добавить/изменить → форма этапа в шторке
+      body.querySelectorAll("[data-add]").forEach(function (btn) {
+        var st = PSTAGES[+btn.getAttribute("data-add")], url = t ? pTargetLink(t, st.code) : "";
+        if (!url) return;
+        btn.addEventListener("click", function () { openDrawer("Этап · " + st.label, t.thread, url); });
+      });
+    }
+    draw();
   }
 
   // ── drawer (c-drawer): task detail = full-height Fillout iframe (write-path) ──

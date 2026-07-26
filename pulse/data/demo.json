@@ -1,0 +1,45 @@
+{
+  "scope": "person",
+  "generated_at": "2026-07-26T12:00",
+  "today": "2026-07-26",
+  "sprint_no": 1,
+  "subject": { "name": "Демо Участник", "client": "SZ", "group": "Демо" },
+  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?type=T1_idea",
+  "status_light": { "state": "ok", "days_idle": 1, "done_7d": 2 },
+  "events": [
+    { "all_day": true, "start": "2026-07-14", "end": "2026-07-28", "title": "Цикл 1", "kind": "other" }
+  ],
+  "tasks": [],
+  "profile": { "name": "Демо Участник", "group": "Демо", "skills": [] },
+  "metrics": {
+    "total_hours": 90,
+    "impact_share": 0,
+    "quadrant": "",
+    "activity_14d": [],
+    "threads": [
+      {
+        "thread_key": "D-B", "thread": "Сводка встреч из транскриптов", "progress": 0.4,
+        "hours": 90, "stage": "Поиск", "stage_code": "T3_research",
+        "reached": ["T1_idea", "T2_task", "T3_research"],
+        "brief": [
+          { "code": "T1_idea", "text": "Ассистент 30-40 мин на встречу слушает запись созвона и вручную пишет резюме + список задач. 4-5 встреч в неделю." },
+          { "code": "T2_task", "text": "Вход: аудиозапись/транскрипт созвона (Fireflies).\nВыход: структурное резюме (решения, задачи с ответственными, дедлайны) в общий формат за < 5 минут." },
+          { "code": "T3_research", "text": "Проверили 3 аналога. Fireflies AI Notes — резюме есть, но не бьётся в наш формат задач. Otter — слабый русский. Вывод: готовое под наш формат не подошло, идём в прототип." }
+        ],
+        "links": {
+          "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?thread_key=D-B",
+          "take": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T2_task&thread_key=D-B",
+          "research": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T3_research&thread_key=D-B",
+          "prototype": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T5_prototype&thread_key=D-B"
+        },
+        "prototypes": []
+      }
+    ]
+  },
+  "backlog": [
+    { "id": "recA", "title": "Ручной перенос заявок из почты в CRM", "total_hours": 120, "thread_key": "D-A", "ease": 1, "priority_quadrant": "big_hard", "content": "Каждое утро оператор вручную копирует заявки из писем в CRM: открыть письмо, скопировать поля, вставить, проверить дубли. 40 писем в день.", "links": { "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?thread_key=D-A", "take": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T2_task&thread_key=D-A" } },
+    { "id": "recC", "title": "Проверка договоров на типовые ошибки", "total_hours": 60, "thread_key": "D-C", "ease": 4, "priority_quadrant": "small_easy", "content": "Юрист вычитывает каждый входящий договор на 12 типовых пунктов. Рутинно, но требует внимания.", "links": { "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?thread_key=D-C", "take": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T2_task&thread_key=D-C" } },
+    { "id": "recD", "title": "Ежедневный отчёт по остаткам склада", "total_hours": 40, "thread_key": "D-D", "ease": 5, "priority_quadrant": "small_easy", "content": "Кладовщик выгружает остатки в Excel и вручную сводит в отчёт для закупа.", "links": { "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?thread_key=D-D", "take": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T2_task&thread_key=D-D" } },
+    { "id": "recE", "title": "Ответы на частые вопросы клиентов в чате", "total_hours": 30, "thread_key": "D-E", "ease": 2, "priority_quadrant": "small_hard", "content": "Поддержка вручную отвечает на одни и те же вопросы про сроки и оплату.", "links": { "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?thread_key=D-E", "take": "https://iamai.fillout.com/t/8RtZLWzrveus?type=T2_task&thread_key=D-E" } }
+  ]
+}
