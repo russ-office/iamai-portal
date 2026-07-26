@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-25T22:38:27+05:00",
- "today": "2026-07-25",
+ "generated_at": "2026-07-26T11:27:19+05:00",
+ "today": "2026-07-26",
  "sprint_no": 1,
  "subject": {
   "id": "recL6S1BZp4DQl1d8",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrhTXYnh0VnV2GD&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 3,
+  "days_idle": 4,
   "done_7d": 3,
-  "state": "warn"
+  "state": "bad"
  },
  "events": [
   {
@@ -47,7 +47,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P17",
     "thread": "Аналитика открытых замечании ",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 4.166666666666667,
     "stage": "Проблема",
     "links": {
@@ -63,7 +63,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P12",
     "thread": "Обработка замечании БИМ360",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0,
     "stage": "Проблема",
     "links": {
@@ -79,7 +79,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P4",
     "thread": "Обработка и распределение писем.",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0,
     "stage": "Проблема",
     "links": {
@@ -103,14 +103,14 @@
    0,
    0,
    0,
-   0,
    3,
+   0,
    0,
    0,
    0
   ],
-  "activity_from": "12.07",
-  "activity_to": "25.07"
+  "activity_from": "13.07",
+  "activity_to": "26.07"
  },
  "backlog": [
   {

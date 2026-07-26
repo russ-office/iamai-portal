@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-25T22:38:27+05:00",
- "today": "2026-07-25",
+ "generated_at": "2026-07-26T11:27:19+05:00",
+ "today": "2026-07-26",
  "sprint_no": 1,
  "subject": {
   "id": "recKJxa5Cd2ut71XJ",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrhTXYnh0VnV2GD&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 3,
+  "days_idle": 4,
   "done_7d": 1,
-  "state": "warn"
+  "state": "bad"
  },
  "events": [
   {
@@ -47,7 +47,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P28",
     "thread": "Опрос состояния проектных работ",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0,
     "stage": "Проблема",
     "links": {
@@ -71,14 +71,14 @@
    0,
    0,
    0,
-   0,
    1,
+   0,
    0,
    0,
    0
   ],
-  "activity_from": "12.07",
-  "activity_to": "25.07"
+  "activity_from": "13.07",
+  "activity_to": "26.07"
  },
  "backlog": [
   {

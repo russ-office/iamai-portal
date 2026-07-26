@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-25T22:38:27+05:00",
- "today": "2026-07-25",
+ "generated_at": "2026-07-26T11:27:19+05:00",
+ "today": "2026-07-26",
  "sprint_no": 1,
  "subject": {
   "id": "recXm9S55UmUNzsMr",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 3,
+  "days_idle": 4,
   "done_7d": 15,
-  "state": "warn"
+  "state": "bad"
  },
  "events": [
   {
@@ -47,7 +47,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P2",
     "thread": "Коммуникация топ- и мидл-менеджеров",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 240,
     "stage": "Проблема",
     "links": {
@@ -63,7 +63,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P6",
     "thread": "Согласование задач между уровнями",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 160,
     "stage": "Проблема",
     "links": {
@@ -79,7 +79,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P24",
     "thread": "Трекинг статуса проектов",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 100,
     "stage": "Проблема",
     "links": {
@@ -95,7 +95,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P26",
     "thread": "Оцифровка процессов отделов",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 90,
     "stage": "Проблема",
     "links": {
@@ -111,7 +111,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P16",
     "thread": "Сбор информации в data lake",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 90,
     "stage": "Проблема",
     "links": {
@@ -127,7 +127,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P29",
     "thread": "Инфраструктура и архитектура автоматизации",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 80,
     "stage": "Проблема",
     "links": {
@@ -143,7 +143,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P31",
     "thread": "Постановка задач через ИИ-чат в дэшборде",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 80,
     "stage": "Проблема",
     "links": {
@@ -159,7 +159,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P22",
     "thread": "Структуризация данных",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 60,
     "stage": "Проблема",
     "links": {
@@ -175,7 +175,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P11",
     "thread": "Протоколы совещаний заказчик–исполнитель",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 53.333333333333336,
     "stage": "Проблема",
     "links": {
@@ -191,7 +191,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P20",
     "thread": "Хранение и векторизация данных",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 45,
     "stage": "Проблема",
     "links": {
@@ -207,7 +207,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P25",
     "thread": "Транскрибация записей совещаний",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 40,
     "stage": "Проблема",
     "links": {
@@ -223,7 +223,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P30",
     "thread": "Быстрая точечная транскрибация аудио",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 30,
     "stage": "Проблема",
     "links": {
@@ -239,7 +239,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P27",
     "thread": "Выбор способа конвертации процессов",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 30,
     "stage": "Проблема",
     "links": {
@@ -255,7 +255,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P32",
     "thread": "Данные дэшборда в RAG-систему",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 30,
     "stage": "Проблема",
     "links": {
@@ -271,7 +271,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P33",
     "thread": "Концепция «Путь Героя» на этапах",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 4,
     "stage": "Проблема",
     "links": {
@@ -295,14 +295,14 @@
    0,
    0,
    0,
-   0,
    15,
+   0,
    0,
    0,
    0
   ],
-  "activity_from": "12.07",
-  "activity_to": "25.07"
+  "activity_from": "13.07",
+  "activity_to": "26.07"
  },
  "backlog": [
   {

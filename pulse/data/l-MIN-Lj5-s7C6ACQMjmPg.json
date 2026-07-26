@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-25T22:38:27+05:00",
- "today": "2026-07-25",
+ "generated_at": "2026-07-26T11:27:19+05:00",
+ "today": "2026-07-26",
  "sprint_no": 1,
  "subject": {
   "id": "recQpI5lZq7zKmVUX",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recyovQz7lr5BXU3k&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 3,
+  "days_idle": 4,
   "done_7d": 8,
-  "state": "warn"
+  "state": "bad"
  },
  "events": [
   {
@@ -47,7 +47,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P9",
     "thread": "Консолидация выписок",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 15.5,
     "stage": "Проблема",
     "links": {
@@ -63,7 +63,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P45",
     "thread": "Оплата обязательных платежей",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 6.666666666666667,
     "stage": "Проблема",
     "links": {
@@ -79,7 +79,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P44",
     "thread": "Актуализация данных дебиторской задолженности",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 2,
     "stage": "Проблема",
     "links": {
@@ -95,7 +95,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P42",
     "thread": "Проверка подписание АВР заказчиком",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 1.25,
     "stage": "Проблема",
     "links": {
@@ -111,7 +111,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P41",
     "thread": "Выписка АВР в 1С и на сайте электронных Договоров",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0.8333333333333334,
     "stage": "Проблема",
     "links": {
@@ -127,7 +127,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P43",
     "thread": "Отслеживание подписание АВР заказчиком",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0.8333333333333334,
     "stage": "Проблема",
     "links": {
@@ -143,7 +143,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P39",
     "thread": "Проверка новых Договоров на сайте",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0.8333333333333334,
     "stage": "Проблема",
     "links": {
@@ -159,7 +159,7 @@
    {
     "thread_key": "DAN_LAB_1_Intake-P19",
     "thread": "Актуализация эксель таблиц по дебиторской задолженности для каждого ГИПа и общей",
-    "progress": 0.143,
+    "progress": 0.167,
     "hours": 0,
     "stage": "Проблема",
     "links": {
@@ -183,14 +183,14 @@
    0,
    0,
    0,
-   0,
    8,
+   0,
    0,
    0,
    0
   ],
-  "activity_from": "12.07",
-  "activity_to": "25.07"
+  "activity_from": "13.07",
+  "activity_to": "26.07"
  },
  "backlog": [
   {
