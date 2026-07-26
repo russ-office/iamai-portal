@@ -459,48 +459,66 @@
   }
 
   // ── Библиотека / Marketplace — карточки из общего JSON (как guides.json) ──────
+  // Каталог с плашками (LMS / Marketplace). Фильтры: scope (свои/чужие, опц.) + теги (клик-чипы).
   function renderCatalog(body, url, opts) {
     body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Загружаем…</div></div>';
     fetch(url + "?ts=" + Date.now())
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (J) {
-        var items = J.items || [];
-        var cards = items.map(function (x) {
+        var items = J.items || [], state = { scope: "", tag: "" };
+        var tset = {}; items.forEach(function (x) { (x.tags || []).forEach(function (t) { tset[t] = 1; }); });
+        var tags = Object.keys(tset);
+        function card(x) {
           return '<div class="c-sheet c-sheet--pad p-backlog-card p-guide-card" role="button" tabindex="0" data-cat="' + esc(x.id) + '">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(x.title) + '</span>' +
             (x.meta ? '<span class="c-chip is-quiet">' + esc(x.meta) + '</span>' : '') + '</div>' +
-            '<p class="p-backlog-card__body">' + esc(x.subtitle || "") + '</p></div>';
-        }).join("");
-        body.innerHTML = '<div class="p-wrap--list">' +
-          '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
-            (items.length ? items.length + ' · ' + esc(opts.count) : esc(opts.empty_count)) + '</span></div>' +
-          (items.length ? '<div class="p-backlog-grid">' + cards + '</div>'
-            : '<div class="c-sheet c-sheet--flush"><div class="c-empty">' + esc(opts.empty) + '</div></div>') + '</div>';
-        body.querySelectorAll("[data-cat]").forEach(function (card) {
-          var x = items.filter(function (i) { return i.id === card.getAttribute("data-cat"); })[0];
-          if (!x) return;
-          var bodyHtml = mdToHtml(x.body || x.subtitle || "") + (x.link ? '<p><a href="' + esc(x.link) + '" target="_blank" rel="noopener">Открыть решение →</a></p>' : "");
-          function open() { openDrawer(x.meta || opts.eyebrow, x.title, null, bodyHtml); }
-          card.addEventListener("click", open);
-          card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
-        });
+            '<p class="p-backlog-card__body">' + esc(x.subtitle || "") + '</p>' +
+            ((x.tags || []).length ? '<div class="p-badges">' + x.tags.map(function (t) { return '<span class="c-chip is-quiet">' + esc(t) + '</span>'; }).join("") + '</div>' : "") +
+          '</div>';
+        }
+        function draw() {
+          var shown = items.filter(function (x) {
+            if (state.scope && (x.scope || "") !== state.scope) return false;
+            if (state.tag && (x.tags || []).indexOf(state.tag) < 0) return false;
+            return true;
+          });
+          var sc = (opts.scopes || []).map(function (s) { return '<button type="button" class="c-chip ' + (state.scope === s.key ? "is-accent" : "is-quiet") + '" data-scope="' + esc(s.key) + '">' + esc(s.label) + '</button>'; }).join("");
+          var tc = tags.map(function (t) { return '<button type="button" class="c-chip ' + (state.tag === t ? "is-accent" : "is-quiet") + '" data-tag="' + esc(t) + '">' + esc(t) + '</button>'; }).join("");
+          var bar = (sc || tc) ? '<div class="p-badges" style="margin-bottom:16px">' + sc + tc + '</div>' : "";
+          var grid = shown.length ? '<div class="p-backlog-grid">' + shown.map(card).join("") + '</div>'
+            : '<div class="c-sheet c-sheet--flush"><div class="c-empty">' + esc(items.length ? "Ничего не найдено по фильтру." : opts.empty) + '</div></div>';
+          body.innerHTML = '<div class="p-wrap--list">' +
+            '<div class="c-filter-bar" style="margin-bottom:16px"><span class="c-filter-bar__count">' +
+              (items.length ? items.length + ' · ' + esc(opts.count) : esc(opts.empty_count)) + '</span></div>' + bar + grid + '</div>';
+          body.querySelectorAll("[data-scope]").forEach(function (b) { b.onclick = function () { var k = b.getAttribute("data-scope"); state.scope = state.scope === k ? "" : k; draw(); }; });
+          body.querySelectorAll("[data-tag]").forEach(function (b) { b.onclick = function () { var k = b.getAttribute("data-tag"); state.tag = state.tag === k ? "" : k; draw(); }; });
+          body.querySelectorAll("[data-cat]").forEach(function (c) {
+            var x = items.filter(function (i) { return i.id === c.getAttribute("data-cat"); })[0]; if (!x) return;
+            var html = mdToHtml(x.body || x.subtitle || "") + (x.link ? '<p><a href="' + esc(x.link) + '" target="_blank" rel="noopener">Открыть →</a></p>' : "");
+            function open() { openDrawer(x.meta || opts.eyebrow, x.title, null, html); }
+            c.addEventListener("click", open);
+            c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+          });
+        }
+        draw();
       })
       .catch(function () { body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">' + esc(opts.fail) + '</div></div>'; });
   }
   function renderLibrary(body) {
     renderCatalog(body, "library.json", {
-      count: "готовых решений · переиспользуй, не изобретай заново", eyebrow: "Готовое решение",
-      empty_count: "библиотека наполняется",
-      empty: "Сюда попадут решения, прошедшие Демо — с описанием и ссылкой, чтобы другие команды переиспользовали их, а не изобретали заново. Первое готовое решение появится здесь.",
-      fail: "Библиотека не загрузилась. Обнови страницу.",
+      count: "учебных материалов · по темам", eyebrow: "Материал",
+      empty_count: "материалы готовятся",
+      empty: "Учебные материалы Лаборатории — тексты, видео, разбитые по темам. Раздел наполняется.",
+      fail: "Материалы не загрузились. Обнови страницу.",
     });
   }
   function renderMarket(body) {
     renderCatalog(body, "marketplace.json", {
-      count: "решений и инструментов в витрине", eyebrow: "Витрина",
-      empty_count: "витрина готовится",
-      empty: "Витрина решений и инструментов. Здесь команды будут находить и подключать готовое — раздел наполняется.",
-      fail: "Marketplace не загрузился. Обнови страницу.",
+      count: "решений в каталоге · инструменты, скиллы, скрипты", eyebrow: "Решение",
+      empty_count: "каталог наполняется",
+      empty: "Каталог готовых решений — инструменты, скиллы, скрипты и решения команд. Раздел наполняется.",
+      fail: "Каталог не загрузился. Обнови страницу.",
+      scopes: [{ key: "own", label: "Свои" }, { key: "market", label: "Чужие" }],
     });
   }
 
@@ -699,8 +717,8 @@
       overview:    { title: "Спринт",       eyebrow: "CYCLE " + D.sprint_no + " · " + range,                action: updatedAction(D) },
       calendar:    { title: "Календарь",    eyebrow: "SESSIONS + CYCLES + LABTASKS",                        action: updatedAction(D) },
       tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: updatedAction(D) },
-      library:     { title: "Библиотека",   eyebrow: "ГОТОВЫЕ РЕШЕНИЯ · ПЕРЕИСПОЛЬЗОВАНИЕ",                 action: "" },
-      marketplace: { title: "Marketplace",  eyebrow: "ВИТРИНА РЕШЕНИЙ И ИНСТРУМЕНТОВ",                      action: "" },
+      library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ · LMS",                              action: "" },
+      marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
       leaderboard: { title: "Leaderboard",  eyebrow: "ПРОИЗВОДНОЕ · GROUPMEMBERSHIP + ARTIFACTS",           action: updatedAction(D) },
     };
