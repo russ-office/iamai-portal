@@ -29,7 +29,7 @@ OUT_DIR = ROOT / "pulse" / "data"
 STAGE_LABEL = {
     "T0_function_map": "Карта функций", "T1_idea": "Проблема", "T2_task": "Решение",
     "T3_research": "Поиск", "T5_prototype": "Прототип",
-    "T6_test": "Тесты", "T7_prd": "Демо",
+    "T6_test": "Тест", "T7_prd": "PRD",   # ratified Ruslan + ack Cleo 2026-07-26 (было Тесты/Демо)
 }  # T4_hypothesis упразднён (машина 2026-07-26): гипотеза свёрнута в Прототип; choice остаётся в базе, из Пульса скрыт
 STAGE_ORDER = list(STAGE_LABEL.keys())
 

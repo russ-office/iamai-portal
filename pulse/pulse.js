@@ -450,8 +450,8 @@
       '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
         tasks.length + ' задач · ' + doing.length + ' в работе · ' + done.length + ' готово</span></div>' +
       (tasks.length
-        ? section("В работе", doing, "Нет активной задачи в работе") +
-          section("К выполнению", todo, "Очередь пуста") +
+        ? section("К выполнению", todo, "Очередь пуста") +
+          section("В работе", doing, "Нет активной задачи в работе") +
           section("Готово", done, "Пока ничего не завершено")
         : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Задач пока нет. Матеус поставит первую — сам или вместе с куратором — и она появится здесь.</div></div>') +
     '</div>';
