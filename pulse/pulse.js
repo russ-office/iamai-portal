@@ -345,11 +345,11 @@
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (G) {
         var cards = (G.guides || []).map(function (g) {
-          return '<div class="c-sheet c-sheet--pad p-backlog-card" role="button" tabindex="0" data-guide="' + esc(g.id) + '">' +
+          // Вся плашка кликабельна (role=button) — отдельная кнопка «Читать» убрана (Ruslan 26.07).
+          return '<div class="c-sheet c-sheet--pad p-backlog-card p-guide-card" role="button" tabindex="0" data-guide="' + esc(g.id) + '">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(g.title) + '</span>' +
             '<span class="c-chip is-quiet">' + esc(g.meta || "") + '</span></div>' +
             '<p class="p-backlog-card__body">' + esc(g.subtitle || "") + '</p>' +
-            '<div class="p-backlog-card__acts"><button type="button" class="c-btn is-secondary">Читать</button></div>' +
           '</div>';
         }).join("");
         body.innerHTML = '<div class="p-wrap--list">' +
@@ -527,10 +527,11 @@
         var active = i === 0 || (t && (pStageReached(t, st) || pTargetLink(t, st.code)));
         var frontier = t && i > 0 && !pStageReached(t, st) && pTargetLink(t, st.code);
         var sel = i === state.view, cls = "p-stage" + (i > 0 ? " notch" : "");
+        // тон: пройден=оливковый, текущий(фронтир)=терракота, Бэклог=нейтраль; активный форвард = done|frontier
+        var done = i > 0 && pStageReached(t, st);
+        var tone = i === 0 ? "neutral" : (done ? "done" : "cur");
         if (!active) cls += " is-disabled";
-        else if (sel && frontier) cls += " is-current";
-        else if (sel) cls += " is-selected";
-        else if (frontier) cls += " is-frontier";
+        else cls += " tone-" + tone + (sel ? " is-sel" : "");
         var n = i === 0 ? '<span class="p-stage__n">' + ((D.backlog || []).length) + '</span>' : '';
         var at = active ? ' data-stage="' + i + '"' : ' disabled';
         return '<button type="button" class="' + cls + '"' + at + '>' + esc(st.label) + n + '</button>';

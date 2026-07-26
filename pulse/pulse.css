@@ -108,11 +108,16 @@
 .p-stage.notch { padding-left: 28px; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%); }
 .p-stage:hover { color: var(--accent); }
 .p-stage__n { margin-left: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-.p-stage.is-selected { background: var(--ink); color: var(--paper); }             /* просматриваемый этап */
-.p-stage.is-current  { background: var(--accent); color: var(--paper); }          /* текущий рабочий (фронтир) = терракота */
-.p-stage.is-frontier { color: var(--accent); }                                     /* текущий, но не открыт */
-.p-stage.is-disabled { background: transparent; box-shadow: none; color: var(--muted); opacity: .45; cursor: not-allowed; }
-.p-stage.is-selected .p-stage__n, .p-stage.is-current .p-stage__n { color: rgba(255,255,255,.7); }
+/* Тоны этапа: пройден = оливковый (--status-ok), текущий = терракота (--accent),
+   Бэклог/вход = нейтральный (тёмный при выборе), будущий = приглушён. Просматриваемый = жирнее. */
+.p-stage.tone-neutral { background: var(--surface); box-shadow: var(--shadow-d1); color: var(--ink-soft); }
+.p-stage.tone-neutral.is-sel { background: var(--deep); color: var(--text-on-inverted); box-shadow: none; }
+.p-stage.tone-done { background: var(--status-ok); color: var(--text-on-inverted); box-shadow: none; }
+.p-stage.tone-cur  { background: var(--accent);    color: var(--text-on-inverted); box-shadow: none; }
+.p-stage.is-sel { font-weight: 700; }
+.p-stage.is-disabled { background: transparent; box-shadow: none; color: var(--muted); opacity: .4; cursor: not-allowed; }
+.p-stage.tone-done .p-stage__n, .p-stage.tone-cur .p-stage__n,
+.p-stage.tone-neutral.is-sel .p-stage__n { color: rgba(242,237,226,.72); }
 
 /* Бэклог: рекомендация Матеуса + замок «одна на цикл» */
 .p-badges { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -123,7 +128,7 @@
 .p-pipe { display: flex; gap: 22px; align-items: flex-start; }
 .p-pipe__brief { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 .p-pipe__side { flex: 0 0 248px; }
-.p-brk__h { display: flex; align-items: baseline; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.p-brk__h { display: flex; align-items: baseline; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
 .p-brk.is-own .p-brk__h { color: var(--accent); }
 .p-brk__edit { cursor: pointer; font-family: var(--font-text); font-size: 11px; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .p-brk__edit:hover { color: var(--accent); }
