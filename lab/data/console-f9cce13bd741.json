@@ -1,0 +1,1621 @@
+{
+ "generated_at": "2026-07-26T23:04:05+05:00",
+ "token": "f9cce13bd741",
+ "clients": [
+  "DAN",
+  "EVRIKA",
+  "SZ",
+  "Демо"
+ ],
+ "stage_order": [
+  "T0_function_map",
+  "T1_idea",
+  "T2_task",
+  "T3_research",
+  "T5_prototype",
+  "T6_test",
+  "T7_prd"
+ ],
+ "stage_label": {
+  "T0_function_map": "Карта функций",
+  "T1_idea": "Проблема",
+  "T2_task": "Решение",
+  "T3_research": "Поиск",
+  "T5_prototype": "Прототип",
+  "T6_test": "Тест",
+  "T7_prd": "PRD"
+ },
+ "groups": [
+  {
+   "group": "SZ_LAB_1_7_HR",
+   "group_id": "recmJ5pNhqkWX05Vi",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_HR_1-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 2,
+   "backlog_count": 2,
+   "hours_month": 116.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 12,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-14 06:49",
+   "stepper": {
+    "T1_idea": 2
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P3",
+     "title": "Воронка найма ",
+     "hours_month": 66,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P2",
+     "title": "Расчет оценочных бланков (переменная часть заработной платы)",
+     "hours_month": 50,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_6_HR",
+   "group_id": "recJTpyGqmXv0brvo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_HR_2-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 1,
+   "threads": 10,
+   "backlog_count": 10,
+   "hours_month": 73.1,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 12,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-14 07:13",
+   "stepper": {
+    "T1_idea": 10,
+    "T0_function_map": 1
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P7",
+     "title": "Регулярный контент для сотрудников",
+     "hours_month": 36,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:53",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P10",
+     "title": "Часто повторяющиеся вопросы отдела кадров",
+     "hours_month": 20,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P9",
+     "title": "HR-аналитика вручную",
+     "hours_month": 5,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:55",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P2",
+     "title": "Рассылка поздравлений с днями рождения",
+     "hours_month": 3.3333333333333335,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 07:13",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P8",
+     "title": "Пояснительные записки и протоколы для Совета директоров",
+     "hours_month": 3,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:54",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P6",
+     "title": "Подготовка и обработка опросов сотрудников",
+     "hours_month": 2.25,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:52",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P1",
+     "title": "Рассылка вакансий сотрудникам",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P3",
+     "title": "Рассылка о кадровых перемещениях",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:48",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P4",
+     "title": "Еженедельная рассылка цитат",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P5",
+     "title": "Рассылка поздравлений с праздниками",
+     "hours_month": 0.5,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:50",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_8_Acc",
+   "group_id": "rechQNZDU1nxPz1RH",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_Acc-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rechQNZDU1nxPz1RH&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 5,
+   "threads": 5,
+   "backlog_count": 5,
+   "hours_month": 154.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 12,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-14 07:03",
+   "stepper": {
+    "T1_idea": 5
+   },
+   "dirty_count": 1,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_Acc-P9",
+     "title": "ежедневный запуск обработок по загрузке/выгрузке данных в 1с БК",
+     "hours_month": 90,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 07:03",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_Acc-P5",
+     "title": "ежедневный отчет по дебиторской задолженности",
+     "hours_month": 40,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:46",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_Acc-P6",
+     "title": "сверка учета, ЦОЛИ, налогов",
+     "hours_month": 19,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:50",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_Acc-P8",
+     "title": "Отчеты Логиком",
+     "hours_month": 5,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_Acc-P7",
+     "title": "Разработка Налоговой учетной политики компании",
+     "hours_month": 0,
+     "ease": 2,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:51",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_5_Ecom",
+   "group_id": "rech5SFuPyuwYAdJy",
+   "client": "SZ",
+   "cycle": "SZ_LAB_Ecom-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rech5SFuPyuwYAdJy&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 2,
+   "backlog_count": 2,
+   "hours_month": 7.3,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 12,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-14 10:46",
+   "stepper": {
+    "T1_idea": 2
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_Ecom-P1",
+     "title": "Мониторинг продаж по продуктам (план/факт, динамика, % выполнения)",
+     "hours_month": 4,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 10:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_Ecom-P2",
+     "title": "Создание текстов для СМС",
+     "hours_month": 3.3333333333333335,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 10:46",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_4_IT",
+   "group_id": "recBoN3ZsXbY7AAGn",
+   "client": "SZ",
+   "cycle": "SZ_LAB_IT-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recBoN3ZsXbY7AAGn&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 4,
+   "threads": 4,
+   "backlog_count": 4,
+   "hours_month": 13.8,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 10,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-16 14:42",
+   "stepper": {
+    "T1_idea": 4
+   },
+   "dirty_count": 2,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_IT-P1",
+     "title": "Экспертиза ЛБ",
+     "hours_month": 10.416666666666666,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 10:37",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_IT-P2",
+     "title": "Обработка обращений FastPlay",
+     "hours_month": 3.3333333333333335,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 10:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_IT-P3",
+     "title": "Создание схем БП из текста",
+     "hours_month": 0,
+     "ease": 2,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 10:41",
+     "dirty": true
+    },
+    {
+     "thread_key": "SZ_LAB_IT-P4",
+     "title": "Обучение",
+     "hours_month": 0,
+     "ease": 2,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-16 14:42",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_10_HR",
+   "group_id": "recT5FrmxKKm27NIA",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_HR_3-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recT5FrmxKKm27NIA&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 1,
+   "threads": 3,
+   "backlog_count": 3,
+   "hours_month": 24.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 7,
+    "done_7d": 1
+   },
+   "last_at": "2026-07-19 07:17",
+   "stepper": {
+    "T1_idea": 3
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P5",
+     "title": "Изменение должностных инструкций",
+     "hours_month": 10,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-19 07:17",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P1",
+     "title": "Внесение изменений в штатное расписание и оргструктуру ",
+     "hours_month": 9,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P4",
+     "title": "Подготовка шаблонов приказов для MetaDoc ",
+     "hours_month": 5,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-15 05:36",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_3",
+   "group_id": "recJgiQEmCVXaNJ7p",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_3-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 2,
+   "backlog_count": 2,
+   "hours_month": 6.7,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 4,
+    "done_7d": 2
+   },
+   "last_at": "2026-07-22 06:42",
+   "stepper": {
+    "T1_idea": 2
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P5",
+     "title": "Проверка писем отклонений вертикальных конструкций",
+     "hours_month": 4.166666666666667,
+     "ease": 2,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P10",
+     "title": "Проверка листов чертежей",
+     "hours_month": 2.5,
+     "ease": 2,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:42",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_4",
+   "group_id": "recyovQz7lr5BXU3k",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_4-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recyovQz7lr5BXU3k&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 3,
+   "threads": 16,
+   "backlog_count": 16,
+   "hours_month": 466.2,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 4,
+    "done_7d": 16
+   },
+   "last_at": "2026-07-22 09:08",
+   "stepper": {
+    "T1_idea": 16
+   },
+   "dirty_count": 1,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P38",
+     "title": "Оценка компетенций 360 градусов по отделам",
+     "hours_month": 166.66666666666666,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:46",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P40",
+     "title": "Оценка 360: автоматизация через Битрикс",
+     "hours_month": 166.66666666666666,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:53",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P36",
+     "title": "Заявление на отпуск",
+     "hours_month": 60,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:32",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P9",
+     "title": "Консолидация выписок",
+     "hours_month": 15.5,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:41",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P37",
+     "title": "Табель рабочего времени в Битрикс",
+     "hours_month": 12,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:36",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P23",
+     "title": "Отсматриваю кандидатов на открытые позиции",
+     "hours_month": 10,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:48",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P34",
+     "title": "Переписка с кандидатами в ватсап",
+     "hours_month": 10,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 07:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P8",
+     "title": "1. Юридическая проверка договоров и других документов",
+     "hours_month": 10,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P45",
+     "title": "Оплата обязательных платежей",
+     "hours_month": 6.666666666666667,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 09:08",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P35",
+     "title": "Рейтинг Утреннего челленджа",
+     "hours_month": 3,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:17",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P44",
+     "title": "Актуализация данных дебиторской задолженности",
+     "hours_month": 2,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 09:06",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P42",
+     "title": "Проверка подписание АВР заказчиком",
+     "hours_month": 1.25,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 09:01",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P39",
+     "title": "Проверка новых Договоров на сайте",
+     "hours_month": 0.8333333333333334,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:53",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P41",
+     "title": "Выписка АВР в 1С и на сайте электронных Договоров",
+     "hours_month": 0.8333333333333334,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 08:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P43",
+     "title": "Отслеживание подписание АВР заказчиком",
+     "hours_month": 0.8333333333333334,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 09:03",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P19",
+     "title": "Актуализация эксель таблиц по дебиторской задолженности для каждого ГИПа и общей",
+     "hours_month": 0,
+     "ease": 3,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:45",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_1",
+   "group_id": "recHFFw93GRcDM3bX",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_1-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recHFFw93GRcDM3bX&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 3,
+   "threads": 3,
+   "backlog_count": 3,
+   "hours_month": 1203.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 4,
+    "done_7d": 3
+   },
+   "last_at": "2026-07-22 06:45",
+   "stepper": {
+    "T1_idea": 3
+   },
+   "dirty_count": 2,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P18",
+     "title": "Спецификацию быстро заполнить надо",
+     "hours_month": 1200,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:45",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P1",
+     "title": "Проверка общих указании для проекта на первом листе альбома",
+     "hours_month": 3,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:38",
+     "dirty": true
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P15",
+     "title": "Заполнение общих указаний проекта",
+     "hours_month": 0,
+     "ease": 4,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_2",
+   "group_id": "recrhTXYnh0VnV2GD",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_2-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrhTXYnh0VnV2GD&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 3,
+   "threads": 6,
+   "backlog_count": 6,
+   "hours_month": 122.2,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 4,
+    "done_7d": 6
+   },
+   "last_at": "2026-07-22 06:53",
+   "stepper": {
+    "T1_idea": 6
+   },
+   "dirty_count": 4,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P13",
+     "title": "Исходно разрешительная документация",
+     "hours_month": 100,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:43",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P1",
+     "title": "Опросные листы",
+     "hours_month": 18,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:38",
+     "dirty": true
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P17",
+     "title": "Аналитика открытых замечании ",
+     "hours_month": 4.166666666666667,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P12",
+     "title": "Обработка замечании БИМ360",
+     "hours_month": 0,
+     "ease": 2,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:43",
+     "dirty": true
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P28",
+     "title": "Опрос состояния проектных работ",
+     "hours_month": 0,
+     "ease": 4,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:53",
+     "dirty": true
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P4",
+     "title": "Обработка и распределение писем.",
+     "hours_month": 0,
+     "ease": 4,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:39",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_5",
+   "group_id": "recrvRXnzkF35FvTN",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_5-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 1,
+   "threads": 15,
+   "backlog_count": 15,
+   "hours_month": 1132.3,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 4,
+    "done_7d": 15
+   },
+   "last_at": "2026-07-22 07:00",
+   "stepper": {
+    "T1_idea": 15
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P2",
+     "title": "Коммуникация топ- и мидл-менеджеров",
+     "hours_month": 240,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:38",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P6",
+     "title": "Согласование задач между уровнями",
+     "hours_month": 160,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P24",
+     "title": "Трекинг статуса проектов",
+     "hours_month": 100,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P16",
+     "title": "Сбор информации в data lake",
+     "hours_month": 90,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P26",
+     "title": "Оцифровка процессов отделов",
+     "hours_month": 90,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:51",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P29",
+     "title": "Инфраструктура и архитектура автоматизации",
+     "hours_month": 80,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:54",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P31",
+     "title": "Постановка задач через ИИ-чат в дэшборде",
+     "hours_month": 80,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P22",
+     "title": "Структуризация данных",
+     "hours_month": 60,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:48",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P11",
+     "title": "Протоколы совещаний заказчик–исполнитель",
+     "hours_month": 53.333333333333336,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:42",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P20",
+     "title": "Хранение и векторизация данных",
+     "hours_month": 45,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:46",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P25",
+     "title": "Транскрибация записей совещаний",
+     "hours_month": 40,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:50",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P27",
+     "title": "Выбор способа конвертации процессов",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:52",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P30",
+     "title": "Быстрая точечная транскрибация аудио",
+     "hours_month": 30,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:56",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P32",
+     "title": "Данные дэшборда в RAG-систему",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:59",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P33",
+     "title": "Концепция «Путь Героя» на этапах",
+     "hours_month": 4,
+     "ease": 1,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 07:00",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_Intake",
+   "group_id": "recIS4AAapP5XL737",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_Intake-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recIS4AAapP5XL737&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 4,
+   "threads": 5,
+   "backlog_count": 5,
+   "hours_month": 126.3,
+   "in_sprint": false,
+   "temp": {
+    "state": "warn",
+    "days_idle": 3,
+    "done_7d": 5
+   },
+   "last_at": "2026-07-23 04:27",
+   "stepper": {
+    "T1_idea": 5
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P14",
+     "title": "Согласование отклонений от проекта",
+     "hours_month": 46.666666666666664,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P7",
+     "title": "График выполненных работ",
+     "hours_month": 40,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P46",
+     "title": "Автоматические поздравления с ДР и праздниками в чате Битрикс",
+     "hours_month": 30,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 04:27",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P21",
+     "title": "генерация квартирографии",
+     "hours_month": 9,
+     "ease": 2,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:47",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P3",
+     "title": "ведение принятых проектных решении",
+     "hours_month": 0.6666666666666666,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:39",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "group_id": "recq4f8g3aLUFXJwi",
+   "client": "EVRIKA",
+   "cycle": "EVRIKA-BUH-F1-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
+   "people": 19,
+   "threads": 25,
+   "backlog_count": 25,
+   "hours_month": 2426.8,
+   "in_sprint": false,
+   "temp": {
+    "state": "warn",
+    "days_idle": 2,
+    "done_7d": 25
+   },
+   "last_at": "2026-07-24 05:23",
+   "stepper": {
+    "T1_idea": 25
+   },
+   "dirty_count": 1,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P6",
+     "title": "Отправка статистической отчётности ежемесячно и поквартально, данные собираются по 1С, продажи, себестоимость, запасы, по филиалам и головной компании, в разрезе адресов точек. Отчетность по фин.показателям за квартал по головной компании",
+     "hours_month": 540,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 07:43",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P25",
+     "title": "Автоматизация контент-плана",
+     "hours_month": 520,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:19",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P22",
+     "title": "Внесение данных кандидата в excel",
+     "hours_month": 472.5,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:05",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P15",
+     "title": "Первичный скрининг резюме ",
+     "hours_month": 200,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P24",
+     "title": "Восстановление отчетности за предыдущие годы",
+     "hours_month": 150,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:15",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P7",
+     "title": "Фильтры по приоритетности заказов в 1С и WMS",
+     "hours_month": 90,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 10:04",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P21",
+     "title": "Написание ежемесячные курсов ",
+     "hours_month": 80,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:05",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P11",
+     "title": "Балансировка стока между складами",
+     "hours_month": 67.5,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P18",
+     "title": "Просмотр резюме",
+     "hours_month": 55,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:02",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P26",
+     "title": "Автоматизация организации мероприятий",
+     "hours_month": 50,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:23",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P23",
+     "title": "Поиск поставщиков",
+     "hours_month": 40,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:14",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P2",
+     "title": "чтение ",
+     "hours_month": 30,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 07:34",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P17",
+     "title": "Обработка входящих сообщений в whats app",
+     "hours_month": 25,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:02",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P12",
+     "title": "Составление потребности перед поставщиком",
+     "hours_month": 24,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P19",
+     "title": "Обработка пропущенных звонков в нерабочее время",
+     "hours_month": 23.333333333333332,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:03",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P5",
+     "title": "Отчёт 1ТС",
+     "hours_month": 20,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 07:42",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P16",
+     "title": "Формирование расчетов для поставщиков по промоутерам",
+     "hours_month": 15,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P13",
+     "title": "Фильтрация рабочего стола от разных документов",
+     "hours_month": 6.666666666666667,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:01",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P20",
+     "title": "Чистка траекторий у сотрудников",
+     "hours_month": 6.25,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 05:03",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P8",
+     "title": "Вбивание имей коды занимайся монографияның времени",
+     "hours_month": 5,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 10:05",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P9",
+     "title": "проверка расходов гсм и заполнение занимает около 6 часов",
+     "hours_month": 4,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 10:08",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P14",
+     "title": "Поиск оптимального варианта у одного из партнеров",
+     "hours_month": 2,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:03",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P10",
+     "title": "Составление отчетов",
+     "hours_month": 0.3333333333333333,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 11:55",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P3",
+     "title": "Перенос наименований с файла ексель и проверка на наличие в подразделении ",
+     "hours_month": 0.16666666666666666,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 07:36",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P4",
+     "title": "Сверка инкассаций",
+     "hours_month": 0,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 07:37",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_1_CorpGov",
+   "group_id": "recq40h3l2aTVnge5",
+   "client": "SZ",
+   "cycle": "SZ_Sprint_1-1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recq40h3l2aTVnge5&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_2_Adm",
+   "group_id": "rectNb6K7IojGTGdS",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_Adm-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rectNb6K7IojGTGdS&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_3_Sales",
+   "group_id": "reciKzjGJVFrhLmBo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_Sales-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_9_Acc",
+   "group_id": "recOKKQS1JJRlAAAi",
+   "client": "SZ",
+   "cycle": "",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "Демо",
+   "group_id": "demo",
+   "client": "Демо",
+   "cycle": "1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?type=T1_idea",
+   "people": 6,
+   "threads": 5,
+   "backlog_count": 4,
+   "hours_month": 340.0,
+   "in_sprint": true,
+   "temp": {
+    "state": "ok",
+    "days_idle": 1,
+    "done_7d": 5
+   },
+   "last_at": "2026-07-25 11:00",
+   "stepper": {
+    "T1_idea": 5,
+    "T2_task": 1,
+    "T3_research": 1
+   },
+   "dirty_count": 0,
+   "orphan": true,
+   "backlog": [
+    {
+     "thread_key": "D-A",
+     "title": "Ручной перенос заявок из почты в CRM",
+     "hours_month": 120,
+     "ease": 1,
+     "recommendation": "big_hard",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 09:10",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-C",
+     "title": "Проверка договоров на типовые ошибки",
+     "hours_month": 60,
+     "ease": 4,
+     "recommendation": "small_easy",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 16:20",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-D",
+     "title": "Ежедневный отчёт по остаткам склада",
+     "hours_month": 40,
+     "ease": 5,
+     "recommendation": "small_easy",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-E",
+     "title": "Ответы на частые вопросы клиентов в чате",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "small_hard",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 18:40",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  }
+ ],
+ "collisions": [
+  "DAN_LAB_1_Intake-P1"
+ ],
+ "gaps": [
+  "температура = сабмиты форм (плотность на уровне тредов), не обращения — бот слеп, user_id пуст",
+  "частотность по этапам = первый сабмит формы этапа, не «сколько раз тыкались»",
+  "рекомендация LAB = operator-локальное поле (слота в снапшоте пока нет, M-042/G7)",
+  "слой задач (LabTasks) пуст — формы нет (M-042)",
+  "EVRIKA: HR-сплит не сделан, метрики частично N/A (P2)"
+ ]
+}

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MateOS Lab · Консоль</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1ECE2; --surface:#F2EDE3; --ink:#2B2925; --ink-soft:#5A564E;
+  --muted:#9A958A; --line:#E0DACE; --terra:#C2613C; --sage:#8C9A84; --amber:#C99A3C; --cta:#322F2A;
+  --nm-light:rgba(255,255,255,.95); --nm-dark:rgba(197,186,165,.5);
+  --raised:5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light);
+  --inset:inset 3px 3px 7px var(--nm-dark), inset -3px -3px 7px var(--nm-light);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:34px clamp(16px,4vw,40px) 70px}
+.kicker{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-weight:300;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;margin:12px 0 6px}
+h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:34px 0 14px}
+.sub{color:var(--ink-soft);font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:24px}
+.kpi{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:18px 20px}
+.kpi b{display:block;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1}
+.kpi.hot b{color:var(--terra)}
+.kpi span{display:block;margin-top:6px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
+.filters button{font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--ink-soft);
+  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:8px 18px;cursor:pointer;transition:.15s}
+.filters button.on{color:#F4F1EA;background:var(--terra);box-shadow:var(--inset)}
+table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:18px;box-shadow:var(--raised);overflow:hidden}
+th{text-align:left;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+td.h{text-align:right;font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums}
+tr.row{cursor:pointer;transition:.12s}
+tr.row:hover td{background:rgba(197,186,165,.16)}
+.temp{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+  border-radius:999px;padding:4px 10px;white-space:nowrap;color:#F4F1EA}
+.temp.ok{background:var(--sage)} .temp.warn{background:var(--amber)} .temp.bad{background:var(--terra)}
+.temp.none{background:var(--muted)}
+.step{display:inline-flex;gap:3px}
+.step i{width:12px;height:7px;border-radius:2px;background:rgba(197,186,165,.4);display:inline-block}
+.step i.on{background:var(--sage)} .step i.cur{background:var(--terra)}
+.badge{display:inline-block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;
+  border-radius:999px;padding:3px 8px;margin-left:6px;white-space:nowrap;color:#7A4A1E;background:rgba(201,154,60,.22)}
+.badge.col{color:#7A2E1E;background:rgba(194,97,60,.18)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:#F4F1EA;background:var(--sage);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--raised);padding:22px}
+.card h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+.card .note{font-size:11px;color:var(--muted);margin-bottom:16px}
+.hbar{margin-bottom:11px}
+.hbar .top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+.hbar .top .who{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-soft)}
+.hbar .top .val{font-weight:700;color:var(--terra);font-variant-numeric:tabular-nums;padding-left:10px}
+.hbar .track{height:10px;border-radius:999px;background:rgba(197,186,165,.35);overflow:hidden}
+.hbar .fill{height:100%;border-radius:999px;background:var(--terra)}
+.ghead{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-top:10px}
+.ghead .m{font-size:12.5px;color:var(--ink-soft)} .ghead .m b{color:var(--ink)}
+.back{display:inline-block;font-size:12px;font-weight:600;color:var(--terra);cursor:pointer;margin-top:18px}
+.empty{background:var(--surface);border-radius:18px;box-shadow:var(--raised);text-align:center;padding:34px 20px;color:var(--muted);font-size:13px}
+.foot{margin-top:36px;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.gaps{margin-top:14px;font-size:11.5px;color:var(--muted);line-height:1.7}
+.gaps b{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">MateOS Lab · оператор</div>
+  <h1>Консоль <em>Лаборатории</em></h1>
+  <div class="sub" id="sub">Загрузка…</div>
+  <div id="body"></div>
+  <div class="foot" id="gen"></div>
+</div>
+<script>
+const K=(new URLSearchParams(location.search).get("k")||"").trim();
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const n=v=>Math.round((v||0)*10)/10;
+let DATA=null, FILTER="Все", VIEW={s:"overview"};
+
+function hbars(items){
+  items=items.filter(i=>i.value>0);
+  if(!items.length) return `<div class="note">Пока нет данных.</div>`;
+  const max=Math.max(...items.map(i=>i.value));
+  return items.map(i=>`<div class="hbar">
+    <div class="top"><span class="who">${esc(i.label)}</span><span class="val">${n(i.value)}</span></div>
+    <div class="track"><div class="fill" style="width:${Math.max(3,i.value/max*100)}%"></div></div>
+  </div>`).join("");
+}
+function tempChip(t){
+  const L={ok:"активна",warn:"остывает",bad:"холодная",none:"нет данных"};
+  return `<span class="temp ${t.state}">${L[t.state]||t.state}</span>`;
+}
+function freshness(g){
+  const d=g.temp.days_idle;
+  if(d==null) return "—";
+  if(d===0) return "сегодня";
+  return `${d} дн. назад`;
+}
+function stepper(g){
+  return `<span class="step">`+DATA.stage_order.map(code=>{
+    const c=(g.stepper||{})[code]||0;
+    const cur=code===g.last_stage;
+    return `<i class="${c>0?(cur?"cur":"on"):""}" title="${esc(DATA.stage_label[code]||code)}: ${c}"></i>`;
+  }).join("")+`</span>`;
+}
+function visibleGroups(){
+  return DATA.groups.filter(g=>g.client!=="Демо" && (FILTER==="Все"||g.client===FILTER));
+}
+
+function renderOverview(){
+  const gs=visibleGroups();
+  const kpi={
+    active:gs.filter(g=>g.threads>0).length,
+    backlog:gs.reduce((s,g)=>s+(g.backlog_count||0),0),
+    cold:gs.filter(g=>g.temp.state==="bad").length,
+    sprint:gs.filter(g=>g.in_sprint).length,
+  };
+  let h=`<div class="kpis">
+    <div class="kpi"><b>${kpi.active}</b><span>активных групп</span></div>
+    <div class="kpi"><b>${kpi.backlog}</b><span>проблем в бэклоге</span></div>
+    <div class="kpi hot"><b>${kpi.cold}</b><span>холодных · idle≥4д</span></div>
+    <div class="kpi"><b>${kpi.sprint}</b><span>в спринте</span></div>
+  </div>`;
+
+  const clients=["Все",...DATA.clients.filter(c=>c!=="Демо")];
+  h+=`<div class="filters">`+clients.map(c=>`<button class="${c===FILTER?"on":""}" data-f="${esc(c)}">${esc(c)}</button>`).join("")+`</div>`;
+
+  h+=`<h2>Группы · холодные наверх</h2>`;
+  if(!gs.length){ h+=`<div class="empty">Нет групп по фильтру «${esc(FILTER)}».</div>`; }
+  else{
+    h+=`<table><tr><th>Группа</th><th>Клиент</th><th>Температура</th><th>Свежесть</th>
+      <th style="text-align:right">Проблем</th><th>Прогресс T0→T7</th><th></th></tr>`;
+    h+=gs.map(g=>`<tr class="row" data-g="${esc(g.group_id)}">
+      <td>${esc(g.group)}${g.orphan?`<span class="badge">без клиента</span>`:""}</td>
+      <td>${esc(g.client)}</td>
+      <td>${tempChip(g.temp)}</td>
+      <td>${freshness(g)}</td>
+      <td class="n">${g.threads}</td>
+      <td>${stepper(g)}</td>
+      <td>${g.dirty_count>0?`<span class="badge">⚠ метрика ${g.dirty_count}</span>`:""}</td>
+    </tr>`).join("");
+    h+=`</table>`;
+  }
+
+  const freq=DATA.stage_order.map(code=>({
+    label:DATA.stage_label[code]||code,
+    value:gs.reduce((s,g)=>s+((g.stepper||{})[code]||0),0),
+  }));
+  h+=`<h2>Частотность по этапам</h2>
+    <div class="card"><h3>Где стоит поток</h3>
+      <div class="note">частотность = сабмиты форм, не обращения (бот слеп, user_id пуст)</div>
+      ${hbars(freq)}</div>`;
+
+  h+=`<div class="gaps"><b>Что честно НЕ мерим (v1):</b><br>`+
+     (DATA.gaps||[]).map(g=>"· "+esc(g)).join("<br>")+`</div>`;
+  return h;
+}
+
+function renderGroup(gid){
+  const g=DATA.groups.find(x=>x.group_id===gid);
+  if(!g) return `<div class="empty">Группа не найдена.</div>`;
+  const col=new Set(DATA.collisions||[]);
+  let h=`<div class="back" data-back="1">← Обзор</div>
+    <h2 style="margin-top:16px">${esc(g.group)}</h2>
+    <div class="ghead">
+      <span class="m">клиент <b>${esc(g.client)}</b></span>
+      <span class="m">цикл <b>${esc(g.cycle||"—")}</b></span>
+      <span class="m">участников <b>${g.people}</b></span>
+      <span class="m">проблем <b>${g.threads}</b></span>
+      <span class="m">${tempChip(g.temp)} · ${freshness(g)}</span>
+    </div>`;
+
+  h+=`<h2>Бэклог — проблемы (T0/T1)</h2>`;
+  if(!(g.backlog||[]).length){ h+=`<div class="empty">Бэклог пуст.</div>`; }
+  else{
+    h+=`<table><tr><th>Проблема</th><th style="text-align:right">Часов/мес</th>
+      <th style="text-align:right">Выполнимость</th><th>Рекомендация</th><th>Стадия</th><th>Свежесть</th></tr>`;
+    h+=g.backlog.map(r=>`<tr>
+      <td>${esc(r.title)}
+        ${r.dirty?`<span class="badge">⚠ проверить метрику</span>`:""}
+        ${col.has(r.thread_key)?`<span class="badge col">коллизия ключа</span>`:""}</td>
+      <td class="h">${n(r.hours_month)}</td>
+      <td class="n">${r.ease?`${r.ease}/5`:"—"}</td>
+      <td>${esc(r.recommendation||"—")}</td>
+      <td><span class="tag">${esc(r.stage)}</span></td>
+      <td>${esc(r.last_at||"—")}</td>
+    </tr>`).join("");
+    h+=`</table><div class="note" style="margin-top:8px">Рекомендация = приоритет (часы × лёгкость), совет не гейт. Ворота «взять в работу» — участник в Пульсе.</div>`;
+  }
+
+  h+=`<h2>Задачи этапа (LabTasks)</h2>`;
+  if(!(g.tasks||[]).length){
+    h+=`<div class="empty">Слой задач пока пуст — форма задач в разработке (M-042).</div>`;
+  }
+  return h;
+}
+
+function render(){
+  document.getElementById("body").innerHTML =
+    VIEW.s==="group" ? renderGroup(VIEW.gid) : renderOverview();
+}
+
+document.addEventListener("click",e=>{
+  const f=e.target.closest("[data-f]");
+  if(f){ FILTER=f.getAttribute("data-f"); VIEW={s:"overview"}; render(); return; }
+  const r=e.target.closest("[data-g]");
+  if(r){ VIEW={s:"group",gid:r.getAttribute("data-g")}; window.scrollTo(0,0); render(); return; }
+  if(e.target.closest("[data-back]")){ VIEW={s:"overview"}; render(); }
+});
+
+async function boot(){
+  if(!K){document.getElementById("sub").textContent="Ссылка неполная (нет ?k=).";return;}
+  let d;
+  try{
+    const r=await fetch(`data/console-${encodeURIComponent(K)}.json?ts=${Date.now()}`);
+    if(!r.ok) throw 0;
+    d=await r.json();
+  }catch(e){document.getElementById("sub").textContent="Консоль не найдена. Проверь ссылку.";return;}
+  // last_stage для подсветки текущего сегмента степпера
+  d.groups.forEach(g=>{
+    const reached=(d.stage_order||[]).filter(c=>(g.stepper||{})[c]>0);
+    g.last_stage=reached.length?reached[reached.length-1]:null;
+  });
+  DATA=d;
+  const gs=d.groups.filter(g=>g.client!=="Демо");
+  document.getElementById("sub").textContent=`${gs.length} групп · ${d.clients.filter(c=>c!=="Демо").join(" · ")} · холодные требуют внимания первыми`;
+  document.getElementById("gen").textContent="Обновлено: "+(d.generated_at||"").replace("T"," ").slice(0,16);
+  const g=(new URLSearchParams(location.search).get("g")||"").trim();
+  if(g && d.groups.some(x=>x.group_id===g)) VIEW={s:"group",gid:g};
+  render();
+}
+boot();
+</script>
+</body>
+</html>
