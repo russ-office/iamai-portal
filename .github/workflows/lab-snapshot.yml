@@ -37,6 +37,12 @@ jobs:
           LAB_PREFILL: ${{ vars.LAB_PREFILL || '0' }}
         run: python3 scripts/lab_snapshot.py
 
+      # Консоль оператора (Ruslan): агрегат ГОТОВЫХ lab/data/*.json — без секретов,
+      # без Airtable. Идёт ПОСЛЕ lab_snapshot.py (читает его выход). Token детерминирован
+      # (sha256 от константы), env не нужен. P0 — свежесть фида Консоли (handover MateOS 29.07).
+      - name: Run console snapshot
+        run: python3 scripts/console_snapshot.py
+
       # Пульс участников. LAB_PREFILL обязана быть и здесь: прогон без переменной
       # молча пишет ссылки БЕЗ p_* и затирает уже хорошие (грабля M-034).
       - name: Run pulse snapshot
