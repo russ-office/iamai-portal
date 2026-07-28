@@ -42,6 +42,7 @@ jobs:
       - name: Run pulse snapshot
         env:
           LAB_PREFILL: ${{ vars.LAB_PREFILL || '0' }}
+          LAB_TASK_FORM: '1'
         run: python3 scripts/pulse_snapshot.py
 
       - name: Commit snapshots

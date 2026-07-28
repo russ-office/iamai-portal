@@ -18,13 +18,19 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lab_links import add_prefill, nav_links, report_dropped, step_links  # noqa: E402
+from lab_links import add_prefill, nav_links, report_dropped, step_links, task_form_link  # noqa: E402
 
 BASE_ID = "appi7h7PZhQ5riAIu"
 API = "https://api.airtable.com/v0"
 ALMATY = timezone(timedelta(hours=5))
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "pulse" / "data"
+
+# Гейт формы задачи (зеркало LAB_PREFILL): url_task пустой, пока переменная не выставлена.
+# Кнопка «+ Добавить задачу» без ссылки на фронте дизейблится (formLink('')). Включать
+# ТОЛЬКО после того, как в Airtable choices поля source приведены к self|curator — иначе
+# сабмит source=self падает/тайпкастит. Ставится repo-переменной LAB_TASK_FORM после фикса схемы.
+TASK_FORM = os.environ.get("LAB_TASK_FORM", "0") == "1"
 
 STAGE_LABEL = {
     "T0_function_map": "Карта функций", "T1_idea": "Проблема", "T2_task": "Решение",
@@ -137,6 +143,28 @@ def user_threads(arts):
     return out
 
 
+def user_tasks(uid, labtasks, art_title):
+    """LabTasks, где участник = assignee (owner). Форма Пульса (taskRowHTML) ждёт
+    id/title/status/due/artifact(лейбл)/priority. Клик по строке пока не открывает
+    форму (редактирование задачи вне v1) → url=''."""
+    out = []
+    for r in labtasks:
+        f = r["fields"]
+        if uid not in (f.get("assignees") or []):
+            continue
+        aid = first(f.get("artifact"))
+        out.append({
+            "id": r["id"],
+            "title": f.get("title") or "—",
+            "status": f.get("status") or "todo",
+            "due": f.get("due") or "",
+            "artifact": art_title.get(aid, "") if aid else "",
+            "priority": f.get("priority") or "",
+            "url": "",
+        })
+    return out
+
+
 def session_events(rows, now):
     """Sessions группы → события календаря. rows = записи Sessions одной группы.
 
@@ -219,6 +247,7 @@ def main():
     users = fetch_all("Users")
     sessions = fetch_all("Sessions")
     orgs = fetch_all("Organizations")
+    labtasks = fetch_all("tblArWJVgbDgCfZSP")  # LabTasks по ID (устойчивее к переименованию таблицы)
 
     # Мультиклиент: обрабатываем ВСЕ группы. Участник попадёт в снимок только если он
     # в GroupMembership группы (цикл ниже) И имеет pulse_token — клиент без членства
@@ -282,6 +311,9 @@ def main():
                                for r in arts_by_group.get(gid, []) if r["fields"].get("is_current"))
 
     umap = {u["id"]: u for u in users}
+    # Лейбл артефакта для строки задачи (task.artifact): заголовок треда, нет — thread_key.
+    art_title = {r["id"]: (r["fields"].get("title") or r["fields"].get("thread_key") or "")
+                 for r in arts}
     now = datetime.now(ALMATY)
     today = now.date()
     now_iso = now.isoformat(timespec="seconds")
@@ -323,6 +355,11 @@ def main():
         # Встречи группы. Без них участник открывал Пульс и не видел ни одной сессии —
         # «Лаборатория не началась» (блокер запуска SZ, lab_to_mos_pulse-blocks-sz-rollout).
         events += session_events(sess_by_group.get(gid, []), now)
+        # Задачи участника + ссылка «+ Добавить» (принадлежность из контекста).
+        org_id = first(gfields.get(gid, {}).get("client"))
+        cyc_id = cyc["id"] if cyc else ""
+        url_task = task_form_link(uid, gid, org_id, cyc_id) if TASK_FORM else ""
+        tasks = user_tasks(uid, labtasks, art_title)
         snap = {
             "scope": "person",
             "generated_at": now_iso,
@@ -336,7 +373,8 @@ def main():
             "url_backlog": gfields.get(gid, {}).get("url_backlog_T1", ""),
             "status_light": status_light(dates, today),
             "events": events,
-            "tasks": [],  # LabTasks пока пусты в базе — деградирует в c-empty
+            "tasks": tasks,           # LabTasks участника (assignee=uid); 0 → фронт даёт c-empty
+            "url_task": url_task,     # «+ Добавить задачу»: '' до гейта LAB_TASK_FORM + фикса source-choices
             "profile": {"name": name, "role": (uf.get("Role") or ""), "group": gname.get(gid, ""),
                         "org": client_label(gid), "skills": [], "work_style": "", "format_pref": "",
                         "country": "", "city_residence": "", "os": "", "device": ""},

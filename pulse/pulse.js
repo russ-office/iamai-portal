@@ -122,6 +122,7 @@
   function updatedAction(D) { return '<span class="p-updated">обновлено ' + esc((D.generated_at || "").replace("T"," ").slice(0,16)) + '</span>'; }
   // Add opens the write-path in the right drawer (not a new tab) — canon write-path is c-drawer.
   function backlogAction() { return '<button type="button" class="c-btn is-primary" id="p-add-problem">Добавить проблему</button>'; }
+  function taskAction() { return '<button type="button" class="c-btn is-primary" id="p-add-task">+ Добавить задачу</button>'; }
 
   // ── c-tape (activity feed, exactly 14 days; 1px tick + dot; not a bar chart) ─
   function tapeHTML(arr, fromLabel, toLabel) {
@@ -716,7 +717,7 @@
       list:        { title: "Бэклог",       eyebrow: "ARTIFACTS · T0 / T1",                                 action: backlogAction() },
       overview:    { title: "Спринт",       eyebrow: "CYCLE " + D.sprint_no + " · " + range,                action: updatedAction(D) },
       calendar:    { title: "Календарь",    eyebrow: "SESSIONS + CYCLES + LABTASKS",                        action: updatedAction(D) },
-      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: updatedAction(D) },
+      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: taskAction() },
       library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ · LMS",                              action: "" },
       marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
@@ -737,6 +738,11 @@
       var newBacklog = formLink(D.url_backlog);
       if (addBtn && newBacklog) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", newBacklog); });
       else if (addBtn) addBtn.setAttribute("disabled", "disabled");
+      // «Новая задача» = url_task (hidden assignee/group/cycle/client + source=self, status=todo).
+      var addTask = document.getElementById("p-add-task");
+      var newTask = formLink(D.url_task);
+      if (addTask && newTask) addTask.addEventListener("click", function () { openDrawer("Новая задача", "Задача · LabTasks", newTask); });
+      else if (addTask) addTask.setAttribute("disabled", "disabled");
       if (view === "person") renderPerson(body, D);
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);

@@ -104,6 +104,33 @@ def add_prefill(url, f):
     return out
 
 
+# ── Форма задачи участника (LabTasks) ────────────────────────────────────────
+# В отличие от форм этапов (база даёт формулу url_* на записи Artifacts), у задачи
+# нет записи-источника: принадлежность берётся из контекста участника в снапшоте.
+# Построена 2026-07-26 (M-042), Fillout form qrGUZPSs16us. Скрытые поля формы:
+# assignee_id/group_id/cycle_id/client_id (+ source=self, status=todo — дефолты формы,
+# дублируем в URL для детерминизма). Участник вводит только title/desc/due.
+TASK_FORM_URL = "https://iamai.fillout.com/t/qrGUZPSs16us"
+
+
+def task_form_link(assignee_id, group_id, client_id, cycle_id=""):
+    """Ссылка «+ Добавить задачу» с зашитой принадлежностью (скрытые поля формы).
+    Пустой обязательный id (assignee/group/client) → '' : фронт без готовой ссылки
+    не рисует кнопку (тот же инвариант, что url_backlog)."""
+    if not (assignee_id and group_id and client_id):
+        return ""
+    p = {
+        "assignee_id": assignee_id,
+        "group_id": group_id,
+        "client_id": client_id,
+        "source": "self",
+        "status": "todo",
+    }
+    if cycle_id:
+        p["cycle_id"] = cycle_id
+    return TASK_FORM_URL + "?" + urllib.parse.urlencode(p, quote_via=urllib.parse.quote)
+
+
 def report_dropped():
     """Печатает, у каких артефактов prefill урезан. Тихий обрез = ложное «всё доехало»."""
     if not dropped_log:
