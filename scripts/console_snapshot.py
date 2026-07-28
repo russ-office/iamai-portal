@@ -175,12 +175,29 @@ def main():
     groups.sort(key=lambda g: (rank.get(g["temp"]["state"], 4),
                                -(g["temp"]["days_idle"] or 0)))
 
+    # панель «Частотность по этапам» (спека §Сегмент 1, «сильная идея Ruslan»):
+    # распределение тредов по ТЕКУЩЕЙ стадии (stage_code). v1 = сабмит-сигнал —
+    # «первый сабмит формы этапа» = достигнутая стадия треда; «сколько раз
+    # тыкались» = предусловие (бот слеп, user_id пуст). Демо исключаем —
+    # visGroups фронта его тоже режет, цифры должны сойтись.
+    freq = {code: 0 for code in STAGE_ORDER}
+    for s in snaps:
+        if client_code(s["group"]) == "Демо":
+            continue
+        for t in s["threads"]:
+            sc = t.get("stage_code")
+            if sc in freq:
+                freq[sc] += 1
+    stage_freq = [{"code": code, "label": STAGE_LABEL[code], "count": freq[code]}
+                  for code in STAGE_ORDER]
+
     out = {
         "generated_at": now.isoformat(timespec="seconds"),
         "token": TOKEN,
         "clients": sorted({g["client"] for g in groups}),
         "stage_order": STAGE_ORDER,
         "stage_label": STAGE_LABEL,
+        "stage_freq": stage_freq,          # панель «Частотность по этапам» (треды по текущей стадии)
         "groups": groups,
         "collisions": collisions,                # thread_key в >1 группе
         "gaps": [

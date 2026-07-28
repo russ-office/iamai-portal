@@ -49,6 +49,20 @@ h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
 .kpi.hot b{color:var(--terra)}
 .kpi span{display:block;margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
+/* Панель «Частотность по этапам» (heat-строка) — спека §Сегмент 1 */
+.freq{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 20px;margin-top:18px}
+.freq-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.freq-h b{font-size:14px;font-weight:700}
+.freq-h .gap{font-size:11px;color:var(--muted);font-weight:600;text-align:right}
+.freq-row{display:grid;grid-template-columns:26px 104px 1fr 44px;align-items:center;gap:10px;padding:4px 0;font-size:12.5px}
+.freq-row .lab{color:var(--muted);font-weight:700;font-size:11px;font-variant-numeric:tabular-nums}
+.freq-row .nm{color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.freq-row .bar{height:13px;border-radius:7px;background:rgba(197,186,165,.25);overflow:hidden}
+.freq-row .bar i{display:block;height:100%;border-radius:7px;background:var(--terra);transition:width .3s}
+.freq-row .ct{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);text-align:right}
+.freq-row.zero .ct{color:var(--muted);font-weight:600}
+@media(max-width:560px){.freq-row{grid-template-columns:24px 76px 1fr 36px;gap:7px;font-size:11.5px}}
+
 /* Компания → команды */
 .company{margin-top:28px}
 .company-h{display:flex;align-items:baseline;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
@@ -168,6 +182,28 @@ function crumb(){
 const grp=gid=>DATA.groups.find(g=>g.group_id===gid);
 const visGroups=()=>DATA.groups.filter(g=>g.client!=="Демо");
 
+/* ── панель «Частотность по этапам» (heat-строка, спека §Сегмент 1) ──
+   v1 = сабмит-сигнал: тред по его текущей стадии (stage_code). «Сколько раз
+   тыкались» = предусловие (бот слеп, user_id пуст) → подпись на панели. */
+function renderFreq(){
+  const f=DATA.stage_freq||[];
+  if(!f.length) return "";
+  const max=Math.max(1,...f.map(x=>x.count||0));
+  const total=f.reduce((s,x)=>s+(x.count||0),0);
+  const rows=f.map(x=>{
+    const c=x.count||0, w=Math.round(c/max*100);
+    return `<div class="freq-row${c?"":" zero"}">
+      <span class="lab">${esc((x.code||"").split("_")[0])}</span>
+      <span class="nm">${esc(x.label||x.code)}</span>
+      <span class="bar"><i style="width:${w}%"></i></span>
+      <span class="ct">${c}</span></div>`;
+  }).join("");
+  return `<div class="freq">
+    <div class="freq-h"><b>Частотность по этапам</b><span class="gap">сабмиты форм, не обращения · ${total} тредов</span></div>
+    ${rows}
+  </div>`;
+}
+
 /* ── экран: Обзор (компании → команды) ── */
 function renderOverview(){
   const gs=visGroups();
@@ -178,6 +214,8 @@ function renderOverview(){
     <div class="kpi"><b>${kpi.backlog}</b><span>проблем в бэклоге</span></div>
     <div class="kpi hot"><b>${kpi.cold}</b><span>холодных · idle≥4д</span></div>
     <div class="kpi"><b>${kpi.sprint}</b><span>в спринте</span></div></div>`;
+
+  h+=renderFreq();
 
   const companies=DATA.clients.filter(c=>c!=="Демо");
   const rank={bad:0,warn:1,none:2,ok:3};
