@@ -1,6 +1,6 @@
 {
  "scope": "person",
- "generated_at": "2026-07-28T22:06:13+05:00",
+ "generated_at": "2026-07-28T22:50:54+05:00",
  "today": "2026-07-28",
  "sprint_no": 1,
  "subject": {
@@ -17,6 +17,7 @@
  },
  "events": [],
  "tasks": [],
+ "url_task": "https://iamai.fillout.com/t/qrGUZPSs16us?assignee_id=recgJ7uRuDk9emQYO&group_id=recOKKQS1JJRlAAAi&client_id=recTHD8qGCMvvoznH&source=self&status=todo",
  "profile": {
   "name": "Людмила Никулина",
   "role": "",

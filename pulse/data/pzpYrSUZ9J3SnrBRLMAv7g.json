@@ -1,6 +1,6 @@
 {
  "scope": "person",
- "generated_at": "2026-07-28T22:06:13+05:00",
+ "generated_at": "2026-07-28T22:50:54+05:00",
  "today": "2026-07-28",
  "sprint_no": 1,
  "subject": {
@@ -26,6 +26,7 @@
   }
  ],
  "tasks": [],
+ "url_task": "https://iamai.fillout.com/t/qrGUZPSs16us?assignee_id=rec6SDGQIGOo7bJpN&group_id=recHFFw93GRcDM3bX&client_id=recFZuQiqAJAsyL6U&source=self&status=todo&cycle_id=rec6Qq3oOX7EhlSGJ",
  "profile": {
   "name": "Жасулан Елмуратов",
   "role": "",
