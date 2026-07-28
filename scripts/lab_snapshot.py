@@ -174,12 +174,41 @@ def mail_hash(email):
     return hashlib.sha256(email.strip().lower().encode()).hexdigest()
 
 
+def group_tasks(uids, labtasks, art_title, uname):
+    """LabTasks, где assignee ∈ uids (активные участники группы). Shape под Console
+    (console.html renderTasks читает title/status/artifact) + assignee для оператора.
+    Зеркало pulse_snapshot.user_tasks, но на группу, не на участника."""
+    uset = set(uids)
+    rank = {"doing": 0, "todo": 1, "done": 2}
+    out = []
+    for r in labtasks:
+        f = r["fields"]
+        owners = [u for u in (f.get("assignees") or []) if u in uset]
+        if not owners:
+            continue
+        aid = first(f.get("artifact"))
+        who = ", ".join(uname.get(u, "") for u in owners if uname.get(u))
+        out.append({
+            "id": r["id"],
+            "title": f.get("title") or "—",
+            "status": f.get("status") or "todo",
+            "due": f.get("due") or "",
+            "artifact": art_title.get(aid, "") if aid else "",
+            "priority": f.get("priority") or "",
+            "assignee": who,
+            "url": "",
+        })
+    out.sort(key=lambda t: (rank.get(t["status"], 9), t["due"] or "9"))
+    return out
+
+
 def main():
     groups = fetch_all("Groups")
     cycles = fetch_all("Cycles")
     arts = fetch_all("Artifacts")
     members = fetch_all("GroupMembership")
     users = fetch_all("Users")
+    labtasks = fetch_all("tblArWJVgbDgCfZSP")  # LabTasks по ID (устойчивее к переименованию таблицы)
 
     gname = {g["id"]: g["fields"].get("name", "") for g in groups}
     # Поля группы целиком: ссылка бэклога живёт на ГРУППЕ, не на цикле (M-046).
@@ -205,6 +234,20 @@ def main():
         gid = first(r["fields"].get("group"))
         if gid:
             arts_by_group.setdefault(gid, []).append(r)
+    # Задачи группы (LabTasks): лейбл артефакта + имя участника + состав участников группы.
+    art_title = {r["id"]: (r["fields"].get("title") or r["fields"].get("thread_key") or "")
+                 for r in arts}
+    uname = {u["id"]: ((u["fields"].get("first_name") or "") + " " + (u["fields"].get("last_name") or "")).strip()
+             or "Участник" for u in users}
+    uids_by_group = {}
+    for r in members:
+        f = r["fields"]
+        if f.get("active") is False:
+            continue
+        gid = first(f.get("group"))
+        uid = first(f.get("user"))
+        if gid and uid:
+            uids_by_group.setdefault(gid, []).append(uid)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     index = []
@@ -216,6 +259,7 @@ def main():
             continue
         cyc = cyc_by_group.get(gid)
         threads = build_threads(arts_by_group.get(gid, []))
+        tasks = group_tasks(uids_by_group.get(gid, []), labtasks, art_title, uname)
         snap = {
             "group": name,
             "group_id": gid,
@@ -225,6 +269,7 @@ def main():
             "url_backlog": gfields.get(gid, {}).get("url_backlog_T1", ""),
             "generated_at": now,
             "threads": threads,
+            "tasks": tasks,   # LabTasks группы (assignee ∈ members); читает Console (renderTasks)
         }
         body = json.dumps(snap, ensure_ascii=False, indent=1)
         # M-034: стабильный ключ = rec_id. Имя-файл остаётся как legacy —
@@ -235,7 +280,7 @@ def main():
                       "cycle": snap["cycle"], "threads": len(threads)}
         index.append({"id": gid, "group": name, "client": snap["client"],
                       "cycle": snap["cycle"], "threads": len(threads)})
-        print(f"{name} ({gid}): {len(threads)} тредов")
+        print(f"{name} ({gid}): {len(threads)} тредов, {len(tasks)} задач")
 
     # _members.json: sha256(email) → [group_id, …]. Открытых email в снимке нет.
     mem = {}
