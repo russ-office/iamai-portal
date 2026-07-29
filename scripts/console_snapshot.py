@@ -167,7 +167,10 @@ def main():
             "dirty_count": dirty_ct,
             "orphan": code not in KNOWN_CLIENTS,
             "backlog": backlog,
-            "tasks": [],   # LabTasks GAP (M-042): 0 записей, формы нет — слот под будущее
+            "tasks": [
+                {k: v for k, v in t.items() if k != "assignee"}
+                for t in (s.get("tasks") or [])
+            ],   # LabTasks группы (emit: lab_snapshot.py 3bf51ce); assignee стрипаем — PII не на public JSON (как author_email)
         })
 
     # сортировка Обзора: холодные/молчащие наверх (bad → warn → none → ok)
