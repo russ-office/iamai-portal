@@ -5,137 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>MateOS Lab · Консоль</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../design-system/styles.css">
 <style>
-/* Дизайн-код Пульса (lab/index.html) — тот же язык: тёплая бумага, терракота, неоморфизм-плашки. */
-:root{
-  --paper:#F1ECE2; --surface:#F2EDE3; --ink:#2B2925; --ink-soft:#5A564E;
-  --muted:#9A958A; --line:#E0DACE; --terra:#C2613C; --sage:#8C9A84; --amber:#C99A3C; --cta:#322F2A;
-  --nm-light:rgba(255,255,255,.95); --nm-dark:rgba(197,186,165,.5);
-  --raised:5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light);
-  --inset:inset 4px 4px 9px var(--nm-dark), inset -4px -4px 9px var(--nm-light);
-}
+/* Console — DS-канон (design-system/styles.css): токены W2 Linen, элевация D1, шрифты.
+   Инлайн — console-специфика + временные ванильные классы до перемаппинга на c-* (шаги 1–4). */
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Manrope",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
 .wrap{max-width:1020px;margin:0 auto;padding:30px clamp(16px,4vw,40px) 70px}
-.kicker{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
-h1{font-weight:300;font-size:clamp(24px,4vw,36px);letter-spacing:-.02em;margin:10px 0 6px}
-h1 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+.kicker{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--font-text);font-weight:300;font-size:clamp(24px,4vw,36px);letter-spacing:-.02em;margin:10px 0 6px}
+h1 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .sub{color:var(--ink-soft);font-size:14px}
-.crumb{font-size:12.5px;color:var(--muted);margin:2px 0 4px;min-height:18px}
-.crumb a{color:var(--terra);font-weight:600;cursor:pointer;text-decoration:none}
+.crumb{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin:2px 0 4px;min-height:18px}
+.crumb a{color:var(--accent);font-weight:600;cursor:pointer;text-decoration:none}
 
 .bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}
-.btn{border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;border-radius:12px;
-  padding:11px 18px;background:var(--cta);color:#F4F1EA;transition:transform .18s,box-shadow .18s;text-decoration:none;display:inline-block;line-height:1}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(38,36,31,.2)}
-.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--raised)}
-.btn.sm{padding:9px 14px;font-size:12.5px;border-radius:11px}
+/* Кнопки — канон c-btn (design-system/styles.css); локальный .btn убран. */
 
-/* Верхние вкладки Консоли: Обзор | Задачи */
+/* Верхние вкладки Консоли: Обзор | Задачи (→ c-nav-item на Шаге 1, R1=B) */
 .tabs{display:flex;gap:8px;margin:18px 0 6px}
-.tabs button{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--ink-soft);
-  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:9px 20px;cursor:pointer}
-.tabs button.on{color:#F4F1EA;background:var(--terra);box-shadow:var(--inset)}
+.tabs button{font-family:var(--font-text);font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);
+  padding:9px 20px;cursor:pointer;transition:background 140ms ease,color 140ms ease}
+.tabs button:hover{background:rgba(28,26,23,.05)}
+.tabs button.on{color:#fff;background:var(--accent);border-color:var(--accent)}
 
+/* §7-фильтр SZ/DAN/EVRIKA/Все (→ c-filter-bar+c-chip на Шаге 1) */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
-.filters button{font-family:inherit;font-size:12px;font-weight:600;color:var(--ink-soft);
-  background:var(--surface);box-shadow:var(--raised);border:none;border-radius:999px;padding:7px 16px;cursor:pointer}
-.filters button.on{color:#F4F1EA;background:var(--cta);box-shadow:var(--inset)}
+.filters button{font-family:var(--font-text);font-size:12px;font-weight:600;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);
+  padding:7px 16px;cursor:pointer;transition:background 140ms ease}
+.filters button:hover{background:rgba(28,26,23,.05)}
+.filters button.on{color:var(--text-on-inverted);background:var(--deep);border-color:var(--deep)}
 
+/* KPI-полоса (→ c-kpi-tile на Шаге 1) */
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:18px}
-.kpi{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 18px}
-.kpi b{display:block;font-size:26px;font-weight:700;line-height:1.1}
-.kpi.hot b{color:var(--terra)}
-.kpi span{display:block;margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kpi{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:16px 18px}
+.kpi b{display:block;font-size:26px;font-weight:600;line-height:1.1}
+.kpi.hot b{color:var(--accent)}
+.kpi span{display:block;margin-top:5px;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
-/* Панель «Частотность по этапам» (heat-строка) — спека §Сегмент 1 */
-.freq{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 20px;margin-top:18px}
+/* Панель «Частотность по этапам» — console-специфика (custom, не канон; c-tape = другое) */
+.freq{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:16px 20px;margin-top:18px}
 .freq-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
-.freq-h b{font-size:14px;font-weight:700}
-.freq-h .gap{font-size:11px;color:var(--muted);font-weight:600;text-align:right}
+.freq-h b{font-family:var(--font-text);font-size:14px;font-weight:700}
+.freq-h .gap{font-family:var(--font-mono);font-size:11px;color:var(--muted);font-weight:600;text-align:right}
 .freq-row{display:grid;grid-template-columns:26px 104px 1fr 44px;align-items:center;gap:10px;padding:4px 0;font-size:12.5px}
-.freq-row .lab{color:var(--muted);font-weight:700;font-size:11px;font-variant-numeric:tabular-nums}
+.freq-row .lab{color:var(--muted);font-weight:700;font-size:11px}
 .freq-row .nm{color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.freq-row .bar{height:13px;border-radius:7px;background:rgba(197,186,165,.25);overflow:hidden}
-.freq-row .bar i{display:block;height:100%;border-radius:7px;background:var(--terra);transition:width .3s}
-.freq-row .ct{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);text-align:right}
+.freq-row .bar{height:13px;border-radius:7px;background:rgba(28,26,23,.06);overflow:hidden}
+.freq-row .bar i{display:block;height:100%;border-radius:7px;background:var(--accent);transition:width .3s}
+.freq-row .ct{font-weight:700;color:var(--ink);text-align:right}
 .freq-row.zero .ct{color:var(--muted);font-weight:600}
 @media(max-width:560px){.freq-row{grid-template-columns:24px 76px 1fr 36px;gap:7px;font-size:11.5px}}
 
-/* Компания → команды */
+/* Компания → команды (→ c-task-row на Шаге 1) */
 .company{margin-top:28px}
-.company-h{display:flex;align-items:baseline;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
-.company-h b{color:var(--ink);font-size:15px;letter-spacing:0;text-transform:none}
-.team{display:flex;align-items:center;gap:14px;background:var(--surface);box-shadow:var(--raised);border-radius:14px;
-  padding:14px 18px;margin-bottom:9px;cursor:pointer;transition:transform .14s}
-.team:hover{transform:translateY(-2px)}
-.dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto}
-.dot.ok{background:var(--sage)} .dot.warn{background:var(--amber)} .dot.bad{background:var(--terra)} .dot.none{background:var(--muted)}
-.team .nm{font-weight:600;font-size:14.5px;flex:0 0 auto}
+.company-h{display:flex;align-items:baseline;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
+.company-h b{color:var(--ink);font-family:var(--font-text);font-size:15px;letter-spacing:0;text-transform:none}
+.team{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);
+  padding:14px 18px;margin-bottom:9px;cursor:pointer;transition:background 120ms ease}
+.team:hover{background:rgba(28,26,23,.03)}
+.dot{width:14px;height:14px;border-radius:50%;flex:0 0 auto}
+.dot.ok{background:var(--status-ok)} .dot.warn{background:var(--status-warn)} .dot.bad{background:var(--status-bad)} .dot.none{background:var(--status-none)}
+.team .nm{font-family:var(--font-text);font-weight:600;font-size:14.5px;flex:0 0 auto}
 .team .mt{font-size:12px;color:var(--muted);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .team .st{margin-left:auto;flex:0 0 auto}
-.badge{display:inline-block;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;
-  border-radius:999px;padding:3px 8px;white-space:nowrap;color:#7A4A1E;background:rgba(201,154,60,.22)}
-.badge.col{color:#7A2E1E;background:rgba(194,97,60,.18)}
+.badge{display:inline-block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;
+  border-radius:var(--radius-sm);padding:3px 8px;white-space:nowrap;color:#7A4A1E;background:rgba(192,138,43,.14);border:1px solid rgba(192,138,43,.3)}
+.badge.col{color:#7A2E1E;background:rgba(217,84,47,.10);border-color:rgba(217,84,47,.3)}
 
 /* Мини-степпер T0→T7 */
 .step{display:inline-flex;gap:3px}
-.step i{width:12px;height:7px;border-radius:2px;background:rgba(197,186,165,.45)}
-.step i.on{background:var(--sage)} .step i.cur{background:var(--terra)}
+.step i{width:12px;height:7px;border-radius:2px;background:rgba(28,26,23,.12)}
+.step i.on{background:var(--status-ok)} .step i.cur{background:var(--accent)}
 
-/* Stagebar (пайплайн-навигатор) — из Пульса */
+/* Stagebar (→ c-stage-bar на Шаге 3, R2=c2) */
 .stagebar{display:flex;flex-wrap:wrap;gap:5px;margin:14px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
-.chev{position:relative;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);
-  background:var(--surface);box-shadow:var(--raised);padding:11px 22px 11px 18px;transition:transform .16s,color .16s;
+.chev{position:relative;border:1px solid var(--line);border-top:1px solid #fff;cursor:pointer;font-family:var(--font-text);font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:var(--surface);box-shadow:var(--shadow-d1);padding:11px 22px 11px 18px;transition:background 140ms ease,color 140ms ease;
   clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%);}
 .chev.notch{padding-left:28px;clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%, 13px 50%);}
-.chev:hover{color:var(--terra);transform:translateY(-1px)}
-.chev .n{display:inline-block;min-width:16px;text-align:center;margin-left:7px;font-size:11px;font-weight:700;color:var(--muted)}
-.chev.act{background:var(--cta);color:#F4F1EA} .chev.act .n{color:#E7C9B8}
-.chev.done{color:var(--terra)} .chev.done .n{color:var(--terra)}
-.chev.disabled{opacity:.4;cursor:not-allowed;background:transparent;color:var(--muted);box-shadow:none}
+.chev:hover{color:var(--accent);background:rgba(28,26,23,.04)}
+.chev .n{display:inline-block;min-width:16px;text-align:center;margin-left:7px;font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--muted)}
+.chev.act{background:var(--deep);color:var(--text-on-inverted);border-color:var(--deep)} .chev.act .n{color:var(--muted)}
+.chev.done{color:var(--accent)} .chev.done .n{color:var(--accent)}
+.chev.disabled{opacity:.4;cursor:not-allowed;background:transparent;color:var(--muted);box-shadow:none;border-color:var(--line)}
 @media(max-width:560px){.chev{font-size:12px;padding:10px 16px 10px 14px}.chev.notch{padding-left:22px}}
 
-/* Пайплайн-страница задачи: слева накопительные брифы, справа мета */
+/* Пайплайн-страница задачи — console-специфика layout (.pipe) */
 .pipe{display:flex;gap:22px;align-items:flex-start}
 @media(max-width:720px){.pipe{flex-direction:column-reverse}}
 .brief{flex:1;min-width:0}.side{flex:0 0 240px}
 @media(max-width:720px){.side{flex:1;width:100%}}
 .brk{margin-bottom:16px}
-.brk-h{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
-.brk.cur .brk-h{color:var(--terra)}
-.brk-b{background:var(--surface);box-shadow:var(--inset);border-radius:14px;padding:14px 17px;font-size:13.5px;line-height:1.6;color:var(--ink-soft);white-space:pre-wrap}
-.brk.cur .brk-b{box-shadow:var(--inset),inset 3px 0 0 var(--terra)}
-.metacard{background:var(--surface);box-shadow:var(--raised);border-radius:16px;padding:16px 18px;position:sticky;top:16px}
-.metacard h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
+.brk-h{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+.brk.cur .brk-h{color:var(--accent)}
+.brk-b{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:14px 17px;font-size:13.5px;line-height:1.6;color:var(--ink-soft);white-space:pre-wrap}
+.brk.cur .brk-b{border-left:3px solid var(--accent)}
+.metacard{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:16px 18px;position:sticky;top:16px}
+.metacard h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
 .metacard .row{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:5px 0;color:var(--ink-soft);border-bottom:1px solid var(--line)}
-.metacard .row:last-child{border-bottom:none} .metacard .row b{color:var(--ink);font-variant-numeric:tabular-nums}
+.metacard .row:last-child{border-bottom:none} .metacard .row b{color:var(--ink)}
 
-/* Карточка бэклога/задачи — из Пульса */
-.card{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:16px 20px;margin-bottom:12px;cursor:pointer;transition:transform .14s}
-.card:hover{transform:translateY(-2px)}
-.card.rec{box-shadow:var(--raised),inset 3px 0 0 var(--terra)}
+/* Карточка бэклога/задачи (→ c-sheet на Шаге 2, R3=A) */
+.card{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:16px 20px;margin-bottom:12px;cursor:pointer;transition:background 120ms ease}
+.card:hover{background:rgba(28,26,23,.03)}
+.card.rec{border-left:3px solid var(--accent)}
 .card .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
-.card h3{font-size:16px;font-weight:600;line-height:1.35}
-.recbadge{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--terra);margin-bottom:4px}
+.card h3{font-family:var(--font-text);font-size:16px;font-weight:600;line-height:1.35}
+.recbadge{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:4px}
 .desc{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin-top:5px}
-.meta{font-size:11.5px;color:var(--muted);margin-top:6px}
+.meta{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:6px}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
-.chip{font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--surface);box-shadow:var(--inset);border-radius:999px;padding:4px 10px;white-space:nowrap}
-.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#F4F1EA;background:var(--sage);border-radius:999px;padding:4px 10px;white-space:nowrap}
-.hours{font-size:20px;font-weight:700;color:var(--terra);white-space:nowrap;text-align:right}
-.hours small{display:block;font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.chip{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--ink-soft);background:rgba(28,26,23,.05);border:1px solid var(--line);border-radius:var(--radius-sm);padding:4px 10px;white-space:nowrap}
+.tag{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--text-on-inverted);background:var(--status-ok);border-radius:var(--radius-sm);padding:4px 10px;white-space:nowrap}
+.hours{font-size:20px;font-weight:700;color:var(--accent);white-space:nowrap;text-align:right}
+.hours small{display:block;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 
-.card2{background:var(--surface);border-radius:16px;box-shadow:var(--raised);padding:20px 22px}
-.empty{text-align:center;padding:46px 20px;color:var(--muted);font-size:13.5px;line-height:1.6}
+.card2{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:20px 22px}
+.empty{text-align:center;padding:46px 20px;color:var(--muted);font-family:var(--font-mono);font-size:13px;line-height:1.6}
 .empty b{color:var(--ink-soft)}
-h2{font-weight:300;font-size:20px;letter-spacing:-.01em;margin:20px 0 6px}
-h2 em{font-family:"Lora",serif;font-style:italic;color:var(--terra)}
+h2{font-family:var(--font-text);font-weight:300;font-size:20px;letter-spacing:-.01em;margin:20px 0 6px}
+h2 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .hint{font-size:13px;color:var(--ink-soft);margin:4px 0 10px;line-height:1.55}
-.gaps{margin-top:16px;font-size:11.5px;color:var(--muted);line-height:1.7}
+.gaps{margin-top:16px;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);line-height:1.7}
 .gaps b{color:var(--ink-soft)}
-.foot{margin-top:30px;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.foot{margin-top:30px;font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 </style>
 </head>
 <body>
@@ -193,10 +188,10 @@ function renderFreq(){
   const rows=f.map(x=>{
     const c=x.count||0, w=Math.round(c/max*100);
     return `<div class="freq-row${c?"":" zero"}">
-      <span class="lab">${esc((x.code||"").split("_")[0])}</span>
+      <span class="lab c-num">${esc((x.code||"").split("_")[0])}</span>
       <span class="nm">${esc(x.label||x.code)}</span>
       <span class="bar"><i style="width:${w}%"></i></span>
-      <span class="ct">${c}</span></div>`;
+      <span class="ct c-num">${c}</span></div>`;
   }).join("");
   return `<div class="freq">
     <div class="freq-h"><b>Частотность по этапам</b><span class="gap">сабмиты форм, не обращения · ${total} тредов</span></div>
@@ -210,10 +205,10 @@ function renderOverview(){
   const kpi={active:gs.filter(g=>g.threads>0).length,backlog:gs.reduce((s,g)=>s+(g.backlog_count||0),0),
              cold:gs.filter(g=>g.temp.state==="bad").length,sprint:gs.filter(g=>g.in_sprint).length};
   let h=`<div class="kpis">
-    <div class="kpi"><b>${kpi.active}</b><span>активных команд</span></div>
-    <div class="kpi"><b>${kpi.backlog}</b><span>проблем в бэклоге</span></div>
-    <div class="kpi hot"><b>${kpi.cold}</b><span>холодных · idle≥4д</span></div>
-    <div class="kpi"><b>${kpi.sprint}</b><span>в спринте</span></div></div>`;
+    <div class="kpi"><b class="c-num">${kpi.active}</b><span>активных команд</span></div>
+    <div class="kpi"><b class="c-num">${kpi.backlog}</b><span>проблем в бэклоге</span></div>
+    <div class="kpi hot"><b class="c-num">${kpi.cold}</b><span>холодных · idle≥4д</span></div>
+    <div class="kpi"><b class="c-num">${kpi.sprint}</b><span>в спринте</span></div></div>`;
 
   h+=renderFreq();
 
@@ -282,7 +277,7 @@ async function renderGroup(gid){
         <div class="desc">${esc(clip(t.content,150))}</div>
         <div class="chips">${chips.join("")}</div>
         <div class="meta">${esc(t.thread_key)} · стадия: ${esc(t.stage)} · пройдено этапов: ${nreached} · вклад: ${t.edits}</div>
-      </div><div class="hours">${n(t.hours_month)}<small>ч / мес</small></div></div>
+      </div><div class="hours c-num">${n(t.hours_month)}<small>ч / мес</small></div></div>
     </div>`;
   }).join("")||`<div class="empty">Бэклог пуст.</div>`;
   body.innerHTML=h;
@@ -318,11 +313,11 @@ async function renderThread(gid,tk){
      <div class="stagebar">${bar}</div>
      <div class="pipe"><div class="brief">${blocks}</div>
        <div class="side"><div class="metacard"><h4>Метрика</h4>
-         <div class="row"><span>Часов / мес</span><b>${n(t.hours_month)}</b></div>
-         <div class="row"><span>Лёгкость</span><b>${t.ease?t.ease+"/5":"—"}</b></div>
+         <div class="row"><span>Часов / мес</span><b class="c-num">${n(t.hours_month)}</b></div>
+         <div class="row"><span>Лёгкость</span><b class="c-num">${t.ease?t.ease+"/5":"—"}</b></div>
          <div class="row"><span>Рекомендация</span><b>${esc(t.priority_quadrant||"—")}</b></div>
-         <div class="row"><span>Правок</span><b>${t.edits||0}</b></div>
-         <div class="row"><span>Участников</span><b>${contribs||1}</b></div>
+         <div class="row"><span>Правок</span><b class="c-num">${t.edits||0}</b></div>
+         <div class="row"><span>Участников</span><b class="c-num">${contribs||1}</b></div>
        </div></div></div>`;
   body.innerHTML=h;
 }
