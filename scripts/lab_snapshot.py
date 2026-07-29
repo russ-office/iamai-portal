@@ -174,10 +174,10 @@ def mail_hash(email):
     return hashlib.sha256(email.strip().lower().encode()).hexdigest()
 
 
-def group_tasks(uids, labtasks, art_title, uname):
+def group_tasks(uids, labtasks, art_title):
     """LabTasks, где assignee ∈ uids (активные участники группы). Shape под Console
-    (console.html renderTasks читает title/status/artifact) + assignee для оператора.
-    Зеркало pulse_snapshot.user_tasks, но на группу, не на участника."""
+    (console.html renderTasks читает title/status/artifact). assignee-имя НЕ эмитим —
+    PII-гейт (Ruslan via Cleo): имена стрипим в v1 до login-блока (сентябрь)."""
     uset = set(uids)
     rank = {"doing": 0, "todo": 1, "done": 2}
     out = []
@@ -187,7 +187,6 @@ def group_tasks(uids, labtasks, art_title, uname):
         if not owners:
             continue
         aid = first(f.get("artifact"))
-        who = ", ".join(uname.get(u, "") for u in owners if uname.get(u))
         out.append({
             "id": r["id"],
             "title": f.get("title") or "—",
@@ -195,7 +194,6 @@ def group_tasks(uids, labtasks, art_title, uname):
             "due": f.get("due") or "",
             "artifact": art_title.get(aid, "") if aid else "",
             "priority": f.get("priority") or "",
-            "assignee": who,
             "url": "",
         })
     out.sort(key=lambda t: (rank.get(t["status"], 9), t["due"] or "9"))
@@ -234,11 +232,9 @@ def main():
         gid = first(r["fields"].get("group"))
         if gid:
             arts_by_group.setdefault(gid, []).append(r)
-    # Задачи группы (LabTasks): лейбл артефакта + имя участника + состав участников группы.
+    # Задачи группы (LabTasks): лейбл артефакта + состав участников группы (имена НЕ эмитим — PII-гейт).
     art_title = {r["id"]: (r["fields"].get("title") or r["fields"].get("thread_key") or "")
                  for r in arts}
-    uname = {u["id"]: ((u["fields"].get("first_name") or "") + " " + (u["fields"].get("last_name") or "")).strip()
-             or "Участник" for u in users}
     uids_by_group = {}
     for r in members:
         f = r["fields"]
@@ -259,7 +255,7 @@ def main():
             continue
         cyc = cyc_by_group.get(gid)
         threads = build_threads(arts_by_group.get(gid, []))
-        tasks = group_tasks(uids_by_group.get(gid, []), labtasks, art_title, uname)
+        tasks = group_tasks(uids_by_group.get(gid, []), labtasks, art_title)
         snap = {
             "group": name,
             "group_id": gid,
