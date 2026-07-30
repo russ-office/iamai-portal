@@ -55,14 +55,10 @@ h1 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .freq-row.zero .ct{color:var(--muted);font-weight:600}
 @media(max-width:560px){.freq-row{grid-template-columns:24px 76px 1fr 36px;gap:7px;font-size:11.5px}}
 
-/* Компания → команды — c-sheet--flush + c-task-row (канон); секция-обёртка.
-   .badge/.badge.col временно остались (renderGroup, Шаг 2 → c-chip). */
+/* Компания → команды — c-sheet--flush + c-task-row (канон); секция-обёртка. */
 .company{margin-top:28px}
 .company-h{display:flex;align-items:baseline;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
 .company-h b{color:var(--ink);font-family:var(--font-text);font-size:15px;letter-spacing:0;text-transform:none}
-.badge{display:inline-block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;
-  border-radius:var(--radius-sm);padding:3px 8px;white-space:nowrap;color:#7A4A1E;background:rgba(192,138,43,.14);border:1px solid rgba(192,138,43,.3)}
-.badge.col{color:#7A2E1E;background:rgba(217,84,47,.10);border-color:rgba(217,84,47,.3)}
 
 /* Мини-степпер T0→T7 */
 .step{display:inline-flex;gap:3px}
@@ -97,17 +93,14 @@ h1 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .metacard .row{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:5px 0;color:var(--ink-soft);border-bottom:1px solid var(--line)}
 .metacard .row:last-child{border-bottom:none} .metacard .row b{color:var(--ink)}
 
-/* Карточка бэклога/задачи (→ c-sheet на Шаге 2, R3=A) */
-.card{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:16px 20px;margin-bottom:12px;cursor:pointer;transition:background 120ms ease}
+/* Карточка бэклога — c-sheet (D1 из канона); здесь только layout */
+.card{padding:16px 20px;margin-bottom:12px;cursor:pointer;transition:background 120ms ease}
 .card:hover{background:rgba(28,26,23,.03)}
-.card.rec{border-left:3px solid var(--accent)}
 .card .top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
 .card h3{font-family:var(--font-text);font-size:16px;font-weight:600;line-height:1.35}
-.recbadge{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:4px}
 .desc{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin-top:5px}
 .meta{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:6px}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
-.chip{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--ink-soft);background:rgba(28,26,23,.05);border:1px solid var(--line);border-radius:var(--radius-sm);padding:4px 10px;white-space:nowrap}
 .tag{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--text-on-inverted);background:var(--status-ok);border-radius:var(--radius-sm);padding:4px 10px;white-space:nowrap}
 .hours{font-size:20px;font-weight:700;color:var(--accent);white-space:nowrap;text-align:right}
 .hours small{display:block;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
@@ -248,7 +241,7 @@ function recRank(list){
 }
 async function renderGroup(gid){
   const body=document.getElementById("body");
-  let d; try{d=await loadGroup(gid);}catch(e){body.innerHTML=`<div class="empty">Данные группы недоступны.</div>`;return;}
+  let d; try{d=await loadGroup(gid);}catch(e){body.innerHTML=`<div class="c-empty">Данные группы недоступны.</div>`;return;}
   const g=grp(gid)||{};
   const sum=d.threads.reduce((a,t)=>a+(t.hours_month||0),0);
   const sorted=[...d.threads].sort((a,b)=>(b.hours_month||0)-(a.hours_month||0));
@@ -258,21 +251,21 @@ async function renderGroup(gid){
     <div class="hint">${esc(g.client||d.client||"")} · цикл ${esc(d.cycle||"—")} · ${d.threads.length} проблем · ${n(sum)} ч/мес потенциал. Клик по задаче — вся цепочка этапов.</div>`;
   h+=sorted.map(t=>{
     const r=rec[t.thread_key];
-    const badge=r?`<div class="recbadge">★ Рекомендация №${r}</div>`:"";
     const chips=[];
-    if((t.ease||0)>0) chips.push(`<span class="chip">лёгкость ${t.ease}/5</span>`);
-    if(t.priority_quadrant) chips.push(`<span class="chip">${esc(t.priority_quadrant)}</span>`);
-    if(!t.hours_month) chips.push(`<span class="badge">⚠ проверить метрику</span>`);
-    if(col.has(t.thread_key)) chips.push(`<span class="badge col">коллизия ключа</span>`);
+    if(r) chips.push(`<span class="c-chip is-accent">Рекомендация №${r}</span>`);
+    if((t.ease||0)>0) chips.push(`<span class="c-chip is-quiet">лёгкость ${t.ease}/5</span>`);
+    if(t.priority_quadrant) chips.push(`<span class="c-chip">${esc(t.priority_quadrant)}</span>`);
+    if(!t.hours_month) chips.push(`<span class="c-chip is-accent">проверить метрику</span>`);
+    if(col.has(t.thread_key)) chips.push(`<span class="c-chip is-accent">коллизия ключа</span>`);
     const nreached=(t.reached||[]).length;
-    return `<div class="card${r?" rec":""}" data-t="${esc(t.thread_key)}">
-      <div class="top"><div>${badge}<h3>${esc(t.title)}</h3>
+    return `<div class="c-sheet c-sheet--pad card" data-t="${esc(t.thread_key)}">
+      <div class="top"><div><h3>${esc(t.title)}</h3>
         <div class="desc">${esc(clip(t.content,150))}</div>
         <div class="chips">${chips.join("")}</div>
         <div class="meta">${esc(t.thread_key)} · стадия: ${esc(t.stage)} · пройдено этапов: ${nreached} · вклад: ${t.edits}</div>
       </div><div class="hours c-num">${n(t.hours_month)}<small>ч / мес</small></div></div>
     </div>`;
-  }).join("")||`<div class="empty">Бэклог пуст.</div>`;
+  }).join("")||`<div class="c-empty">Бэклог пуст.</div>`;
   body.innerHTML=h;
 }
 
