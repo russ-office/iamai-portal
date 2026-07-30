@@ -4,7 +4,7 @@
  "client": "rec7kIMmwjZ6j3ahS",
  "cycle": "EVRIKA-BUH-F1-C1",
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
- "generated_at": "2026-07-29T22:55:18+05:00",
+ "generated_at": "2026-07-30T11:15:10+05:00",
  "threads": [
   {
    "thread_key": "EVRIKA_LAB_1_1_Acc-P6",
@@ -141,6 +141,40 @@
    "prototypes": []
   },
   {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P28",
+   "title": "Универсальный Парсер",
+   "content": "Парсер анализирующий позиции кат.менеджера/директора - с анализом цен, конкурентов. Результат парсинга в отдельный файл.\n",
+   "author_email": "sergei.k@evrika.com",
+   "contributors": [
+    "sergei.k@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "sergei.k@evrika.com",
+   "last_at": "2026-07-30 05:21",
+   "hours_month": 160,
+   "ease": 0,
+   "priority_quadrant": "",
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "reached": [
+    "T1_idea"
+   ],
+   "brief": [
+    {
+     "code": "T1_idea",
+     "text": "Парсер анализирующий позиции кат.менеджера/директора - с анализом цен, конкурентов. Результат парсинга в отдельный файл."
+    }
+   ],
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P28&p_title=%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80&p_content=%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8%20%D0%BA%D0%B0%D1%82.%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%2F%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0%20-%20%D1%81%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%BC%20%D1%86%D0%B5%D0%BD%2C%20%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.%20%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%20%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3%D0%B0%20%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BB.%0A&p_freq=8&p_time=60&p_emp=20",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P28&type=T2_task&p_title=%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80&p_content=%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%B8%20%D0%BA%D0%B0%D1%82.%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%2F%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0%20-%20%D1%81%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%BC%20%D1%86%D0%B5%D0%BD%2C%20%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.%20%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%20%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3%D0%B0%20%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BB.%0A&p_freq=8&p_time=60&p_emp=20",
+    "research": "",
+    "prototype": "",
+    "prd": ""
+   },
+   "prototypes": []
+  },
+  {
    "thread_key": "EVRIKA_LAB_1_1_Acc-P24",
    "title": "Восстановление отчетности за предыдущие годы",
    "content": "Необходимо восстановить отчетность за 2-3 года для отгрузки через загрузчик в биай отчет. Всего шаблонов 10, из них наиболее сложные и считаются вручную как минимум 2 вида отчетности (Аттестация так как подтягивается код аттестации, который мы смотрим вручную через выгрузку биай, дата прохождения по системе, так как не совпадение приведет к не корректному отображению отчетности; Внутренний тренер так как тут расчет выплат на каждого обученного сотрудника и расчет доли занимаемой сотрудником у тренера).\n",
@@ -168,6 +202,40 @@
    "links": {
     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P24&p_title=%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B8%D0%B5%20%D0%B3%D0%BE%D0%B4%D1%8B&p_content=%D0%9D%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%20%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B7%D0%B0%202-3%20%D0%B3%D0%BE%D0%B4%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%20%D0%B2%20%D0%B1%D0%B8%D0%B0%D0%B9%20%D0%BE%D1%82%D1%87%D0%B5%D1%82.%20%D0%92%D1%81%D0%B5%D0%B3%D0%BE%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2010%2C%20%D0%B8%D0%B7%20%D0%BD%D0%B8%D1%85%20%D0%BD%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B8%20%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BA%D0%B0%D0%BA%20%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D1%83%D0%BC%202%20%D0%B2%D0%B8%D0%B4%D0%B0%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%28%D0%90%D1%82%D1%82%D0%B5%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%B4%D1%82%D1%8F%D0%B3%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BA%D0%BE%D0%B4%20%D0%B0%D1%82%D1%82%D0%B5%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BC%D1%8B%20%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D0%BC%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83%20%D0%B1%D0%B8%D0%B0%D0%B9%2C%20%D0%B4%D0%B0%D1%82%D0%B0%20%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%2C%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D0%BD%D0%B5%20%D1%81%D0%BE%D0%B2%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D1%82%20%D0%BA%20%D0%BD%D0%B5%20%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%3B%20%D0%92%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9%20%D1%82%D1%80%D0%B5%D0%BD%D0%B5%D1%80%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D1%82%D1%83%D1%82%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%B4%D0%BE%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC%D0%BE%D0%B9%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%BC%20%D1%83%20%D1%82%D1%80%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%29.%0A&p_freq=30&p_time=200&p_emp=1.5",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P24&type=T2_task&p_title=%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B8%D0%B5%20%D0%B3%D0%BE%D0%B4%D1%8B&p_content=%D0%9D%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%20%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B7%D0%B0%202-3%20%D0%B3%D0%BE%D0%B4%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%20%D0%B2%20%D0%B1%D0%B8%D0%B0%D0%B9%20%D0%BE%D1%82%D1%87%D0%B5%D1%82.%20%D0%92%D1%81%D0%B5%D0%B3%D0%BE%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2010%2C%20%D0%B8%D0%B7%20%D0%BD%D0%B8%D1%85%20%D0%BD%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B8%20%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D0%BA%D0%B0%D0%BA%20%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D1%83%D0%BC%202%20%D0%B2%D0%B8%D0%B4%D0%B0%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%28%D0%90%D1%82%D1%82%D0%B5%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%B4%D1%82%D1%8F%D0%B3%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BA%D0%BE%D0%B4%20%D0%B0%D1%82%D1%82%D0%B5%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BC%D1%8B%20%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D0%BC%20%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B2%D1%8B%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83%20%D0%B1%D0%B8%D0%B0%D0%B9%2C%20%D0%B4%D0%B0%D1%82%D0%B0%20%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%2C%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D0%BD%D0%B5%20%D1%81%D0%BE%D0%B2%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D1%82%20%D0%BA%20%D0%BD%D0%B5%20%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%3B%20%D0%92%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9%20%D1%82%D1%80%D0%B5%D0%BD%D0%B5%D1%80%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D1%82%D1%83%D1%82%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%B4%D0%BE%D0%BB%D0%B8%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC%D0%BE%D0%B9%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%BC%20%D1%83%20%D1%82%D1%80%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%29.%0A&p_freq=30&p_time=200&p_emp=1.5",
+    "research": "",
+    "prototype": "",
+    "prd": ""
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P29",
+   "title": "Автоматизация распределения товаров между РЦ",
+   "content": "В случае если на одном РЦ количество товаров 0, на другом РЦ количество товаров 2+, уведомлять о необходимости производить перемещение.\n",
+   "author_email": "sergei.k@evrika.com",
+   "contributors": [
+    "sergei.k@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "sergei.k@evrika.com",
+   "last_at": "2026-07-30 05:23",
+   "hours_month": 106.66666666666667,
+   "ease": 0,
+   "priority_quadrant": "",
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "reached": [
+    "T1_idea"
+   ],
+   "brief": [
+    {
+     "code": "T1_idea",
+     "text": "В случае если на одном РЦ количество товаров 0, на другом РЦ количество товаров 2+, уведомлять о необходимости производить перемещение."
+    }
+   ],
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P29&p_title=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%A0%D0%A6&p_content=%D0%92%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B5%20%D0%B5%D1%81%D0%BB%D0%B8%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%A0%D0%A6%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%200%2C%20%D0%BD%D0%B0%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%20%D0%A0%D0%A6%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%202%2B%2C%20%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D1%8F%D1%82%D1%8C%20%D0%BE%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5.%0A&p_freq=8&p_time=40&p_emp=20",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P29&type=T2_task&p_title=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%A0%D0%A6&p_content=%D0%92%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B5%20%D0%B5%D1%81%D0%BB%D0%B8%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%A0%D0%A6%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%200%2C%20%D0%BD%D0%B0%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%BC%20%D0%A0%D0%A6%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%202%2B%2C%20%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D1%8F%D1%82%D1%8C%20%D0%BE%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5.%0A&p_freq=8&p_time=40&p_emp=20",
     "research": "",
     "prototype": "",
     "prd": ""
@@ -236,6 +304,74 @@
    "links": {
     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P21&p_title=%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B5%D0%B6%D0%B5%D0%BC%D0%B5%D1%81%D1%8F%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%20&p_content=%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%20%D0%BC%D1%8B%20%D0%BF%D0%B8%D1%88%D0%B5%D0%BC%20%D0%BA%D1%83%D1%80%D1%81%D1%8B%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0%D0%BC%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%B1%D1%83%D0%B4%D1%83%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.%20%D0%9D%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%20%D0%BC%D1%8B%20%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%BC%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%208-10%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BC%D1%83%20%D1%87%D1%82%D0%BE%20%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B4%D0%BE%20%D1%81%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B0%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D1%82%D1%8C%2C%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%2C%20%D0%BE%D1%82%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%2C%20%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%2C%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B2%20%D1%87%D0%B8%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC-%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B2%D0%B8%D0%B4%D0%B5.%20%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%20%D0%B8%20%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%8D%D1%82%D0%BE%20%D0%B2%D1%81%D0%B5%20%D0%B2%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83.%20%D0%A2%D0%B0%D0%BA%D0%B8%D1%85%20%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%205%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86.%0A&p_freq=5&p_time=480&p_emp=2",
     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P21&type=T2_task&p_title=%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B5%D0%B6%D0%B5%D0%BC%D0%B5%D1%81%D1%8F%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%20&p_content=%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%20%D0%BC%D1%8B%20%D0%BF%D0%B8%D1%88%D0%B5%D0%BC%20%D0%BA%D1%83%D1%80%D1%81%D1%8B%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0%D0%BC%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%B1%D1%83%D0%B4%D1%83%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.%20%D0%9D%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%20%D0%BC%D1%8B%20%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%BC%20%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%208-10%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BC%D1%83%20%D1%87%D1%82%D0%BE%20%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B4%D0%BE%20%D1%81%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B0%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D1%82%D1%8C%2C%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%2C%20%D0%BE%D1%82%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%2C%20%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%2C%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B2%20%D1%87%D0%B8%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC-%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B2%D0%B8%D0%B4%D0%B5.%20%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%20%D0%B8%20%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%8D%D1%82%D0%BE%20%D0%B2%D1%81%D0%B5%20%D0%B2%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83.%20%D0%A2%D0%B0%D0%BA%D0%B8%D1%85%20%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%205%20%D0%B2%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86.%0A&p_freq=5&p_time=480&p_emp=2",
+    "research": "",
+    "prototype": "",
+    "prd": ""
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P27",
+   "title": "Автоматизация отправки потребности",
+   "content": "Через Dashboard связанный с файлом \"Рабочее Место\", при нажатии кнопки \"потребность\", в отдельной папке формировать файлы с потребностью на уровне поставщика/бренда/SKU.\n",
+   "author_email": "sergei.k@evrika.com",
+   "contributors": [
+    "sergei.k@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "sergei.k@evrika.com",
+   "last_at": "2026-07-30 05:18",
+   "hours_month": 80,
+   "ease": 0,
+   "priority_quadrant": "",
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "reached": [
+    "T1_idea"
+   ],
+   "brief": [
+    {
+     "code": "T1_idea",
+     "text": "Через Dashboard связанный с файлом \"Рабочее Место\", при нажатии кнопки \"потребность\", в отдельной папке формировать файлы с потребностью на уровне поставщика/бренда/SKU."
+    }
+   ],
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P27&p_title=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8&p_content=%D0%A7%D0%B5%D1%80%D0%B5%D0%B7%20Dashboard%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%81%20%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%BC%20%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B5%20%D0%9C%D0%B5%D1%81%D1%82%D0%BE%22%2C%20%D0%BF%D1%80%D0%B8%20%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8%20%22%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D1%8C%22%2C%20%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B5%20%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%81%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%2F%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%D0%B0%2FSKU.%0A&p_freq=4&p_time=60&p_emp=20",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P27&type=T2_task&p_title=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8&p_content=%D0%A7%D0%B5%D1%80%D0%B5%D0%B7%20Dashboard%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%81%20%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%BC%20%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B5%20%D0%9C%D0%B5%D1%81%D1%82%D0%BE%22%2C%20%D0%BF%D1%80%D0%B8%20%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8%20%22%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D1%8C%22%2C%20%D0%B2%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%B0%D0%BF%D0%BA%D0%B5%20%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20%D1%81%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%2F%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%D0%B0%2FSKU.%0A&p_freq=4&p_time=60&p_emp=20",
+    "research": "",
+    "prototype": "",
+    "prd": ""
+   },
+   "prototypes": []
+  },
+  {
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P30",
+   "title": "Универсальный инструмент для Анализа",
+   "content": "Упрощения процессов по:  \nАнализ продаж за периоды  \nАнализ товарных категорий  \nАнализ товаров для закупа  \nАнализ новых товаров\n",
+   "author_email": "sergei.k@evrika.com",
+   "contributors": [
+    "sergei.k@evrika.com"
+   ],
+   "edits": 1,
+   "last_author": "sergei.k@evrika.com",
+   "last_at": "2026-07-30 05:25",
+   "hours_month": 80,
+   "ease": 0,
+   "priority_quadrant": "",
+   "stage": "Проблема",
+   "stage_code": "T1_idea",
+   "reached": [
+    "T1_idea"
+   ],
+   "brief": [
+    {
+     "code": "T1_idea",
+     "text": "Упрощения процессов по:  \nАнализ продаж за периоды  \nАнализ товарных категорий  \nАнализ товаров для закупа  \nАнализ новых товаров"
+    }
+   ],
+   "links": {
+    "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P30&p_title=%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0&p_content=%D0%A3%D0%BF%D1%80%D0%BE%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%BF%D0%BE%3A%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%B7%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D1%8B%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8B%D1%85%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B9%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%B0%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BD%D0%BE%D0%B2%D1%8B%D1%85%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%0A&p_freq=4&p_time=60&p_emp=20",
+    "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P30&type=T2_task&p_title=%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0&p_content=%D0%A3%D0%BF%D1%80%D0%BE%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%BF%D0%BE%3A%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%B7%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D1%8B%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8B%D1%85%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B9%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%B0%20%20%0A%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BD%D0%BE%D0%B2%D1%8B%D1%85%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%0A&p_freq=4&p_time=60&p_emp=20",
     "research": "",
     "prototype": "",
     "prd": ""

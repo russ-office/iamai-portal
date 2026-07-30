@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-29T22:55:19+05:00",
+ "generated_at": "2026-07-30T11:15:10+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -34,7 +34,7 @@
   {
    "code": "T1_idea",
    "label": "Проблема",
-   "count": 98
+   "count": 102
   },
   {
    "code": "T2_task",
@@ -76,7 +76,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 15,
+    "days_idle": 16,
     "done_7d": 0
    },
    "last_at": "2026-07-14 10:46",
@@ -124,7 +124,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 15,
+    "days_idle": 16,
     "done_7d": 0
    },
    "last_at": "2026-07-14 07:03",
@@ -205,7 +205,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 15,
+    "days_idle": 16,
     "done_7d": 0
    },
    "last_at": "2026-07-14 07:13",
@@ -342,7 +342,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 15,
+    "days_idle": 16,
     "done_7d": 0
    },
    "last_at": "2026-07-14 06:49",
@@ -390,7 +390,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 13,
+    "days_idle": 14,
     "done_7d": 0
    },
    "last_at": "2026-07-16 14:42",
@@ -460,7 +460,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 10,
+    "days_idle": 11,
     "done_7d": 0
    },
    "last_at": "2026-07-19 07:17",
@@ -519,8 +519,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 16
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-22 09:08",
    "stepper": {
@@ -721,8 +721,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 2
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-22 06:42",
    "stepper": {
@@ -769,8 +769,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 15
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-22 07:00",
    "stepper": {
@@ -960,8 +960,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 3
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-22 06:45",
    "stepper": {
@@ -1019,8 +1019,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 6
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-22 06:53",
    "stepper": {
@@ -1111,8 +1111,8 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 6,
-    "done_7d": 5
+    "days_idle": 7,
+    "done_7d": 1
    },
    "last_at": "2026-07-23 04:27",
    "stepper": {
@@ -1180,24 +1180,188 @@
    "tasks": []
   },
   {
+   "group": "Демо",
+   "group_id": "demo",
+   "client": "Демо",
+   "cycle": "1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?type=T1_idea",
+   "people": 6,
+   "threads": 5,
+   "backlog_count": 4,
+   "hours_month": 340.0,
+   "in_sprint": true,
+   "temp": {
+    "state": "bad",
+    "days_idle": 5,
+    "done_7d": 4
+   },
+   "last_at": "2026-07-25 11:00",
+   "stepper": {
+    "T1_idea": 5,
+    "T2_task": 1,
+    "T3_research": 1
+   },
+   "dirty_count": 0,
+   "orphan": true,
+   "backlog": [
+    {
+     "thread_key": "D-A",
+     "title": "Ручной перенос заявок из почты в CRM",
+     "hours_month": 120,
+     "ease": 1,
+     "recommendation": "big_hard",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-24 09:10",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-C",
+     "title": "Проверка договоров на типовые ошибки",
+     "hours_month": 60,
+     "ease": 4,
+     "recommendation": "small_easy",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 16:20",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-D",
+     "title": "Ежедневный отчёт по остаткам склада",
+     "hours_month": 40,
+     "ease": 5,
+     "recommendation": "small_easy",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-23 12:00",
+     "dirty": false
+    },
+    {
+     "thread_key": "D-E",
+     "title": "Ответы на частые вопросы клиентов в чате",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "small_hard",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 18:40",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_1_CorpGov",
+   "group_id": "recq40h3l2aTVnge5",
+   "client": "SZ",
+   "cycle": "SZ_Sprint_1-1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recq40h3l2aTVnge5&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_2_Adm",
+   "group_id": "rectNb6K7IojGTGdS",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_Adm-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rectNb6K7IojGTGdS&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_3_Sales",
+   "group_id": "reciKzjGJVFrhLmBo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_Sales-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_9_Acc",
+   "group_id": "recOKKQS1JJRlAAAi",
+   "client": "SZ",
+   "cycle": "",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "client": "EVRIKA",
    "cycle": "EVRIKA-BUH-F1-C1",
    "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
    "people": 19,
-   "threads": 25,
-   "backlog_count": 25,
-   "hours_month": 2426.8,
+   "threads": 29,
+   "backlog_count": 29,
+   "hours_month": 2853.4,
    "in_sprint": false,
    "temp": {
-    "state": "bad",
-    "days_idle": 5,
-    "done_7d": 25
+    "state": "ok",
+    "days_idle": 0,
+    "done_7d": 29
    },
-   "last_at": "2026-07-24 05:23",
+   "last_at": "2026-07-30 05:25",
    "stepper": {
-    "T1_idea": 25
+    "T1_idea": 29
    },
    "dirty_count": 1,
    "orphan": false,
@@ -1247,6 +1411,17 @@
      "dirty": false
     },
     {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P28",
+     "title": "Универсальный Парсер",
+     "hours_month": 160,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-30 05:21",
+     "dirty": false
+    },
+    {
      "thread_key": "EVRIKA_LAB_1_1_Acc-P24",
      "title": "Восстановление отчетности за предыдущие годы",
      "hours_month": 150,
@@ -1255,6 +1430,17 @@
      "stage": "Проблема",
      "stage_code": "T1_idea",
      "last_at": "2026-07-24 05:15",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P29",
+     "title": "Автоматизация распределения товаров между РЦ",
+     "hours_month": 106.66666666666667,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-30 05:23",
      "dirty": false
     },
     {
@@ -1277,6 +1463,28 @@
      "stage": "Проблема",
      "stage_code": "T1_idea",
      "last_at": "2026-07-24 05:05",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P27",
+     "title": "Автоматизация отправки потребности",
+     "hours_month": 80,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-30 05:18",
+     "dirty": false
+    },
+    {
+     "thread_key": "EVRIKA_LAB_1_1_Acc-P30",
+     "title": "Универсальный инструмент для Анализа",
+     "hours_month": 80,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-30 05:25",
      "dirty": false
     },
     {
@@ -1478,170 +1686,6 @@
      "dirty": true
     }
    ],
-   "tasks": []
-  },
-  {
-   "group": "Демо",
-   "group_id": "demo",
-   "client": "Демо",
-   "cycle": "1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?type=T1_idea",
-   "people": 6,
-   "threads": 5,
-   "backlog_count": 4,
-   "hours_month": 340.0,
-   "in_sprint": true,
-   "temp": {
-    "state": "bad",
-    "days_idle": 4,
-    "done_7d": 5
-   },
-   "last_at": "2026-07-25 11:00",
-   "stepper": {
-    "T1_idea": 5,
-    "T2_task": 1,
-    "T3_research": 1
-   },
-   "dirty_count": 0,
-   "orphan": true,
-   "backlog": [
-    {
-     "thread_key": "D-A",
-     "title": "Ручной перенос заявок из почты в CRM",
-     "hours_month": 120,
-     "ease": 1,
-     "recommendation": "big_hard",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-24 09:10",
-     "dirty": false
-    },
-    {
-     "thread_key": "D-C",
-     "title": "Проверка договоров на типовые ошибки",
-     "hours_month": 60,
-     "ease": 4,
-     "recommendation": "small_easy",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-23 16:20",
-     "dirty": false
-    },
-    {
-     "thread_key": "D-D",
-     "title": "Ежедневный отчёт по остаткам склада",
-     "hours_month": 40,
-     "ease": 5,
-     "recommendation": "small_easy",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-23 12:00",
-     "dirty": false
-    },
-    {
-     "thread_key": "D-E",
-     "title": "Ответы на частые вопросы клиентов в чате",
-     "hours_month": 30,
-     "ease": 2,
-     "recommendation": "small_hard",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 18:40",
-     "dirty": false
-    }
-   ],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_1_CorpGov",
-   "group_id": "recq40h3l2aTVnge5",
-   "client": "SZ",
-   "cycle": "SZ_Sprint_1-1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recq40h3l2aTVnge5&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_2_Adm",
-   "group_id": "rectNb6K7IojGTGdS",
-   "client": "SZ",
-   "cycle": "SZ_LAB_1_Adm-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rectNb6K7IojGTGdS&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_3_Sales",
-   "group_id": "reciKzjGJVFrhLmBo",
-   "client": "SZ",
-   "cycle": "SZ_LAB_Sales-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_9_Acc",
-   "group_id": "recOKKQS1JJRlAAAi",
-   "client": "SZ",
-   "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
    "tasks": []
   }
  ],

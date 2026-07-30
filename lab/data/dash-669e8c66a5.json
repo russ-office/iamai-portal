@@ -1,25 +1,25 @@
 {
  "client": "Evrika",
- "generated_at": "2026-07-29T22:55:18+05:00",
+ "generated_at": "2026-07-30T11:15:10+05:00",
  "kpi": {
   "groups": 1,
   "people": 19,
-  "threads": 25,
-  "hours_month": 2426.8,
-  "hours_year": 29121.6
+  "threads": 29,
+  "hours_month": 2853.4,
+  "hours_year": 34240.8
  },
  "groups": [
   {
    "group": "EVRIKA_LAB_1_1_Acc",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
-   "threads": 25,
+   "threads": 29,
    "people": 19,
-   "hours_month": 2426.8
+   "hours_month": 2853.4
   }
  ],
  "funnel": {
-  "Проблема": 25
+  "Проблема": 29
  },
  "top": [
   {
@@ -51,11 +51,25 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P15"
   },
   {
+   "title": "Универсальный Парсер",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 160,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P28"
+  },
+  {
    "title": "Восстановление отчетности за предыдущие годы",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 150,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P24"
+  },
+  {
+   "title": "Автоматизация распределения товаров между РЦ",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 106.66666666666667,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P29"
   },
   {
    "title": "Фильтры по приоритетности заказов в 1С и WMS",
@@ -72,39 +86,25 @@
    "thread_key": "EVRIKA_LAB_1_1_Acc-P21"
   },
   {
+   "title": "Автоматизация отправки потребности",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P27"
+  },
+  {
+   "title": "Универсальный инструмент для Анализа",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "hours_month": 80,
+   "stage": "Проблема",
+   "thread_key": "EVRIKA_LAB_1_1_Acc-P30"
+  },
+  {
    "title": "Балансировка стока между складами",
    "group": "EVRIKA_LAB_1_1_Acc",
    "hours_month": 67.5,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P11"
-  },
-  {
-   "title": "Просмотр резюме",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 55,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P18"
-  },
-  {
-   "title": "Автоматизация организации мероприятий",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 50,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P26"
-  },
-  {
-   "title": "Поиск поставщиков",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 40,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P23"
-  },
-  {
-   "title": "чтение ",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "hours_month": 30,
-   "stage": "Проблема",
-   "thread_key": "EVRIKA_LAB_1_1_Acc-P2"
   }
  ],
  "board": [
@@ -128,6 +128,13 @@
    "ideas": 1,
    "hours_month": 472.5,
    "rows": 1
+  },
+  {
+   "email": "sergei.k@evrika.com",
+   "group": "EVRIKA_LAB_1_1_Acc",
+   "ideas": 5,
+   "hours_month": 427.0,
+   "rows": 5
   },
   {
    "email": "sofya.s@evrika.com",
@@ -183,13 +190,6 @@
    "group": "EVRIKA_LAB_1_1_Acc",
    "ideas": 1,
    "hours_month": 25,
-   "rows": 1
-  },
-  {
-   "email": "azhar.m@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
-   "ideas": 1,
-   "hours_month": 23.333333333333332,
    "rows": 1
   }
  ]
