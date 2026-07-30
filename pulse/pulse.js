@@ -203,6 +203,8 @@
     var geoParts = [D.profile.city_residence, D.profile.country].filter(Boolean).join(" · ");
     var devParts = [D.profile.os, D.profile.device].filter(Boolean).join(" · ");
     var geoHTML = [geoParts, devParts].filter(Boolean).join("<br>");
+    // Demo Day = событие kind=demo_day из снапшота (не хардкод). Нет события — блок не нужен.
+    var demo = D.events.filter(function (e) { return e.kind === "demo_day"; })[0];
 
     body.innerHTML =
       '<div class="p-wrap">' +
@@ -215,7 +217,6 @@
               '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
               '<span class="p-cover__status-meta">' + esc(slMeta) + '</span>' +
             '</div>' +
-            '<div class="p-note">«Прототип закрыт, интервью в работе — держим темп до Demo Day.»</div>' +
           '</div>' +
           '<div class="p-illus"><span>иллюстрация</span></div>' +
         '</div>' +
@@ -229,7 +230,7 @@
               '<div class="p-sprint__head"><span class="p-sprint__name">' + esc(cycle ? cycle.title : "Цикл") + '</span><span class="p-sprint__meta">2 недели</span></div>' +
               '<div class="p-sprint__range">' + (cycle ? esc(U.fmtDay(cycle.start)) + ' — ' + esc(U.fmtDay(cycle.end)) : '') + '</div>' +
               stageBarHTML("", day / 14, "День " + day + " / 14") +
-              '<div class="p-sprint__demo">Demo Day ' + esc(U.fmtDay("2026-07-24")) + '</div>' +
+              (demo ? '<div class="p-sprint__demo">' + esc(U.kindLabel(demo.kind)) + ' ' + esc(U.fmtDay(demo.start)) + '</div>' : '') +
             '</div></div>' +
         '</div>' +
 
@@ -714,14 +715,14 @@
     var range = cyc ? U.fmtDay(cyc.start) + "–" + U.fmtDay(cyc.end) : "";
     var M = {
       person:      { title: "Мой Пульс",   eyebrow: D.subject.client + " · " + D.subject.group,           action: updatedAction(D) },
-      list:        { title: "Бэклог",       eyebrow: "ARTIFACTS · T0 / T1",                                 action: backlogAction() },
-      overview:    { title: "Спринт",       eyebrow: "CYCLE " + D.sprint_no + " · " + range,                action: updatedAction(D) },
-      calendar:    { title: "Календарь",    eyebrow: "SESSIONS + CYCLES + LABTASKS",                        action: updatedAction(D) },
+      list:        { title: "Бэклог",       eyebrow: "",                                 action: backlogAction() },
+      overview:    { title: "Спринт",       eyebrow: "Цикл " + D.sprint_no + " · " + range,                action: updatedAction(D) },
+      calendar:    { title: "Календарь",    eyebrow: "",                        action: updatedAction(D) },
       tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: taskAction() },
-      library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ · LMS",                              action: "" },
+      library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },
       marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
-      leaderboard: { title: "Leaderboard",  eyebrow: "ПРОИЗВОДНОЕ · GROUPMEMBERSHIP + ARTIFACTS",           action: updatedAction(D) },
+      leaderboard: { title: "Leaderboard",  eyebrow: "",           action: updatedAction(D) },
     };
     return M[view] || { title: view, eyebrow: "", action: updatedAction(D) };
   }
