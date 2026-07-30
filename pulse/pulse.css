@@ -3,11 +3,13 @@
    --shadow-d1. Zero custom box-shadow → neumorphism impossible by construction.
    Terracotta stays on action / active / bad / stage-bar fill only (canon). */
 
-/* Page column inside c-shell__body */
-.p-wrap { max-width: 900px; display: flex; flex-direction: column; gap: 28px; }
-.p-wrap--wide { max-width: 900px; }
-.p-wrap--narrow { max-width: 760px; }
-.p-wrap--list { max-width: 860px; }
+/* Page column inside c-shell__body.
+   §7 (redesign): контейнер на всю ширину c-shell__main — раньше max-width 900px
+   давал «правую границу ~3/4». main и так flex:1 (viewport − rail); limit был здесь. */
+.p-wrap { max-width: none; display: flex; flex-direction: column; gap: 28px; }
+.p-wrap--wide { max-width: none; }
+.p-wrap--narrow { max-width: none; }
+.p-wrap--list { max-width: none; }
 
 /* Mono section eyebrow (uses tokens only) */
 .p-section {
@@ -55,7 +57,9 @@
 .p-profile__tags { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 
 /* Backlog cards (page-list · Бэклог) — cards, not a table (decision 2026-07-20) */
-.p-backlog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.p-backlog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+/* §7: 3 колонки на широкой; сужаем до 2 на средних (на 720px → 1 колонка, см. ниже). */
+@media (max-width: 1000px) { .p-backlog-grid { grid-template-columns: repeat(2, 1fr); } }
 .p-backlog-card { display: flex; flex-direction: column; gap: 10px; }
 .p-backlog-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .p-backlog-card__title { font-size: 15px; font-weight: 600; line-height: 1.3; }
