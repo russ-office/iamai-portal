@@ -105,9 +105,7 @@ h1 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .hours{font-size:20px;font-weight:700;color:var(--accent);white-space:nowrap;text-align:right}
 .hours small{display:block;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 
-.card2{background:var(--surface);border:1px solid var(--line);border-top:1px solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-d1);padding:20px 22px}
-.empty{text-align:center;padding:46px 20px;color:var(--muted);font-family:var(--font-mono);font-size:13px;line-height:1.6}
-.empty b{color:var(--ink-soft)}
+/* .card2/.empty убраны — c-sheet/c-empty канон */
 h2{font-family:var(--font-text);font-weight:300;font-size:20px;letter-spacing:-.01em;margin:20px 0 6px}
 h2 em{font-family:var(--font-accent);font-style:italic;color:var(--accent)}
 .hint{font-size:13px;color:var(--ink-soft);margin:4px 0 10px;line-height:1.55}
@@ -313,18 +311,19 @@ function renderTasks(){
   const gs=visGroups();
   const companies=DATA.clients.filter(c=>c!=="Демо");
   const total=gs.reduce((s,g)=>s+((g.tasks||[]).length),0);
-  let h=`<h2>Задачи <em>по командам</em></h2>
+  const SL={bad:"Плохо",warn:"Так себе",ok:"Хорошо",none:"Нет данных"};
+  let h=`<h2>Задачи по командам</h2>
     <div class="hint">Операционные задачи участников (LabTasks: К выполнению → В работе → Готово), сгруппированы компания → команда и связаны с бэклогом/пайплайном.</div>`;
   if(!total){
-    h+=`<div class="card2 empty" style="text-align:left"><b>Задач пока нет.</b><br>
+    h+=`<div class="c-sheet c-sheet--pad" style="text-align:left"><b>Задач пока нет.</b><br>
       Форма задач разблокирована (рельс поднят) — когда участники начнут ставить задачи через Пульс,
       они появятся здесь с привязкой к бэклогу и этапу. Структура (компания → команда) готова.</div>`;
     // покажем скелет группировки, чтобы было видно охват
     companies.forEach(co=>{
       const teams=gs.filter(g=>g.client===co);
-      h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b> · ${teams.length} команд · 0 задач</div>`;
-      h+=teams.map(g=>`<div class="team"><span class="dot ${g.temp.state}"></span><span class="nm">${esc(g.group)}</span><span class="mt">задач нет</span></div>`).join("");
-      h+=`</div>`;
+      h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b> · ${teams.length} команд · 0 задач</div><div class="c-sheet c-sheet--flush">`;
+      h+=teams.map(g=>`<div class="c-task-row"><span class="c-status-dot" data-state="${esc(g.temp.state)}" role="img" aria-label="${esc(SL[g.temp.state]||g.temp.state)}"></span><div class="c-task-row__main"><div class="c-task-row__title">${esc(g.group)}</div><div class="c-task-row__meta">задач нет</div></div></div>`).join("");
+      h+=`</div></div>`;
     });
     return h;
   }
@@ -334,9 +333,15 @@ function renderTasks(){
     if(!teams.length) return;
     h+=`<div class="company"><div class="company-h"><b>${esc(co)}</b></div>`;
     teams.forEach(g=>{
-      h+=`<div class="meta" style="margin:8px 0 4px;font-weight:700;color:var(--ink)">${esc(g.group)}</div>`;
-      h+=(g.tasks||[]).map(t=>`<div class="card2" style="margin-bottom:8px"><b>${esc(t.title||t.thread_key)}</b>
-        <div class="meta">${esc(t.status||"todo")}${t.artifact?" · задача: "+esc(t.artifact):""}</div></div>`).join("");
+      h+=`<div class="meta" style="margin:8px 0 4px;font-weight:700;color:var(--ink)">${esc(g.group)}</div><div class="c-sheet c-sheet--flush">`;
+      h+=(g.tasks||[]).map(t=>{
+        const st=t.status==="done"?"ok":t.status==="doing"?"warn":"none";
+        const lab=t.status==="done"?"Готово":t.status==="doing"?"В работе":"К выполнению";
+        return `<div class="c-task-row"><span class="c-status-dot" data-state="${st}" role="img" aria-label="${lab}"></span>
+          <div class="c-task-row__main"><div class="c-task-row__title">${esc(t.title||t.thread_key)}</div>
+            <div class="c-task-row__meta">${lab}${t.artifact?" · "+esc(t.artifact):""}</div></div></div>`;
+      }).join("");
+      h+=`</div>`;
     });
     h+=`</div>`;
   });
@@ -349,8 +354,8 @@ async function render(){
   crumb();
   const body=document.getElementById("body");
   if(TAB==="tasks"){body.innerHTML=renderTasks();return;}
-  if(NAV.l==="group"){body.innerHTML=`<div class="empty">Загрузка…</div>`;await renderGroup(NAV.gid);return;}
-  if(NAV.l==="thread"){body.innerHTML=`<div class="empty">Загрузка…</div>`;await renderThread(NAV.gid,NAV.tk);return;}
+  if(NAV.l==="group"){body.innerHTML=`<div class="c-empty">Загрузка…</div>`;await renderGroup(NAV.gid);return;}
+  if(NAV.l==="thread"){body.innerHTML=`<div class="c-empty">Загрузка…</div>`;await renderThread(NAV.gid,NAV.tk);return;}
   body.innerHTML=renderOverview();
 }
 
