@@ -36,6 +36,15 @@
 .p-illus { width: 220px; flex: none; display: flex; align-items: center; justify-content: center; background: var(--paper); border: 1px dashed var(--line); border-radius: var(--radius); }
 .p-illus span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
+/* Шапка person (redesign §2): одна строка — привет слева + статус справа.
+   p-cover/p-illus/eyebrow-дата убраны; дата+спринт → footer. */
+.p-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.p-head__title { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -.015em; }
+.p-head__status { display: flex; align-items: center; gap: 9px; }
+/* Footer (redesign §6): дата + № спринта, ярче/крупнее */
+.p-foot { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.p-foot__sprint { font-weight: 700; color: var(--ink); }
+
 /* Calendar / sprint rows inside a sheet */
 .p-cal-row { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 14px; border-bottom: 1px solid var(--line); }
 .p-cal-row:last-child { border-bottom: none; }

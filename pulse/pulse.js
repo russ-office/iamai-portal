@@ -208,18 +208,13 @@
 
     body.innerHTML =
       '<div class="p-wrap">' +
-        // 1 · Обложка
-        '<div class="p-cover">' +
-          '<div class="p-cover__main">' +
-            '<div class="p-cover__eyebrow">' + esc(U.fmtDate(D.today)) + ' · Спринт №' + esc(D.sprint_no) + '</div>' +
-            '<h1 class="p-cover__title">Привет, ' + esc(first) + '</h1>' +
-            '<div class="p-cover__status">' + dot(light.state, light.label) +
-              '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
-              '<span class="p-cover__status-meta">' + esc(slMeta) + '</span>' +
-            '</div>' +
+        // 1 · Шапка (одна строка: привет + статус) — redesign §2 (p-cover/p-illus/eyebrow-дата убраны)
+        '<header class="p-head">' +
+          '<h1 class="p-head__title">Привет, ' + esc(first) + '</h1>' +
+          '<div class="p-head__status">' + dot(light.state, light.label) +
+            '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
           '</div>' +
-          '<div class="p-illus"><span>иллюстрация</span></div>' +
-        '</div>' +
+        '</header>' +
 
         // 2 · Календарь · Текущий спринт
         '<div class="p-grid-2">' +
@@ -258,6 +253,9 @@
           '</div>' +
           (skills ? '<div class="p-profile__tags">' + skills + '</div>' : '') +
         '</div></div>' +
+
+        // Footer — дата + № спринта (из шапки, ярче) — redesign §6
+        '<footer class="p-foot"><span>' + esc(U.fmtDate(D.today)) + '</span><span class="p-foot__sprint">Спринт №' + esc(D.sprint_no) + '</span></footer>' +
       '</div>';
 
     wireTaskRows(body, D);
