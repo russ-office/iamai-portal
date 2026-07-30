@@ -148,7 +148,12 @@
             '<div class="c-page-head__titles">' +
               (meta.eyebrow ? '<span class="c-page-head__eyebrow">' + esc(meta.eyebrow) + '</span>' : '') +
               '<span class="c-page-head__title">' + esc(meta.title) + '</span>' +
-            '</div>' + (meta.action || '') +
+            '</div>' +
+            '<div class="c-page-head__right">' +
+              '<span class="c-page-head__sprint">Спринт №' + esc(D.sprint_no) + '</span>' +
+              '<span class="c-page-head__date">' + esc(U.fmtDate(D.today)) + '</span>' +
+              (meta.action ? '<span class="c-page-head__action">' + meta.action + '</span>' : '') +
+            '</div>' +
           '</header>' +
           '<main class="c-shell__body"><div id="p-body"></div></main>' +
         '</div>' +
@@ -269,14 +274,16 @@
 
     body.innerHTML =
       '<div class="p-wrap">' +
-        // 1 · Шапка (одна строка: привет + статус) — redesign §2 (p-cover/p-illus/eyebrow-дата убраны)
-        '<header class="p-head">' +
-          '<h1 class="p-head__title">Привет, ' + esc(first) + '</h1>' +
-          '<div class="p-head__status">' + dot(light.state, light.label) +
-            '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
+        // K9 · Person-шапка: приветствие + статус (справа от него) + цитата (правый край), одна линия.
+        '<header class="p-head p-head--row">' +
+          '<div class="p-head__left">' +
+            '<h1 class="p-head__title">Привет, ' + esc(first) + '</h1>' +
+            '<div class="p-head__status">' + dot(light.state, light.label) +
+              '<span class="p-cover__status-label">' + esc(light.label) + '</span>' +
+            '</div>' +
           '</div>' +
+          (q ? '<div class="p-head__quote"><span class="p-head__quote-text">«' + esc(q.text) + '»</span><span class="p-head__quote-author">' + esc(q.author) + '</span></div>' : '') +
         '</header>' +
-        (q ? '<div class="p-note">«' + esc(q.text) + '» — ' + esc(q.author) + '</div>' : '') +
         snap +
         floor2 +
 
@@ -288,9 +295,6 @@
           '<div><div class="p-section">Задачи · текущие</div>' +
             '<div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
         '</div>' +
-
-        // Footer — дата + № спринта (из шапки, ярче) — redesign §6
-        '<footer class="p-foot"><span>' + esc(U.fmtDate(D.today)) + '</span><span class="p-foot__sprint">Спринт №' + esc(D.sprint_no) + '</span></footer>' +
       '</div>';
 
     wireTaskRows(body, D);

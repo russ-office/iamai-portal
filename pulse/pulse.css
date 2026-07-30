@@ -45,6 +45,21 @@
 .p-foot { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .p-foot__sprint { font-weight: 700; color: var(--ink); }
 
+/* K9 · c-page-head: одна линия — название ALL CAPS слева + № спринта/дата справа (redesign §1). */
+.c-page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 0 0 14px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.c-page-head__titles { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.c-page-head__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.c-page-head__title { font-size: 22px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.c-page-head__right { display: flex; align-items: baseline; gap: 14px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.c-page-head__sprint { font-weight: 700; color: var(--ink); }
+.c-page-head__action { display: inline-flex; }
+/* K9 · Person-шапка: приветствие+статус слева, цитата правый край (одна линия). */
+.p-head--row { align-items: center; }
+.p-head__left { display: flex; align-items: baseline; gap: 16px; min-width: 0; }
+.p-head__quote { margin-left: auto; text-align: right; max-width: 46%; }
+.p-head__quote-text { font-family: var(--font-accent); font-style: italic; font-size: 15px; color: var(--ink); line-height: 1.4; }
+.p-head__quote-author { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+
 /* Calendar / sprint rows inside a sheet */
 .p-cal-row { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 14px; border-bottom: 1px solid var(--line); }
 .p-cal-row:last-child { border-bottom: none; }
