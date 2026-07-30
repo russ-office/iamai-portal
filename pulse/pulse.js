@@ -15,7 +15,7 @@
     statusLight: function (s) { var st = s.state; var L = { ok: "Хорошо", warn: "Так себе", bad: "Плохо", none: "Нет данных" }; return { state: st, label: L[st] || "Нет данных" }; },
     taskStatus: function (t) { return t === "done" ? "ok" : t === "doing" ? "warn" : "none"; },
     taskLabel:  function (t) { return t === "done" ? "Готово" : t === "doing" ? "В работе" : "К выполнению"; },
-    kindLabel:  function (k) { return ({ demo_day: "Demo Day", session: "Сессия", other: "Цикл" })[k] || "Событие"; },
+    kindLabel:  function (k) { return ({ demo_day: "Demo Day", session: "Сессия", other: "Спринт" })[k] || "Событие"; },  // K8: «Цикл»→«Спринт» (terminology; DB cycle* не трогаем)
   };
 
   // ── helpers ────────────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@
     { id: "library",     label: "Библиотека",  href: "page-list.html?view=library",      state: "active" },
     { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "active" },
     { id: "guides",      label: "Инструкции",  href: "page-guides.html",                 state: "active" },
-    { id: "history",     label: "История",     state: "soon" },
+    { id: "chat",        label: "Чат",         state: "chat" },  // K8: История→Чат (Ruslan; фаза1=«сообщить о проблеме»=feedbackUrl, фаза2=чаты с ботом)
   ];
 
   // Ротация цитат для p-note (redesign §8, контент от Cleo coord 10:44).
@@ -124,13 +124,15 @@
       var soon = n.state === "soon";
       var cls = "c-nav-item" + (view === n.id ? " is-active" : "") + (soon ? " is-soon" : "");
       if (soon) return '<span class="' + cls + '" title="Появится позже / база не подключена"><span>' + esc(n.label) + '</span></span>';
+      // K8: Чат (фаза1) = «сообщить о проблеме» (feedbackUrl, внешняя Airtable-форма, новая вкладка).
+      if (n.state === "chat") return '<a class="' + cls + '" href="' + esc(feedbackUrl) + '" target="_blank" rel="noopener" title="Сообщить о проблеме или идее"><span>' + esc(n.label) + '</span></a>';
       return '<a class="' + cls + '" href="' + esc(withTok(n.href)) + '"><span>' + esc(n.label) + '</span></a>';
     }).join("");
 
     return '' +
       '<div class="c-shell">' +
         '<aside class="c-shell__rail">' +
-          '<a class="c-shell__brand" href="' + esc(withTok("page-person.html")) + '" style="text-decoration:none;cursor:pointer" title="На стартовую (Мой Пульс)"><b>MateOS</b><span>ПУЛЬС</span></a>' +
+          '<a class="c-shell__brand" href="' + esc(withTok("page-person.html")) + '" style="text-decoration:none;cursor:pointer;display:inline-flex;align-items:center" title="На стартовую (Мой Пульс)"><img src="assets/mateos_logo.png" srcset="assets/mateos_logo@3x.png 3x" alt="MateOS Пульс" style="height:30px;width:auto;display:block"></a>' +  // K8: лого вместо текста (Ruslan §D)
           '<nav class="c-nav">' + nav + '</nav>' +
           '<div class="c-nav__foot">' +
             '<a href="' + esc(withTok("page-person.html")) + '" style="display:flex;align-items:center;gap:10px;text-decoration:none">' +
@@ -138,7 +140,7 @@
               '<span style="min-width:0"><span style="display:block;font-size:12px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(D.subject.name) + '</span>' +
               '<span style="display:block;font-family:var(--font-mono);font-size:10px;color:var(--muted)">' + esc(D.subject.client) + ' · ' + esc(D.subject.group) + '</span></span>' +
             '</a>' +
-            '<a href="' + esc(feedbackUrl) + '" target="_blank" rel="noopener" style="display:block;margin-top:10px;font-size:11px;color:var(--muted);text-decoration:none;text-align:center" title="Сообщить о проблеме или идее по MateOS">Сообщить о проблеме</a>' +
+            updatedAction(D) +  // K8 §2: время обновления под юзер-блоком; «Сообщить о проблеме» → Чат (NAV)
           '</div>' +
         '</aside>' +
         '<div class="c-shell__main">' +
@@ -755,17 +757,17 @@
     var cyc = D.events.filter(function (e) { return e.all_day; })[0];
     var range = cyc ? U.fmtDay(cyc.start) + "–" + U.fmtDay(cyc.end) : "";
     var M = {
-      person:      { title: "Мой Пульс",   eyebrow: D.subject.client + " · " + D.subject.group,           action: updatedAction(D) },
+      person:      { title: "Мой Пульс",   eyebrow: D.subject.client + " · " + D.subject.group,           action: "" },
       list:        { title: "Бэклог",       eyebrow: "",                                 action: backlogAction() },
-      overview:    { title: "Спринт",       eyebrow: "Цикл " + D.sprint_no + " · " + range,                action: updatedAction(D) },
-      calendar:    { title: "Календарь",    eyebrow: "",                        action: updatedAction(D) },
+      overview:    { title: "Спринт",       eyebrow: "Спринт " + D.sprint_no + " · " + range,             action: "" },  // K8: «Цикл»→«Спринт»
+      calendar:    { title: "Календарь",    eyebrow: "",                        action: "" },
       tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: taskAction() },
       library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },
       marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
-      leaderboard: { title: "Leaderboard",  eyebrow: "",           action: updatedAction(D) },
+      leaderboard: { title: "Leaderboard",  eyebrow: "",           action: "" },
     };
-    return M[view] || { title: view, eyebrow: "", action: updatedAction(D) };
+    return M[view] || { title: view, eyebrow: "", action: "" };
   }
 
   function mount(view) {
