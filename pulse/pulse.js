@@ -200,11 +200,6 @@
   // ── views ──────────────────────────────────────────────────────────────────
   function renderPerson(body, D) {
     var light = U.statusLight(D.status_light);
-    var slMeta = (D.status_light.state === "none" || D.status_light.days_idle == null)
-      ? "· нет недавней активности"
-      : "· без простоя " + D.status_light.days_idle + "д · " + D.status_light.done_7d + " готово за 7д";
-    var cycle = D.events.filter(function (e) { return e.all_day; })[0];
-    var day = cycle ? U.daysBetween(cycle.start, D.today) + 1 : 1;
     var first = (D.subject.name || "").split(" ")[0];
 
     var calRows = D.events.filter(function (e) { return !e.all_day; }).map(function (e) {
@@ -223,22 +218,6 @@
 
     var tasks = D.tasks.map(taskRowHTML).join("");
 
-    var threads = D.metrics.threads.length ? D.metrics.threads.map(function (th, i) {
-      var last = i === D.metrics.threads.length - 1;
-      var h = Math.round((th.hours || 0) * 10) / 10;
-      return '<div style="margin-bottom:' + (last ? 0 : 16) + 'px">' +
-             stageBarHTML(th.thread, th.progress, h + " ч · " + Math.round(th.progress * 100) + "%") + '</div>';
-    }).join("") : '<div class="c-empty">Пока нет тредов</div>';
-
-    var tagArr = (D.profile.skills || []).map(function (s) { return '<span class="c-chip">' + esc(s) + '</span>'; });
-    if (D.profile.work_style) tagArr.push('<span class="c-chip is-quiet">' + esc(D.profile.work_style) + '</span>');
-    if (D.profile.format_pref) tagArr.push('<span class="c-chip is-quiet">' + esc(D.profile.format_pref) + '</span>');
-    var skills = tagArr.join("");
-    var geoParts = [D.profile.city_residence, D.profile.country].filter(Boolean).join(" · ");
-    var devParts = [D.profile.os, D.profile.device].filter(Boolean).join(" · ");
-    var geoHTML = [geoParts, devParts].filter(Boolean).join("<br>");
-    // Demo Day = событие kind=demo_day из снапшота (не хардкод). Нет события — блок не нужен.
-    var demo = D.events.filter(function (e) { return e.kind === "demo_day"; })[0];
     var q = pickQuote();  // ротация цитат p-note (redesign §8)
 
     // §E · Этаж 1 — инфографика (redesign §3): Бэклог · В работе · Сделано (25/50/25).
@@ -299,40 +278,14 @@
         snap +
         floor2 +
 
-        // 2 · Календарь · Текущий спринт
+        // K5/K6 · Календарь (LEFT) + Задачи (RIGHT). «Текущий спринт» убран — спринт живёт в
+        // этаже-1 (K3 «В работе»), не дублируем (Ruslan 31.07). Треды/вклад/профиль убраны (K6).
         '<div class="p-grid-2">' +
           '<div><div class="p-section">Календарь · ближайшее</div>' +
             '<div class="c-sheet c-sheet--flush">' + (calRows || '<div class="c-empty">Нет ближайших событий</div>') + '</div></div>' +
-          '<div><div class="p-section">Текущий спринт</div>' +
-            '<div class="c-sheet c-sheet--pad">' +
-              '<div class="p-sprint__head"><span class="p-sprint__name">' + esc(cycle ? cycle.title : "Цикл") + '</span><span class="p-sprint__meta">2 недели</span></div>' +
-              '<div class="p-sprint__range">' + (cycle ? esc(U.fmtDay(cycle.start)) + ' — ' + esc(U.fmtDay(cycle.end)) : '') + '</div>' +
-              stageBarHTML("", day / 14, "День " + day + " / 14") +
-              (demo ? '<div class="p-sprint__demo">' + esc(U.kindLabel(demo.kind)) + ' ' + esc(U.fmtDay(demo.start)) + '</div>' : '') +
-            '</div></div>' +
+          '<div><div class="p-section">Задачи · текущие</div>' +
+            '<div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
         '</div>' +
-
-        // 4 · To-Do (c-task-row) — список задач; K5 переезжает в «задачи списком» справа от календаря
-        '<div><div class="p-section">To-Do · текущие задачи</div><div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
-
-        // 5 · Треды · вклад
-        '<div class="p-grid-2">' +
-          '<div><div class="p-section">Треды · экономия часов</div><div class="c-sheet c-sheet--pad">' + threads + '</div></div>' +
-          '<div><div class="p-section">Вклад</div><div class="c-sheet c-sheet--pad">' +
-            '<div class="p-metric-row">' +
-              '<div class="c-metric"><span class="c-metric__value c-num">' + esc(D.metrics.total_hours) + '</span><span class="c-metric__label">часов / мес</span></div>' +
-            '</div>' +
-          '</div></div>' +
-        '</div>' +
-
-        // Профиль
-        '<div><div class="p-section">Профиль</div><div class="c-sheet c-sheet--pad">' +
-          '<div class="p-profile__row">' + avatar(D.profile.name, 44) +
-            '<div style="flex:1"><div class="p-profile__name">' + esc(D.profile.name) + '</div><div class="p-profile__role">' + esc(D.profile.role || D.profile.group || "") + '</div></div>' +
-            (geoHTML ? '<div class="p-profile__geo">' + geoHTML + '</div>' : '') +
-          '</div>' +
-          (skills ? '<div class="p-profile__tags">' + skills + '</div>' : '') +
-        '</div></div>' +
 
         // Footer — дата + № спринта (из шапки, ярче) — redesign §6
         '<footer class="p-foot"><span>' + esc(U.fmtDate(D.today)) + '</span><span class="p-foot__sprint">Спринт №' + esc(D.sprint_no) + '</span></footer>' +
@@ -545,9 +498,7 @@
     fetch(url + "?ts=" + Date.now())
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (J) {
-        var items = J.items || [], state = { scope: "", tag: "" };
-        var tset = {}; items.forEach(function (x) { (x.tags || []).forEach(function (t) { tset[t] = 1; }); });
-        var tags = Object.keys(tset);
+        var items = J.items || [], state = { scope: "" };
         function card(x) {
           return '<div class="c-sheet c-sheet--pad p-backlog-card p-guide-card" role="button" tabindex="0" data-cat="' + esc(x.id) + '">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(x.title) + '</span>' +
@@ -559,19 +510,17 @@
         function draw() {
           var shown = items.filter(function (x) {
             if (state.scope && (x.scope || "") !== state.scope) return false;
-            if (state.tag && (x.tags || []).indexOf(state.tag) < 0) return false;
             return true;
           });
           var sc = (opts.scopes || []).map(function (s) { return '<button type="button" class="c-chip ' + (state.scope === s.key ? "is-accent" : "is-quiet") + '" data-scope="' + esc(s.key) + '">' + esc(s.label) + '</button>'; }).join("");
-          var tc = tags.map(function (t) { return '<button type="button" class="c-chip ' + (state.tag === t ? "is-accent" : "is-quiet") + '" data-tag="' + esc(t) + '">' + esc(t) + '</button>'; }).join("");
-          var bar = (sc || tc) ? '<div class="p-badges" style="margin-bottom:16px">' + sc + tc + '</div>' : "";
+          // K6 · tag-фильтр убран (Ruslan 31.07: теги маркетплейса убрать). scope (Свои/Чужие) остаётся.
+          var bar = sc ? '<div class="p-badges" style="margin-bottom:16px">' + sc + '</div>' : "";
           var grid = shown.length ? '<div class="p-backlog-grid">' + shown.map(card).join("") + '</div>'
             : '<div class="c-sheet c-sheet--flush"><div class="c-empty">' + esc(items.length ? "Ничего не найдено по фильтру." : opts.empty) + '</div></div>';
           body.innerHTML = '<div class="p-wrap--list">' +
             '<div class="c-filter-bar" style="margin-bottom:16px"><span class="c-filter-bar__count">' +
               (items.length ? items.length + ' · ' + esc(opts.count) : esc(opts.empty_count)) + '</span></div>' + bar + grid + '</div>';
           body.querySelectorAll("[data-scope]").forEach(function (b) { b.onclick = function () { var k = b.getAttribute("data-scope"); state.scope = state.scope === k ? "" : k; draw(); }; });
-          body.querySelectorAll("[data-tag]").forEach(function (b) { b.onclick = function () { var k = b.getAttribute("data-tag"); state.tag = state.tag === k ? "" : k; draw(); }; });
           body.querySelectorAll("[data-cat]").forEach(function (c) {
             var x = items.filter(function (i) { return i.id === c.getAttribute("data-cat"); })[0]; if (!x) return;
             var html = mdToHtml(x.body || x.subtitle || "") + (x.link ? '<p><a href="' + esc(x.link) + '" target="_blank" rel="noopener">Открыть →</a></p>' : "");
