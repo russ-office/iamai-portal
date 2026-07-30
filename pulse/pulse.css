@@ -164,6 +164,23 @@
 @media (max-width: 1000px) { .p-snap { grid-template-columns: 1fr 1fr; } .p-snap__tile--work { grid-column: 1 / -1; } }
 @media (max-width: 720px) { .p-snap { grid-template-columns: 1fr; } }
 
+/* §4 · Этаж 2 — Активность (2/3, неактивная) + Задачи графикой (1/3, клик → tasks).
+   Бар пропорций по статусам; done в бар НЕ входит (красит только активные). */
+.p-floor2 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: stretch; }
+.p-act { display: flex; flex-direction: column; gap: 10px; }
+.p-tbar { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--ink); transition: transform .15s; cursor: pointer; }
+.p-tbar:hover { transform: translateY(-2px); }
+.p-tbar__count { font-family: var(--font-mono); font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.p-tbar__track { display: flex; height: 10px; border-radius: var(--radius); overflow: hidden; background: var(--paper); }
+.p-tbar__seg { display: block; }
+.p-tbar__seg.is-doing { background: var(--accent); }   /* терракота = в работе (active, канон) */
+.p-tbar__seg.is-todo { background: var(--muted); }
+.p-tbar__leg { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); line-height: 1.6; }
+.p-tbar__dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.p-tbar__dot.is-doing { background: var(--accent); }
+.p-tbar__dot.is-todo { background: var(--muted); }
+@media (max-width: 720px) { .p-floor2 { grid-template-columns: 1fr; } }
+
 /* Mobile — rail to bottom, grids to stack, table to card list (canon rule 10) */
 @media (max-width: 720px) {
   .c-shell { height: auto; min-height: 100vh; flex-direction: column; }

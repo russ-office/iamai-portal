@@ -267,6 +267,25 @@
         '</a>' +
       '</section>';
 
+    // §4 · Этаж 2 (redesign §4, stays per §I): Активность c-tape (2/3, без клика) +
+    // Задачи графикой (1/3, пропорции по статусам, done НЕ в баре; клик → tasks).
+    var tstats = (D.tasks || []).reduce(function (a, t) { a.total++; a[t.status] = (a[t.status] || 0) + 1; return a; }, { total: 0 });
+    var doing = tstats.doing || 0, todoN = tstats.todo || 0, doneN = tstats.done || 0;
+    var tbarSeg = function (n, cls) { return n > 0 ? '<span class="p-tbar__seg ' + cls + '" style="flex:' + n + '"></span>' : ''; };
+    var tbarActive = doing + todoN;
+    var floor2 =
+      '<section class="p-floor2" aria-label="Активность и задачи">' +
+        '<div class="c-sheet c-sheet--pad p-act"><div class="p-snap__lbl">Активность · 14 дней</div>' + tape + '</div>' +
+        '<a class="c-sheet c-sheet--pad p-tbar" href="page-list.html?view=tasks">' +
+          '<div class="p-snap__lbl">Задачи</div>' +
+          '<div class="p-tbar__count">' + esc(tstats.total) + ' всего</div>' +
+          (tbarActive > 0
+            ? '<div class="p-tbar__track">' + tbarSeg(doing, 'is-doing') + tbarSeg(todoN, 'is-todo') + '</div>' +
+              '<div class="p-tbar__leg"><span class="p-tbar__dot is-doing"></span>в работе ' + doing + ' · <span class="p-tbar__dot is-todo"></span>к выполнению ' + todoN + (doneN ? ' · готово ' + doneN : '') + '</div>'
+            : '<div class="c-empty" style="margin:0">Нет активных задач</div>') +
+        '</a>' +
+      '</section>';
+
     body.innerHTML =
       '<div class="p-wrap">' +
         // 1 · Шапка (одна строка: привет + статус) — redesign §2 (p-cover/p-illus/eyebrow-дата убраны)
@@ -278,6 +297,7 @@
         '</header>' +
         (q ? '<div class="p-note">«' + esc(q.text) + '» — ' + esc(q.author) + '</div>' : '') +
         snap +
+        floor2 +
 
         // 2 · Календарь · Текущий спринт
         '<div class="p-grid-2">' +
@@ -292,10 +312,7 @@
             '</div></div>' +
         '</div>' +
 
-        // 3 · Активность (c-tape)
-        '<div><div class="p-section">Активность · 14 дней</div><div class="c-sheet c-sheet--pad">' + tape + '</div></div>' +
-
-        // 4 · To-Do (c-task-row)
+        // 4 · To-Do (c-task-row) — список задач; K5 переезжает в «задачи списком» справа от календаря
         '<div><div class="p-section">To-Do · текущие задачи</div><div class="c-sheet c-sheet--flush">' + (tasks || '<div class="c-empty">Задач нет</div>') + '</div></div>' +
 
         // 5 · Треды · вклад
