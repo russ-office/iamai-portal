@@ -241,6 +241,32 @@
     var demo = D.events.filter(function (e) { return e.kind === "demo_day"; })[0];
     var q = pickQuote();  // ротация цитат p-note (redesign §8)
 
+    // §E · Этаж 1 — инфографика (redesign §3): Бэклог · В работе · Сделано (25/50/25).
+    // Бэклог = N решений + Σ total_hours; В работе = frontier-тред (pPipeThread) + цепочка
+    // стадий + № спринта + часы; Сделано = stub «Скоро» (Маркетплейс не построен, решение A).
+    var bl = D.backlog || [];
+    var blHours = h1(bl.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
+    var cur = pPipeThread(D);
+    var curHours = cur ? h1(cur.hours) : 0;
+    var snap =
+      '<section class="p-snap" aria-label="Состояние спринта">' +
+        '<a class="c-sheet c-sheet--pad p-snap__tile" href="page-list.html">' +
+          '<div class="p-snap__k">' + esc(bl.length) + '</div>' +
+          '<div class="p-snap__lbl">Бэклог</div>' +
+          '<div class="p-snap__sub">' + esc(blHours) + ' ч / мес потенциал</div>' +
+        '</a>' +
+        '<a class="c-sheet c-sheet--pad p-snap__tile p-snap__tile--work" href="page-overview.html">' +
+          '<div class="p-snap__head"><span class="p-snap__lbl">В работе</span>' +
+            '<span class="p-snap__sub">Спринт №' + esc(D.sprint_no) + ' · ' + esc(curHours) + ' ч</span></div>' +
+          '<div class="p-snap__name">' + (cur ? esc(cur.thread) : 'Нет задачи в работе') + '</div>' +
+          pStageChainHTML(cur) +
+        '</a>' +
+        '<a class="c-sheet c-sheet--pad p-snap__tile" href="page-list.html?view=leaderboard">' +
+          '<div class="p-snap__lbl">Сделано</div>' +
+          '<div class="p-snap__stub">Скоро</div>' +
+        '</a>' +
+      '</section>';
+
     body.innerHTML =
       '<div class="p-wrap">' +
         // 1 · Шапка (одна строка: привет + статус) — redesign §2 (p-cover/p-illus/eyebrow-дата убраны)
@@ -251,6 +277,7 @@
           '</div>' +
         '</header>' +
         (q ? '<div class="p-note">«' + esc(q.text) + '» — ' + esc(q.author) + '</div>' : '') +
+        snap +
 
         // 2 · Календарь · Текущий спринт
         '<div class="p-grid-2">' +
@@ -576,6 +603,20 @@
   function pThreads(D) { return (D.metrics && D.metrics.threads) || []; }
   function pPipeThread(D) { return pThreads(D).filter(function (t) { return !PBACKLOG[t.stage_code]; })[0] || null; }
   function pStageReached(t, st) { return !!t && st.codes.some(function (c) { return (t.reached || []).indexOf(c) >= 0; }); }
+  // §E · Этаж 1 «В работе» — компактная chevron-цепочка стадий (read-only превью).
+  // Бэклог-шеврон (i=0) пропущен: слева своя плашка Бэклог. Тон = done/cur/disabled,
+  // как в renderOverview; здесь span (внутри <a>-плашки, button вкладывать нельзя).
+  function pStageChainHTML(t) {
+    if (!t) return '<div class="c-empty" style="margin:0">Нет задачи в работе</div>';
+    return '<nav class="p-stagebar" aria-label="Этапы решения">' + PSTAGES.map(function (st, i) {
+      if (i === 0) return '';
+      var done = pStageReached(t, st);
+      // frontier = следующий не-пройденный этап с открытым link'ом (канон renderOverview) → tone-cur
+      var frontier = !done && pTargetLink(t, st.code);
+      var cls = 'p-stage notch' + (done ? ' tone-done' : (frontier ? ' tone-cur' : ' is-disabled'));
+      return '<span class="' + cls + '">' + esc(st.label) + '</span>';
+    }).join('') + '</nav>';
+  }
   function pTargetLink(t, code) {
     var L = t.links || {};
     if (code === "T6_test") { var p = (t.prototypes || []).filter(function (x) { return x.url_test; })[0]; return p ? formLink(p.url_test) : ""; }
