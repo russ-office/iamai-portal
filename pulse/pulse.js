@@ -56,7 +56,6 @@
     { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard",  state: "active" },
     { id: "library",     label: "Библиотека",  href: "page-list.html?view=library",      state: "active" },
     { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "active" },
-    { id: "guides",      label: "Инструкции",  href: "page-guides.html",                 state: "active" },
     { id: "chat",        label: "Чат",         state: "chat" },  // K8: История→Чат (Ruslan; фаза1=«сообщить о проблеме»=feedbackUrl, фаза2=чаты с ботом)
   ];
 
@@ -770,7 +769,7 @@
       tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: "" },
       library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },
       marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
-      guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },
+      guides:      { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },  // F: redirect guides→library (Ruslan #9)
       leaderboard: { title: "Leaderboard",  eyebrow: "",           action: "" },
     };
     return M[view] || { title: view, eyebrow: "", action: "" };
@@ -800,7 +799,7 @@
       else if (view === "calendar") renderCalendar(body, D);
       else if (view === "library") renderLibrary(body);
       else if (view === "marketplace") renderMarket(body);
-      else if (view === "guides") renderGuides(body);
+      else if (view === "guides") renderLibrary(body);  // F: Инструкции → Библиотека (Ruslan #9)
       else if (view === "leaderboard") renderLeaderboard(body, D);
       else body.innerHTML = '<div class="c-empty">Экран появится позже</div>';
       initDrawer();
