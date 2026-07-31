@@ -1,12 +1,12 @@
 {
  "client": "DAN Partners",
- "generated_at": "2026-07-31T16:38:34+05:00",
+ "generated_at": "2026-07-31T18:17:52+05:00",
  "kpi": {
   "groups": 6,
-  "people": 15,
+  "people": 16,
   "threads": 47,
-  "hours_month": 3056.7,
-  "hours_year": 36680.4
+  "hours_month": 2996.7,
+  "hours_year": 35960.4
  },
  "groups": [
   {
@@ -22,8 +22,8 @@
    "group_id": "recrvRXnzkF35FvTN",
    "cycle": "DAN_LAB_1_5-C1",
    "threads": 15,
-   "people": 1,
-   "hours_month": 1132.3
+   "people": 2,
+   "hours_month": 1072.3
   },
   {
    "group": "DAN_LAB_1_4",
@@ -105,13 +105,6 @@
    "thread_key": "DAN_LAB_1_Intake-P13"
   },
   {
-   "title": "Трекинг статуса проектов",
-   "group": "DAN_LAB_1_5",
-   "hours_month": 100,
-   "stage": "Проблема",
-   "thread_key": "DAN_LAB_1_Intake-P24"
-  },
-  {
    "title": "Сбор информации в data lake",
    "group": "DAN_LAB_1_5",
    "hours_month": 90,
@@ -145,6 +138,13 @@
    "hours_month": 60,
    "stage": "Проблема",
    "thread_key": "DAN_LAB_1_Intake-P22"
+  },
+  {
+   "title": "Заявление на отпуск",
+   "group": "DAN_LAB_1_4",
+   "hours_month": 60,
+   "stage": "Проблема",
+   "thread_key": "DAN_LAB_1_Intake-P36"
   }
  ],
  "board": [
@@ -158,8 +158,8 @@
   {
    "email": "zh.abishev@danpartners.com",
    "group": "DAN_LAB_1_5",
-   "ideas": 15,
-   "hours_month": 1132.3333333333335,
+   "ideas": 14,
+   "hours_month": 1032.3333333333335,
    "rows": 15
   },
   {
@@ -186,6 +186,13 @@
   {
    "email": "e.balagazin@danpartners.com",
    "group": "DAN_LAB_1_Intake",
+   "ideas": 1,
+   "hours_month": 40,
+   "rows": 1
+  },
+  {
+   "email": "a.kubiev@danpartners.com",
+   "group": "DAN_LAB_1_5",
    "ideas": 1,
    "hours_month": 40,
    "rows": 1
@@ -223,13 +230,6 @@
    "group": "DAN_LAB_1_3",
    "ideas": 1,
    "hours_month": 4.166666666666667,
-   "rows": 1
-  },
-  {
-   "email": "j.elmuratov@danpartners.com",
-   "group": "DAN_LAB_1_1",
-   "ideas": 1,
-   "hours_month": 3,
    "rows": 1
   }
  ]

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-31T16:38:35+05:00",
+ "generated_at": "2026-07-31T18:17:52+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -757,197 +757,6 @@
    "tasks": []
   },
   {
-   "group": "DAN_LAB_1_5",
-   "group_id": "recrvRXnzkF35FvTN",
-   "client": "DAN",
-   "cycle": "DAN_LAB_1_5-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
-   "people": 1,
-   "threads": 15,
-   "backlog_count": 15,
-   "hours_month": 1132.3,
-   "in_sprint": false,
-   "temp": {
-    "state": "bad",
-    "days_idle": 9,
-    "done_7d": 0
-   },
-   "last_at": "2026-07-22 07:00",
-   "stepper": {
-    "T1_idea": 15
-   },
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [
-    {
-     "thread_key": "DAN_LAB_1_Intake-P2",
-     "title": "Коммуникация топ- и мидл-менеджеров",
-     "hours_month": 240,
-     "ease": 1,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:38",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P6",
-     "title": "Согласование задач между уровнями",
-     "hours_month": 160,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:40",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P24",
-     "title": "Трекинг статуса проектов",
-     "hours_month": 100,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:49",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P16",
-     "title": "Сбор информации в data lake",
-     "hours_month": 90,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:44",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P26",
-     "title": "Оцифровка процессов отделов",
-     "hours_month": 90,
-     "ease": 1,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:51",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P29",
-     "title": "Инфраструктура и архитектура автоматизации",
-     "hours_month": 80,
-     "ease": 1,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:54",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P31",
-     "title": "Постановка задач через ИИ-чат в дэшборде",
-     "hours_month": 80,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:57",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P22",
-     "title": "Структуризация данных",
-     "hours_month": 60,
-     "ease": 3,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:48",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P11",
-     "title": "Протоколы совещаний заказчик–исполнитель",
-     "hours_month": 53.333333333333336,
-     "ease": 4,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:42",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P20",
-     "title": "Хранение и векторизация данных",
-     "hours_month": 45,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:46",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P25",
-     "title": "Транскрибация записей совещаний",
-     "hours_month": 40,
-     "ease": 5,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:50",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P27",
-     "title": "Выбор способа конвертации процессов",
-     "hours_month": 30,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:52",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P30",
-     "title": "Быстрая точечная транскрибация аудио",
-     "hours_month": 30,
-     "ease": 5,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:56",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P32",
-     "title": "Данные дэшборда в RAG-систему",
-     "hours_month": 30,
-     "ease": 2,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:59",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P33",
-     "title": "Концепция «Путь Героя» на этапах",
-     "hours_month": 4,
-     "ease": 1,
-     "recommendation": "4 долгострой",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 07:00",
-     "dirty": false
-    }
-   ],
-   "tasks": []
-  },
-  {
    "group": "DAN_LAB_1_1",
    "group_id": "recHFFw93GRcDM3bX",
    "client": "DAN",
@@ -1246,6 +1055,197 @@
      "stage": "Проблема",
      "stage_code": "T1_idea",
      "last_at": "2026-07-22 18:40",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_5",
+   "group_id": "recrvRXnzkF35FvTN",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_5-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 15,
+   "backlog_count": 15,
+   "hours_month": 1072.3,
+   "in_sprint": false,
+   "temp": {
+    "state": "warn",
+    "days_idle": 0,
+    "done_7d": 1
+   },
+   "last_at": "2026-07-31 12:29",
+   "stepper": {
+    "T1_idea": 15
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P2",
+     "title": "Коммуникация топ- и мидл-менеджеров",
+     "hours_month": 240,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:38",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P6",
+     "title": "Согласование задач между уровнями",
+     "hours_month": 160,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P16",
+     "title": "Сбор информации в data lake",
+     "hours_month": 90,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P26",
+     "title": "Оцифровка процессов отделов",
+     "hours_month": 90,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:51",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P29",
+     "title": "Инфраструктура и архитектура автоматизации",
+     "hours_month": 80,
+     "ease": 1,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:54",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P31",
+     "title": "Постановка задач через ИИ-чат в дэшборде",
+     "hours_month": 80,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P22",
+     "title": "Структуризация данных",
+     "hours_month": 60,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:48",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P11",
+     "title": "Протоколы совещаний заказчик–исполнитель",
+     "hours_month": 53.333333333333336,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:42",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P20",
+     "title": "Хранение и векторизация данных",
+     "hours_month": 45,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:46",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P24",
+     "title": "Трекинг статуса проектов",
+     "hours_month": 40,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-31 12:29",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P25",
+     "title": "Транскрибация записей совещаний",
+     "hours_month": 40,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:50",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P27",
+     "title": "Выбор способа конвертации процессов",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:52",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P30",
+     "title": "Быстрая точечная транскрибация аудио",
+     "hours_month": 30,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:56",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P32",
+     "title": "Данные дэшборда в RAG-систему",
+     "hours_month": 30,
+     "ease": 2,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:59",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P33",
+     "title": "Концепция «Путь Героя» на этапах",
+     "hours_month": 4,
+     "ease": 1,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 07:00",
      "dirty": false
     }
    ],
