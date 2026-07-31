@@ -335,8 +335,9 @@
 
     body.innerHTML =
       '<div class="p-wrap--list">' +
-        '<div class="c-filter-bar" style="margin-bottom:18px">' +
-          '<span class="c-filter-bar__count">' + D.backlog.length + ' проблем · ' + total + ' ч/мес потенциал</span>' +
+        '<div class="p-list-head">' +
+          '<div class="c-filter-bar" style="margin:0"><span class="c-filter-bar__count">' + D.backlog.length + ' проблем · ' + total + ' ч/мес потенциал</span></div>' +
+          backlogAction() +
         '</div>' + cards +
       '</div>';
 
@@ -484,8 +485,9 @@
     }
     // Рамка Ruslan: задачи подаются как «от Матеуса» — часть ставит сам участник, часть куратор
     // (Ruslan/Cleo) через Матеуса. Участник взаимодействует с агентом, а не напрямую с людьми.
-    var intro = '<div class="p-note" style="max-width:none;margin:0 0 18px">Матеус ведёт твои задачи. Часть ты ставишь себе сам, часть — куратор Лаборатории; всё приходит одним потоком от Матеуса.</div>';
-    body.innerHTML = '<div class="p-wrap--list">' + intro +
+    var intro = '<div class="p-note" style="max-width:none;margin:0">Матеус ведёт твои задачи. Часть ты ставишь себе сам, часть — куратор Лаборатории; всё приходит одним потоком от Матеуса.</div>';
+    body.innerHTML = '<div class="p-wrap--list">' +
+      '<div class="p-list-head">' + intro + taskAction() + '</div>' +
       '<div class="c-filter-bar" style="margin-bottom:18px"><span class="c-filter-bar__count">' +
         tasks.length + ' задач · ' + doing.length + ' в работе · ' + done.length + ' готово</span></div>' +
       (tasks.length
@@ -762,10 +764,10 @@
     var range = cyc ? U.fmtDay(cyc.start) + "–" + U.fmtDay(cyc.end) : "";
     var M = {
       person:      { title: "Мой Пульс",   eyebrow: D.subject.client + " · " + D.subject.group,           action: "" },
-      list:        { title: "Бэклог",       eyebrow: "",                                 action: backlogAction() },
+      list:        { title: "Бэклог",       eyebrow: "",                                 action: "" },
       overview:    { title: "Спринт",       eyebrow: "Спринт " + D.sprint_no + " · " + range,             action: "" },  // K8: «Цикл»→«Спринт»
       calendar:    { title: "Календарь",    eyebrow: "",                        action: "" },
-      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: taskAction() },
+      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: "" },
       library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },
       marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
       guides:      { title: "Инструкции",   eyebrow: "КАК РАБОТАТЬ В ЛАБОРАТОРИИ",                         action: "" },

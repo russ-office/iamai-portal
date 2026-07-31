@@ -46,13 +46,17 @@
 .p-foot__sprint { font-weight: 700; color: var(--ink); }
 
 /* K9 · c-page-head: одна линия — название ALL CAPS слева + № спринта/дата справа (redesign §1). */
-.c-page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 0 0 14px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.c-page-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 32px 14px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
 .c-page-head__titles { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .c-page-head__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .c-page-head__title { font-size: 22px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 .c-page-head__right { display: flex; align-items: baseline; gap: 14px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 .c-page-head__sprint { font-weight: 700; color: var(--ink); }
 .c-page-head__action { display: inline-flex; }
+/* Ревью #7/#8: кнопки «Добавить» — вниз из шапки, на уровне intro/filter-bar, правый край. */
+.p-list-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
+.p-list-head .c-btn { flex: none; }
+.p-list-head .c-filter-bar { margin: 0; }
 /* K9 · Person-шапка: приветствие+статус слева, цитата правый край (одна линия). */
 .p-head--row { align-items: center; }
 .p-head__left { display: flex; align-items: baseline; gap: 16px; min-width: 0; }
