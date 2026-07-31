@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-07-30T22:47:05+05:00",
- "today": "2026-07-30",
+ "generated_at": "2026-07-31T11:34:46+05:00",
+ "today": "2026-07-31",
  "sprint_no": 1,
  "subject": {
   "id": "recvZqqiuT3VIRVcV",
@@ -11,7 +11,7 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 16,
+  "days_idle": 17,
   "done_7d": 0,
   "state": "bad"
  },
