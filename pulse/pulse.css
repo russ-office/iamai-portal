@@ -1,7 +1,8 @@
 /* pulse.css — LAYOUT ONLY. No new components, no new elevation, no new colours.
    All elevation comes from the design-system classes (c-sheet / c-kpi-tile) via
    --shadow-d1. Zero custom box-shadow → neumorphism impossible by construction.
-   Terracotta stays on action / active / bad / stage-bar fill only (canon). */
+   Terracotta stays on action / active / bad only. Stage-bar fill = positive (--status-ok)
+   on current, per Ruslan 01.08 (coord pulse-cd-decisions #5, инверсия тонов). */
 
 /* Page column inside c-shell__body.
    §7 (redesign): контейнер на всю ширину c-shell__main — раньше max-width 900px
@@ -128,7 +129,7 @@
 .p-quadrant { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
 /* ── Стадии-пайплайн (Спринт) — полоса-подразделы (макап Ruslan). Layout-only:
-   тень из --shadow-d1, терракота только на current(active)/selected-frontier (канон). ── */
+   тень из --shadow-d1; тон current = positive (--status-ok), не терракота (Ruslan 01.08, инверсия). ── */
 .p-stagebar { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 24px; }
 .p-stage {
   position: relative; border: none; cursor: pointer; font-family: var(--font-text);
@@ -140,21 +141,31 @@
 .p-stage.notch { padding-left: 28px; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%); }
 .p-stage:hover { color: var(--accent); }
 .p-stage__n { margin-left: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-/* Тоны этапа: пройден = оливковый (--status-ok), текущий = терракота (--accent),
-   Бэклог/вход = нейтральный (тёмный при выборе), будущий = приглушён. Просматриваемый = жирнее. */
+/* Тоны этапа (coord C/#5, инверсия от 31.07): текущий активный = positive (--status-ok, зелёный),
+   пройденные = бежевая плашка (--paper), frontier/вход = нейтральный (тёмный при выборе),
+   будущий = приглушён. Просматриваемый (is-sel) = жирнее.
+   NB: терракота(--accent) ушла из stage-bar fill — исключение из канона «terracotta on stage-bar
+   fill only» по решению Ruslan (coord pulse-cd-decisions #5, 31.07). hover терракоты остался. На live-ревью. */
 .p-stage.tone-neutral { background: var(--surface); box-shadow: var(--shadow-d1); color: var(--ink-soft); }
 .p-stage.tone-neutral.is-sel { background: var(--deep); color: var(--text-on-inverted); box-shadow: none; }
-.p-stage.tone-done { background: var(--status-ok); color: var(--text-on-inverted); box-shadow: none; }
-.p-stage.tone-cur  { background: var(--accent);    color: var(--text-on-inverted); box-shadow: none; }
+.p-stage.tone-done { background: var(--paper); box-shadow: var(--shadow-d1); color: var(--muted); }
+.p-stage.tone-cur  { background: var(--status-ok); color: var(--text-on-inverted); box-shadow: none; }
 .p-stage.is-sel { font-weight: 700; }
 .p-stage.is-disabled { background: transparent; box-shadow: none; color: var(--muted); opacity: .4; cursor: not-allowed; }
-.p-stage.tone-done .p-stage__n, .p-stage.tone-cur .p-stage__n,
-.p-stage.tone-neutral.is-sel .p-stage__n { color: rgba(242,237,226,.72); }
+.p-stage.tone-cur .p-stage__n, .p-stage.tone-neutral.is-sel .p-stage__n { color: rgba(242,237,226,.72); }
 
 /* Бэклог: рекомендация Матеуса + замок «одна на цикл» */
 .p-badges { display: flex; gap: 6px; flex-wrap: wrap; }
 .p-lockban { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 16px; }
 .p-lockban b { color: var(--ink); }
+/* Спринт empty-state (нет взятой задачи): фокус на одной проблеме, ведём в Бэклог (coord ядро-2). */
+.p-sprint-empty { text-align: center; padding: 48px 24px; max-width: 520px; margin: 0 auto; }
+.p-sprint-empty__title { margin: 6px 0 12px; font-size: 18px; font-weight: 700; }
+.p-sprint-empty .p-backlog-card__body { max-width: 420px; margin: 0 auto 18px; }
+/* Заголовок взятой задачи над контентом этапа (Спринт = одна проблема, coord ядро-2). */
+.p-sprint-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.p-sprint-head__thread { font-size: 18px; font-weight: 700; line-height: 1.3; }
+.p-sprint-head__stage { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
 /* Страница этапа: слева накопительный read-only бриф, справа «+ Добавить» */
 .p-pipe { display: flex; gap: 22px; align-items: flex-start; }

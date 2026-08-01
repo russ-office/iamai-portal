@@ -310,42 +310,49 @@
     { act: "take", link: "take", label: "Взять в работу", eyebrow: "Взять в работу",     kind: "is-secondary p-btn-take" },
   ];
 
-  function cardActions(b) {
-    var links = b.links || {};
-    var btns = CARD_ACTS.filter(function (a) { return formLink(links[a.link]); }).map(function (a) {
-      return '<button type="button" class="c-btn ' + a.kind + '" data-card="' + esc(b.id) + '" data-act="' + a.act + '">' + esc(a.label) + '</button>';
-    }).join("");
-    return btns ? '<div class="p-backlog-card__acts">' + btns + '</div>' : '';
-  }
-
   function renderBacklog(body, D) {
-    var total = Math.round(D.backlog.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0) * 10) / 10;
-    var cards = D.backlog.length === 0
-      ? '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму</div></div>'
-      : '<div class="p-backlog-grid">' + D.backlog.map(function (b) {
+    var t = pPipeThread(D);
+    var list = (D.backlog || []).slice().sort(function (a, b) { return (b.total_hours || 0) - (a.total_hours || 0); });
+    var rec = pRecRank(list), locked = !!t;
+    var total = h1(list.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
+    var ban = locked
+      ? '<div class="c-sheet c-sheet--pad p-lockban">В работе уже: <b>' + esc(t.thread) + '</b> (' + esc(t.stage) + '). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div>'
+      : '';
+    var cards = list.length
+      ? '<div class="p-backlog-grid">' + list.map(function (b) {
+          var r = rec[b.id];
+          // Ранжирование Матеуса по паре (экономия × лёгкость): ★ №N на топ-3, бейдж лёгкости на остальных (coord ядро-3).
+          var badges = (r ? '<span class="c-chip is-accent">★ Матеос №' + r + '</span>' : '')
+            + ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
+          var takeBtn = locked
+            ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
+            : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
+          var editBtn = formLink((b.links || {}).edit)
+            ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
           return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
-            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span><span class="p-backlog-card__hchip"><b>' + esc(Math.round((b.total_hours || 0) * 10) / 10) + '</b> ч / мес</span></div>' +
-            // Карточка = название + часы (акцент, справа) + выжимка. thread_key убран (Ruslan 23.07).
-            // Полный текст живёт в форме, не здесь: стена markdown-а ломала вёрстку (улов Ruslan, M-042).
-            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 180)) + '</p>' +
-            cardActions(b) +
+            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
+              '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
+            (badges ? '<div class="p-badges">' + badges + '</div>' : '') +
+            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 150)) + '</p>' +
+            '<div class="p-backlog-card__acts">' + editBtn + takeBtn + '</div>' +
           '</div>';
-        }).join("") + '</div>';
+        }).join("") + '</div>'
+      : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму.</div></div>';
 
     body.innerHTML =
       '<div class="p-wrap--list">' +
         '<div class="p-list-head">' +
-          '<div class="c-filter-bar" style="margin:0"><span class="c-filter-bar__count">' + D.backlog.length + ' проблем · ' + total + ' ч/мес потенциал</span></div>' +
+          '<div class="c-filter-bar" style="margin:0"><span class="c-filter-bar__count">' +
+            list.length + ' проблем · ' + total + ' ч/мес потенциал · сортировка по экономии</span></div>' +
           backlogAction() +
-        '</div>' + cards +
+        '</div>' + ban + cards +
       '</div>';
 
-    // Обе кнопки открывают форму в правой шторке (канон write-path = c-drawer).
-    // Ссылка берётся из снапшота: она несёт hidden-принадлежность И значения (p_*),
-    // чтобы человек увидел свой текст, а не пустую форму.
+    // взять/поправить → форма в шторке (канон write-path = c-drawer). locked-take без data-act сюда не попадает.
+    // Ссылка из снапшота несёт hidden-принадлежность И значения (p_*), чтобы человек видел свой текст.
     body.querySelectorAll("[data-card][data-act]").forEach(function (btn) {
       var id = btn.getAttribute("data-card"), act = btn.getAttribute("data-act");
-      var b = D.backlog.filter(function (x) { return x.id === id; })[0];
+      var b = list.filter(function (x) { return x.id === id; })[0];
       var meta = CARD_ACTS.filter(function (a) { return a.act === act; })[0];
       var src = b && meta && formLink((b.links || {})[meta.link]);
       if (!src) return;
@@ -563,14 +570,14 @@
   // форвард-этапы = накопительный read-only бриф по взятому решению + «+ Добавить».
   // Рельс тот же chain-forward (nav_links); тут только представление.
   var PSTAGES = [
-    { code: "backlog",      label: "Бэклог",   codes: ["T0_function_map", "T1_idea"], brief: "проблема" },
+    { code: "backlog",      label: "Проблема", codes: ["T0_function_map", "T1_idea"], brief: "проблема" },
     { code: "T2_task",      label: "Решение",  codes: ["T2_task"],       brief: "решение" },
     { code: "T3_research",  label: "Поиск",    codes: ["T3_research"],    brief: "поиск" },
     { code: "T5_prototype", label: "Прототип", codes: ["T5_prototype"],   brief: "прототип" },
     { code: "T6_test",      label: "Тест",     codes: ["T6_test"],        brief: "тест" },
     { code: "T7_prd",       label: "PRD",      codes: ["T7_prd"],         brief: "PRD" },
   ];
-  var PADDKEY = { T2_task: "take", T3_research: "research", T5_prototype: "prototype", T6_test: "__test", T7_prd: "prd" };
+  var PADDKEY = { backlog: "edit", T2_task: "take", T3_research: "research", T5_prototype: "prototype", T6_test: "__test", T7_prd: "prd" };
   var PBACKLOG = { T0_function_map: 1, T1_idea: 1 };
 
   function pThreads(D) { return (D.metrics && D.metrics.threads) || []; }
@@ -604,36 +611,6 @@
   }
   var h1 = function (n) { return Math.round((n || 0) * 10) / 10; };
 
-  function pBacklogPane(D, t) {
-    var list = (D.backlog || []).slice().sort(function (a, b) { return (b.total_hours || 0) - (a.total_hours || 0); });
-    var rec = pRecRank(list), locked = !!t;
-    var total = h1(list.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
-    var ban = locked
-      ? '<div class="c-sheet c-sheet--pad p-lockban">В работе уже: <b>' + esc(t.thread) + '</b> (' + esc(t.stage) + '). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div>'
-      : '';
-    var cards = list.length
-      ? '<div class="p-backlog-grid">' + list.map(function (b) {
-          var r = rec[b.id];
-          var badges = (r ? '<span class="c-chip is-accent">★ Матеос №' + r + '</span>' : '')
-            + ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
-          var takeBtn = locked
-            ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
-            : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
-          var editBtn = formLink((b.links || {}).edit)
-            ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
-          return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
-            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
-              '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
-            (badges ? '<div class="p-badges">' + badges + '</div>' : '') +
-            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 150)) + '</p>' +
-            '<div class="p-backlog-card__acts">' + editBtn + takeBtn + '</div>' +
-          '</div>';
-        }).join("") + '</div>'
-      : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему.</div></div>';
-    return '<div class="c-filter-bar" style="margin-bottom:16px"><span class="c-filter-bar__count">' +
-      list.length + ' проблем · ' + total + ' ч/мес потенциал · сортировка по экономии</span></div>' + ban + cards;
-  }
-
   function pStagePane(D, t, i) {
     var st = PSTAGES[i];
     if (!t) {
@@ -660,35 +637,51 @@
   }
 
   function renderOverview(body, D) {
-    var state = { view: 0 };
+    var t = pPipeThread(D);
+    // Активный этап = stage_code взятой задачи (coord C/#4: дефолт is-sel = где участник, не Проблема/Бэклог).
+    function activeView() {
+      if (!t) return -1;
+      var idx = PSTAGES.findIndex(function (st) { return st.codes.indexOf(t.stage_code) >= 0; });
+      return idx >= 0 ? idx : 1; // fallback на «Решение», если stage_code не нашёлся в цепочке
+    }
+    var state = { view: activeView() };
     function draw() {
-      var t = pPipeThread(D);
+      // Нет взятой задачи → Спринт пуст: фокус на одной проблеме, ведём в Бэклог (coord ядро-2).
+      if (!t) {
+        var tok = new URLSearchParams(location.search).get("c");
+        var qs = tok ? ("?c=" + encodeURIComponent(tok)) : "";
+        body.innerHTML = '<div class="p-wrap"><div class="c-sheet c-sheet--pad p-sprint-empty">' +
+          '<div class="p-section">Спринт пуст</div>' +
+          '<h3 class="p-sprint-empty__title">Возьмите проблему в работу</h3>' +
+          '<p class="p-backlog-card__body">В этом цикле нет задачи. Выберите одну проблему из бэклога — она пройдёт здесь по этапам: решение, поиск, прототип, тест, PRD.</p>' +
+          '<a class="c-btn is-primary" href="page-list.html' + qs + '">Перейти к бэклогу</a>' +
+          '</div></div>';
+        return;
+      }
+      var curView = activeView();
       var bar = PSTAGES.map(function (st, i) {
-        var active = i === 0 || (t && (pStageReached(t, st) || pTargetLink(t, st.code)));
-        var frontier = t && i > 0 && !pStageReached(t, st) && pTargetLink(t, st.code);
+        var reached = pStageReached(t, st);
+        var isCur = i === curView;                       // текущий активный этап (stage_code)
+        var link = pTargetLink(t, st.code);
+        var frontier = !reached && !isCur && i > 0 && link; // следующий открытый (chain-forward)
+        var active = i === 0 || reached || isCur || frontier;
         var sel = i === state.view, cls = "p-stage" + (i > 0 ? " notch" : "");
-        // тон: пройден=оливковый, текущий(фронтир)=терракота, Бэклог=нейтраль; активный форвард = done|frontier
-        var done = i > 0 && pStageReached(t, st);
-        var tone = i === 0 ? "neutral" : (done ? "done" : "cur");
+        // Тон (coord C/#5, инверсия): текущий=positive(зелёный), пройденные=бежевая плашка,
+        // frontier(след. доступный)=нейтральный кликабельный, будущий=disabled.
         if (!active) cls += " is-disabled";
-        else cls += " tone-" + tone + (sel ? " is-sel" : "");
-        var n = i === 0 ? '<span class="p-stage__n">' + ((D.backlog || []).length) + '</span>' : '';
+        else if (isCur) cls += " tone-cur" + (sel ? " is-sel" : "");
+        else if (reached) cls += " tone-done" + (sel ? " is-sel" : "");
+        else cls += " tone-neutral" + (sel ? " is-sel" : "");
         var at = active ? ' data-stage="' + i + '"' : ' disabled';
-        return '<button type="button" class="' + cls + '"' + at + '>' + esc(st.label) + n + '</button>';
+        return '<button type="button" class="' + cls + '"' + at + '>' + esc(st.label) + '</button>';
       }).join("");
-      var content = state.view === 0 ? pBacklogPane(D, t) : pStagePane(D, t, state.view);
-      body.innerHTML = '<div class="p-wrap"><nav class="p-stagebar">' + bar + '</nav>' + content + '</div>';
+      var content = pStagePane(D, t, state.view);
+      var head = '<div class="p-sprint-head"><div class="p-sprint-head__thread">' + esc(t.thread) + '</div>' +
+        '<div class="p-sprint-head__stage">этап · ' + esc(t.stage) + '</div></div>';
+      body.innerHTML = '<div class="p-wrap"><nav class="p-stagebar">' + bar + '</nav>' + head + content + '</div>';
       // навигация по вкладкам + «изменить» (уйти на этап) — переключают view без перезагрузки
       body.querySelectorAll("[data-stage]").forEach(function (btn) { btn.onclick = function () { state.view = +btn.getAttribute("data-stage"); draw(); }; });
       body.querySelectorAll("[data-goto]").forEach(function (el) { el.onclick = function () { state.view = +el.getAttribute("data-goto"); draw(); }; });
-      // бэклог: взять/поправить → форма в шторке
-      body.querySelectorAll("[data-card][data-act]").forEach(function (btn) {
-        var b = (D.backlog || []).filter(function (x) { return x.id === btn.getAttribute("data-card"); })[0];
-        if (!b) return;
-        var act = btn.getAttribute("data-act"), link = formLink((b.links || {})[act === "take" ? "take" : "edit"]);
-        if (!link) return;
-        btn.addEventListener("click", function () { openDrawer(act === "take" ? "Взять в работу → Решение" : "Поправить проблему", b.title, link); });
-      });
       // форвард-этап: добавить/изменить → форма этапа в шторке
       body.querySelectorAll("[data-add]").forEach(function (btn) {
         var st = PSTAGES[+btn.getAttribute("data-add")], url = t ? pTargetLink(t, st.code) : "";
