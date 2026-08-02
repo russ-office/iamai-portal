@@ -149,7 +149,6 @@
               '<span class="c-page-head__title">' + esc(meta.title) + '</span>' +
             '</div>' +
             '<div class="c-page-head__right">' +
-              '<span class="c-page-head__sprint">Спринт №' + esc(D.sprint_no) + '</span>' +
               '<span class="c-page-head__date">' + esc(U.fmtDate(D.today)) + '</span>' +
               (meta.action ? '<span class="c-page-head__action">' + meta.action + '</span>' : '') +
             '</div>' +
@@ -512,7 +511,7 @@
     fetch(url)
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (J) {
-        var items = J.items || [], state = { scope: "" };
+        var items = J.items || [], state = { scope: "", platform: false };
         function card(x) {
           return '<div class="c-sheet c-sheet--pad p-backlog-card p-guide-card" role="button" tabindex="0" data-cat="' + esc(x.id) + '">' +
             '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(x.title) + '</span>' +
@@ -524,17 +523,21 @@
         function draw() {
           var shown = items.filter(function (x) {
             if (state.scope && (x.scope || "") !== state.scope) return false;
+            // F (#7): «Только платформенные» — фильтр по тэгу (instructions MateOS vs AI-обучение).
+            if (state.platform && opts.platformTag && (x.tags || []).indexOf(opts.platformTag) < 0) return false;
             return true;
           });
           var sc = (opts.scopes || []).map(function (s) { return '<button type="button" class="c-chip ' + (state.scope === s.key ? "is-accent" : "is-quiet") + '" data-scope="' + esc(s.key) + '">' + esc(s.label) + '</button>'; }).join("");
+          var pf = opts.platformTag ? '<button type="button" class="c-chip ' + (state.platform ? "is-accent" : "is-quiet") + '" data-platform="1">Только платформенные</button>' : "";
           // K6 · tag-фильтр убран (Ruslan 31.07: теги маркетплейса убрать). scope (Свои/Чужие) остаётся.
-          var bar = sc ? '<div class="p-badges" style="margin-bottom:16px">' + sc + '</div>' : "";
+          var bar = (sc || pf) ? '<div class="p-badges" style="margin-bottom:16px">' + sc + pf + '</div>' : "";
           var grid = shown.length ? '<div class="p-backlog-grid">' + shown.map(card).join("") + '</div>'
             : '<div class="c-sheet c-sheet--flush"><div class="c-empty">' + esc(items.length ? "Ничего не найдено по фильтру." : opts.empty) + '</div></div>';
           body.innerHTML = '<div class="p-wrap--list">' +
             '<div class="c-filter-bar" style="margin-bottom:16px"><span class="c-filter-bar__count">' +
               (items.length ? items.length + ' · ' + esc(opts.count) : esc(opts.empty_count)) + '</span></div>' + bar + grid + '</div>';
           body.querySelectorAll("[data-scope]").forEach(function (b) { b.onclick = function () { var k = b.getAttribute("data-scope"); state.scope = state.scope === k ? "" : k; draw(); }; });
+          if (opts.platformTag) body.querySelectorAll("[data-platform]").forEach(function (b) { b.onclick = function () { state.platform = !state.platform; draw(); }; });
           body.querySelectorAll("[data-cat]").forEach(function (c) {
             var x = items.filter(function (i) { return i.id === c.getAttribute("data-cat"); })[0]; if (!x) return;
             var html = mdToHtml(x.body || x.subtitle || "") + (x.link ? '<p><a href="' + esc(x.link) + '" target="_blank" rel="noopener">Открыть →</a></p>' : "");
@@ -553,6 +556,7 @@
       empty_count: "материалы готовятся",
       empty: "Учебные материалы Лаборатории — тексты, видео, разбитые по темам. Раздел наполняется.",
       fail: "Материалы не загрузились. Обнови страницу.",
+      platformTag: "MateOS",  // F (#7): фильтр «Только платформенные» по тэгу MateOS
     });
   }
   function renderMarket(body) {
@@ -754,18 +758,22 @@
   function metaFor(view, D) {
     var cyc = D.events.filter(function (e) { return e.all_day; })[0];
     var range = cyc ? U.fmtDay(cyc.start) + "–" + U.fmtDay(cyc.end) : "";
+    // Единый eyebrow = {группа} · Спринт {N} на всех экранах (coord pulse-cd-decisions #6).
+    // Категории (УЧЕБНЫЕ МАТЕРИАЛЫ / КАТАЛОГ / ОТ МАТЕУСА) ушли из eyebrow; Спринт №N — в eyebrow,
+    // из c-page-head__right убран (не дублировать). Range — контекст спринта, только в overview.
+    var eb = D.subject.group + " · Спринт " + D.sprint_no;
     var M = {
-      person:      { title: "Мой Пульс",   eyebrow: D.subject.client + " · " + D.subject.group,           action: "" },
-      list:        { title: "Бэклог",       eyebrow: "",                                 action: "" },
-      overview:    { title: "Спринт",       eyebrow: "Спринт " + D.sprint_no + " · " + range,             action: "" },  // K8: «Цикл»→«Спринт»
-      calendar:    { title: "Календарь",    eyebrow: "",                        action: "" },
-      tasks:       { title: "Задачи",       eyebrow: "ОТ МАТЕУСА · В РАБОТЕ / ОЧЕРЕДЬ / ГОТОВО",            action: "" },
-      library:     { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },
-      marketplace: { title: "Marketplace",  eyebrow: "КАТАЛОГ РЕШЕНИЙ · ИНСТРУМЕНТЫ / СКИЛЛЫ / СКРИПТЫ",      action: "" },
-      guides:      { title: "Библиотека",   eyebrow: "УЧЕБНЫЕ МАТЕРИАЛЫ",                              action: "" },  // F: redirect guides→library (Ruslan #9)
-      leaderboard: { title: "Leaderboard",  eyebrow: "",           action: "" },
+      person:      { title: "Мой Пульс",   eyebrow: eb,                                  action: "" },
+      list:        { title: "Бэклог",       eyebrow: eb,                                  action: "" },
+      overview:    { title: "Спринт",       eyebrow: eb + (range ? " · " + range : ""),     action: "" },
+      calendar:    { title: "Календарь",    eyebrow: eb,                                  action: "" },
+      tasks:       { title: "Задачи",       eyebrow: eb,                                  action: "" },
+      library:     { title: "Библиотека",   eyebrow: eb,                                  action: "" },
+      marketplace: { title: "Marketplace",  eyebrow: eb,                                  action: "" },
+      guides:      { title: "Библиотека",   eyebrow: eb,                                  action: "" },  // F: redirect guides→library (Ruslan #9)
+      leaderboard: { title: "Leaderboard",  eyebrow: eb,                                  action: "" },
     };
-    return M[view] || { title: view, eyebrow: "", action: "" };
+    return M[view] || { title: view, eyebrow: eb, action: "" };
   }
 
   function mount(view) {
