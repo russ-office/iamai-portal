@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-08-01T22:12:47+05:00",
- "today": "2026-08-01",
+ "generated_at": "2026-08-02T11:24:29+05:00",
+ "today": "2026-08-02",
  "sprint_no": 1,
  "subject": {
   "id": "rec25ceKLAA9vxWKD",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": null,
-  "done_7d": 0,
-  "state": "none"
+  "days_idle": 1,
+  "done_7d": 1,
+  "state": "warn"
  },
  "events": [
   {
@@ -41,10 +41,54 @@
   "device": ""
  },
  "metrics": {
-  "total_hours": 0,
-  "impact_share": 0.0,
+  "total_hours": 4.2,
+  "impact_share": 0.004,
   "quadrant": "",
-  "threads": []
+  "threads": [
+   {
+    "thread_key": "DAN_LAB_1_Intake-P25",
+    "thread": "Транскрибация записей совещаний",
+    "progress": 0.833,
+    "hours": 4.166666666666667,
+    "stage": "Тест",
+    "stage_code": "T6_test",
+    "reached": [
+     "T6_test"
+    ],
+    "brief": [
+     {
+      "code": "T6_test",
+      "text": "Записи совещаний не переводятся в текст. Невозможно быстро найти принятые решения и поручения, отсутствует база расшифровок для поиска и анализа."
+     }
+    ],
+    "links": {
+     "edit": null,
+     "take": null,
+     "research": "",
+     "prototype": "",
+     "prd": ""
+    },
+    "prototypes": []
+   }
+  ],
+  "activity_14d": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "activity_from": "20.07",
+  "activity_to": "02.08"
  },
  "backlog": [
   {

@@ -1,9 +1,9 @@
 {
  "client": "DAN Partners",
- "generated_at": "2026-08-01T22:12:43+05:00",
+ "generated_at": "2026-08-02T11:24:27+05:00",
  "kpi": {
   "groups": 6,
-  "people": 16,
+  "people": 17,
   "threads": 47,
   "hours_month": 2996.7,
   "hours_year": 35960.4
@@ -22,7 +22,7 @@
    "group_id": "recrvRXnzkF35FvTN",
    "cycle": "DAN_LAB_1_5-C1",
    "threads": 15,
-   "people": 2,
+   "people": 3,
    "hours_month": 1072.3
   },
   {
@@ -59,7 +59,8 @@
   }
  ],
  "funnel": {
-  "Проблема": 47
+  "Проблема": 46,
+  "Тест": 1
  },
  "top": [
   {

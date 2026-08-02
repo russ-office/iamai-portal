@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-01T22:12:44+05:00",
+ "generated_at": "2026-08-02T11:24:27+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -34,7 +34,7 @@
   {
    "code": "T1_idea",
    "label": "Проблема",
-   "count": 102
+   "count": 101
   },
   {
    "code": "T2_task",
@@ -54,7 +54,7 @@
   {
    "code": "T6_test",
    "label": "Тест",
-   "count": 0
+   "count": 1
   },
   {
    "code": "T7_prd",
@@ -76,7 +76,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 18,
+    "days_idle": 19,
     "done_7d": 0
    },
    "last_at": "2026-07-14 10:46",
@@ -124,7 +124,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 18,
+    "days_idle": 19,
     "done_7d": 0
    },
    "last_at": "2026-07-14 07:03",
@@ -205,7 +205,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 18,
+    "days_idle": 19,
     "done_7d": 0
    },
    "last_at": "2026-07-14 07:13",
@@ -342,7 +342,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 18,
+    "days_idle": 19,
     "done_7d": 0
    },
    "last_at": "2026-07-14 06:49",
@@ -390,7 +390,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 16,
+    "days_idle": 17,
     "done_7d": 0
    },
    "last_at": "2026-07-16 14:42",
@@ -460,7 +460,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 13,
+    "days_idle": 14,
     "done_7d": 0
    },
    "last_at": "2026-07-19 07:17",
@@ -519,7 +519,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 10,
+    "days_idle": 11,
     "done_7d": 0
    },
    "last_at": "2026-07-22 09:08",
@@ -721,7 +721,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 10,
+    "days_idle": 11,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:42",
@@ -769,7 +769,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 10,
+    "days_idle": 11,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:45",
@@ -828,7 +828,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 10,
+    "days_idle": 11,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:53",
@@ -920,7 +920,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 9,
+    "days_idle": 10,
     "done_7d": 0
    },
    "last_at": "2026-07-23 04:27",
@@ -1001,8 +1001,8 @@
    "in_sprint": true,
    "temp": {
     "state": "bad",
-    "days_idle": 7,
-    "done_7d": 1
+    "days_idle": 8,
+    "done_7d": 0
    },
    "last_at": "2026-07-25 11:00",
    "stepper": {
@@ -1073,7 +1073,7 @@
    "in_sprint": false,
    "temp": {
     "state": "warn",
-    "days_idle": 2,
+    "days_idle": 3,
     "done_7d": 4
    },
    "last_at": "2026-07-30 05:25",
@@ -1406,24 +1406,117 @@
    "tasks": []
   },
   {
+   "group": "SZ_LAB_1_1_CorpGov",
+   "group_id": "recq40h3l2aTVnge5",
+   "client": "SZ",
+   "cycle": "SZ_Sprint_1-1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recq40h3l2aTVnge5&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_2_Adm",
+   "group_id": "rectNb6K7IojGTGdS",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_Adm-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rectNb6K7IojGTGdS&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_3_Sales",
+   "group_id": "reciKzjGJVFrhLmBo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_Sales-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_9_Acc",
+   "group_id": "recOKKQS1JJRlAAAi",
+   "client": "SZ",
+   "cycle": "",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
    "group": "DAN_LAB_1_5",
    "group_id": "recrvRXnzkF35FvTN",
    "client": "DAN",
    "cycle": "DAN_LAB_1_5-C1",
    "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
-   "people": 2,
+   "people": 3,
    "threads": 15,
-   "backlog_count": 15,
+   "backlog_count": 14,
    "hours_month": 1072.3,
-   "in_sprint": false,
+   "in_sprint": true,
    "temp": {
-    "state": "warn",
+    "state": "ok",
     "days_idle": 1,
-    "done_7d": 1
+    "done_7d": 2
    },
-   "last_at": "2026-07-31 12:29",
+   "last_at": "2026-08-01 17:23",
    "stepper": {
-    "T1_idea": 15
+    "T1_idea": 15,
+    "T6_test": 1
    },
    "dirty_count": 0,
    "orphan": false,
@@ -1539,17 +1632,6 @@
      "dirty": false
     },
     {
-     "thread_key": "DAN_LAB_1_Intake-P25",
-     "title": "Транскрибация записей совещаний",
-     "hours_month": 40,
-     "ease": 5,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:50",
-     "dirty": false
-    },
-    {
      "thread_key": "DAN_LAB_1_Intake-P27",
      "title": "Выбор способа конвертации процессов",
      "hours_month": 30,
@@ -1594,98 +1676,6 @@
      "dirty": false
     }
    ],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_1_CorpGov",
-   "group_id": "recq40h3l2aTVnge5",
-   "client": "SZ",
-   "cycle": "SZ_Sprint_1-1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recq40h3l2aTVnge5&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_2_Adm",
-   "group_id": "rectNb6K7IojGTGdS",
-   "client": "SZ",
-   "cycle": "SZ_LAB_1_Adm-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=rectNb6K7IojGTGdS&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_3_Sales",
-   "group_id": "reciKzjGJVFrhLmBo",
-   "client": "SZ",
-   "cycle": "SZ_LAB_Sales-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_9_Acc",
-   "group_id": "recOKKQS1JJRlAAAi",
-   "client": "SZ",
-   "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recOKKQS1JJRlAAAi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
    "tasks": []
   }
  ],
