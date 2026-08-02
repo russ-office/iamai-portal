@@ -4,6 +4,11 @@
    Terracotta stays on action / active / bad only. Stage-bar fill = positive (--status-ok)
    on current, per Ruslan 01.08 (coord pulse-cd-decisions #5, инверсия тонов). */
 
+/* hover-underline off (Ruslan 02.08, блокер launch 03.08): base.css a:hover{text-decoration:underline}
+   с --link-hover (оранжевый) → раздражало. pulse.css грузится после design-system → same specificity,
+   pulse выигрывает. base.css НЕ трогаем (другие проекты зависят). */
+a:hover { text-decoration: none; }
+
 /* Page column inside c-shell__body.
    §7 (redesign): контейнер на всю ширину c-shell__main — раньше max-width 900px
    давал «правую границу ~3/4». main и так flex:1 (viewport − rail); limit был здесь. */
