@@ -96,7 +96,7 @@
   function loadSnapshot(token) {
     if (token) {
       // capability link → load this participant's snapshot; a bad token surfaces as error (mount .catch)
-      return fetch("data/" + encodeURIComponent(token) + ".json?ts=" + Date.now())
+      return fetch("data/" + encodeURIComponent(token) + ".json")
         .then(function (r) { if (!r.ok) throw new Error("notfound"); return r.json(); });
     }
     if (window.PULSE_SNAPSHOT) return Promise.resolve(window.PULSE_SNAPSHOT);
@@ -388,7 +388,7 @@
 
   function renderGuides(body) {
     body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Загружаем…</div></div>';
-    fetch("guides.json?ts=" + Date.now())
+    fetch("guides.json")
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (G) {
         var cards = (G.guides || []).map(function (g) {
@@ -509,7 +509,7 @@
   // Каталог с плашками (LMS / Marketplace). Фильтры: scope (свои/чужие, опц.) + теги (клик-чипы).
   function renderCatalog(body, url, opts) {
     body.innerHTML = '<div class="p-wrap--list"><div class="c-empty">Загружаем…</div></div>';
-    fetch(url + "?ts=" + Date.now())
+    fetch(url)
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (J) {
         var items = J.items || [], state = { scope: "" };
