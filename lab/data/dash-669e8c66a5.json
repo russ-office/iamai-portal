@@ -1,8 +1,8 @@
 {
  "client": "Evrika",
- "generated_at": "2026-08-02T22:30:19+05:00",
+ "generated_at": "2026-08-03T11:49:29+05:00",
  "kpi": {
-  "groups": 1,
+  "groups": 6,
   "people": 19,
   "threads": 29,
   "hours_month": 2853.4,
@@ -10,12 +10,52 @@
  },
  "groups": [
   {
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "group_id": "recq4f8g3aLUFXJwi",
    "cycle": "EVRIKA-BUH-F1-C1",
    "threads": 29,
    "people": 19,
    "hours_month": 2853.4
+  },
+  {
+   "group": "EVRIKA_LAB_1_2",
+   "group_id": "recBxL7wR1GrWpLAZ",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  },
+  {
+   "group": "EVRIKA_LAB_1_3",
+   "group_id": "recSeqmD6i1GRgekQ",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  },
+  {
+   "group": "EVRIKA_LAB_1_6",
+   "group_id": "recSuCeVAthcnZCAb",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  },
+  {
+   "group": "EVRIKA_LAB_1_5",
+   "group_id": "receDoYfSJIhJKOPY",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
+  },
+  {
+   "group": "EVRIKA_LAB_1_4",
+   "group_id": "recflSquE2ik660Hq",
+   "cycle": "",
+   "threads": 0,
+   "people": 0,
+   "hours_month": 0
   }
  ],
  "funnel": {
@@ -24,84 +64,84 @@
  "top": [
   {
    "title": "Отправка статистической отчётности ежемесячно и поквартально, данные собираются по 1С, продажи, себестоимость, запасы, по филиалам и головной компании, в разрезе адресов точек. Отчетность по фин.показателям за квартал по головной компании",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 540,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P6"
   },
   {
    "title": "Автоматизация контент-плана",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 520,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P25"
   },
   {
    "title": "Внесение данных кандидата в excel",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 472.5,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P22"
   },
   {
    "title": "Первичный скрининг резюме ",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 200,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P15"
   },
   {
    "title": "Универсальный Парсер",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 160,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P28"
   },
   {
    "title": "Восстановление отчетности за предыдущие годы",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 150,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P24"
   },
   {
    "title": "Автоматизация распределения товаров между РЦ",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 106.66666666666667,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P29"
   },
   {
    "title": "Фильтры по приоритетности заказов в 1С и WMS",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 90,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P7"
   },
   {
    "title": "Написание ежемесячные курсов ",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 80,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P21"
   },
   {
    "title": "Автоматизация отправки потребности",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 80,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P27"
   },
   {
    "title": "Универсальный инструмент для Анализа",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 80,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P30"
   },
   {
    "title": "Балансировка стока между складами",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "hours_month": 67.5,
    "stage": "Проблема",
    "thread_key": "EVRIKA_LAB_1_1_Acc-P11"
@@ -110,84 +150,84 @@
  "board": [
   {
    "email": "tatyana.sh0709@gmail.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 540,
    "rows": 1
   },
   {
    "email": "milana.b@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 520,
    "rows": 1
   },
   {
    "email": "umit.d@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 472.5,
    "rows": 1
   },
   {
    "email": "sergei.k@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 5,
    "hours_month": 427.0,
    "rows": 5
   },
   {
    "email": "sofya.s@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 2,
    "hours_month": 156.25,
    "rows": 2
   },
   {
    "email": "dinara.bo@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 2,
    "hours_month": 120,
    "rows": 2
   },
   {
    "email": "zanggar.o@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 90,
    "rows": 1
   },
   {
    "email": "maxim.m@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 67.5,
    "rows": 1
   },
   {
    "email": "ayaulym.t@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 55,
    "rows": 1
   },
   {
    "email": "nurbolat.s@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 3,
    "hours_month": 32.66666666666667,
    "rows": 3
   },
   {
    "email": "nurzhan.d@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 30,
    "rows": 1
   },
   {
    "email": "nazym.i@evrika.com",
-   "group": "EVRIKA_LAB_1_1_Acc",
+   "group": "EVRIKA_LAB_1_1",
    "ideas": 1,
    "hours_month": 25,
    "rows": 1

@@ -1,11 +1,17 @@
 {
- "generated_at": "2026-08-02T22:30:19+05:00",
+ "generated_at": "2026-08-03T11:49:29+05:00",
  "groups": {
   "recBoN3ZsXbY7AAGn": {
    "name": "SZ_LAB_1_4_IT",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_IT-C1",
    "threads": 4
+  },
+  "recBxL7wR1GrWpLAZ": {
+   "name": "EVRIKA_LAB_1_2",
+   "client": "rec7kIMmwjZ6j3ahS",
+   "cycle": "",
+   "threads": 0
   },
   "recHFFw93GRcDM3bX": {
    "name": "DAN_LAB_1_1",
@@ -37,11 +43,35 @@
    "cycle": "",
    "threads": 0
   },
+  "recSeqmD6i1GRgekQ": {
+   "name": "EVRIKA_LAB_1_3",
+   "client": "rec7kIMmwjZ6j3ahS",
+   "cycle": "",
+   "threads": 0
+  },
+  "recSuCeVAthcnZCAb": {
+   "name": "EVRIKA_LAB_1_6",
+   "client": "rec7kIMmwjZ6j3ahS",
+   "cycle": "",
+   "threads": 0
+  },
   "recT5FrmxKKm27NIA": {
    "name": "SZ_LAB_1_10_HR",
    "client": "recTHD8qGCMvvoznH",
    "cycle": "SZ_LAB_1_HR_3-C1",
    "threads": 3
+  },
+  "receDoYfSJIhJKOPY": {
+   "name": "EVRIKA_LAB_1_5",
+   "client": "rec7kIMmwjZ6j3ahS",
+   "cycle": "",
+   "threads": 0
+  },
+  "recflSquE2ik660Hq": {
+   "name": "EVRIKA_LAB_1_4",
+   "client": "rec7kIMmwjZ6j3ahS",
+   "cycle": "",
+   "threads": 0
   },
   "rech5SFuPyuwYAdJy": {
    "name": "SZ_LAB_1_5_Ecom",
@@ -74,7 +104,7 @@
    "threads": 0
   },
   "recq4f8g3aLUFXJwi": {
-   "name": "EVRIKA_LAB_1_1_Acc",
+   "name": "EVRIKA_LAB_1_1",
    "client": "rec7kIMmwjZ6j3ahS",
    "cycle": "EVRIKA-BUH-F1-C1",
    "threads": 29
