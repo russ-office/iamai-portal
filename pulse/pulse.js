@@ -56,7 +56,7 @@
     { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard",  state: "active" },
     { id: "library",     label: "Библиотека",  href: "page-list.html?view=library",      state: "active" },
     { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "active" },
-    { id: "chat",        label: "Чат",         state: "chat" },  // K8: История→Чат (Ruslan; фаза1=«сообщить о проблеме»=feedbackUrl, фаза2=чаты с ботом)
+    { id: "chat",        label: "Чат",         state: "soon", title: "Скоро: сообщить о проблеме или идее" },  // #665 интерим: скрыт до слайдера+формы (K8 фаза2). Было state:"chat"→feedbackUrl новой вкладкой.
   ];
 
   // Ротация цитат для p-note (redesign §8, контент от Cleo coord 10:44).
@@ -122,7 +122,7 @@
     var nav = NAV.map(function (n) {
       var soon = n.state === "soon";
       var cls = "c-nav-item" + (view === n.id ? " is-active" : "") + (soon ? " is-soon" : "");
-      if (soon) return '<span class="' + cls + '" title="Появится позже / база не подключена"><span>' + esc(n.label) + '</span></span>';
+      if (soon) return '<span class="' + cls + '" title="' + esc(n.title || "Появится позже / база не подключена") + '"><span>' + esc(n.label) + '</span></span>';
       // K8: Чат (фаза1) = «сообщить о проблеме» (feedbackUrl, внешняя Airtable-форма, новая вкладка).
       if (n.state === "chat") return '<a class="' + cls + '" href="' + esc(feedbackUrl) + '" target="_blank" rel="noopener" title="Сообщить о проблеме или идее"><span>' + esc(n.label) + '</span></a>';
       return '<a class="' + cls + '" href="' + esc(withTok(n.href)) + '"><span>' + esc(n.label) + '</span></a>';
@@ -145,11 +145,13 @@
         '<div class="c-shell__main">' +
           '<header class="c-page-head">' +
             '<div class="c-page-head__titles">' +
-              (meta.eyebrow ? '<span class="c-page-head__eyebrow">' + esc(meta.eyebrow) + '</span>' : '') +
               '<span class="c-page-head__title">' + esc(meta.title) + '</span>' +
             '</div>' +
             '<div class="c-page-head__right">' +
-              '<span class="c-page-head__date">' + esc(U.fmtDate(D.today)) + '</span>' +
+              '<div class="c-page-head__datestack">' +
+                '<span class="c-page-head__date">' + esc(U.fmtDate(D.today)) + '</span>' +
+                (meta.eyebrow ? '<span class="c-page-head__sub">' + esc(meta.eyebrow) + '</span>' : '') +
+              '</div>' +
               (meta.action ? '<span class="c-page-head__action">' + meta.action + '</span>' : '') +
             '</div>' +
           '</header>' +
@@ -314,29 +316,51 @@
     var list = (D.backlog || []).slice().sort(function (a, b) { return (b.total_hours || 0) - (a.total_hours || 0); });
     var rec = pRecRank(list), locked = !!t;
     var total = h1(list.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
+
+    // #664: всегда-видимый блок «Наши рекомендации» наверху бэклога. pRecRank уже считает top-3
+    // по паре (экономия × лёгкость); блок переиспользует card-разметку, без toggle/слайдера.
+    // Закрывает discoverability (Ruslan: «могут не догадаться») — рекомендация не за кликом, а наверху.
+    var top3 = Object.keys(rec).map(function (id) {
+      var b = list.filter(function (x) { return x.id === id; })[0];
+      return b ? { b: b, r: rec[id] } : null;
+    }).filter(Boolean).sort(function (a, b) { return a.r - b.r; });
+    var rest = list.filter(function (b) { return !rec[b.id]; });   // top-3 уходят в блок, в сетку — остальные
+
+    function card(b, r) {
+      var takeBtn = locked
+        ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
+        : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
+      var editBtn = formLink((b.links || {}).edit)
+        ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
+      var badges = ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
+      var rankrow = r ? '<div class="p-rec__rankrow"><span class="p-rec__rank">№' + r + '</span>' +
+        '<span class="p-rec__ranklabel">рекомендация Матеос</span></div>' : '';
+      return '<div class="c-sheet c-sheet--pad p-backlog-card' + (r ? ' p-rec__card' : '') + '">' +
+        rankrow +
+        '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
+          '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
+        (badges ? '<div class="p-badges">' + badges + '</div>' : '') +
+        '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 150)) + '</p>' +
+        '<div class="p-backlog-card__acts">' + editBtn + takeBtn + '</div>' +
+      '</div>';
+    }
+
+    var recBlock = top3.length
+      ? '<div class="p-rec">' +
+          '<div class="p-rec__head"><span class="p-rec__title">★ Наши рекомендации</span>' +
+          '<span class="p-rec__hint">по паре экономия × лёгкость — с чего выгоднее начать</span></div>' +
+          '<div class="p-rec__grid">' + top3.map(function (it) { return card(it.b, it.r); }).join("") + '</div>' +
+        '</div>'
+      : '';
+
     var ban = locked
       ? '<div class="c-sheet c-sheet--pad p-lockban">В работе уже: <b>' + esc(t.thread) + '</b> (' + esc(t.stage) + '). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div>'
       : '';
-    var cards = list.length
-      ? '<div class="p-backlog-grid">' + list.map(function (b) {
-          var r = rec[b.id];
-          // Ранжирование Матеуса по паре (экономия × лёгкость): ★ №N на топ-3, бейдж лёгкости на остальных (coord ядро-3).
-          var badges = (r ? '<span class="c-chip is-accent">★ Матеос №' + r + '</span>' : '')
-            + ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
-          var takeBtn = locked
-            ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
-            : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
-          var editBtn = formLink((b.links || {}).edit)
-            ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
-          return '<div class="c-sheet c-sheet--pad p-backlog-card">' +
-            '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
-              '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
-            (badges ? '<div class="p-badges">' + badges + '</div>' : '') +
-            '<p class="p-backlog-card__body">' + esc(excerpt(b.content, 150)) + '</p>' +
-            '<div class="p-backlog-card__acts">' + editBtn + takeBtn + '</div>' +
-          '</div>';
-        }).join("") + '</div>'
-      : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму.</div></div>';
+    var cards = rest.length
+      ? '<div class="p-backlog-grid">' + rest.map(function (b) { return card(b); }).join("") + '</div>'
+      : (top3.length
+        ? '<div class="c-sheet c-sheet--flush"><div class="c-empty">Остальные проблемы появятся в бэклоге по мере заполнения.</div></div>'
+        : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму.</div></div>');
 
     body.innerHTML =
       '<div class="p-wrap--list">' +
@@ -344,10 +368,11 @@
           '<div class="c-filter-bar" style="margin:0"><span class="c-filter-bar__count">' +
             list.length + ' проблем · ' + total + ' ч/мес потенциал · сортировка по экономии</span></div>' +
           backlogAction() +
-        '</div>' + ban + cards +
+        '</div>' + recBlock + ban + cards +
       '</div>';
 
-    // взять/поправить → форма в шторке (канон write-path = c-drawer). locked-take без data-act сюда не попадает.
+    // взять/поправить → форма в шторке (канон write-path = c-drawer). Кнопки блока и сетки несут
+    // тот же data-card/data-act; поиск по полному list (top-3 в нём). locked-take без data-act не попадает.
     // Ссылка из снапшота несёт hidden-принадлежность И значения (p_*), чтобы человек видел свой текст.
     body.querySelectorAll("[data-card][data-act]").forEach(function (btn) {
       var id = btn.getAttribute("data-card"), act = btn.getAttribute("data-act");
