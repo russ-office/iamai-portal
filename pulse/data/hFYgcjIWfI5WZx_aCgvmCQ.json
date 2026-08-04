@@ -1,0 +1,59 @@
+{
+ "scope": "person",
+ "generated_at": "2026-08-04T16:14:59+05:00",
+ "today": "2026-08-04",
+ "sprint_no": 1,
+ "subject": {
+  "id": "recWAuxIKn4iB5iKA",
+  "name": "Арман Омаров",
+  "group": "EVRIKA_LAB_1_4",
+  "client": "Evrika"
+ },
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recflSquE2ik660Hq&cycle=&type=T1_idea&author_email=",
+ "status_light": {
+  "days_idle": 12,
+  "done_7d": 0,
+  "state": "bad"
+ },
+ "events": [],
+ "tasks": [],
+ "url_task": "https://iamai.fillout.com/t/qrGUZPSs16us?assignee_id=recWAuxIKn4iB5iKA&group_id=recflSquE2ik660Hq&client_id=rec7kIMmwjZ6j3ahS&source=self&status=todo",
+ "profile": {
+  "name": "Арман Омаров",
+  "role": "",
+  "group": "EVRIKA_LAB_1_4",
+  "org": "Evrika",
+  "skills": [],
+  "work_style": "",
+  "format_pref": "",
+  "country": "",
+  "city_residence": "",
+  "os": "",
+  "device": ""
+ },
+ "metrics": {
+  "total_hours": 0,
+  "impact_share": 0,
+  "quadrant": "",
+  "threads": [],
+  "activity_14d": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "activity_from": "22.07",
+  "activity_to": "04.08"
+ },
+ "backlog": []
+}

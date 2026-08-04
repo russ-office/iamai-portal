@@ -1,0 +1,85 @@
+{
+ "scope": "person",
+ "generated_at": "2026-08-04T16:14:59+05:00",
+ "today": "2026-08-04",
+ "sprint_no": 1,
+ "subject": {
+  "id": "reca2Msua6nZDJakb",
+  "name": "Мухтар Алибжанов",
+  "group": "EVRIKA_LAB_1_5",
+  "client": "Evrika"
+ },
+ "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=receDoYfSJIhJKOPY&cycle=&type=T1_idea&author_email=",
+ "status_light": {
+  "days_idle": 12,
+  "done_7d": 0,
+  "state": "bad"
+ },
+ "events": [],
+ "tasks": [],
+ "url_task": "https://iamai.fillout.com/t/qrGUZPSs16us?assignee_id=reca2Msua6nZDJakb&group_id=receDoYfSJIhJKOPY&client_id=rec7kIMmwjZ6j3ahS&source=self&status=todo",
+ "profile": {
+  "name": "Мухтар Алибжанов",
+  "role": "",
+  "group": "EVRIKA_LAB_1_5",
+  "org": "Evrika",
+  "skills": [],
+  "work_style": "",
+  "format_pref": "",
+  "country": "",
+  "city_residence": "",
+  "os": "",
+  "device": ""
+ },
+ "metrics": {
+  "total_hours": 5,
+  "impact_share": 0,
+  "quadrant": "",
+  "threads": [
+   {
+    "thread_key": "EVRIKA_LAB_1_1_Acc-P8",
+    "thread": "Вбивание имей коды занимайся монографияның времени",
+    "progress": 0.167,
+    "hours": 5,
+    "stage": "Проблема",
+    "stage_code": "T1_idea",
+    "reached": [
+     "T1_idea"
+    ],
+    "brief": [
+     {
+      "code": "T1_idea",
+      "text": "На каждый телефон вбивание имей коды,"
+     }
+    ],
+    "links": {
+     "edit": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&thread_key=EVRIKA_LAB_1_1_Acc-P8&p_freq=20&p_time=5&p_emp=3&p_title=%D0%92%D0%B1%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B9%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B9%D1%81%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%D0%BD%D1%8B%D2%A3%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8&p_content=%D0%9D%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%20%D0%B2%D0%B1%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B9%20%D0%BA%D0%BE%D0%B4%D1%8B%2C%20%0A&p_freq=20&p_time=5&p_emp=3",
+     "take": "https://iamai.fillout.com/t/8RtZLWzrveus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&thread_key=EVRIKA_LAB_1_1_Acc-P8&type=T2_task&p_freq=20&p_time=5&p_emp=3&p_title=%D0%92%D0%B1%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B9%20%D0%BA%D0%BE%D0%B4%D1%8B%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D0%B9%D1%81%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%D0%BD%D1%8B%D2%A3%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8&p_content=%D0%9D%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%20%D0%B2%D0%B1%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B9%20%D0%BA%D0%BE%D0%B4%D1%8B%2C%20%0A&p_freq=20&p_time=5&p_emp=3",
+     "research": "",
+     "prototype": "",
+     "prd": ""
+    },
+    "prototypes": []
+   }
+  ],
+  "activity_14d": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "activity_from": "22.07",
+  "activity_to": "04.08"
+ },
+ "backlog": []
+}
