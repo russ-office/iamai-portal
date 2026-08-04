@@ -334,7 +334,7 @@
         ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
       var badges = ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
       var rankrow = r ? '<div class="p-rec__rankrow"><span class="p-rec__rank">№' + r + '</span>' +
-        '<span class="p-rec__ranklabel">рекомендация Матеос</span></div>' : '';
+        '<span class="p-rec__ranklabel">рекомендация Матеус</span></div>' : '';
       return '<div class="c-sheet c-sheet--pad p-backlog-card' + (r ? ' p-rec__card' : '') + '">' +
         rankrow +
         '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
@@ -347,8 +347,7 @@
 
     var recBlock = top3.length
       ? '<div class="p-rec">' +
-          '<div class="p-rec__head"><span class="p-rec__title">★ Наши рекомендации</span>' +
-          '<span class="p-rec__hint">по паре экономия × лёгкость — с чего выгоднее начать</span></div>' +
+          '<div class="p-rec__head"><span class="p-rec__title">★ Наши рекомендации</span></div>' +
           '<div class="p-rec__grid">' + top3.map(function (it) { return card(it.b, it.r); }).join("") + '</div>' +
         '</div>'
       : '';
@@ -631,7 +630,10 @@
     if (code === "T6_test") { var p = (t.prototypes || []).filter(function (x) { return x.url_test; })[0]; return p ? formLink(p.url_test) : ""; }
     var k = PADDKEY[code]; return k ? formLink(L[k]) : "";
   }
-  // Рекомендация Матеуса: топ-3 backlog по паре (экономия × лёгкость). Не обязаны стоять в первых строках.
+  // INTERIM — топ-3 по hours × ease. Логика рекомендаций = домен Cleo (LAB), НЕ MateOS (Ruslan 04.08:
+  // «MateOS — только рельсы; top-3 должна давать Cleo, доп. колонка в Airtable скорее всего»). Ждём спек
+  // Cleo: либо ratify формулы в ранбуке, либо новая колонка recommendation_rank (ставит она) → MateOS
+  // читает. ease уже ставит Cleo (Artifacts.ease) — не фантазия. Будет заменено по её решению.
   function pRecRank(list) {
     var scored = list.filter(function (b) { return (b.ease || 0) > 0; });
     if (!scored.length) return {};

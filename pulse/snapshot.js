@@ -37,10 +37,13 @@ window.PULSE_SNAPSHOT = {
     ],
   },
   backlog: [
-    { id: "recBL01", title: "Ручной сбор проблемных интервью", total_hours: 12, thread_key: "T-INT", content: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста." },
-    { id: "recBL02", title: "Сборка one-pager под Demo Day", total_hours: 6, thread_key: "T-OPG", content: "Гипотезы живут в чатах и файлах. Перед демо всё пересобирается заново — 6 часов на человека в цикл." },
-    { id: "recBL03", title: "Прогон прототипов в Figma", total_hours: 9, thread_key: "T-FIG", content: "Прототипы делаются с нуля каждый раз. Нет переиспользуемых блоков под путь Вход→Выход." },
-    { id: "recBL04", title: "Синхронизация статусов по спринту", total_hours: 4, thread_key: "T-SYNC", content: "Статусы задач разбросаны. Лид тратит время на ручной сбор картины к status_check." },
+    { id: "recBL01", title: "Ручной сбор проблемных интервью", total_hours: 12, ease: 3, thread_key: "T-INT", content: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста." },
+    { id: "recBL02", title: "Сборка one-pager под Demo Day", total_hours: 6, ease: 4, thread_key: "T-OPG", content: "Гипотезы живут в чатах и файлах. Перед демо всё пересобирается заново — 6 часов на человека в цикл." },
+    { id: "recBL03", title: "Прогон прототипов в Figma", total_hours: 9, ease: 2, thread_key: "T-FIG", content: "Прототипы делаются с нуля каждый раз. Нет переиспользуемых блоков под путь Вход→Выход." },
+    { id: "recBL04", title: "Синхронизация статусов по спринту", total_hours: 4, ease: 5, thread_key: "T-SYNC", content: "Статусы задач разбросаны. Лид тратит время на ручной сбор картины к status_check." },
+    { id: "recBL05", title: "Ручной расчёт KPI отдела", total_hours: 8, ease: 4, thread_key: "T-KPI", content: "KPI считаются в таблицах руками. Нет единой формулы, ошибки, пересогласование каждую неделю." },
+    { id: "recBL06", title: "Дедупликация контактов в CRM", total_hours: 15, ease: 2, thread_key: "T-DUP", content: "Дубли контактов плодятся, ручная сверка. Высокий риск потерять или слить сделки — но чистка сложна." },
+    { id: "recBL07", title: "Шаблон еженедельного отчёта", total_hours: 3, ease: 5, thread_key: "T-RPT", content: "Отчёт собирается с нуля каждую неделю. Шаблон = быстрая победа без автоматизации." },
   ],
   // __mock: derived (GroupMembership + Artifacts). Delete to see c-empty on Leaderboard.
   leaderboard: [
