@@ -166,9 +166,12 @@
   function taskAction() { return '<button type="button" class="c-btn is-primary" id="p-add-task">+ Добавить задачу</button>'; }
 
   // ── c-tape (activity feed, exactly 14 days; 1px tick + dot; not a bar chart) ─
-  function tapeHTML(arr, fromLabel, toLabel) {
+  function tapeHTML(arr, today) {
     if (!arr || !arr.length) return '<div class="c-empty">Нет активности за период</div>';
     var max = Math.max.apply(null, arr) || 1;
+    var end = today ? new Date(today) : new Date();
+    var LABEL_AT = { 0: 1, 4: 1, 7: 1, 10: 1, 13: 1 };  // даты под выбранными днями (start + 3 внутри + end)
+    function fmtDay(d) { return String(d.getDate()).padStart(2, "0") + "." + String(d.getMonth() + 1).padStart(2, "0"); }
     var days = arr.map(function (v, i) {
       var isEmpty = v <= 0, isToday = i === arr.length - 1;
       var h = 6 + Math.round((v > 0 ? v : 0) / max * 26);
@@ -177,9 +180,14 @@
              '<span class="c-tape__tick" style="height:' + h + 'px"></span>' +
              '<span class="c-tape__dot"' + dotStyle + '></span></div>';
     }).join("");
+    var labels = arr.map(function (_, i) {
+      var d = new Date(end.getTime() - (arr.length - 1 - i) * 86400000);
+      var show = LABEL_AT[i];
+      return '<span class="c-tape__lbl' + (show ? '' : ' is-hidden') + '">' + (show ? esc(fmtDay(d)) : '') + '</span>';
+    }).join("");
     return '<div class="c-tape">' +
              '<div class="c-tape__row" role="img" aria-label="Активность за 14 дней">' + days + '</div>' +
-             '<div class="c-tape__axis"><span>' + esc(fromLabel || "") + '</span><span>' + esc(toLabel || "") + '</span></div>' +
+             '<div class="c-tape__axis">' + labels + '</div>' +
            '</div>';
   }
 
@@ -220,7 +228,7 @@
     }).join("");
 
     var tape = (D.metrics.activity_14d && D.metrics.activity_14d.length)
-      ? tapeHTML(D.metrics.activity_14d, D.metrics.activity_from, D.metrics.activity_to)
+      ? tapeHTML(D.metrics.activity_14d, D.today)
       : '<div class="c-empty">Нет активности за период</div>';
 
     var tasks = D.tasks.map(taskRowHTML).join("");
@@ -313,29 +321,48 @@
 
   function renderBacklog(body, D) {
     var t = pPipeThread(D);
+    var tok = new URLSearchParams(location.search).get("c") || "";
+    var tokQs = tok ? ("?c=" + encodeURIComponent(tok)) : "";
     var list = (D.backlog || []).slice().sort(function (a, b) { return (b.total_hours || 0) - (a.total_hours || 0); });
-    var rec = pRecRank(list), locked = !!t;
+    var locked = !!t;
     var total = h1(list.reduce(function (s, b) { return s + (b.total_hours || 0); }, 0));
 
-    // #664: всегда-видимый блок «Наши рекомендации» наверху бэклога. pRecRank уже считает top-3
-    // по паре (экономия × лёгкость); блок переиспользует card-разметку, без toggle/слайдера.
-    // Закрывает discoverability (Ruslan: «могут не догадаться») — рекомендация не за кликом, а наверху.
+    // #664 review: взятая в спринт проблема остаётся в бэклоге и выделяется «в работе» (бейдж+бордер,
+    // по принципу Матеус-карточек). Если её T1 выпал из бэклога (is_current снят) — синтетическая
+    // карточка из треда. Из рекомендаций взятую исключаем (не советуем начатое).
+    var workKey = t && t.thread_key;
+    var workMatch = workKey ? list.filter(function (b) { return b.thread_key === workKey; })[0] : null;
+    var workCard = workMatch || (t ? {
+      id: "work-" + (workKey || "x"), title: t.thread || "В работе", total_hours: t.hours || 0,
+      thread_key: workKey || "", ease: 0, links: {},
+      content: (((t.brief || []).filter(function (b) { return b.code === "T1_idea"; })[0]) || {}).text || ""
+    } : null);
+    var workId = workCard && workCard.id;
+    var recList = list.filter(function (b) { return b.id !== workId; });   // взятая проблема — вне рекомендаций/сетки
+
+    // #664: всегда-видимый блок «Наши рекомендации» наверху бэклога. pRecRank считает top-3 (interim
+    // hours×ease; логика рекомендаций = домен Cleo — ждём спек). Закрывает discoverability — не за кликом.
+    var rec = pRecRank(recList);
     var top3 = Object.keys(rec).map(function (id) {
-      var b = list.filter(function (x) { return x.id === id; })[0];
+      var b = recList.filter(function (x) { return x.id === id; })[0];
       return b ? { b: b, r: rec[id] } : null;
     }).filter(Boolean).sort(function (a, b) { return a.r - b.r; });
-    var rest = list.filter(function (b) { return !rec[b.id]; });   // top-3 уходят в блок, в сетку — остальные
+    var rest = recList.filter(function (b) { return !rec[b.id]; });   // top-3 уходят в блок, в сетку — остальные
 
     function card(b, r) {
-      var takeBtn = locked
-        ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
-        : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>';
-      var editBtn = formLink((b.links || {}).edit)
+      var isWork = b.id === workId;
+      var takeBtn = isWork
+        ? '<a class="c-btn is-secondary" href="page-overview.html' + tokQs + '">В работе →</a>'
+        : (locked
+          ? '<button type="button" class="c-btn is-secondary p-btn-take" disabled title="Уже взята задача в работу">Взять в работу</button>'
+          : '<button type="button" class="c-btn is-secondary p-btn-take" data-card="' + esc(b.id) + '" data-act="take">Взять в работу</button>');
+      var editBtn = (!isWork && formLink((b.links || {}).edit))
         ? '<button type="button" class="c-btn is-secondary" data-card="' + esc(b.id) + '" data-act="edit">Поправить</button>' : '';
-      var badges = ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
+      var badges = (isWork ? '<span class="c-chip is-work">в работе</span>' : '')
+        + ((b.ease || 0) > 0 ? '<span class="c-chip is-quiet">лёгкость ' + esc(b.ease) + '/5</span>' : '');
       var rankrow = r ? '<div class="p-rec__rankrow"><span class="p-rec__rank">№' + r + '</span>' +
         '<span class="p-rec__ranklabel">рекомендация Матеус</span></div>' : '';
-      return '<div class="c-sheet c-sheet--pad p-backlog-card' + (r ? ' p-rec__card' : '') + '">' +
+      return '<div class="c-sheet c-sheet--pad p-backlog-card' + (r ? ' p-rec__card' : '') + (isWork ? ' p-work-card' : '') + '">' +
         rankrow +
         '<div class="p-backlog-card__head"><span class="p-backlog-card__title">' + esc(b.title) + '</span>' +
           '<span class="p-backlog-card__hchip"><b>' + h1(b.total_hours) + '</b> ч / мес</span></div>' +
@@ -355,8 +382,10 @@
     var ban = locked
       ? '<div class="c-sheet c-sheet--pad p-lockban">В работе уже: <b>' + esc(t.thread) + '</b> (' + esc(t.stage) + '). Одна задача на цикл — заверши её, чтобы взять из бэклога новую. Остальные проблемы ждут здесь и не теряются.</div>'
       : '';
-    var cards = rest.length
-      ? '<div class="p-backlog-grid">' + rest.map(function (b) { return card(b); }).join("") + '</div>'
+    var gridItems = rest.map(function (b) { return card(b); });
+    if (workCard) gridItems.unshift(card(workCard));   // взятая проблема — первой плашкой, с «в работе»
+    var cards = gridItems.length
+      ? '<div class="p-backlog-grid">' + gridItems.join("") + '</div>'
       : (top3.length
         ? '<div class="c-sheet c-sheet--flush"><div class="c-empty">Остальные проблемы появятся в бэклоге по мере заполнения.</div></div>'
         : '<div class="c-sheet c-sheet--flush"><div class="c-empty">Бэклог пуст — добавьте проблему через форму.</div></div>');
@@ -630,15 +659,20 @@
     if (code === "T6_test") { var p = (t.prototypes || []).filter(function (x) { return x.url_test; })[0]; return p ? formLink(p.url_test) : ""; }
     var k = PADDKEY[code]; return k ? formLink(L[k]) : "";
   }
-  // INTERIM — топ-3 по hours × ease. Логика рекомендаций = домен Cleo (LAB), НЕ MateOS (Ruslan 04.08:
-  // «MateOS — только рельсы; top-3 должна давать Cleo, доп. колонка в Airtable скорее всего»). Ждём спек
-  // Cleo: либо ratify формулы в ранбуке, либо новая колонка recommendation_rank (ставит она) → MateOS
-  // читает. ease уже ставит Cleo (Artifacts.ease) — не фантазия. Будет заменено по её решению.
+  // Рекомендация: top-3 по рангу Cleo (Artifacts.recommendation_rank, 1-3; ставит Cleo+Ruslan per-record,
+  // coord recs-decision-B). Ранг есть → топ-3 по нему (ease-first зашит в значения Cleo). Ранга нет
+  // (поле не заведено) → interim hours×ease. Логика = домен Cleo; MateOS = рельса.
   function pRecRank(list) {
+    var ranked = list.filter(function (b) { return (b.recommendation_rank || 0) > 0; });
+    if (ranked.length) {
+      var r = {}; ranked.slice().sort(function (a, b) { return (a.recommendation_rank || 0) - (b.recommendation_rank || 0); })
+        .slice(0, 3).forEach(function (b) { r[b.id] = b.recommendation_rank; });
+      return r;
+    }
     var scored = list.filter(function (b) { return (b.ease || 0) > 0; });
     if (!scored.length) return {};
     var ord = scored.slice().sort(function (a, b) { return ((b.total_hours || 0) * (b.ease || 0)) - ((a.total_hours || 0) * (a.ease || 0)); });
-    var r = {}; ord.slice(0, 3).forEach(function (b, i) { r[b.id] = i + 1; }); return r;
+    var r2 = {}; ord.slice(0, 3).forEach(function (b, i) { r2[b.id] = i + 1; }); return r2;
   }
   var h1 = function (n) { return Math.round((n || 0) * 10) / 10; };
 

@@ -31,19 +31,24 @@ window.PULSE_SNAPSHOT = {
     activity_14d: [2, 1, 0, 3, 2, 0, 0, 4, 1, 2, 3, 0, 2, 3], // __mock: derived per day
     activity_from: "07.07", activity_to: "20.07",
     threads: [
-      { thread: "Проблемные интервью", progress: 0.6, hours: 8 },
+      { thread: "Проблемные интервью", thread_key: "T-INT", stage_code: "T2_task", stage: "Решение", progress: 0.6, hours: 8,
+        reached: ["T1_idea", "T2_task"],
+        brief: [
+          { code: "T1_idea", text: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста — 12 ч/мес на человека." },
+          { code: "T2_task", text: "Шаблон формы интервью + авто-сводка в Airtable. Вход — сырые ответы, выход — структурированная карточка проблемы." }
+        ] },
       { thread: "Прототип", progress: 1.0, hours: 6.5 },
       { thread: "One-pager", progress: 0.1, hours: 4 },
     ],
   },
   backlog: [
-    { id: "recBL01", title: "Ручной сбор проблемных интервью", total_hours: 12, ease: 3, thread_key: "T-INT", content: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста." },
+    { id: "recBL01", title: "Ручной сбор проблемных интервью", total_hours: 12, ease: 3, thread_key: "T-INT", content: "Каждый продакт вручную сводит интервью в таблицу. Нет единого формата, дубли, потери контекста." },  // ← T-INT = взят в спринт (см. threads[0] ниже)
     { id: "recBL02", title: "Сборка one-pager под Demo Day", total_hours: 6, ease: 4, thread_key: "T-OPG", content: "Гипотезы живут в чатах и файлах. Перед демо всё пересобирается заново — 6 часов на человека в цикл." },
     { id: "recBL03", title: "Прогон прототипов в Figma", total_hours: 9, ease: 2, thread_key: "T-FIG", content: "Прототипы делаются с нуля каждый раз. Нет переиспользуемых блоков под путь Вход→Выход." },
-    { id: "recBL04", title: "Синхронизация статусов по спринту", total_hours: 4, ease: 5, thread_key: "T-SYNC", content: "Статусы задач разбросаны. Лид тратит время на ручной сбор картины к status_check." },
-    { id: "recBL05", title: "Ручной расчёт KPI отдела", total_hours: 8, ease: 4, thread_key: "T-KPI", content: "KPI считаются в таблицах руками. Нет единой формулы, ошибки, пересогласование каждую неделю." },
+    { id: "recBL04", title: "Синхронизация статусов по спринту", total_hours: 4, ease: 5, recommendation_rank: 1, thread_key: "T-SYNC", content: "Статусы задач разбросаны. Лид тратит время на ручной сбор картины к status_check." },
+    { id: "recBL05", title: "Ручной расчёт KPI отдела", total_hours: 8, ease: 4, recommendation_rank: 3, thread_key: "T-KPI", content: "KPI считаются в таблицах руками. Нет единой формулы, ошибки, пересогласование каждую неделю." },
     { id: "recBL06", title: "Дедупликация контактов в CRM", total_hours: 15, ease: 2, thread_key: "T-DUP", content: "Дубли контактов плодятся, ручная сверка. Высокий риск потерять или слить сделки — но чистка сложна." },
-    { id: "recBL07", title: "Шаблон еженедельного отчёта", total_hours: 3, ease: 5, thread_key: "T-RPT", content: "Отчёт собирается с нуля каждую неделю. Шаблон = быстрая победа без автоматизации." },
+    { id: "recBL07", title: "Шаблон еженедельного отчёта", total_hours: 3, ease: 5, recommendation_rank: 2, thread_key: "T-RPT", content: "Отчёт собирается с нуля каждую неделю. Шаблон = быстрая победа без автоматизации." },
   ],
   // __mock: derived (GroupMembership + Artifacts). Delete to see c-empty on Leaderboard.
   leaderboard: [

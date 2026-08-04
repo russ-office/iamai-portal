@@ -298,8 +298,9 @@ def main():
                             "total_hours": f.get("total_hours") or 0,
                             "thread_key": f.get("thread_key") or "",
                             "content": f.get("content") or "",
-                            "ease": f.get("ease") or 0,                       # рекомендация Матеуса (пара часы×лёгкость)
+                            "ease": f.get("ease") or 0,                       # лёгкость 1-5 (ставит Cleo)
                             "priority_quadrant": f.get("priority_quadrant") or "",
+                            "recommendation_rank": f.get("recommendation_rank") or 0,   # top-3 ранг Cleo+Ruslan (coord recs-decision-B); 0 = не в топ-3
                             # готовые ссылки со значениями — фронт свои не собирает
                             "links": step_links(f)})
         out.sort(key=lambda b: -(b["total_hours"] or 0))

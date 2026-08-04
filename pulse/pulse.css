@@ -178,6 +178,14 @@ a:hover { text-decoration: none; }
 .p-rec__rankrow { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
 .p-rec__rank { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 22px; padding: 0 7px; border-radius: 999px; background: var(--accent); color: #fff; font-family: var(--font-mono); font-weight: 700; font-size: 11px; flex: none; }
 .p-rec__ranklabel { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+
+/* #664 review: c-tape — метки дат внутри плашки (start + 3 внутри + end), выровнены по дням. */
+.c-tape__lbl { flex: 1; text-align: center; }
+.c-tape__lbl.is-hidden { visibility: hidden; }
+
+/* #664 review: взятая в спринт проблема в бэклоге — выделение «в работе» (как Матеус-карточки, но нейтральнее). */
+.p-work-card { border-left: 3px solid var(--ink); }
+.c-chip.is-work { background: var(--ink); color: #fff; border-color: var(--ink); }
 /* Спринт empty-state (нет взятой задачи): фокус на одной проблеме, ведём в Бэклог (coord ядро-2). */
 .p-sprint-empty { text-align: center; padding: 48px 24px; max-width: 520px; margin: 0 auto; }
 .p-sprint-empty__title { margin: 6px 0 12px; font-size: 18px; font-weight: 700; }
