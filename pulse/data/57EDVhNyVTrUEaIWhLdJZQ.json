@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-08-04T22:17:47+05:00",
- "today": "2026-08-04",
+ "generated_at": "2026-08-05T11:16:14+05:00",
+ "today": "2026-08-05",
  "sprint_no": 1,
  "subject": {
   "id": "recxmV7v3pvoc7nUE",
@@ -19,8 +19,8 @@
   {
    "id": "reciWRnrsVTSapwN0",
    "title": "EVRIKA-BUH-F1-C1",
-   "start": "2026-08-04T22:17:47+05:00",
-   "end": "2026-08-04T22:17:47+05:00",
+   "start": "2026-08-05T11:16:14+05:00",
+   "end": "2026-08-05T11:16:14+05:00",
    "kind": "other",
    "all_day": true
   }

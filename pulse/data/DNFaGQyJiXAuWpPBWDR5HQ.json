@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-08-04T22:17:47+05:00",
- "today": "2026-08-04",
+ "generated_at": "2026-08-05T11:16:14+05:00",
+ "today": "2026-08-05",
  "sprint_no": 1,
  "subject": {
   "id": "rec25ceKLAA9vxWKD",
@@ -11,9 +11,9 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recrvRXnzkF35FvTN&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 3,
+  "days_idle": 4,
   "done_7d": 1,
-  "state": "warn"
+  "state": "bad"
  },
  "events": [
   {
@@ -81,14 +81,14 @@
    0,
    0,
    0,
-   0,
    1,
+   0,
    0,
    0,
    0
   ],
-  "activity_from": "22.07",
-  "activity_to": "04.08"
+  "activity_from": "23.07",
+  "activity_to": "05.08"
  },
  "backlog": [
   {
