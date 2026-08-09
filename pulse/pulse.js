@@ -844,16 +844,6 @@
       document.title = "MateOS · Пульс · " + (metaFor(view, D).title);
       root.innerHTML = buildShell(view, metaFor(view, D), D);
       var body = document.getElementById("p-body");
-      var addBtn = document.getElementById("p-add-problem");
-      // «Новая проблема» = url_backlog_T1 текущего цикла (hidden client/group/cycle, без prefill).
-      var newBacklog = formLink(D.url_backlog);
-      if (addBtn && newBacklog) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", newBacklog); });
-      else if (addBtn) addBtn.setAttribute("disabled", "disabled");
-      // «Новая задача» = url_task (hidden assignee/group/cycle/client + source=self, status=todo).
-      var addTask = document.getElementById("p-add-task");
-      var newTask = formLink(D.url_task);
-      if (addTask && newTask) addTask.addEventListener("click", function () { openDrawer("Новая задача", "Задача · LabTasks", newTask); });
-      else if (addTask) addTask.setAttribute("disabled", "disabled");
       if (view === "person") renderPerson(body, D);
       else if (view === "list") renderBacklog(body, D);
       else if (view === "overview") renderOverview(body, D);
@@ -864,6 +854,18 @@
       else if (view === "guides") renderLibrary(body);  // F: Инструкции → Библиотека (Ruslan #9)
       else if (view === "leaderboard") renderLeaderboard(body, D);
       else body.innerHTML = '<div class="c-empty">Экран появится позже</div>';
+      // #677 fix: add-кнопки (#p-add-problem/#p-add-task) создаются в renderBacklog/renderTasks
+      // (выше по цепочке), НЕ в buildShell → listener вешаем ПОСЛЕ рендера, когда кнопки уже в DOM.
+      var addBtn = document.getElementById("p-add-problem");
+      // «Новая проблема» = url_backlog_T1 текущего цикла (hidden client/group/cycle, без prefill).
+      var newBacklog = formLink(D.url_backlog);
+      if (addBtn && newBacklog) addBtn.addEventListener("click", function () { openDrawer("Новая проблема", "Бэклог · T0 / T1", newBacklog); });
+      else if (addBtn) addBtn.setAttribute("disabled", "disabled");
+      // «Новая задача» = url_task (hidden assignee/group/cycle/client + source=self, status=todo).
+      var addTask = document.getElementById("p-add-task");
+      var newTask = formLink(D.url_task);
+      if (addTask && newTask) addTask.addEventListener("click", function () { openDrawer("Новая задача", "Задача · LabTasks", newTask); });
+      else if (addTask) addTask.setAttribute("disabled", "disabled");
       initDrawer();
     }).catch(function () {
       root.innerHTML = '<div class="c-empty" style="padding:80px 20px">Снапшот не найден. Проверь snapshot.js / snapshot.json рядом со страницей.</div>';
