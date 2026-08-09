@@ -55,7 +55,7 @@
     { id: "calendar",    label: "Календарь",   href: "page-list.html?view=calendar",     state: "active" },
     { id: "leaderboard", label: "Leaderboard", href: "page-list.html?view=leaderboard",  state: "active" },
     { id: "library",     label: "Библиотека",  href: "page-list.html?view=library",      state: "active" },
-    { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "active" },
+    { id: "marketplace", label: "Marketplace", href: "page-list.html?view=market",       state: "soon", title: "Появится позже / база не подключена" },  // #677 UI: Marketplace неактивен (как Чат); T7_prd=0 → soon вместо empty-state.
     { id: "chat",        label: "Чат",         state: "soon", title: "Скоро: сообщить о проблеме или идее" },  // #665 интерим: скрыт до слайдера+формы (K8 фаза2). Было state:"chat"→feedbackUrl новой вкладкой.
   ];
 
@@ -676,29 +676,39 @@
   }
   var h1 = function (n) { return Math.round((n || 0) * 10) / 10; };
 
-  function pStagePane(D, t, i) {
-    var st = PSTAGES[i];
+  function pStagePane(D, t, viewIdx) {
     if (!t) {
       return '<div class="c-sheet c-sheet--flush"><div class="c-empty">Пока никто не взят в работу. Возьмите задачу на Бэклоге — решение пойдёт по этапам здесь.</div></div>';
     }
     var reached = t.reached || [], briefMap = {};
     (t.brief || []).forEach(function (b) { briefMap[b.code] = b.text; });
-    var blocks = PSTAGES.filter(function (s) { return s.codes.some(function (c) { return reached.indexOf(c) >= 0; }); }).map(function (s) {
-      var code = s.codes.filter(function (c) { return reached.indexOf(c) >= 0; })[0];
-      var txt = (briefMap[code] || "").trim(), own = s.code === st.code, pos = PSTAGES.indexOf(s);
-      var editL = !own ? '<span class="p-brk__edit" data-goto="' + pos + '">изменить</span>' : '';
-      return '<div class="c-sheet c-sheet--pad p-brk' + (own ? ' is-own' : '') + '">' +
-        '<div class="p-brk__h"><span>' + esc(s.brief) + '</span>' + editL + '</div>' +
-        '<div class="p-brk__body">' + (txt ? esc(txt) : "—") + '</div></div>';
+    var curView = (function () {
+      var idx = PSTAGES.findIndex(function (s) { return s.codes.indexOf(t.stage_code) >= 0; });
+      return idx >= 0 ? idx : 1;
+    })();
+    // #677 UI: список плашек = активные этапы (reached / текущий / frontier), Бэклог(i=0) пропущен.
+    // Биселекция с цепочкой: p-brk[data-stage] кликабелен → тот же state.view, что и bar.
+    // «Изменить» (data-add → форма в шторке) ТОЛЬКО у выделенной плашки (viewIdx) и только если есть url.
+    var blocks = PSTAGES.map(function (s, i) {
+      if (i === 0) return '';
+      var isReached = pStageReached(t, s);
+      var isCur = i === curView;
+      var url = pTargetLink(t, s.code);
+      var frontier = !isReached && url;
+      if (!(isReached || isCur || frontier)) return '';
+      var txt = (briefMap[s.codes[0]] || "").trim();
+      var isSel = i === viewIdx;
+      var editL = (isSel && url)
+        ? '<button type="button" class="c-btn is-secondary p-brk__edit" data-add="' + i + '">' + (isReached ? 'Изменить' : '+ Добавить') + '</button>'
+        : '';
+      var body = isReached ? (txt ? esc(txt) : '—')
+        : (frontier ? 'Добавьте информацию этого этапа — она ляжет к решению.'
+                    : 'Откроется, когда будет заполнен предыдущий этап.');
+      return '<div class="c-sheet c-sheet--pad p-brk' + (isSel ? ' is-sel' : '') + '" data-stage="' + i + '">' +
+        '<div class="p-brk__h"><span>' + esc(s.label) + '</span>' + editL + '</div>' +
+        '<div class="p-brk__body">' + body + '</div></div>';
     }).join("");
-    var url = pTargetLink(t, st.code), isReached = pStageReached(t, st), action = "", sub = "";
-    if (url && isReached) { action = '<button type="button" class="c-btn is-primary" data-add="' + i + '">Изменить · ' + esc(st.label) + '</button>'; sub = "Этап заполнен. Можно дополнить — новая версия, старое не теряется."; }
-    else if (url) { action = '<button type="button" class="c-btn is-primary" data-add="' + i + '">+ Добавить ' + esc(st.label) + '</button>'; sub = "Добавьте информацию этого этапа — она ляжет к решению."; }
-    else if (isReached) { sub = "Этап заполнен. Правка — на его вкладке."; }
-    else { sub = "Откроется, когда будет заполнен предыдущий этап."; }
-    return '<div class="p-pipe"><div class="p-pipe__brief">' + (blocks || '<div class="c-empty">Пока пусто.</div>') + '</div>' +
-      '<div class="p-pipe__side"><div class="c-sheet c-sheet--pad"><div class="p-section" style="margin-bottom:8px">' + esc(st.label) + '</div>' +
-      '<p class="p-backlog-card__body" style="margin-bottom:' + (action ? "14px" : "0") + '">' + esc(sub) + '</p>' + action + '</div></div></div>';
+    return '<div class="p-pipe"><div class="p-pipe__brief">' + (blocks || '<div class="c-empty">Пока пусто.</div>') + '</div></div>';
   }
 
   function renderOverview(body, D) {
@@ -744,14 +754,13 @@
       var head = '<div class="p-sprint-head"><div class="p-sprint-head__thread">' + esc(t.thread) + '</div>' +
         '<div class="p-sprint-head__stage">этап · ' + esc(t.stage) + '</div></div>';
       body.innerHTML = '<div class="p-wrap"><nav class="p-stagebar">' + bar + '</nav>' + head + content + '</div>';
-      // навигация по вкладкам + «изменить» (уйти на этап) — переключают view без перезагрузки
+      // биселекция (#677 UI): клик по этапу цепочки ИЛИ по плашке списка [data-stage] → state.view → draw()
       body.querySelectorAll("[data-stage]").forEach(function (btn) { btn.onclick = function () { state.view = +btn.getAttribute("data-stage"); draw(); }; });
-      body.querySelectorAll("[data-goto]").forEach(function (el) { el.onclick = function () { state.view = +el.getAttribute("data-goto"); draw(); }; });
-      // форвард-этап: добавить/изменить → форма этапа в шторке
+      // «Изменить» в выделенной плашке → форма этапа в шторке (stopPropagation — клик не переключает stage)
       body.querySelectorAll("[data-add]").forEach(function (btn) {
         var st = PSTAGES[+btn.getAttribute("data-add")], url = t ? pTargetLink(t, st.code) : "";
         if (!url) return;
-        btn.addEventListener("click", function () { openDrawer("Этап · " + st.label, t.thread, url); });
+        btn.addEventListener("click", function (e) { e.stopPropagation(); openDrawer("Этап · " + st.label, t.thread, url); });
       });
     }
     draw();
@@ -802,14 +811,30 @@
     if (s) s.classList.remove("is-open");
     if (d) { d.classList.remove("is-open"); d.setAttribute("aria-hidden", "true"); }
   }
+  // #677 UI: read-only карточка задачи для слайдера (edit-формы LabTasks пока нет → все read-only).
+  function taskReadonlyHTML(t) {
+    var rows = [];
+    rows.push(["Статус", U.taskLabel(t.status)]);
+    rows.push(["Приоритет", t.priority === "high" ? "высокий" : "обычный"]);
+    if (t.due) rows.push(["Срок", U.fmtDate(t.due)]);
+    if (t.assignees && t.assignees.length) rows.push(["Исполнитель", t.assignees.join(", ")]);
+    if (t.artifact) rows.push(["Артефакт", t.artifact]);
+    return '<div class="c-sheet c-sheet--pad p-task-ro"><div class="p-task-ro__rows">' +
+      rows.map(function (r) {
+        return '<div class="p-task-ro__row"><span class="p-task-ro__k">' + esc(r[0]) + '</span><span class="p-task-ro__v">' + esc(r[1]) + '</span></div>';
+      }).join("") + '</div></div>';
+  }
   function wireTaskRows(body, D) {
     body.querySelectorAll("[data-task]").forEach(function (row) {
       var t = D.tasks.filter(function (x) { return x.id === row.getAttribute("data-task"); })[0];
       if (!t) return;
-      // У LabTasks своей формы нет (задача ≠ артефакт). Ссылка появится в снапшоте — откроем её.
+      // Клик по плашке задачи → слайдер. Edit-формы LabTasks пока нет (tasks[].url всегда "") →
+      // read-only структурированная инфа. Когда edit-link появится в снапшоте — ветвить на форму.
       var src = formLink(t.url);
-      if (!src) return;
-      function open() { openDrawer(U.taskLabel(t.status), t.title, src); }
+      function open() {
+        if (src) { openDrawer(U.taskLabel(t.status), t.title, src); return; }
+        openDrawer(U.taskLabel(t.status), t.title, null, taskReadonlyHTML(t));
+      }
       row.addEventListener("click", open);
       row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
     });

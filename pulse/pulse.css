@@ -205,6 +205,16 @@ a:hover { text-decoration: none; }
 .p-brk__edit:hover { color: var(--accent); }
 .p-brk__body { font-size: 13px; line-height: 1.55; color: var(--ink-soft); white-space: pre-wrap; }
 @media (max-width: 720px) { .p-pipe { flex-direction: column-reverse; } .p-pipe__side { width: 100%; flex: 1; } }
+/* #677 UI: биселекция Спринт — выделенная плашка списка + кликабельность; read-only карточка задачи. */
+.p-brk[data-stage] { cursor: pointer; transition: box-shadow .15s; }
+.p-brk[data-stage]:hover { box-shadow: inset 3px 0 0 var(--ink-soft); }
+.p-brk.is-sel { box-shadow: inset 3px 0 0 var(--accent); }
+.p-brk.is-sel .p-brk__h { color: var(--accent); }
+.p-brk__edit.c-btn { font-family: var(--font-text); font-size: 11px; letter-spacing: 0; text-transform: none; padding: 4px 10px; min-height: 0; }
+.p-task-ro__rows { display: flex; flex-direction: column; gap: 10px; }
+.p-task-ro__row { display: flex; gap: 12px; align-items: baseline; font-size: 13px; }
+.p-task-ro__k { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); flex: 0 0 120px; }
+.p-task-ro__v { color: var(--ink); flex: 1; min-width: 0; }
 
 /* §E · Этаж 1 — инфографика: 3 плашки 25/50/25 (redesign §3). Кликабельные <a>-плашки.
    Elevation из c-sheet (--shadow-d1); hover = transform (canon: zero custom box-shadow). */
