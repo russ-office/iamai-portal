@@ -1,14 +1,22 @@
 {
  "client": "SZ",
- "generated_at": "2026-08-10T17:28:49+05:00",
+ "generated_at": "2026-08-10T18:54:15+05:00",
  "kpi": {
   "groups": 10,
-  "people": 15,
-  "threads": 26,
-  "hours_month": 388.2,
-  "hours_year": 4658.4
+  "people": 16,
+  "threads": 27,
+  "hours_month": 763.2,
+  "hours_year": 9158.4
  },
  "groups": [
+  {
+   "group": "SZ_LAB_1_6_HR",
+   "group_id": "recJTpyGqmXv0brvo",
+   "cycle": "SZ_LAB_1_HR_2-C1",
+   "threads": 11,
+   "people": 2,
+   "hours_month": 448.1
+  },
   {
    "group": "SZ_LAB_1_8_Acc",
    "group_id": "rechQNZDU1nxPz1RH",
@@ -24,14 +32,6 @@
    "threads": 2,
    "people": 2,
    "hours_month": 116
-  },
-  {
-   "group": "SZ_LAB_1_6_HR",
-   "group_id": "recJTpyGqmXv0brvo",
-   "cycle": "SZ_LAB_1_HR_2-C1",
-   "threads": 10,
-   "people": 1,
-   "hours_month": 73.1
   },
   {
    "group": "SZ_LAB_1_10_HR",
@@ -91,9 +91,16 @@
   }
  ],
  "funnel": {
-  "Проблема": 26
+  "Проблема": 27
  },
  "top": [
+  {
+   "title": "Онлайн-методолог ",
+   "group": "SZ_LAB_1_6_HR",
+   "hours_month": 375,
+   "stage": "Проблема",
+   "thread_key": "SZ_LAB_1_6_HR-P1"
+  },
   {
    "title": "ежедневный запуск обработок по загрузке/выгрузке данных в 1с БК",
    "group": "SZ_LAB_1_8_Acc",
@@ -170,16 +177,16 @@
    "hours_month": 5,
    "stage": "Проблема",
    "thread_key": "SZ_LAB_1_HR_2-P9"
-  },
-  {
-   "title": "Подготовка шаблонов приказов для MetaDoc ",
-   "group": "SZ_LAB_1_10_HR",
-   "hours_month": 5,
-   "stage": "Проблема",
-   "thread_key": "SZ_LAB_1_HR_1-P4"
   }
  ],
  "board": [
+  {
+   "email": "tguryeva@szhuldyz.kz",
+   "group": "SZ_LAB_1_6_HR",
+   "ideas": 1,
+   "hours_month": 375,
+   "rows": 1
+  },
   {
    "email": "ahlystunov@szhuldyz.kz",
    "group": "SZ_LAB_1_8_Acc",
@@ -253,13 +260,6 @@
   {
    "email": "kson@szhuldyz.kz",
    "group": "SZ_LAB_1_4_IT",
-   "ideas": 1,
-   "hours_month": 3.3333333333333335,
-   "rows": 1
-  },
-  {
-   "email": "dsavitsky@szhuldyz.kz",
-   "group": "SZ_LAB_1_5_Ecom",
    "ideas": 1,
    "hours_month": 3.3333333333333335,
    "rows": 1

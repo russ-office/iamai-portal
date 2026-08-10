@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-10T17:28:49+05:00",
+ "generated_at": "2026-08-10T18:54:16+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -34,7 +34,7 @@
   {
    "code": "T1_idea",
    "label": "Проблема",
-   "count": 101
+   "count": 102
   },
   {
    "code": "T2_task",
@@ -188,143 +188,6 @@
      "stage_code": "T1_idea",
      "last_at": "2026-07-14 06:51",
      "dirty": true
-    }
-   ],
-   "tasks": []
-  },
-  {
-   "group": "SZ_LAB_1_6_HR",
-   "group_id": "recJTpyGqmXv0brvo",
-   "client": "SZ",
-   "cycle": "SZ_LAB_1_HR_2-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 1,
-   "threads": 10,
-   "backlog_count": 10,
-   "hours_month": 73.1,
-   "in_sprint": false,
-   "temp": {
-    "state": "bad",
-    "days_idle": 27,
-    "done_7d": 0
-   },
-   "last_at": "2026-07-14 07:13",
-   "stepper": {
-    "T1_idea": 10,
-    "T0_function_map": 1
-   },
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P7",
-     "title": "Регулярный контент для сотрудников",
-     "hours_month": 36,
-     "ease": 5,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:53",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P10",
-     "title": "Часто повторяющиеся вопросы отдела кадров",
-     "hours_month": 20,
-     "ease": 4,
-     "recommendation": "1 быстрая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:57",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P9",
-     "title": "HR-аналитика вручную",
-     "hours_month": 5,
-     "ease": 3,
-     "recommendation": "4 долгострой",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:55",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P2",
-     "title": "Рассылка поздравлений с днями рождения",
-     "hours_month": 3.3333333333333335,
-     "ease": 5,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 07:13",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P8",
-     "title": "Пояснительные записки и протоколы для Совета директоров",
-     "hours_month": 3,
-     "ease": 4,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:54",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P6",
-     "title": "Подготовка и обработка опросов сотрудников",
-     "hours_month": 2.25,
-     "ease": 4,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:52",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P1",
-     "title": "Рассылка вакансий сотрудникам",
-     "hours_month": 1,
-     "ease": 5,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:44",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P3",
-     "title": "Рассылка о кадровых перемещениях",
-     "hours_month": 1,
-     "ease": 5,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:48",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P4",
-     "title": "Еженедельная рассылка цитат",
-     "hours_month": 1,
-     "ease": 5,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:49",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_2-P5",
-     "title": "Рассылка поздравлений с праздниками",
-     "hours_month": 0.5,
-     "ease": 5,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:50",
-     "dirty": false
     }
    ],
    "tasks": []
@@ -1581,6 +1444,154 @@
      "stage": "Проблема",
      "stage_code": "T1_idea",
      "last_at": "2026-07-22 07:00",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_6_HR",
+   "group_id": "recJTpyGqmXv0brvo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_HR_2-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recJTpyGqmXv0brvo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 11,
+   "backlog_count": 11,
+   "hours_month": 448.1,
+   "in_sprint": false,
+   "temp": {
+    "state": "warn",
+    "days_idle": 0,
+    "done_7d": 1
+   },
+   "last_at": "2026-08-10 12:44",
+   "stepper": {
+    "T1_idea": 11,
+    "T0_function_map": 1
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_6_HR-P1",
+     "title": "Онлайн-методолог ",
+     "hours_month": 375,
+     "ease": 0,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-08-10 12:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P7",
+     "title": "Регулярный контент для сотрудников",
+     "hours_month": 36,
+     "ease": 5,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:53",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P10",
+     "title": "Часто повторяющиеся вопросы отдела кадров",
+     "hours_month": 20,
+     "ease": 4,
+     "recommendation": "1 быстрая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:57",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P9",
+     "title": "HR-аналитика вручную",
+     "hours_month": 5,
+     "ease": 3,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:55",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P2",
+     "title": "Рассылка поздравлений с днями рождения",
+     "hours_month": 3.3333333333333335,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 07:13",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P8",
+     "title": "Пояснительные записки и протоколы для Совета директоров",
+     "hours_month": 3,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:54",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P6",
+     "title": "Подготовка и обработка опросов сотрудников",
+     "hours_month": 2.25,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:52",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P1",
+     "title": "Рассылка вакансий сотрудникам",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:44",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P3",
+     "title": "Рассылка о кадровых перемещениях",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:48",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P4",
+     "title": "Еженедельная рассылка цитат",
+     "hours_month": 1,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_2-P5",
+     "title": "Рассылка поздравлений с праздниками",
+     "hours_month": 0.5,
+     "ease": 5,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:50",
      "dirty": false
     }
    ],
