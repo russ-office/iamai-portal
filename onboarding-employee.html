@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MateOS · Онбординг · Методология</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../design-system/styles.css">
+<link rel="stylesheet" href="./onboarding.css">
+</head>
+<body>
+<div class="c-shell c-shell--onb">
+
+  <!-- Рельса: бренд + навигация по блокам -->
+  <aside class="c-shell__rail">
+    <div class="c-shell__brand">
+      <b>MATEOS</b>
+      <span>Лаборатория</span>
+    </div>
+    <nav class="c-nav">
+      <button class="c-nav-item is-active" type="button">
+        <span class="c-status-dot" data-state="warn" aria-label="Текущий блок"></span>
+        Методология
+      </button>
+      <button class="c-nav-item is-soon" type="button" disabled>Методология ↔ Пульс</button>
+      <button class="c-nav-item is-soon" type="button" disabled>Доп. функции</button>
+    </nav>
+    <div class="c-nav__foot">
+      <span class="c-chip is-quiet">ТРЕК Б · СОТРУДНИК</span>
+    </div>
+  </aside>
+
+  <!-- Основная область -->
+  <div class="c-shell__main">
+    <header class="c-page-head">
+      <div class="c-page-head__titles">
+        <span class="c-page-head__eyebrow">Онбординг · Блок 1 из 3</span>
+        <span class="c-page-head__title">Методология</span>
+      </div>
+    </header>
+
+    <div class="c-shell__body">
+      <div class="onb-wrap">
+
+        <!-- Прогресс по блокам -->
+        <div class="onb-progress">
+          <div class="onb-progress__labels">
+            <span class="is-active">01 Методология</span>
+            <span>02 Методология ↔ Пульс</span>
+            <span>03 Доп. функции</span>
+          </div>
+          <div class="c-stage-bar">
+            <div class="c-stage-bar__track">
+              <div class="c-stage-bar__fill" style="width:33%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 1.1 — Что такое Лаборатория -->
+        <section class="c-sheet c-sheet--pad onb-card">
+          <div class="onb-card__head">
+            <span class="onb-card__num">01</span>
+            <h2 class="onb-card__title">Что такое Лаборатория</h2>
+          </div>
+          <p class="onb-card__lede">
+            Лаборатория — вы своими руками превращаете рабочие задачи, которые съедают время, в готовые
+            решения. Цепочка: <strong>проблема → решение → техническое задание (ТЗ)</strong>. Идём спринтами
+            по 2 недели. Результат измеряем в сэкономленных часах.
+          </p>
+
+          <div class="onb-chain">
+            <div class="onb-chain__node">
+              <div class="onb-chain__node-icon">1</div>
+              <div class="onb-chain__node-label">Проблема</div>
+            </div>
+            <div class="onb-chain__arrow">→</div>
+            <div class="onb-chain__node">
+              <div class="onb-chain__node-icon">2</div>
+              <div class="onb-chain__node-label">Прототип</div>
+            </div>
+            <div class="onb-chain__arrow">→</div>
+            <div class="onb-chain__node">
+              <div class="onb-chain__node-icon">3</div>
+              <div class="onb-chain__node-label">ТЗ</div>
+            </div>
+          </div>
+
+          <div class="onb-chain__plate">
+            <span>Спринт = <b>2 недели</b></span>
+            <span>Метрика = <b>часы</b></span>
+          </div>
+        </section>
+
+        <!-- Карточка 1.2 — Этапы пути задачи (T0–T7) -->
+        <section class="c-sheet c-sheet--pad onb-card">
+          <div class="onb-card__head">
+            <span class="onb-card__num">02</span>
+            <h2 class="onb-card__title">Этапы пути задачи (T0–T7)</h2>
+          </div>
+          <p class="onb-card__lede">
+            Задача проходит этапы — от проблемы до готового ТЗ. Каждый этап = <strong>форма</strong>
+            (не «свободный чат»); следующий открывается, когда предыдущий квалифицирован. Сумма кусков
+            превращает проблему в ТЗ.
+          </p>
+
+          <!-- Конвейер стадий: Бэклог/Решение/Поиск = пройдены (reached), Прототип = текущий (frontier), Тест/PRD = будущее. T4 упразднён, не показываем. -->
+          <div class="onb-stages">
+            <div class="onb-stage is-reached">
+              <span class="onb-stage__tag">T0/T1</span>
+              <span class="onb-stage__label">Бэклог</span>
+            </div>
+            <div class="onb-stage is-reached">
+              <span class="onb-stage__tag">T2</span>
+              <span class="onb-stage__label">Решение</span>
+            </div>
+            <div class="onb-stage is-reached">
+              <span class="onb-stage__tag">T3</span>
+              <span class="onb-stage__label">Поиск</span>
+            </div>
+            <div class="onb-stage is-frontier">
+              <span class="onb-stage__tag">T5</span>
+              <span class="onb-stage__label">Прототип</span>
+            </div>
+            <div class="onb-stage is-future">
+              <span class="onb-stage__tag">T6</span>
+              <span class="onb-stage__label">Тест</span>
+            </div>
+            <div class="onb-stage is-future">
+              <span class="onb-stage__tag">T7</span>
+              <span class="onb-stage__label">PRD / ТЗ</span>
+            </div>
+          </div>
+
+          <!-- Что нашивается на тред (по канону lab_method_process_v01) -->
+          <div class="onb-edges">
+            <div class="onb-edge"><span class="onb-edge__tag">T0/T1 · Бэклог</span><span>описание проблемы + оценка времени (цена проблемы)</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">T2 · Решение</span><span>полная <b>триада</b>: проблема · вход · выход (= будущие критерии)</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">T3 · Поиск</span><span>аналоги рынка + verdict (подходит/нет) → общий каталог</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">T5 · Прототип</span><span>JTBD + мини-PRD: подход · стеки · критерии тестирования</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">T6 · Тест</span><span>план тестов + протокол «до/после» против критериев триады</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">T7 · PRD / ТЗ</span><span>готовое ТЗ + факт экономии (сэкономленные часы)</span></div>
+          </div>
+
+          <!-- Рёбра: shortcut / петля / финиш -->
+          <div class="onb-flow">Бэклог → Решение → Поиск ─┬─ аналог подошёл ──────────▶ Тест ── прошло ──▶ PRD / ТЗ
+                            └─ не нашлось ── Прототип ──▶ Тест ── не прошло ──▶ Прототип (петля)</div>
+
+          <div class="onb-edges">
+            <div class="onb-edge"><span class="onb-edge__tag">Shortcut T3→T6</span><span>нашли готовый аналог, подходит по триаде → <b>не строим свой прототип</b>, сразу тест. Цель Лаборатории — экономия времени, а не «обязательно с нуля».</span></div>
+            <div class="onb-edge"><span class="onb-edge__tag">Петля T6→T5</span><span>тест не прошёл → назад в Прототип, дорабатываем. Несколько кругов — нормально.</span></div>
+          </div>
+        </section>
+
+        <!-- Карточка 1.3 — Триада -->
+        <section class="c-sheet c-sheet--pad onb-card">
+          <div class="onb-card__head">
+            <span class="onb-card__num">03</span>
+            <h2 class="onb-card__title">Триада: как описать решение</h2>
+          </div>
+          <p class="onb-card__lede">
+            На этапе «Решение» (T2) описываешь триадой:
+          </p>
+
+          <div class="onb-triad">
+            <div class="onb-triad__vertex">
+              <div class="onb-triad__vertex-head">
+                <span class="onb-triad__vertex-mark">1</span>
+                <span class="onb-triad__vertex-title">Вход</span>
+              </div>
+              <div class="onb-triad__vertex-body">что есть сейчас — сырьё, состояние.</div>
+            </div>
+            <div class="onb-triad__vertex">
+              <div class="onb-triad__vertex-head">
+                <span class="onb-triad__vertex-mark">2</span>
+                <span class="onb-triad__vertex-title">Выход</span>
+              </div>
+              <div class="onb-triad__vertex-body">что станет — результат.</div>
+            </div>
+            <div class="onb-triad__vertex">
+              <div class="onb-triad__vertex-head">
+                <span class="onb-triad__vertex-mark">3</span>
+                <span class="onb-triad__vertex-title">Критерии приёмки</span>
+              </div>
+              <div class="onb-triad__vertex-body">проверимое условие «сделано».</div>
+            </div>
+          </div>
+
+          <div class="onb-example">
+            <div class="onb-example__cell">
+              <div class="onb-example__tag">До · размыто</div>
+              <div class="onb-example__text is-muted">«отчёт хороший»</div>
+            </div>
+            <div class="onb-example__cell">
+              <div class="onb-example__tag">После · проверимо</div>
+              <div class="onb-example__text">«отчёт собирается &lt;5 мин из 3 источников без правок»</div>
+            </div>
+          </div>
+
+          <p class="onb-card__lede" style="margin-top:16px">
+            Критерии фиксируются на входе в Прототип и <strong>не переписываются после сборки</strong> —
+            протокол «до-после» меряет против них.
+          </p>
+        </section>
+
+        <!-- Низ: навигация -->
+        <div class="onb-foot">
+          <button class="c-btn is-ghost" type="button" disabled>← Назад</button>
+          <span class="onb-foot__hint">Контент — Cleo (LAB), сборка — MateOS</span>
+          <button class="c-btn is-primary" type="button" disabled>Вперёд →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
