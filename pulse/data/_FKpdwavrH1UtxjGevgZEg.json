@@ -1,7 +1,7 @@
 {
  "scope": "person",
- "generated_at": "2026-08-11T22:36:11+05:00",
- "today": "2026-08-11",
+ "generated_at": "2026-08-12T10:21:05+05:00",
+ "today": "2026-08-12",
  "sprint_no": 1,
  "subject": {
   "id": "rec4GLN2WMTvbJ2rb",
@@ -11,7 +11,7 @@
  },
  "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recq4f8g3aLUFXJwi&cycle=reciWRnrsVTSapwN0&type=T1_idea&author_email=",
  "status_light": {
-  "days_idle": 19,
+  "days_idle": 20,
   "done_7d": 0,
   "state": "bad"
  },
@@ -19,8 +19,8 @@
   {
    "id": "reciWRnrsVTSapwN0",
    "title": "EVRIKA-BUH-F1-C1",
-   "start": "2026-08-11T22:36:11+05:00",
-   "end": "2026-08-11T22:36:11+05:00",
+   "start": "2026-08-12T10:21:05+05:00",
+   "end": "2026-08-12T10:21:05+05:00",
    "kind": "other",
    "all_day": true
   }
