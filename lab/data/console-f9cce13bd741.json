@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-13T21:31:31+05:00",
+ "generated_at": "2026-08-13T22:37:52+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -63,54 +63,6 @@
   }
  ],
  "groups": [
-  {
-   "group": "SZ_LAB_1_7_HR",
-   "group_id": "recmJ5pNhqkWX05Vi",
-   "client": "SZ",
-   "cycle": "SZ_LAB_1_HR_1-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 2,
-   "threads": 2,
-   "backlog_count": 2,
-   "hours_month": 116.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "bad",
-    "days_idle": 30,
-    "done_7d": 0
-   },
-   "last_at": "2026-07-14 06:49",
-   "stepper": {
-    "T1_idea": 2
-   },
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [
-    {
-     "thread_key": "SZ_LAB_1_HR_1-P3",
-     "title": "Воронка найма ",
-     "hours_month": 66,
-     "ease": 3,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:49",
-     "dirty": false
-    },
-    {
-     "thread_key": "SZ_LAB_1_HR_1-P2",
-     "title": "Расчет оценочных бланков (переменная часть заработной платы)",
-     "hours_month": 50,
-     "ease": 3,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-14 06:49",
-     "dirty": false
-    }
-   ],
-   "tasks": []
-  },
   {
    "group": "SZ_LAB_1_5_Ecom",
    "group_id": "rech5SFuPyuwYAdJy",
@@ -241,6 +193,54 @@
    "tasks": []
   },
   {
+   "group": "SZ_LAB_1_7_HR",
+   "group_id": "recmJ5pNhqkWX05Vi",
+   "client": "SZ",
+   "cycle": "SZ_LAB_1_HR_1-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=recmJ5pNhqkWX05Vi&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 2,
+   "backlog_count": 2,
+   "hours_month": 116.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 30,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-14 06:49",
+   "stepper": {
+    "T1_idea": 2
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P3",
+     "title": "Воронка найма ",
+     "hours_month": 66,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    },
+    {
+     "thread_key": "SZ_LAB_1_HR_1-P2",
+     "title": "Расчет оценочных бланков (переменная часть заработной платы)",
+     "hours_month": 50,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-14 06:49",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
    "group": "SZ_LAB_1_4_IT",
    "group_id": "recBoN3ZsXbY7AAGn",
    "client": "SZ",
@@ -365,65 +365,6 @@
      "stage_code": "T1_idea",
      "last_at": "2026-07-15 05:36",
      "dirty": false
-    }
-   ],
-   "tasks": []
-  },
-  {
-   "group": "DAN_LAB_1_1",
-   "group_id": "recHFFw93GRcDM3bX",
-   "client": "DAN",
-   "cycle": "DAN_LAB_1_1-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recHFFw93GRcDM3bX&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
-   "people": 3,
-   "threads": 3,
-   "backlog_count": 3,
-   "hours_month": 1203.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "bad",
-    "days_idle": 22,
-    "done_7d": 0
-   },
-   "last_at": "2026-07-22 06:45",
-   "stepper": {
-    "T1_idea": 3
-   },
-   "dirty_count": 2,
-   "orphan": false,
-   "backlog": [
-    {
-     "thread_key": "DAN_LAB_1_Intake-P18",
-     "title": "Спецификацию быстро заполнить надо",
-     "hours_month": 1200,
-     "ease": 3,
-     "recommendation": "2 большая победа",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:45",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P1",
-     "title": "Проверка общих указании для проекта на первом листе альбома",
-     "hours_month": 3,
-     "ease": 4,
-     "recommendation": "3 мелочь",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:38",
-     "dirty": true
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P15",
-     "title": "Заполнение общих указаний проекта",
-     "hours_month": 0,
-     "ease": 4,
-     "recommendation": "",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:44",
-     "dirty": true
     }
    ],
    "tasks": []
@@ -631,6 +572,113 @@
    "tasks": []
   },
   {
+   "group": "DAN_LAB_1_3",
+   "group_id": "recJgiQEmCVXaNJ7p",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_3-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 2,
+   "threads": 2,
+   "backlog_count": 2,
+   "hours_month": 6.7,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 22,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-22 06:42",
+   "stepper": {
+    "T1_idea": 2
+   },
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P5",
+     "title": "Проверка писем отклонений вертикальных конструкций",
+     "hours_month": 4.166666666666667,
+     "ease": 2,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:40",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P10",
+     "title": "Проверка листов чертежей",
+     "hours_month": 2.5,
+     "ease": 2,
+     "recommendation": "4 долгострой",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:42",
+     "dirty": false
+    }
+   ],
+   "tasks": []
+  },
+  {
+   "group": "DAN_LAB_1_1",
+   "group_id": "recHFFw93GRcDM3bX",
+   "client": "DAN",
+   "cycle": "DAN_LAB_1_1-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recHFFw93GRcDM3bX&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
+   "people": 3,
+   "threads": 3,
+   "backlog_count": 3,
+   "hours_month": 1203.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "bad",
+    "days_idle": 22,
+    "done_7d": 0
+   },
+   "last_at": "2026-07-22 06:45",
+   "stepper": {
+    "T1_idea": 3
+   },
+   "dirty_count": 2,
+   "orphan": false,
+   "backlog": [
+    {
+     "thread_key": "DAN_LAB_1_Intake-P18",
+     "title": "Спецификацию быстро заполнить надо",
+     "hours_month": 1200,
+     "ease": 3,
+     "recommendation": "2 большая победа",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:45",
+     "dirty": false
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P1",
+     "title": "Проверка общих указании для проекта на первом листе альбома",
+     "hours_month": 3,
+     "ease": 4,
+     "recommendation": "3 мелочь",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:38",
+     "dirty": true
+    },
+    {
+     "thread_key": "DAN_LAB_1_Intake-P15",
+     "title": "Заполнение общих указаний проекта",
+     "hours_month": 0,
+     "ease": 4,
+     "recommendation": "",
+     "stage": "Проблема",
+     "stage_code": "T1_idea",
+     "last_at": "2026-07-22 06:44",
+     "dirty": true
+    }
+   ],
+   "tasks": []
+  },
+  {
    "group": "DAN_LAB_1_2",
    "group_id": "recrhTXYnh0VnV2GD",
    "client": "DAN",
@@ -718,54 +766,6 @@
      "stage_code": "T1_idea",
      "last_at": "2026-07-22 06:39",
      "dirty": true
-    }
-   ],
-   "tasks": []
-  },
-  {
-   "group": "DAN_LAB_1_3",
-   "group_id": "recJgiQEmCVXaNJ7p",
-   "client": "DAN",
-   "cycle": "DAN_LAB_1_3-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recFZuQiqAJAsyL6U&group=recJgiQEmCVXaNJ7p&cycle=recuJSQvVfhsOId1S&type=T1_idea&author_email=",
-   "people": 2,
-   "threads": 2,
-   "backlog_count": 2,
-   "hours_month": 6.7,
-   "in_sprint": false,
-   "temp": {
-    "state": "bad",
-    "days_idle": 22,
-    "done_7d": 0
-   },
-   "last_at": "2026-07-22 06:42",
-   "stepper": {
-    "T1_idea": 2
-   },
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [
-    {
-     "thread_key": "DAN_LAB_1_Intake-P5",
-     "title": "Проверка писем отклонений вертикальных конструкций",
-     "hours_month": 4.166666666666667,
-     "ease": 2,
-     "recommendation": "4 долгострой",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:40",
-     "dirty": false
-    },
-    {
-     "thread_key": "DAN_LAB_1_Intake-P10",
-     "title": "Проверка листов чертежей",
-     "hours_month": 2.5,
-     "ease": 2,
-     "recommendation": "4 долгострой",
-     "stage": "Проблема",
-     "stage_code": "T1_idea",
-     "last_at": "2026-07-22 06:42",
-     "dirty": false
     }
    ],
    "tasks": []
@@ -1598,29 +1598,6 @@
    "tasks": []
   },
   {
-   "group": "EVRIKA_LAB_1_4",
-   "group_id": "recflSquE2ik660Hq",
-   "client": "EVRIKA",
-   "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recflSquE2ik660Hq&cycle=&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
    "group": "EVRIKA_LAB_1_2",
    "group_id": "recBxL7wR1GrWpLAZ",
    "client": "EVRIKA",
@@ -1644,34 +1621,11 @@
    "tasks": []
   },
   {
-   "group": "SZ_LAB_1_3_Sales",
-   "group_id": "reciKzjGJVFrhLmBo",
-   "client": "SZ",
-   "cycle": "SZ_LAB_Sales-C1",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
-   "people": 0,
-   "threads": 0,
-   "backlog_count": 0,
-   "hours_month": 0.0,
-   "in_sprint": false,
-   "temp": {
-    "state": "none",
-    "days_idle": null,
-    "done_7d": 0
-   },
-   "last_at": "",
-   "stepper": {},
-   "dirty_count": 0,
-   "orphan": false,
-   "backlog": [],
-   "tasks": []
-  },
-  {
-   "group": "EVRIKA_LAB_1_6",
-   "group_id": "recSuCeVAthcnZCAb",
+   "group": "EVRIKA_LAB_1_3",
+   "group_id": "recSeqmD6i1GRgekQ",
    "client": "EVRIKA",
    "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recSuCeVAthcnZCAb&cycle=&type=T1_idea&author_email=",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recSeqmD6i1GRgekQ&cycle=&type=T1_idea&author_email=",
    "people": 0,
    "threads": 0,
    "backlog_count": 0,
@@ -1713,11 +1667,11 @@
    "tasks": []
   },
   {
-   "group": "EVRIKA_LAB_1_5",
-   "group_id": "receDoYfSJIhJKOPY",
+   "group": "EVRIKA_LAB_1_4",
+   "group_id": "recflSquE2ik660Hq",
    "client": "EVRIKA",
    "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=receDoYfSJIhJKOPY&cycle=&type=T1_idea&author_email=",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recflSquE2ik660Hq&cycle=&type=T1_idea&author_email=",
    "people": 0,
    "threads": 0,
    "backlog_count": 0,
@@ -1759,11 +1713,57 @@
    "tasks": []
   },
   {
-   "group": "EVRIKA_LAB_1_3",
-   "group_id": "recSeqmD6i1GRgekQ",
+   "group": "EVRIKA_LAB_1_6",
+   "group_id": "recSuCeVAthcnZCAb",
    "client": "EVRIKA",
    "cycle": "",
-   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recSeqmD6i1GRgekQ&cycle=&type=T1_idea&author_email=",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=recSuCeVAthcnZCAb&cycle=&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "EVRIKA_LAB_1_5",
+   "group_id": "receDoYfSJIhJKOPY",
+   "client": "EVRIKA",
+   "cycle": "",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=rec7kIMmwjZ6j3ahS&group=receDoYfSJIhJKOPY&cycle=&type=T1_idea&author_email=",
+   "people": 0,
+   "threads": 0,
+   "backlog_count": 0,
+   "hours_month": 0.0,
+   "in_sprint": false,
+   "temp": {
+    "state": "none",
+    "days_idle": null,
+    "done_7d": 0
+   },
+   "last_at": "",
+   "stepper": {},
+   "dirty_count": 0,
+   "orphan": false,
+   "backlog": [],
+   "tasks": []
+  },
+  {
+   "group": "SZ_LAB_1_3_Sales",
+   "group_id": "reciKzjGJVFrhLmBo",
+   "client": "SZ",
+   "cycle": "SZ_LAB_Sales-C1",
+   "url_backlog": "https://iamai.fillout.com/t/xnyBgL499Qus?client=recTHD8qGCMvvoznH&group=reciKzjGJVFrhLmBo&cycle=recdK3TjdxQeCNFCz&type=T1_idea&author_email=",
    "people": 0,
    "threads": 0,
    "backlog_count": 0,
