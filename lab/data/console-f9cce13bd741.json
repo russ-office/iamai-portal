@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-19T21:52:19+05:00",
+ "generated_at": "2026-08-20T09:23:18+05:00",
  "token": "f9cce13bd741",
  "clients": [
   "DAN",
@@ -76,7 +76,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 36,
+    "days_idle": 37,
     "done_7d": 0
    },
    "last_at": "2026-07-14 06:49",
@@ -124,7 +124,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 36,
+    "days_idle": 37,
     "done_7d": 0
    },
    "last_at": "2026-07-14 10:46",
@@ -172,7 +172,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 36,
+    "days_idle": 37,
     "done_7d": 0
    },
    "last_at": "2026-07-14 07:03",
@@ -253,7 +253,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 34,
+    "days_idle": 35,
     "done_7d": 0
    },
    "last_at": "2026-07-16 14:42",
@@ -323,7 +323,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 31,
+    "days_idle": 32,
     "done_7d": 0
    },
    "last_at": "2026-07-19 07:17",
@@ -382,7 +382,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 28,
+    "days_idle": 29,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:45",
@@ -441,7 +441,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 28,
+    "days_idle": 29,
     "done_7d": 0
    },
    "last_at": "2026-07-22 09:08",
@@ -643,7 +643,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 28,
+    "days_idle": 29,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:53",
@@ -735,7 +735,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 28,
+    "days_idle": 29,
     "done_7d": 0
    },
    "last_at": "2026-07-22 06:42",
@@ -783,7 +783,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 27,
+    "days_idle": 28,
     "done_7d": 0
    },
    "last_at": "2026-07-23 04:27",
@@ -864,7 +864,7 @@
    "in_sprint": true,
    "temp": {
     "state": "bad",
-    "days_idle": 25,
+    "days_idle": 26,
     "done_7d": 0
    },
    "last_at": "2026-07-25 11:00",
@@ -936,7 +936,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 20,
+    "days_idle": 21,
     "done_7d": 0
    },
    "last_at": "2026-07-30 05:25",
@@ -1281,7 +1281,7 @@
    "in_sprint": true,
    "temp": {
     "state": "bad",
-    "days_idle": 18,
+    "days_idle": 19,
     "done_7d": 0
    },
    "last_at": "2026-08-01 17:23",
@@ -1462,7 +1462,7 @@
    "in_sprint": false,
    "temp": {
     "state": "bad",
-    "days_idle": 9,
+    "days_idle": 10,
     "done_7d": 0
    },
    "last_at": "2026-08-10 12:44",
